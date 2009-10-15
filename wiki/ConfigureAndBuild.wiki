@@ -1,4 +1,4 @@
-= Configure and build =
+#summary Configure and Build
  
 == Prepare your host software environment ==
 == Configure your network ==
