@@ -1,0 +1,22 @@
+#summary Hello! This is main wiki page of Rowboat project.
+
+= Rowboat project brings latest Android on Omap3 platforms =
+
+== Goals of the project: ==
+  * *Provide stable Google Android port for Omap3 platforms*
+  * *Enable Omap3 hardware features (DSP, Neon, and a few others)*
+
+== Key differentiators among many others: ==
+  * Quality of Android port
+  * Graphics and Multimedia performance optimizations
+  * Complete support of Beagleboard and Omap3EVM (a few more to follow soon)
+  * Focus on Testing and Benchmarking
+  * Android Compliance compatibility
+
+= Who might be interested in this project: =
+  * ODMs that not tied to handset/wireless market : (name markets here)
+  * Companies planning to use Android with Omap3 
+
+= Who are main contributors: =
+  * Mentor Graphics
+  * Texas Instrument
