@@ -1,4 +1,4 @@
-#summary FAQ
+#summary Random Questions
 
 Most questions are easily found with Google... but here's a short list of questions already encountered. If you're still stuck, consider sending an email to rowboat@googlegroups.com or trying the #rowboat IRC chat.
 
@@ -6,7 +6,7 @@ Most questions are easily found with Google... but here's a short list of questi
 
 === How can I change the wallpaper? ===
   * Hold the MENU button (key S4 on the OMAP3EVM), select wallpaper, and browse to the picture.
-  * To load a *.png from your host, you can use "adb push <path to file> /sdcard"
+  * To load a xxx.png from your host, you can use "adb push <path to file> /sdcard"
 
 === What if the Gallery App doesn't see my local media files? ===
   * In adb shell: "am broadcast -a android.intent.action.MEDIA_MOUNTED --ez read-only false -d file:///sdcard"
@@ -37,4 +37,3 @@ Most questions are easily found with Google... but here's a short list of questi
 
 === How do you mount an NFS after the board has booted from SD? ===
   * $ mount -t nfs -o nolock xxx.xxx.xxx.xxx:/path/to/nfs
-
