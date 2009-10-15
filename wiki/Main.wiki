@@ -1,4 +1,4 @@
-#summary * Welcome to the rowboat wiki! *
+#summary Welcome to the rowboat wiki!
 
 == Getting Started Topics ==
 * http://code.google.com/p/rowboat/wiki/ConfigureAndBuild
