@@ -1,0 +1,10 @@
+#summary Welcome to the rowboat wiki!
+
+== Getting Started Topics ==
+* http://code.google.com/p/rowboat/wiki/ConfigureAndBuild
+* http://code.google.com/p/rowboat/wiki/UsefulLinks
+
+== Project Information ==
+* TBD
+
+* *List of all rowboat wiki pages at http://code.google.com/p/rowboat/w/list*
