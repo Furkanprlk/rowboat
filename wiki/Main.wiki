@@ -1,6 +1,7 @@
 #summary Welcome to the rowboat wiki!
 
 == Getting Started Topics ==
+  * Pre-built filesystems at http://code.google.com/p/rowboat/downloads/list
   * http://code.google.com/p/rowboat/wiki/ConfigureAndBuild
   * http://code.google.com/p/rowboat/wiki/UsefulLinks
 
