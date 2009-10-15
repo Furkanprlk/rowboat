@@ -1,0 +1,76 @@
+= Configure and build =
+ 
+== Prepare your host software environment ==
+== Configure your network ==
+
+== Build rootfs ==
+The next step is Android file system build. 
+To build file system you need to specify for which board you want to build. Use variable `TARGET_PRODUCT` for this:
+ * beagleboard
+ * omap3evm
+Also if you need some unit tests for further use `TARGET_BUILD_VARIANT=tests`.
+If you are using multicore CPU in your host it’s possible to use more than one core for building Android for this pass -j8 (or 16, it depends on cores/CPUs) parameter to `make` command.
+
+In following listing we build Android for OMAP3EVM board with unit test packages and use 16 threads to speed up build process:
+{{{
+$ make TARGET_PRODUCT=omap3evm TARGET_BUILD_VARIANT=tests -j16
+}}}
+After build process finished you'll need rootfs for this do following:
+{{{ 
+$ cd out/target/product/omap3evm
+$ mkdir android_rootfs
+$ cp -r root/* android_rootfs
+$ cp -r system android_rootfs
+$ sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_stats android_rootfs . rootfs rootfs.tar.bz2
+}}}
+== Build kernel ==
+The next step is building of Linux kernel for your board. In following listing the first step is settings up prebuilt toolchains, the third step is kernel configuring and here you need to use right config file for your board
+ * omap3_evm_android_defconfig is for OMAP3EVM
+ * omap3_beagle_android_defconfig is for Beagleboard 
+The fourth step in listing is kernel build command, here we tell `make` utility what build is for `ARM` architecture using cross-toolchains for ARM, the build target is `uImage` and it’s multithread build (-j8):
+{{{
+$ cd <sources top>
+$ export PATH=${PWD}/prebuilt/linux-x86/toolchain/arm-/eabi-4.4.0/bin:$PATH
+$ cd kernel/
+$ make ARCH=arm omap3_evm_android_defconfig
+$ make ARCH=arm CROSS_COMPILE=arm-eabi- uImage -j8
+$ cd ..
+}}}
+== Prepare SD card ==
+To boot Android from SD/MMC card you must have it partitioned like following:
+{{{
+$ sudo fdisk /dev/<your sdcard,for example sdd>
+Command (m for help): p
+
+Disk /dev/sdd: 1977 MB, 1977614336 bytes
+64 heads, 63 sectors/track, 957 cylinders
+Units = cylinders of 4032 * 512 = 2064384 bytes
+Disk identifier: 0x00000000
+
+Device Boot      Start         End      Blocks   Id  System
+/dev/sdd1            1          30       60448+   b  W95 FAT32
+/dev/sdd2           31         957     1868832   83  Linux
+}}}
+Format the partitions for use the commands:
+{{{
+$ sudo mkfs.msdos /dev/sdd1
+$ sudo mkfs.ext3 /dev/sdd2
+}}}
+Use the kernel image (e.g. uImage) from the build process above and place in on the W95 FAT32 partition:
+{{{
+$ sudo mkdir -p /mnt/fat32
+$ sudo mount /dev/sdd1 /mnt/fat32
+$ sudo cp kernel/arch/arm/boot/uImage /mnt/fat32
+}}}
+Unpack the Android tarball above onto the EXT3 partition:
+{{{
+$ sudo mount /dev/sdd2 /mnt/ext3
+$ sudo tar jxfv out/target/product/<board>/rootfs.tar.bz2 --numeric-owner -C /mnt/ext3
+}}}
+And the final step:
+{{{
+$ sync
+$ sudo umount /mnt/fat32; sudo umount /mnt/etx3
+}}}
+
+== Configure target board ==
