@@ -1,11 +1,11 @@
 #summary Welcome to the rowboat wiki!
 
 == Getting Started Topics ==
-  * Pre-built filesystems - http://code.google.com/p/rowboat/downloads/list
-  * Download and build instructions - http://code.google.com/p/rowboat/wiki/ConfigureAndBuild
-  * Basic tests once Android is running - http://code.google.com/p/rowboat/wiki/TestingAndroid
-  * For questions - http://code.google.com/p/rowboat/wiki/FAQ
-  * Random links - http://code.google.com/p/rowboat/wiki/UsefulLinks
+  * [http://code.google.com/p/rowboat/downloads/list Pre-built filesystems]
+  * [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Download and build instructions]
+  * [http://code.google.com/p/rowboat/wiki/TestingAndroid Basic tests once Android is running]
+  * [http://code.google.com/p/rowboat/wiki/FAQ For questions]
+  * [http://code.google.com/p/rowboat/wiki/UsefulLinks Random links]
 
 == Project Information ==
   * TBD
