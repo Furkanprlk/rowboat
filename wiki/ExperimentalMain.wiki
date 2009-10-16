@@ -16,7 +16,7 @@
 == Who might be interested in this project: ==
   * Companies planning to use Android with OMAP3
   * Android OS community developers
-  * <!wiki>BeagleBoard</!wiki> users with an interest in Android 
+  * !BeagleBoard users with an interest in Android 
 
 == Where to get started: ==
   * See the Rowboat [http://code.google.com/p/rowboat/wiki/Main wiki]
