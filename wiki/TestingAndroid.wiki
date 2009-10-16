@@ -4,3 +4,5 @@ We have two types of tests for Android - *Simple tests* and *Benchmarks*.
  * Tests designed by Google and shipped with their Android's source code
  * Our own test cases (not automated yet)
 "Benchmarks" are designed to measure 2D/3D, multimedia and overall system performance covering miscellaneous areas (browser, network, data processing).
+
+[wiki:SimpleTests]
