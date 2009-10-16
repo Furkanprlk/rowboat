@@ -1,5 +1,5 @@
 = Intro =
-We have too types of tests for our Android - simple tests and benchmarks.
+We have two types of tests for our Android - simple tests and benchmarks.
 "Simple Tests" consisted by two parts:
  * Test which designed by Google and shipped with their Android's source code
  * Our test cases (not automated yet)
@@ -143,4 +143,3 @@ Beagleboard and OMAP3EVM boards supports external display feature. This test cas
 || WUXGA || 1920x1200 || 1920x1200MR-16@60 || TBD ||
 
 == OMAP3EVM On-board display ==
-
