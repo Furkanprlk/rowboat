@@ -14,8 +14,9 @@
   * Focus on Testing and Benchmarking
 
 == Who might be interested in this project: ==
-  * ODMs that not tied to handset/wireless market : (name markets here)
-  * Companies planning to use Android with Omap3 
+  * Companies planning to use Android with OMAP3
+  * Android OS community developers
+  * BeagleBoard users with an interest in Android 
 
 == Where to get started: ==
   * See the Rowboat [http://code.google.com/p/rowboat/wiki/Main wiki]
