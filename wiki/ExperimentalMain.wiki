@@ -14,9 +14,9 @@
   * Focus on Testing and Benchmarking
 
 == Who might be interested in this project: ==
+  * !BeagleBoard users with an interest in Android
+  * Android OS community developers 
   * Companies planning to use Android with OMAP3
-  * Android OS community developers
-  * !BeagleBoard users with an interest in Android 
 
 == Where to get started: ==
   * See the Rowboat [http://code.google.com/p/rowboat/wiki/Main wiki]
