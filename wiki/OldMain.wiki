@@ -1,0 +1,13 @@
+#summary This is old version of MainPage
+
+== Getting Started ==
+  * Check out the [http://code.google.com/p/rowboat/w/list wiki]
+  * Or try [http://code.google.com/p/rowboat/downloads/list pre-built]
+
+== Support Platforms ==
+  * [http://beagleboard.org/ BeagleBoard]
+  * [http://www.mistralsolutions.com/products/omap_3evm.php OMAP3EVM]
+
+== Let's talk ==
+  * IRC chat [http://webchat.freenode.net/?channels=rowboat #rowboat]
+  * Mailing list rowboat@googlegroups.com
