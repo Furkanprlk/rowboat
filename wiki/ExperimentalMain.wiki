@@ -8,15 +8,15 @@
   * Pass the Google Android Compatibility Test Suite
 
 == Key differentiators among many others: ==
-  * Quality of Android port
+  * Active and open development of a quality Android port
   * Graphics and Multimedia performance optimizations
   * Complete support of [http://beagleboard.org/ BeagleBoard] and [http://www.mistralsolutions.com/products/omap_3evm.php OMAP3EVM] (and a few more to soon follow)
-  * Focus on Testing and Benchmarking
+  * Focused on a stable, well tested and benchmarked Android port for OMAP3
 
 == Who might be interested in this project: ==
   * !BeagleBoard users with an interest in Android
   * Android OS community developers 
-  * Companies planning to use Android with OMAP3
+  * Groups planning to use Android with OMAP3
 
 == Where to get started: ==
   * See the Rowboat [http://code.google.com/p/rowboat/wiki/Main wiki]
@@ -26,6 +26,6 @@
   * IRC chat [http://webchat.freenode.net/?channels=rowboat #rowboat]
   * Mailing list rowboat@googlegroups.com
 
-== Who are the main contributors: ==
+== Who are the initial contributors: ==
   * Mentor Graphics
-  * Texas Instrument
+  * Texas Instruments
