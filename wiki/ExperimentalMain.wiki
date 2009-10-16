@@ -18,14 +18,12 @@
   * Android OS community developers 
   * Groups planning to use Android with OMAP3
 
-== Where to get started: ==
-  * See the Rowboat [http://code.google.com/p/rowboat/wiki/Main wiki]
-  * Try [http://code.google.com/p/rowboat/downloads/list pre-built filesystems]
-
-== How to get involved: ==
-  * IRC chat [http://webchat.freenode.net/?channels=rowboat #rowboat]
-  * Mailing list rowboat@googlegroups.com
-
 == Who are the initial contributors: ==
   * Mentor Graphics
   * Texas Instruments
+
+== Where to get started: ==
+  * See the Rowboat [http://code.google.com/p/rowboat/wiki/Main wiki]
+  * Try [http://code.google.com/p/rowboat/downloads/list pre-built Android]
+  * IRC chat [http://webchat.freenode.net/?channels=rowboat #rowboat]
+  * Mailing list rowboat@googlegroups.com
