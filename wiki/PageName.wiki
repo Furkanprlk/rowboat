@@ -1,0 +1,11 @@
+#summary Sidebar page
+
+== Most important pages ==
+  * [http://code.google.com/p/rowboat/downloads/list Pre-built Android]
+  * [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and build instructions]
+  * [http://code.google.com/p/rowboat/wiki/TestingAndroid Testing Android]
+  * [http://code.google.com/p/rowboat/wiki/FAQ FAQ]
+  * [http://code.google.com/p/rowboat/wiki/UsefulLinks Random links]
+
+=== List all Rowboat Wiki pages ===
+  * [http://code.google.com/p/rowboat/w/list All Pages]
