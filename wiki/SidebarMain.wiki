@@ -1,6 +1,6 @@
 #summary Sidebar page
 
-= Most important pages =
+=== Most important pages ===
   * [http://code.google.com/p/rowboat/downloads/list Pre-built Android]
   * [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and build instructions]
   * [http://code.google.com/p/rowboat/wiki/TestingAndroid Testing Android]
