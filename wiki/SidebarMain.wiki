@@ -5,6 +5,7 @@
   * [http://code.google.com/p/rowboat/wiki/Source Get source code]
   * [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and build instructions]
   * [http://code.google.com/p/rowboat/wiki/TestingAndroid Testing Android]
+  * [http://code.google.com/p/rowboat/wiki/HowToContribute Get involved]
   * [http://code.google.com/p/rowboat/wiki/FAQ FAQ]
   * [http://code.google.com/p/rowboat/wiki/UsefulLinks Random links]
 
