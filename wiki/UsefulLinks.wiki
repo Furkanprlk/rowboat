@@ -1,4 +1,4 @@
-#summary UsefulLinks
+#summary Some links we found useful
 
 = General Android =
   * [http://source.android.com/download Google's Android Getting Started Guide]
