@@ -1,6 +1,7 @@
 #summary Source Availability
 
-Our project is hosted at http://gitorious.org/rowboat
+Our project is hosted at http://gitorious.org/rowboat 
+
 To upload it:
 {{{
 mkdir rowboat-android
@@ -16,6 +17,4 @@ $ chmod a+x ~/bin/repo
 }}}
 
 You can find detailed repo installing instruction and repo howto here:
-{{{
-http://source.android.com/download/using-repo
-}}}
+[http://source.android.com/download/using-repo http://source.android.com/download/using-repo]
