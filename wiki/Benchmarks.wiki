@@ -70,8 +70,7 @@ The following results are average from 10 runs on every device.
 || 2D.Rectangles,FPS|| 59 || 60 || 75 || 70  || 65  || 73 ||
 || 2D.Alpha,FPS     || 60 || 58 || 60 || 65  || 61  || 57 ||
 
-TBD: Add graph
-http://chart.apis.google.com/chart?chs=250x150&cht=bhg&chco=4D89D9,C6D9FD&chd=t:61,64,64,69,62,60
+http://chart.apis.google.com/chart?chtt=2D+results&chts=000000,12&chs=500x500&chf=bg,s,ffffff|c,s,ffffff&chxt=x,y&chxl=1:|HTCDream(A1.5)|Beagleboard(Rev.C3)(A1.6)|OMAP3EVM(A1.6)|OMAP3EVM(A1.5)|Emulator(A1.6_r1)|Emulator(A1.5)|0:|0.00|91.50|183.00&cht=bhg&chd=t:33.33,34.97,34.97,37.70,33.87,32.78|37.15,34.97,52.45,56.83,67.21,100.00|32.78,31.69,36.06,38.25,33.87,37.15|32.24,32.78,40.98,38.25,35.51,39.89|32.78,31.69,32.78,35.51,33.33,31.14&chdl=2D.Arcs,FPS++++++|2D.Fill+Rate,FPS|2D.Circles,FPS|2D.Rectangles,FPS|2D.Alpha,FPS&chco=0000ff,0000cc,000099,000066,000033&chbh=10
 
 === 3D ===
  * Render box 
