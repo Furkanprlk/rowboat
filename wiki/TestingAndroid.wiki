@@ -1,3 +1,5 @@
+#summary Overview of available tests
+
 = Intro =
 We have two types of tests for Android - *Simple tests* and *Benchmarks*.
 "Simple Tests" consists of two parts:
