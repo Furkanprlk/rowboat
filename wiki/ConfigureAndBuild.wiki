@@ -18,18 +18,20 @@ To work with Beagleboard or OMAP3EVM you will need the following:
  
 === Software ===
 As Google we recommend to use Ubuntu, but also you can use CentOS 5.3.
- * Install and configure DHCP server (for target's network)
+ * Install DHCP server
+ * Install tftp server (actual for OMAP3EVM)
  * Download the sources from our repos
  * Set up your Linux development environment, make sure you have the following:
-   Required packages:
+Required packages:
+
 {{{
 Git 1.5.4 or newer and the GNU Privacy Guard. 
 JDK 5.0, update 12 or higher.  Java 6 is not supported, because of incompatibilities with @Override.
-flex, bison, gperf, libsdl-dev, libesd0-dev, libwxgtk2.6-dev (optional), build-essential, zip, curl, minicom
+flex, bison, gperf, libsdl-dev, libesd0-dev, libwxgtk2.6-dev (optional), build-essential, zip, curl, minicom, tftp-server
 }}}
 For Ubuntu 32-bit use such command:
 {{{
-$ sudo apt-get install git-core gnupg sun-java5-jdk flex bison gperf libsdl-dev libesd0-dev libwxgtk2.6-dev build-essential zip curl libncurses5-dev zlib1g-dev minicom
+$ sudo apt-get install git-core gnupg sun-java5-jdk flex bison gperf libsdl-dev libesd0-dev libwxgtk2.6-dev build-essential zip curl libncurses5-dev zlib1g-dev minicom tftpd
 }}}
 Ubuntu Intrepid (8.10) users may need a newer version of libreadline:
 {{{
@@ -37,6 +39,45 @@ $ sudo apt-get install lib32readline5-dev
 }}}
 
 == Configure your network ==
+ * Configure your host Ethernet adapter
+{{{
+sudo ifconfig ethX 10.10.10.1 netmask 255.255.255.0 up
+}}}
+ * Configure DHCP server for target's network
+{{{
+; Example dhcpd.conf
+default-lease-time 600;
+max-lease-time 7200;
+subnet 10.10.10.0 netmask 255.255.255.0 {
+  range 10.10.10.2 10.10.10.10;
+
+host beagleboard_rev_c3 {
+  hardware ethernet 00:80:C8:xx:xx:xx;
+  fixed-address 10.10.10.2;
+}
+
+host omap3evm_rev_d {
+  hardware ethernet 00:50:c2:xx:xx:xx;
+  fixed-address 10.10.10.3;
+  filename "evm/uImage"; <- this string actual for boot with tftp 
+}
+
+}}}
+ * Configure TFTP-server
+/etc/xinet.d/tftpd:
+{{{
+service tftp
+{
+protocol        = udp
+port            = 69
+socket_type     = dgram
+wait            = yes
+user            = nobody
+server          = /usr/sbin/in.tftpd
+server_args     = /tftpboot
+disable         = no
+}
+}}}
 
 == Build rootfs ==
 The next step is Android file system build. 
