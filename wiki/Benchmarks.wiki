@@ -71,11 +71,7 @@ The following results are average from 10 runs on every device.
 || 2D.Alpha,FPS     || 60 || 58 || 60 || 65  || 61  || 57 ||
 
 TBD: Add graph
-http://chart.apis.google.com/chart?
-chs=250x150&
-cht=bhg&
-chco=4D89D9,C6D9FD&
-chd=t:61,64,64,69,62,60
+http://chart.apis.google.com/chart?chs=250x150&cht=bhg&chco=4D89D9,C6D9FD&chd=t:61,64,64,69,62,60
 
 === 3D ===
  * Render box 
