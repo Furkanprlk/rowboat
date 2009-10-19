@@ -1,5 +1,6 @@
 #summary Source Availability
 
 Our project is hosted at http://gitorious.org/rowboat
-
-See http://code.google.com/p/rowboat/w/list for docs on downloading, building, and testing
+{{{
+repo init -u git://gitorious.org/rowboat/manifest.git
+}}}
