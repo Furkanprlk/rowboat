@@ -1,4 +1,7 @@
-So let's see what is "Simple Tests".
+#summary Simple Tests
+
+So let's see what "Simple Tests" are available and how to run them
+
 = Dalvik Unit Tests =
 You can find it in `<source_top>/dalvik/tests`. Use `./run-all-tests` to run all tests, or `./run-test <test>` to run a single specified test. 
 Run `./run-test` with no arguments to see command flags; 
