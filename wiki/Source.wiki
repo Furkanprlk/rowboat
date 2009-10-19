@@ -1,8 +1,10 @@
-#summary Source Availability
+#summary Getting Project Source Code
 
 Our project is hosted at http://gitorious.org/rowboat 
 
-To download it:
+You will need [http://git-scm.com/ Git] and [http://source.android.com/download/using-repo Repo] tools set up
+
+To download rowboat source code:
 {{{
 mkdir rowboat-android
 cd rowboat-android
