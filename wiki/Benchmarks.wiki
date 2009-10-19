@@ -1,3 +1,146 @@
-#summary 2D, 3D, & CPU benchmarks
+= Goal =
 
-I'm working on it. Patience!
+The goal is to create the set of performance test applications for Android Platform.
+= Hardware =
+   * Emulator (ARM, MIPS) 
+   * 1300 and HMP (MIPS) 
+   * Omap EVM (OMAP3), BeagleBoard (OMAP35xx) 
+   * HTC myTouch (ARM11), HTC Dream G1 
+= Targets =
+ * Graphics 
+   * 2D performance tests 
+     * Fillrate 
+     * Bitmaps drawing 
+     * Primitives drawing 
+     * Alpha blending 
+     * Animation 
+   * 3D performance tests 
+     * Primitives drawing 
+     * Alpha blending 
+     * Animation 
+     * Fillrate 
+     * Lightmapping 
+     * Shaders 
+     * Dynamic texturing 
+ * Application launch time 
+ * Video Playback 
+   * Audio, video testing with subset of codecs 
+   * Measuring CPU utilization 
+ * CPU High Load 
+ * HTML Render performance 
+ * Dalvik VM benchmarks 
+ * Data providers test (SQLite3 benchmarking,etc) 
+= UI =
+TBD: Need to add
+
+= Artwork =
+== Logo ==
+TBD: Add
+
+== Icon ==
+TBD: Add
+
+= Benchmarks =
+== Graphics ==
+=== 2D ===
+ * First at all is fillrate test (full screen filling). 
+ * Same as first but draw filled rectangles 
+ * Draw some bitmaps at some time 
+ * Draw some primitives, like dots, lines and arcs 
+
+For performing 2D speed test we have almost all things in API samples. So with small changes we use it in our test.
+
+==== Problems ====
+So in performing this set, found some troubles:
+ * Android has 2 methods for graphics output, first - synchronous, initiated by VM, second - with maximum performance available.
+ * All test made by first method, and FPS and other counting values has no mean. Second can not be tested on emulator, because in case running on it we have full CPU load and nothing changes with more or less hard tests.
+
+Second method must be checked on real HW, for make some decisions.
+
+Good links for understand this is:
+ * [http://developer.android.com/reference/android/view/SurfaceView.html SurfaceView]
+ * [http://developer.android.com/guide/topics/graphics/index.html Graphics 2D]
+ * [http://developer.android.com/guide/samples/LunarLander/src/com/example/android/lunarlander/LunarLander.html LunarLander]
+
+==== 2D Results ====
+The following results are average from 10 runs on every device.
+|| Benchmark        || Emulator (A1.5) || Emulator (A1.6_r1) || !OMAP3EVM (A1.5) || !OMAP3EVM (A1.6) || Beagleboard (Rev. C3) (A1.6) || HTC Dream (A1.5) ||
+|| 2D.Arcs,FPS      || 61 || 64 || 64 || 69  || 62  || 60  ||
+|| 2D.Fill Rate,FPS || 68 || 64 || 96 || 104 || 123 || 183 ||
+|| 2D.Circles,FPS   || 60 || 58 || 66 || 70  || 62  || 68 ||
+|| 2D.Rectangles,FPS|| 59 || 60 || 75 || 70  || 65  || 73 ||
+|| 2D.Alpha,FPS     || 60 || 58 || 60 || 65  || 61  || 57 ||
+
+TBD: Add graph
+
+=== 3D ===
+ * Render box 
+ * Render textured box 
+ * Render some scene, like teapot or something like that, and count FPs and polycounts 
+ * Same, but textured 
+ * Not sure but we can test shaders speed if they presents in API (1.5-1.6) 
+ * GLXGears partially we have almost all things for this benchmarking, we need more complex resource consumption scene, but I believe that we can find some. 
+
+==== 3D Results ====
+The following results are average from 10 runs on every device.
+|| Benchmark        || Emulator (A1.5) || Emulator (A1.6_r1) || !OMAP3EVM (A1.5) || !OMAP3EVM (A1.6) || Beagleboard (Rev. C3) (A1.6) || HTC Dream (A1.5) ||
+|| 3D.Colored cube,FPS || 
+|| 3D.Lighting,FPS     ||
+|| 3D.Textures,FPS     ||
+|| 3D.Blending,FPS     ||
+|| 3D.Fog,FPS          ||
+|| 3D.Reflection,FPS   ||
+|| 3D.Multitexture,FPS ||
+|| 3D.Teapod,FPS       ||
+|| 3D.Gears,FPS        ||
+
+Note: emulator runs on macbook pro 2.5GHz
+TBD: Add graph
+
+== CPU High Load ==
+We use 4 mathematical methods witch heavy arithmetical calculations:
+   * [http://en.wikipedia.org/wiki/Mandelbrot_set Mandelbrot set] 
+   * Jacobi 
+   * Spectral Normalization  
+   * [http://en.wikipedia.org/wiki/Dhrystone Dhrystone] 
+
+=== CPU High Load Results ===
+The following results are average from 10 runs on every device.
+|| Benchmark        || Emulator (A1.5) || Emulator (A1.6_r1) || !OMAP3EVM (A1.5) || !OMAP3EVM (A1.6) || Beagleboard (Rev. C3) (A1.6) || HTC Dream (A1.5) ||
+|| Dhrystone ||
+|| CPU.Whetstone (10), KWIPS ||
+|| CPU.Himeno ||
+|| CPU.Spectral norm., ms ||
+|| Dhrystone (native), st./s ||
+
+Note: emulator  ARM runs on macbook pro 2.5GHz
+
+== Web Browser Performance ==
+Rendering of sample page, that counts time needed for proper render it. We must create that sample page...
+
+== Dalvik Benchmarks ==
+   * 011-array-copy 
+   * 023-many-interfaces 
+   * 027-arithmetic 
+   * 051-threads 
+   * 055-enum-performance 
+   * 057-iteration-performance 
+   * 058-enum-order 
+   * CoffeineMark 3.0
+
+== Info ==
+   * http://www.concentric.net/~ttwang/tech/microbench.htm 
+   * http://www.stefankrause.net/wp/?p=9 
+   * http://research.sun.com/techrep/2002/abstract-114.html 
+   * http://www.shudo.net/jit/perf/ 
+   * http://www.ibm.com/developerworks/java/library/j-jtp09275.html?ca=dgr-jw22JavaUrbanLegends 
+
+= Notes =
+   * How about Bezier curves? 
+   * How about add text test (print, output) for 2D part 
+   * add object transformation for 3D test 
+   * add dynamic texturing and dynamic lighting 
+
+
+= Repository =
+Patience!
