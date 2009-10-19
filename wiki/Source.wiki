@@ -2,7 +2,7 @@
 
 Our project is hosted at http://gitorious.org/rowboat 
 
-You will need [http://git-scm.com/ Git] and [http://source.android.com/download/using-repo Repo] tools set up
+You will need [http://git-scm.com/ git] and [http://source.android.com/download/using-repo repo] tools set up
 
 To download rowboat source code:
 {{{
