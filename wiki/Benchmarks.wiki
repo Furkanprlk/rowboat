@@ -1,5 +1,4 @@
 = Goal =
-
 The goal is to create the set of performance test applications for Android Platform.
 = Hardware =
    * Emulator (ARM, MIPS) 
@@ -76,7 +75,7 @@ TBD: Add graph
 === 3D ===
  * Render box 
  * Render textured box 
- * Render some scene, like teapot or something like that, and count FPs and polycounts 
+ * Render some scene, like teapot or something like that, and count FPS and polycounts 
  * Same, but textured 
  * Not sure but we can test shaders speed if they presents in API (1.5-1.6) 
  * GLXGears partially we have almost all things for this benchmarking, we need more complex resource consumption scene, but I believe that we can find some. 
@@ -84,16 +83,15 @@ TBD: Add graph
 ==== 3D Results ====
 The following results are average from 10 runs on every device.
 || Benchmark        || Emulator (A1.5) || Emulator (A1.6_r1) || !OMAP3EVM (A1.5) || !OMAP3EVM (A1.6) || Beagleboard (Rev. C3) (A1.6) || HTC Dream (A1.5) ||
-|| 3D.Colored cube,FPS || 
-|| 3D.Lighting,FPS     ||
-|| 3D.Textures,FPS     ||
-|| 3D.Blending,FPS     ||
-|| 3D.Fog,FPS          ||
-|| 3D.Reflection,FPS   ||
-|| 3D.Multitexture,FPS ||
-|| 3D.Teapod,FPS       ||
-|| 3D.Gears,FPS        ||
-
+|| 3D.Colored cube,FPS || 59 || 59 || 61 || 66 || 64 || 57 || 
+|| 3D.Lighting,FPS     || 59 || 59 || 38 || 60 || 50 || 58 ||
+|| 3D.Textures,FPS     || 34 || 40 || 12 || 30 || 55 || 57 ||
+|| 3D.Blending,FPS     || 19 || 19 || 5  || 14 || 31 || 57 ||
+|| 3D.Fog,FPS          || 31 || 31 || 10 || 26 || 51 || 57 ||
+|| 3D.Reflection,FPS   || 44 || 48 || 15 || 33 || 53 || 57 ||
+|| 3D.Multitexture,FPS || 23 || 25 || 6  || 16 || 37 || 47 ||
+|| 3D.Teapod,FPS       || 19 || 19 || 18 || 23 || 35 || 31 ||
+|| 3D.Gears,FPS        || 31 || 38 || 25 || 37 || 43 || 57 ||
 Note: emulator runs on macbook pro 2.5GHz
 TBD: Add graph
 
@@ -107,11 +105,11 @@ We use 4 mathematical methods witch heavy arithmetical calculations:
 === CPU High Load Results ===
 The following results are average from 10 runs on every device.
 || Benchmark        || Emulator (A1.5) || Emulator (A1.6_r1) || !OMAP3EVM (A1.5) || !OMAP3EVM (A1.6) || Beagleboard (Rev. C3) (A1.6) || HTC Dream (A1.5) ||
-|| Dhrystone ||
-|| CPU.Whetstone (10), KWIPS ||
-|| CPU.Himeno ||
-|| CPU.Spectral norm., ms ||
-|| Dhrystone (native), st./s ||
+|| Dhrystone                 || 17797 || 15404  || 19980 || 20124 || 36613  || 16179  ||
+|| CPU.Whetstone (10), KWIPS || 6958  || 6383   || 9589  || 9525  || 16671  || 9292   ||
+|| CPU.Himeno                || 7.59  || 6.68   || 7.12  || 7.20  || 4.01   || 6.39   ||
+|| CPU.Spectral norm., ms    || 10134 || 9345   || 6095  || 6016  || 3693   || 6256   ||
+|| Dhrystone (native), st./s ||236239 || 229937 || -     || -     || 713776 || 178699 ||
 
 Note: emulator  ARM runs on macbook pro 2.5GHz
 
