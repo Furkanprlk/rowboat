@@ -1,6 +1,41 @@
 #summary Configure and Build
  
-== Prepare your host software environment ==
+== Prepare your host environment ==
+=== Hardware ===
+To work with Beagleboard or OMAP3EVM you will need the following:
+ * Board
+ * Host machine (x86, Linux Ubuntu 8/9) with Ethernet card and serial port
+ * Serial cable
+ * Power supply (5V)
+ * USB Hub
+ * USB Ethernet adapter (for Beagleboard)
+ * USB Keyboard & Mouse
+ * Ethernet cross cable or Ethernet Switch/Hub+2 cables
+ * Card Reader
+ * 2Gb SD Card
+ * Monitor witch support 4:3 or 16:9 dimensions
+ * HDMI to DVI cable
+ 
+=== Software ===
+As Google we recommend to use Ubuntu, but also you can use CentOS 5.3.
+ * Install and configure DHCP server (for target's network)
+ * Download the sources from our repos
+ * Set up your Linux development environment, make sure you have the following:
+   Required packages:
+{{{
+Git 1.5.4 or newer and the GNU Privacy Guard. 
+JDK 5.0, update 12 or higher.  Java 6 is not supported, because of incompatibilities with @Override.
+flex, bison, gperf, libsdl-dev, libesd0-dev, libwxgtk2.6-dev (optional), build-essential, zip, curl, minicom
+}}}
+For Ubuntu 32-bit use such command:
+{{{
+$ sudo apt-get install git-core gnupg sun-java5-jdk flex bison gperf libsdl-dev libesd0-dev libwxgtk2.6-dev build-essential zip curl libncurses5-dev zlib1g-dev minicom
+}}}
+Ubuntu Intrepid (8.10) users may need a newer version of libreadline:
+{{{
+$ sudo apt-get install lib32readline5-dev
+}}}
+
 == Configure your network ==
 
 == Build rootfs ==
