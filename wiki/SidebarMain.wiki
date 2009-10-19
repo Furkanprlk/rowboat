@@ -2,7 +2,7 @@
 
 === Most important pages ===
   * [http://code.google.com/p/rowboat/downloads/list Get pre-built Android]
-  * Get source code
+  * [http://code.google.com/p/rowboat/wiki/Source Get source code]
   * [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and build instructions]
   * [http://code.google.com/p/rowboat/wiki/TestingAndroid Testing Android]
   * [http://code.google.com/p/rowboat/wiki/FAQ FAQ]
