@@ -78,7 +78,8 @@ server_args     = /tftpboot
 disable         = no
 }
 }}}
-
+== Checkout sources ==
+See [Source]
 == Build rootfs ==
 The next step is Android file system build. 
 To build file system you need to specify for which board you want to build. Use variable `TARGET_PRODUCT` for this:
