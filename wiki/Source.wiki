@@ -2,7 +2,7 @@
 
 Our project is hosted at http://gitorious.org/rowboat 
 
-To upload it:
+To download it:
 {{{
 mkdir rowboat-android
 cd rowboat-android
