@@ -13,7 +13,7 @@ repo sync
 }}}
 
 
-You can find detailed repo installing instruction and repo howto here: http://source.android.com/download/using-repo or try following example:
+You can find detailed repo installing instruction and repo how-to here: http://source.android.com/download/using-repo or try following example:
 
 Getting repo:
 {{{
