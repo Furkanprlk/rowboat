@@ -1,0 +1,15 @@
+#summary How to get involved
+
+There are many ways to get involved with the Rowboat project.
+
+== Become a Rowboat user ==
+  * Try out Rowboat Android - either pre-built or from source
+  * Give us feedback via IRC [http://webchat.freenode.net/?channels=rowboat #rowboat] or the Rowboat mailing list (rowboat@googlegroups.com)
+  * If you find a bug, file a tracker [http://code.google.com/p/rowboat/issues/list item]
+
+== Share your Rowboat knowledge ==
+  * Add [http://code.google.com/p/rowboat/wiki/ Wiki] articles or edit existing topics
+  * Share your knowledge on [http://webchat.freenode.net/?channels=rowboat #rowboat] or rowboat@googlegroups.com 
+
+== Submit code ==
+  * Send your patches to the mailing list, rowboat@googlegroups.com
