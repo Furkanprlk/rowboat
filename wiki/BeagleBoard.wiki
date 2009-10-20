@@ -2,10 +2,11 @@
 
 = Introduction =
 
-Add your content here.
+This page describes  Android on BeagleBoard as well as rowboat-specific information: features, configurations supported.
 
+We strongly recommend to get familiar with BeagleBoard resources at www.beagleboard.org
 
-= Details =
+= BeagleBoard =
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
