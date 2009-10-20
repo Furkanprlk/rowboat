@@ -8,6 +8,7 @@
   * [http://code.google.com/p/rowboat/wiki/HowToContribute Get involved]
   * [http://code.google.com/p/rowboat/wiki/FAQ FAQ]
   * [http://code.google.com/p/rowboat/wiki/UsefulLinks Random links]
+  * [http://code.google.com/p/rowboat/wiki/Roadmap Project status]
 
 === List all rowboat wiki pages ===
   * [http://code.google.com/p/rowboat/w/list All Pages]
