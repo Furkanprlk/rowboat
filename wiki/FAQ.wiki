@@ -17,11 +17,11 @@ Most questions are easily found with Google... but here's a short list of questi
 
 === How do I connect via adb? ===
   * Assuming you have installed the Android SDK and <android-sdk-x.xx>/tools is on your PATH:
-    * $ ADBHOST=xxx.xxx.xxx.xxx adb kill-server (note ADBHOST is the IP address of the target)
-    * $ ADBHOST=xxx.xxx.xxx.xxx adb shell
+    * {{{$ ADBHOST=xxx.xxx.xxx.xxx adb kill-server}}} (note ADBHOST is the IP address of the target)
+    * {{{$ ADBHOST=xxx.xxx.xxx.xxx adb shell}}}
 
 === How do I install an app? ===
-  * $ ADBHOST=xxx.xxx.xxx.xxx adb -s device-5554 install <my/path/to>/CoolApp.apk
+  * {{{$ ADBHOST=xxx.xxx.xxx.xxx adb -s device-5554 install <my/path/to>/CoolApp.apk}}}
   * You can see the list of all connected devices with "adb devices"
 
 == Development Questions ==
@@ -36,7 +36,7 @@ Most questions are easily found with Google... but here's a short list of questi
   * http://www.kbrandt.com/2009/06/how-to-cross-compile-the-bash-shell-for-android-15.html
 
 === How do you mount an NFS after the board has booted from SD? ===
-  * $ mount -t nfs -o nolock xxx.xxx.xxx.xxx:/path/to/nfs
+  * {{{$ mount -t nfs -o nolock xxx.xxx.xxx.xxx:/path/to/nfs}}}
 
 === Where did the project name 'rowboat' come from? ===
   * Someone simply added a 'w' and an 'a' to 'robot' and the name stuck.
