@@ -30,15 +30,13 @@ The goal is to create the set of performance test applications for Android Platf
  * Dalvik VM benchmarks 
  * Data providers test (SQLite3 benchmarking,etc) 
 = UI =
-TBD: Need to add
+TBD:Add wireframes
 
 = Artwork =
 == Logo ==
 TBD: Add
-
 == Icon ==
-TBD: Add
-
+http://i772.photobucket.com/albums/yy9/manul7/BA_Icon.png
 = Benchmarks =
 == Graphics ==
 === 2D ===
