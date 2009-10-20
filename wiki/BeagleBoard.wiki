@@ -1,10 +1,10 @@
-#summary Android on BeagleBoard information page
+#summary Android on !BeagleBoard information page
 
 = Introduction =
 
-This page describes  Android on BeagleBoard as well as rowboat-specific information: features, configurations supported.
+This page describes  Android on !BeagleBoard as well as rowboat-specific information: features, configurations supported.
 
-We strongly recommend to get familiar with 'BeagleBoard' resources at [http://www.beagleboard.org www.beagleboard.org]
+We strongly recommend to get familiar with !BeagleBoard resources at *[http://www.beagleboard.org www.beagleboard.org]*
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
