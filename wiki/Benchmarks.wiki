@@ -1,9 +1,8 @@
 = Goal =
 The goal is to create the set of performance test applications for Android Platform.
 = Hardware =
-   * Emulator (ARM, MIPS) 
-   * 1300 and HMP (MIPS) 
-   * Omap EVM (OMAP3), BeagleBoard (OMAP35xx) 
+   * OMAP3EVM and BeagleBoard 
+   * Android ARM Emulator 
    * HTC myTouch (ARM11), HTC Dream G1 
 = Targets =
  * Graphics 
