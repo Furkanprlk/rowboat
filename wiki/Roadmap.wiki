@@ -14,4 +14,4 @@ Plans for *Flan* has not yet been finalized, we will continue the work in follow
  * keep everything synchronized with Google Android
  * integrate latest updates and bugfixes
  * expand supported platforms list
- * achieve record performance and stability bar
+ * try to be better to achieve record performance and stability bar
