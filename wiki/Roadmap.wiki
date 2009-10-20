@@ -8,10 +8,11 @@ Following work is planned for Donut:
  * Miscellaneous optimizations based on ARM Neon technology (bionic, skia, pixelflinger, etc...) 
  * Integration of OMAP35xx Display features and Camera interface
 
-
-
 = Éclair =
 
+Work is being planned for Éclair, most important features are:
+ * Support of hw-accelerated 3D graphics
+ * Revised Neon support (fully integrated everywhere where it gives performance benefits)
 
 = Flan =
 
