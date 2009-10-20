@@ -22,7 +22,7 @@ Most questions are easily found with Google... but here's a short list of questi
 
 === How do I install an app? ===
   * {{{$ ADBHOST=xxx.xxx.xxx.xxx adb -s device-5554 install <my/path/to>/CoolApp.apk}}}
-  * You can see the list of all connected devices with "adb devices"
+  * You can see the list of all connected devices with "{{{adb devices}}}"
 
 == Development Questions ==
 
