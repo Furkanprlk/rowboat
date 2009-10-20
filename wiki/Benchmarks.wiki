@@ -1,9 +1,14 @@
+#summary Benchmarks - currently a work in progress
+
 = Goal =
-The goal is to create the set of performance test applications for Android Platform.
+
+The goal is to create a set of performance test applications for the Android Platform.
+
 = Hardware =
    * OMAP3EVM and BeagleBoard 
    * Android ARM Emulator 
    * HTC myTouch (ARM11), HTC Dream G1 
+
 = Targets =
  * Graphics 
    * 2D performance tests 
@@ -28,16 +33,22 @@ The goal is to create the set of performance test applications for Android Platf
  * HTML Render performance 
  * Dalvik VM benchmarks 
  * Data providers test (SQLite3 benchmarking,etc) 
+
 = UI =
 TBD:Add wireframes
 
 = Artwork =
+
 == Logo ==
 TBD: Add
+
 == Icon ==
 http://i772.photobucket.com/albums/yy9/manul7/BA_Icon.png
+
 = Benchmarks =
+
 == Graphics ==
+
 === 2D ===
  * First at all is fillrate test (full screen filling). 
  * Same as first but draw filled rectangles 
