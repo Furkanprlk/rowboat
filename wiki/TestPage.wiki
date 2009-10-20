@@ -13,7 +13,8 @@ Add your content here.  Format your content with:
   * Automatic links to other wiki pages
 
 
-[aivanov@embeddedalley.com mail]
+[aivanov@embeddedalley.com]
 test
+aivanov@embeddedalley.com
 
 '<mailto:aivanov@embeddedalley.com/>'
