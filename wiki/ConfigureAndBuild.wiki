@@ -1,5 +1,5 @@
 #summary Configure and Build
- 
+
 == Prepare your host environment ==
 === Hardware ===
 To work with Beagleboard or OMAP3EVM you will need the following:
