@@ -4,7 +4,7 @@
 We have three planes/dimensions for the Android testing:
  * *Simple tests*
  * *Benchmarks*
- * Google Android Compatibility Test Suite 
+ * *Google Android Compatibility Test Suite*
 
 "Simple Tests" consists of two parts:
  * Tests designed by Google and shipped with their Android's source code
