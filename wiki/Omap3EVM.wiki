@@ -1,3 +1,0 @@
-#summary OMAP3EVM info
-
-= Under construction =
