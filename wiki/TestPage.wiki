@@ -17,4 +17,7 @@ Add your content here.  Format your content with:
 test
 aivanov@embeddedalley.com
 
-<a href="mailto:aivanov@embeddedalley.com"> chenibud </a>
+<a href="mailto:aivanov@embeddedalley.com"> mailto:aivanov@embeddedalley.com </a>
+
+ 
+ <a style="white-space: nowrap" href="/u/@VxZfS1RYDxlEWAh1/">bojl...@googlemail.com</a>
