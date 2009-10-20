@@ -29,7 +29,7 @@ Most questions are easily found with Google... but here's a short list of questi
 === How do I get around firewall problems? ===
   *  See https://omapzoom.org/gf/project/omapandroid/wiki/?pagename=Git+Firewall
 
-=== How do I install BusyBox? ===
+=== How do I install !BusyBox? ===
   * https://omapzoom.org/gf/project/omapandroid/wiki/?pagename=Installing+Busybox+command+line+tools
 
 === What about bash? ===
@@ -37,3 +37,6 @@ Most questions are easily found with Google... but here's a short list of questi
 
 === How do you mount an NFS after the board has booted from SD? ===
   * $ mount -t nfs -o nolock xxx.xxx.xxx.xxx:/path/to/nfs
+
+=== Where did the project name 'rowboat' come from? ===
+  * Someone simply added a 'w' and an 'a' to 'robot' and the name stuck.
