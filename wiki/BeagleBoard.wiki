@@ -1,4 +1,4 @@
-#summary Android on !BeagleBoard information page
+#summary Android on BeagleBoard information page
 
 = Introduction =
 
