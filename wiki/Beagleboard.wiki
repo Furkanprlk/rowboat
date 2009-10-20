@@ -1,3 +1,0 @@
-#summary BeagleBoard info
-
-= Under construction =
