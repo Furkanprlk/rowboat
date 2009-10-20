@@ -1,7 +1,7 @@
-#summary Overview of available tests
+#summary Overview of Android Testing
 
 = Intro =
-We have three types of tests for Android:
+We have three planes/dimensions for the Android testing:
  * *Simple tests*
  * *Benchmarks*
  * Google Android Compatibility Test Suite 
