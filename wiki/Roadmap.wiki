@@ -12,6 +12,7 @@ Following work is planned for Donut:
 
 Work is being planned for Éclair, most important features are:
  * Support of hw-accelerated 3D graphics
+ * 2D acceleration based on Neon and DSP
  * Revised Neon support (fully integrated everywhere where it gives performance benefits)
 
 = Flan =
