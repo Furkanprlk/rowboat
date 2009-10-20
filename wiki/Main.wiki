@@ -3,7 +3,6 @@
 Browse the latest docs here. If you have questions, comments or want to contribute, let's talk at [http://webchat.freenode.net/?channels=rowboat #rowboat] or [mailto:rowboat@googlegroups.com rowboat@googlegroups.com]
 
 == Getting Started Topics ==
-  * [http://code.google.com/p/rowboat/wiki/Roadmap Get the project status]
   * [http://code.google.com/p/rowboat/downloads/list Get pre-built Android]
   * [http://code.google.com/p/rowboat/wiki/Source Get source code]
   * [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and build instructions]
@@ -13,7 +12,7 @@ Browse the latest docs here. If you have questions, comments or want to contribu
   * [http://code.google.com/p/rowboat/wiki/UsefulLinks Random links]
 
 == Project Information ==
-  * TBD
+  * [http://code.google.com/p/rowboat/wiki/Roadmap Get the project status]
 
 == Other ==
   * List of all rowboat wiki pages at http://code.google.com/p/rowboat/w/list
