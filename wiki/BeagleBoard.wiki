@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This page describes  Android on !BeagleBoard as well as rowboat-specific information: features, configurations supported.
+This page collects hardware-related or low-level notes about Android on !BeagleBoard. It also contains information regarding features features, hardware limitations and many other hardware-specific or low-level topics relevant for Android
 
 We strongly recommend to get familiar with !BeagleBoard resources at *[http://www.beagleboard.org www.beagleboard.org]*
 
