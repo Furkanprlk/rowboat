@@ -157,3 +157,24 @@ $ sudo umount /mnt/fat32; sudo umount /mnt/etx3
 }}}
 
 == Configure target board ==
+There is one important requirement - U-Boot should be 2008.10 (Jun 16 2009-18:54:50)
+=== Beagleboard ===
+{{{
+Beagleboard# setenv bootcmd 'mmc init; fatload mmc 0 84000000 uImage; bootm 84000000'
+Beagleboard# setenv bootargs 'mem=128M androidboot.console=ttyS2 console=tty0 console=ttyS2,115200n8 root=/dev/mmcblk0p2 rw init=/init rootwait'
+Beagleboard# saveenv
+Beagleboard# reset 
+}}}
+=== OMAP3_EVM ===
+This is example. You should use your network parameters 
+{{{
+OMAP3_EVM#setenv bootcmd tftp; bootm
+OMAP3_EVM#setenv baudrate 115200
+OMAP3_EVM#setenv bootargs mem=128M console=tty0 console=ttyS0,115200n8 androidboot.console=ttyS0 #noinitrd root=/dev/mmcblk0p2 rw init=/init rootdelay=5 video=omapfb_mode:320x480MR-16@60
+OMAP3_EVM#setenv ipaddr=10.10.10.3
+OMAP3_EVM#setenv netmask=255.255.255.0
+OMAP3_EVM#setenv serverip=10.10.10.1
+OMAP3_EVM#setenv ethaddr=00:50:c2:XX:XX:XX
+OMAP3_EVM#setenv bootfile=evm/uImage <-- full path on host is /tftpboot/evm/uImage
+OMAP3_EVM#save
+}}}
