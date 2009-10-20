@@ -9,3 +9,5 @@ Add your content here.
 
 
 = Flan =
+
+Plans for *Flan* has not yet been finalized, we are planning to continue the work: keep everything synchronized with Google Android, integrate latest updates and bugfixes, etc...
