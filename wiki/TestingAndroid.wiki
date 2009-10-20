@@ -4,11 +4,8 @@
 We have three planes/dimensions for the Android testing:
  * *[SimpleTests]*
  * *[Benchmarks]*
- * *[CTS Google Android Compatibility Test Suite]*
 
-"Simple Tests" consists of two parts:
+"[SimpleTests]" consists of two parts:
  * Tests designed by Google and shipped with their Android's source code
  * Our own test cases (not automated yet)
-"Benchmarks" are designed to measure 2D/3D, multimedia and overall system performance covering miscellaneous areas (browser, network, data processing).
-
-[SimpleTests] & [Benchmarks]
+"[Benchmarks]" are designed to measure 2D/3D, multimedia and overall system performance covering miscellaneous areas (browser, network, data processing).
