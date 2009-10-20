@@ -2,7 +2,8 @@
 
 = Donut =
 
-Add your content here.
+Work is in progress on Donut-based Android. Currently we are synchronized with 1.6-rc1 
+
 
 
 = Éclair =
