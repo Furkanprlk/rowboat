@@ -2,7 +2,7 @@
 
 = Intro =
 We have three planes/dimensions for the Android testing:
- * *Simple tests*
+ * *[SimpleTests]*
  * *Benchmarks*
  * *Google Android Compatibility Test Suite*
 
