@@ -2,7 +2,10 @@
 
 = Donut =
 
-Work is in progress on Donut-based Android. Currently we are synchronized with 1.6-rc1 
+Work is in progress on Donut-based Android. Currently we are synchronized with 1.6-rc1.
+Following work is planned for Donut:
+ * Integration of DSP support (DSPLink, DMAI) and Multimedia on top of it via GStreamer and OpenCore
+
 
 
 
