@@ -1,6 +1,6 @@
 #summary Welcome to the rowboat wiki!
 
-Browse the latest docs here. If you have questions, comments or want to contribute, let's talk at [http://webchat.freenode.net/?channels=rowboat #rowboat] or rowboat@googlegroups.com
+Browse the latest docs here. If you have questions, comments or want to contribute, let's talk at [http://webchat.freenode.net/?channels=rowboat #rowboat] or [mailto:rowboat@googlegroups.com rowboat@googlegroups.com]
 
 == Getting Started Topics ==
   * [http://code.google.com/p/rowboat/downloads/list Get pre-built Android]
