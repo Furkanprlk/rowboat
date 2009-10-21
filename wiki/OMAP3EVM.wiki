@@ -14,7 +14,7 @@ You can get information regarding OMAP3EVM here:
  * Updated OMAP3EVM (coming soon)
 
 === Bootloader information ===
-TBD
+ We recommend to use uboot from TI DVSDK release
 
 === Booting Android sample ===
 TBD
