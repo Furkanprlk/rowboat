@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Android on OMAP3EVM information page
 
 = Introduction =
 
