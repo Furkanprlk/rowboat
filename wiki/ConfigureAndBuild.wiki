@@ -13,8 +13,9 @@ To work with Beagleboard or OMAP3EVM you will need the following:
  * Ethernet cross cable or Ethernet Switch/Hub+2 cables
  * Card Reader
  * 2Gb SD Card
- * Monitor witch support 4:3 or 16:9 dimensions
- * HDMI to DVI cable
+ * 4:3 or 16:9 capable Display with DVI input
+ * HDMI to DVI cable (for BeagleBoard)
+ * DVI to DVI (if you want to use external Display on OMAP3EVM)
  
 === Software ===
 As Google we recommend to use Ubuntu, but also you can use CentOS 5.3.
