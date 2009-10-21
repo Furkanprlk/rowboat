@@ -7,6 +7,7 @@ The goal is to create a set of performance test applications for the Android Pla
 = Try it now =
 
 You can get Benchmarking application from the [http://rowboat.googlecode.com/files/GeneralRunner.apk Downloads section]
+
 Here's example if you want to add this on your sdcard:
 {{{
 mount sdcard
@@ -14,6 +15,8 @@ put GeneralRunner.apk to <sdcard>/data/app
 sync
 unmount
 }}}
+Running on the device:
+
 
 = Hardware =
    * OMAP3EVM and BeagleBoard 
