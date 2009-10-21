@@ -10,8 +10,9 @@ We strongly recommend to get familiar with !BeagleBoard resources at *[http://be
 We are verifying regular builds on *C3* revision. It also expected work on *B7* and *C2*
 
 === Bootloader information ===
-We are using uboot 2009.10 version (see pre-built stuff here: )
-You can build uboot manually from [http://gitorious.org/u-boot-omap3]
+We are using following bootloader version: X-Loader 1.4.2. U-Boot 2009.08.
+You can get pre-built stuff here: 
+Or download and build uboot manually from [http://gitorious.org/u-boot-omap3]
 
 === Booting Android sample ===
 TBD
