@@ -9,7 +9,6 @@ We strongly recommend to get familiar with !BeagleBoard resources at *[http://ww
 === Board Revisions Tested ===
 We are verifying regular builds on *C3* revision. It also expected work on *B7* and *C2*
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+=== Bootloader information ===
+
+=== On-board keys mapping ===
