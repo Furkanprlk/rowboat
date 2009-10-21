@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This page collects hardware-related notes about Android on !BeagleBoard. It also contains information regarding features, limitations and many other board-specific topics relevant to Android
+This page collects hardware-related notes about Android on !BeagleBoard. It also contains information regarding features, limitations and other board-specific topics relevant to Android
 
 We strongly recommend to get familiar with !BeagleBoard resources at *[http://beagleboard.org beagleboard.org]*
 
