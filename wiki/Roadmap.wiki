@@ -2,18 +2,19 @@
 
 = Donut =
 
-Work is in progress on Donut-based Android. Currently we are synchronized with 1.6-rc1.
-Following work is planned for Donut:
+Work is in progress on *Donut*-based Android. Currently we are synchronized with *1.6-rc1*.
+Following work is planned for *Donut*:
  * Integration of DSP support (DSPLink, DMAI) and Multimedia on top of it via GStreamer and OpenCore/OpenMax
  * Miscellaneous optimizations based on ARM Neon technology (bionic, skia, pixelflinger, etc...) 
  * Integration of OMAP35xx Display features and Camera interface
 
 = Éclair =
 
-Work is being planned for Éclair, most important features are:
- * Support of hw-accelerated 3D graphics
+Work is being planned for *Éclair*, most important features are:
+ * Support of hardware-accelerated 3D graphics
  * 2D acceleration based on Neon and DSP
  * Revised Neon support (fully integrated everywhere where it gives performance benefits)
+ * Support of new hardware platforms/boards
 
 = Flan =
 
