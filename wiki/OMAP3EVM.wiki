@@ -32,4 +32,4 @@ TBD
 TBD
 
 === Known issues, limitations ===
-TBD
+RTC does not work on _(insert rev info here)_
