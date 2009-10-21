@@ -11,6 +11,7 @@ You can get information regarding OMAP3EVM here:
 
 === Board Revisions Tested ===
  * CPU board: rev. *B*; Main board: rev. *D*; MDC board: rev. *B*
+ * Updated OMAP3EVM (coming soon)
 
 === Bootloader information ===
 TBD
