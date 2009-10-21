@@ -27,5 +27,8 @@ TBD
 === Using Media Extension Module (MDC) in Android ===
 TBD
 
+=== Using DVI output instead of on-board LCD ===
+TBD
+
 === Known issues, limitations ===
 TBD
