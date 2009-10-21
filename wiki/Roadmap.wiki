@@ -7,7 +7,7 @@
 = Donut =
 
 The following work is planned for *Donut*:
- * Integration of DSP support (DSPLink, DMAI) and Multimedia on top of it via GStreamer and OpenCore/OpenMax
+ * Integration of DSP (DSPLink, DMAI) and Multimedia support via GStreamer and OpenCore/OpenMax
  * Miscellaneous optimizations based on ARM Neon technology (bionic, skia, pixelflinger, etc...) 
  * Integration of OMAP35xx Display features and Camera interface
 
@@ -16,13 +16,13 @@ The following work is planned for *Donut*:
 Work is being planned for *Éclair*, but the most important features are:
  * Support of hardware-accelerated 3D graphics
  * 2D acceleration based on Neon and DSP
- * Revised Neon support (fully integrated everywhere where it gives performance benefits)
+ * Revised Neon support (fully integrated for best performance)
  * Support of new hardware platforms/boards
 
 = Flan =
 
-Plans for *Flan* has not yet been finalized, we will continue the work in following directions: 
- * keep everything synchronized with Google Android
- * integrate latest updates and bugfixes
- * expand supported platforms list
- * try to be better to achieve record performance and stability bar
+Plans for *Flan* have not yet been finalized, but we will continue to work on the following: 
+ * Keep everything synchronized with Google Android
+ * Integrate latest updates and bugfixes
+ * Expand supported platforms list
+ * Try to achieve record performance and stability
