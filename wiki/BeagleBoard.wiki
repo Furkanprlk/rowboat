@@ -18,7 +18,13 @@ You can get pre-built stuff here: [http://rowboat.googlecode.com/files/u-boot.be
 TBD
 
 === Board features/devices supported: ===
-TBD
+ * Serial
+ * USB Host port
+ * USB OTG port (Host mode)
+ * MMC
+ * GPIO USER key
+ * Audio
+ * HDMI out
 
 === On-board keys mapping in Android ===
 On board key "USER" is mapped to Home.
