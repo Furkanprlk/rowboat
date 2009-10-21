@@ -4,6 +4,17 @@
 
 The goal is to create a set of performance test applications for the Android Platform.
 
+= Try it now =
+
+You can get Benchmarking application from here:
+Here's example if you want to add this on your sdcard:
+{{{
+mount sdcard
+put GeneralRunner.apk to <sdcard>/data/app
+sync
+unmount
+}}}
+
 = Hardware =
    * OMAP3EVM and BeagleBoard 
    * Android ARM Emulator 
