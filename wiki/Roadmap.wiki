@@ -1,16 +1,19 @@
-#summary This page contains rowboat roadmap
+#summary This page contains the Rowboat Roadmap
+
+= What's available today =
+  * Donut-based Android (currently synchronized with 1.6-rc1) for ARM-only of OMAP35xx 
+  * Validated on OMAP3EVM and BeagleBoard (including PacketVideo ARM codecs, Web browsing, touchscreen (for OMAP3EVM), and more. See [http://code.google.com/p/rowboat/wiki/TestingAndroid this] wiki topic for other tests.
 
 = Donut =
 
-Work is in progress on *Donut*-based Android. Currently we are synchronized with *1.6-rc1*.
-Following work is planned for *Donut*:
+The following work is planned for *Donut*:
  * Integration of DSP support (DSPLink, DMAI) and Multimedia on top of it via GStreamer and OpenCore/OpenMax
  * Miscellaneous optimizations based on ARM Neon technology (bionic, skia, pixelflinger, etc...) 
  * Integration of OMAP35xx Display features and Camera interface
 
 = Éclair =
 
-Work is being planned for *Éclair*, most important features are:
+Work is being planned for *Éclair*, but the most important features are:
  * Support of hardware-accelerated 3D graphics
  * 2D acceleration based on Neon and DSP
  * Revised Neon support (fully integrated everywhere where it gives performance benefits)
