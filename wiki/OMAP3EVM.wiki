@@ -24,7 +24,7 @@ TBD
 === On-board keys mapping in Android ===
 TBD
 
-=== Using Media Extension Module (MDC) in Android ===
+=== Using Multimedia Data Card (MDC) in Android ===
 TBD
 
 === Using DVI output instead of on-board LCD ===
