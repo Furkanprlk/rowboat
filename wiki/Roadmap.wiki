@@ -2,7 +2,7 @@
 
 = What's available today =
   * Donut-based Android (currently synchronized with 1.6-rc1) for ARM-only of OMAP35xx 
-  * Validated on OMAP3EVM and BeagleBoard (including PacketVideo ARM codecs, Web browsing, touchscreen (for OMAP3EVM), and more. See [http://code.google.com/p/rowboat/wiki/TestingAndroid this] wiki topic for other tests.
+  * Validated on OMAP3EVM and BeagleBoard, including !PacketVideo ARM codecs, Web browsing, touchscreen (for OMAP3EVM), and more. See [http://code.google.com/p/rowboat/wiki/TestingAndroid this] wiki topic for other tests.
 
 = Donut =
 
