@@ -15,5 +15,11 @@ TBD
 === Booting Android sample ===
 TBD
 
+=== Board features/devices supported: ===
+TBD
+
 === On-board keys mapping in Android ===
+TBD
+
+=== Known issues, limitations ===
 TBD
