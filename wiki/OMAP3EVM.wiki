@@ -14,7 +14,9 @@ You can get information regarding OMAP3EVM here:
  * Updated OMAP3EVM (coming soon)
 
 === Bootloader information ===
- We recommend to use uboot from TI DVSDK release
+We recommend to use uboot from TI PSP SDK release 02.01.02.09.
+
+You can get pre-built stuff here: [http://rowboat.googlecode.com/files/u-boot.evm.bin]
 
 === Booting Android sample ===
 TBD
@@ -23,7 +25,9 @@ TBD
 TBD
 
 === On-board keys mapping in Android ===
-TBD
+The onboard key are mapped in the following way (from the upper left corner to the lower right by the rows):
+
+Menu, Back, Up, Home, Explorer, Volume Up, Left, Center, Right, Search, Volume Down, Soft Left, Down, Soft Right, Power
 
 === Using Multimedia Daughter Card (MDC) in Android ===
 TBD
@@ -32,4 +36,4 @@ TBD
 TBD
 
 === Known issues, limitations ===
-RTC does not work on _(insert rev info here)_
+RTC does not work on Rev D board
