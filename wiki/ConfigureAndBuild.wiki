@@ -4,15 +4,15 @@
 === Hardware ===
 To work with Beagleboard or OMAP3EVM you will need the following:
  * Board
- * Host machine (x86, Linux Ubuntu 8/9) with Ethernet card and serial port
- * Serial cable
+ * Host machine (Linux Ubuntu 8.x/9.x) with Ethernet card and serial port
+ * Serial cable (null-modem)
  * Power supply (5V)
  * USB Hub
  * USB Ethernet adapter (for Beagleboard)
  * USB Keyboard & Mouse
  * Ethernet cross cable or Ethernet Switch/Hub+2 cables
  * Card Reader
- * 2Gb SD Card
+ * 2Gb SD or MMC Card
  * 4:3 or 16:9 capable Display with DVI input
  * HDMI to DVI cable (for BeagleBoard)
  * DVI to DVI (if you want to use external Display on OMAP3EVM)
