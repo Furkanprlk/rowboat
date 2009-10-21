@@ -22,7 +22,15 @@ You can get pre-built stuff here: [http://rowboat.googlecode.com/files/u-boot.ev
 TBD
 
 === Board features/devices supported: ===
-TBD
+ * Serial
+ * NAND flash
+ * MMC
+ * Ethernet
+ * keypad
+ * LCD
+ * Touchscreen
+ * Audio
+ * USB OTG port (Host mode)
 
 === On-board keys mapping in Android ===
 The onboard key are mapped in the following way (from the upper left corner to the lower right by the rows):
