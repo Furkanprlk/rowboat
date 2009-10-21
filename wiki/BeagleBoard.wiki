@@ -4,7 +4,7 @@
 
 This page collects hardware-related or low-level notes about Android on !BeagleBoard. It also contains information regarding features features, hardware limitations and many other hardware-specific or low-level topics relevant for Android
 
-We strongly recommend to get familiar with !BeagleBoard resources at *[http://www.beagleboard.org www.beagleboard.org]*
+We strongly recommend to get familiar with !BeagleBoard resources at *[http://beagleboard.org beagleboard.org]*
 
 === Board Revisions Tested ===
 We are verifying regular builds on *C3* revision. It also expected work on *B7* and *C2*
