@@ -18,7 +18,7 @@ To work with Beagleboard or OMAP3EVM you will need the following:
  * DVI to DVI (if you want to use external Display on OMAP3EVM)
  
 === Software ===
-As Google we recommend to use Ubuntu, but also you can use CentOS 5.3.
+As Google we recommend to use Ubuntu, but also you can use Fedora, CentOS.
  * Install DHCP server
  * Install tftp server (actual for OMAP3EVM)
  * Install [http://source.android.com/download/using-repo repo] tool 
