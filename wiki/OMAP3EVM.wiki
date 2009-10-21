@@ -10,7 +10,7 @@ You can get information regarding OMAP3EVM here:
 
 
 === Board Revisions Tested ===
-* CPU board: rev. B; Main board: rev. D
+ * CPU board: rev. B; Main board: rev. D
 
 === Bootloader information ===
 TBD
