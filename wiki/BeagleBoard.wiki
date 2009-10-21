@@ -10,5 +10,10 @@ We strongly recommend to get familiar with !BeagleBoard resources at *[http://be
 We are verifying regular builds on *C3* revision. It also expected work on *B7* and *C2*
 
 === Bootloader information ===
+TBD
 
-=== On-board keys mapping ===
+=== Booting Android sample ===
+TBD
+
+=== On-board keys mapping in Android ===
+TBD
