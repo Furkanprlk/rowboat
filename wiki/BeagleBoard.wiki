@@ -21,7 +21,7 @@ TBD
 TBD
 
 === On-board keys mapping in Android ===
-TBD
+On board key "USER" is mapped to Home.
 
 === Known issues, limitations ===
 TBD
