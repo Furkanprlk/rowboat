@@ -15,7 +15,9 @@ put GeneralRunner.apk to <sdcard>/data/app
 sync
 unmount
 }}}
-Running on the device: Open Applications menu, Run *GeneralRunner* 
+Running on the device: Open Applications menu, Run *!GeneralRunner* 
+
+Alternatively you can use ADB
 
 
 = Hardware =
