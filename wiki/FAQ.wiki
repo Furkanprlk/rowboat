@@ -8,6 +8,10 @@ Most questions are easily found with Google... but here's a short list of questi
   * Hold the MENU button (key S4 on the OMAP3EVM), select wallpaper, and browse to the picture.
   * To load a xxx.png from your host, you can use "{{{adb push }}}<path to file>{{{ /sdcard}}}"
 
+=== How can I prevent the LCD from sleeping? ===
+  * After booting Android, select "Settings"->"Sound & Display"->Screen Timeout
+  * Note: If the EVM sleeps, then the adb connection may stop functioning, thus for development, it is recommended to change the Screen Timeout to "Never Timeout"
+
 === What if the Gallery App doesn't see my local media files? ===
   * In adb shell: "{{{am broadcast -a android.intent.action.MEDIA_MOUNTED --ez read-only false -d file:///sdcard}}}"
 
