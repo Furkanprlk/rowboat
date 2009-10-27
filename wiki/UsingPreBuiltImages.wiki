@@ -1,4 +1,4 @@
-#This page will discuss using the pre-built Rowboat Android images to try out Rowboat quickly. 
+#summary This page will discuss using the pre-built Rowboat Android images to try out Rowboat quickly.
 
 *THIS IS STILL A WORK IN PROGRESS*
 
@@ -14,23 +14,21 @@ This is the boot of choice particularly if you already have a Mistral EVM up and
 
   * First you can download the [http://code.google.com/p/rowboat/downloads/list pre-built images here]. There are several available files here for download, if you are unsure what to pick just choose the latest 'daily build' for your platform (for example omap3evm-donut-20xx-xx-xx.tar.bz2). 
   * Now you can move the file to your preferred working directory and un-tar the file to take a look at the contents. This should give you two files, uImage which contains your OS kernel and another tar file which contains the file system (for example omap3evm-donut-rootfs-20xx-xx-xx.tar.bz2). 
- host % tar -jxvf omap3evm-donut-20xx-xx-xx.tar.bz2
+{{{host % tar -jxvf omap3evm-donut-20xx-xx-xx.tar.bz2}}}
   * If you have already been working with your OMAP3 EVM you probably already have some of the background work for setting up a TFTP and NFS server on your host done, however if you have not you can read about setting up a [http://wiki.davincidsp.com/index.php/Setting_Up_a_TFTP_Server#Using_Ubuntu TFTP server here] and a [ NFS server here]. With the TFTP and NFS servers up and ready to go we simply need to put the Rowboat files into place and configure the board for NFS.
   * For the kernel image file uImage one must copy the file to the TFTP server's tftpboot directory, in the case of Ubuntu this is generally /var/lib/tftpboot. Note that by default this directory is protected so the sudo command will be used to authorize the copy. 
- host % sudo cp uImage /var/lib/tftpboot
+{{{host % sudo cp uImage /var/lib/tftpboot}}}
   * For the filesystem we can extract this anywhere and than configure the NFS server to serve it, so if it is already in a directory you wish to work from you can just extract it here. Note we are using the sudo command for full privelages to guarantee the file system is extracted properly. 
- host % sudo tar -jxvf omap3evm-donut-rootfs-20xx-xx-xx.tar.bz2
-  * Now that we have the file system extracted we need to configure the NFS server to serve it, so we will edit the /etc/exports file to add a line like "/your/particular/host/path/omap3evm-donut-rootfs-20xx-xx-xx <nowiki>ASTERISK</nowiki>(rw,no_root_squash,no_all_squash,sync)" and save the file. You can use any editor to do this that you like, but if you are new to Linux than gedit is easy, note that once again we are using sudo to allow us to edit this file.
- host % sudo gedit /etc/exports
+{{{host % sudo tar -jxvf omap3evm-donut-rootfs-20xx-xx-xx.tar.bz2}}}
+  * Now that we have the file system extracted we need to configure the NFS server to serve it, so we will edit the /etc/exports file to add a line like {{{/your/particular/host/path/omap3evm-donut-rootfs-20xx-xx-xx *(rw,no_root_squash,no_all_squash,sync)}}} and save the file. You can use any editor to do this that you like, but if you are new to Linux than gedit is easy, note that once again we are using sudo to allow us to edit this file.
+{{{host % sudo gedit /etc/exports}}}
   * Now that the NFS is configured you need to restart the service so it will add in the new directory, so a command like below should do it. 
- host % sudo service nfs-kernel-server restart
+{{{host % sudo service nfs-kernel-server restart}}}
   * With this the host Linux PC should be sharing both the uImage kernel and the filesystem, so we need to configure the U-Boot environment variables. 
- EVM % setenv bootcmd 'dhcp; bootm'
+{{{EVM % setenv bootcmd 'dhcp; bootm'}}}
 
- EVM % setenv bootargs 'mem=128M console=ttyS0,115200n8 androidboot.console=ttyS0 noinitrd ip=dhcp rw root=/dev/nfs nfsroot=xx.xx.xx.xx:/your/particular/host/path/omap3evm-donut-rootfs-20xx-xx-xx,nolock,proto=tcp init=/init rootwait'
+{{{EVM % setenv bootargs 'mem=128M console=ttyS0,115200n8 androidboot.console=ttyS0 noinitrd ip=dhcp rw root=/dev/nfs nfsroot=xx.xx.xx.xx:/your/particular/host/path/omap3evm-donut-rootfs-20xx-xx-xx,nolock,proto=tcp init=/init rootwait'}}}
 
- EVM % setenv serverip xx.xx.xx.xx
+{{{EVM % setenv serverip xx.xx.xx.xx}}}
 
- EVM % setenv bootfile uImage
-
-*THIS IS STILL A WORK IN PROGRESS*
+{{{EVM % setenv bootfile uImage}}}
