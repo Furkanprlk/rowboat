@@ -13,3 +13,6 @@
 = Google Groups =
   * [http://groups.google.com/group/android-porting Android Porting]
   * [http://groups.google.com/group/android-framework Android Framework (useful for PV/OMX questions)]
+
+= OMAP =
+  * [http://tiexpressdsp.com/index.php/Main_Page TI Wiki]
