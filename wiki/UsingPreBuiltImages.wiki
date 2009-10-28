@@ -1,7 +1,5 @@
 #summary This page will discuss using the pre-built Rowboat Android images to try out Rowboat quickly.
 
-*THIS IS STILL A WORK IN PROGRESS*
-
 = Introduction =
 
 This page will discuss using the pre-built Rowboat Android images to try out Rowboat quickly without having to download and build the source (hopefully within minutes!). There are a couple of ways to do this, primarily an SD card boot or a network TFTP/NFS based boot. 
