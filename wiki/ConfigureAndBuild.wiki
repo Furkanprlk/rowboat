@@ -97,7 +97,7 @@ If you are using multicore CPU in your host it’s possible to use more than one
 
 In following listing we build Android for OMAP3EVM board with unit test packages and use 16 threads to speed up build process:
 {{{
-$ make TARGET_PRODUCT=omap3evm TARGET_BUILD_VARIANT=tests -j16
+$ make TARGET_PRODUCT=omap3evm TARGET_BUILD_VARIANT=tests -j8
 }}}
 After build process finished you'll need rootfs for this do following:
 {{{ 
