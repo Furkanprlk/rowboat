@@ -1,10 +1,25 @@
 #summary Getting Project Source Code
 
-Our project is hosted at http://gitorious.org/rowboat 
+Our project is hosted at http://gitorious.org/rowboat. For a more complete set of instructions, see the [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and Build wiki page].
 
-You will need [http://git-scm.com/ git] and [http://source.android.com/download/using-repo repo] tools set up
+Before you download the source, you will need [http://git-scm.com/ git] and [http://source.android.com/download/using-repo repo] tools.
 
-To download rowboat source code:
+On an Ubuntu 8.04 host, you can do the following:
+
+Getting git:
+{{{
+$ sudo apt-get install git-core
+}}}
+
+Getting repo:
+{{{
+$ curl http://android.git.kernel.org/repo >~/bin/repo
+$ chmod a+x ~/bin/repo
+}}}
+
+You can find detailed repo installing instructions [http://source.android.com/download/using-repo here]
+
+To download the rowboat source code:
 {{{
 mkdir rowboat-android
 cd rowboat-android
@@ -13,10 +28,4 @@ repo sync
 }}}
 
 
-You can find detailed repo installing instruction and repo how-to here: http://source.android.com/download/using-repo or try following example:
 
-Getting repo:
-{{{
-$ curl http://android.git.kernel.org/repo >~/bin/repo
-$ chmod a+x ~/bin/repo
-}}}
