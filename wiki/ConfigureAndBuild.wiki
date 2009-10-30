@@ -181,3 +181,5 @@ OMAP3_EVM#setenv ethaddr=00:50:c2:XX:XX:XX
 OMAP3_EVM#setenv bootfile=evm/uImage <-- full path on host is /tftpboot/evm/uImage
 OMAP3_EVM#save
 }}}
+== First start ==
+Start the target board and wait until Android installing all prebuilt applications (default and custom) and configuring default settings. There is no indication for this time so you just need to wait until Android fully launched. After this you need to reboot the board. 
