@@ -29,7 +29,9 @@ Most questions are easily found with Google... but here's a short list of questi
   * You can see the list of all connected devices with "{{{adb devices}}}"
 
 == Development Questions ==
-
+=== Why the first boot takes so much time? ===
+  * It's by design - During first start Android installs all default prebuilt applications and configures settings to default state.
+ 
 === How do I get around firewall problems? ===
   *  See https://omapzoom.org/gf/project/omapandroid/wiki/?pagename=Git+Firewall
 
