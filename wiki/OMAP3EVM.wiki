@@ -11,7 +11,7 @@ You can get information regarding OMAP3EVM here:
 
 === Board Revisions Tested ===
  * CPU board: rev. *B*; Main board: rev. *D*; MDC board: rev. *B*
- * Updated OMAP3EVM (coming soon)
+ * CPU board: rev. *C*; Main board: rev. *G* Updated OMAP3EVM, no MDC required (coming soon)
 
 === Bootloader information ===
 We recommend to use uboot from TI PSP SDK release 02.01.02.09.
