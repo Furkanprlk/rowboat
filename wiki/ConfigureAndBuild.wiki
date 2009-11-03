@@ -193,7 +193,7 @@ Here 720x480MR-16@60 is example value which means:
  * R - reduced blinking  
  * 16 - 16 bits = 65,536 colours
  * @60 - 60 Hz
-For more detailed info see [http://http://www.mjmwired.net/kernel/Documentation/fb/modedb.txt modedb Documentation]
+For more detailed info see [http://www.mjmwired.net/kernel/Documentation/fb/modedb.txt modedb Documentation]
 
 So full `bootargs` string with example values will be following:
 {{{
