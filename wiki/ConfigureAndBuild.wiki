@@ -148,6 +148,7 @@ $ sudo cp kernel/arch/arm/boot/uImage /mnt/fat32
 }}}
 Unpack the Android tarball above onto the EXT3 partition:
 {{{
+$ sudo mkdir -p /mnt/ext3
 $ sudo mount /dev/sdd2 /mnt/ext3
 $ sudo tar jxfv out/target/product/<board>/rootfs.tar.bz2 --numeric-owner -C /mnt/ext3
 }}}
