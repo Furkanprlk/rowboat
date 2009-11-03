@@ -182,7 +182,7 @@ OMAP3_EVM# setenv ethaddr=00:50:c2:XX:XX:XX
 OMAP3_EVM# setenv bootfile=evm/uImage <-- full path on host is /tftpboot/evm/uImage
 OMAP3_EVM# save
 }}}
-If you need external display enabled use this such `bootargs`:
+If you need external display enabled use following `bootargs`:
 {{{
 OMAP3_EVM# setenv bootargs mem=128M console=tty0 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw init=/init rootdelay=5 omap-dss.def_disp=dvi omapfb.video_mode=720x480MR-16@60
 }}}
