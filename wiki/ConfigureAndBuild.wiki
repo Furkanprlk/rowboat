@@ -193,6 +193,7 @@ Here 720x480MR-16@60 is example value which means:
  * 16 - 16 bits = 65,536 colours
  * @60 - 60 Hz
 For more detailed info see [http://http://www.mjmwired.net/kernel/Documentation/fb/modedb.txt Linux Kernel Documentation]
+So full `bootargs` string with example values will be following:
 {{{
 OMAP3_EVM# setenv bootargs mem=128M console=tty0 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw init=/init rootdelay=5 omap-dss.def_disp=dvi omapfb.video_mode=720x480MR-16@60
 }}}
