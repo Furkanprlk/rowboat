@@ -5,13 +5,13 @@
 This page collects hardware-related notes about Android on OMAP3EVM. It also contains information regarding features, limitations and other board-specific topics relevant to Android
 
 You can get information regarding OMAP3EVM here:
- * *Generation I.*Getting started: [http://www.mistralsolutions.com/products/omap_3evm.php]
- * *Generation II.*Detailed information: [http://www.mistralsolutions.com/assets/downloads/3530.php]
+ * Getting started: [http://www.mistralsolutions.com/products/omap_3evm.php]
+ * Detailed information: [http://www.mistralsolutions.com/assets/downloads/3530.php]
 
 
 === Board Revisions Tested ===
- * CPU board: rev. *B*; Main board: rev. *D*; MDC board: rev. *B*
- * CPU board: rev. *C*; Main board: rev. *G*; no MDC required for this type of Main board (support coming soon)
+ * *Generation I.*CPU board: rev. *B*; Main board: rev. *D*; MDC board: rev. *B*
+ * *Generation II.*CPU board: rev. *C*; Main board: rev. *G*; no MDC required for this type of Main board (support coming soon)
 
 === Bootloader information ===
 We recommend to use uboot from TI PSP SDK release 02.01.02.09.
