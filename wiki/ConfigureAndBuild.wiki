@@ -1,5 +1,5 @@
 #summary Configure and Build
-
+<wiki:toc max_depth="4" />
 == Prepare your host environment ==
 === Hardware ===
 To work with Beagleboard or OMAP3EVM you will need the following:
@@ -182,7 +182,17 @@ OMAP3_EVM# setenv ethaddr=00:50:c2:XX:XX:XX
 OMAP3_EVM# setenv bootfile=evm/uImage <-- full path on host is /tftpboot/evm/uImage
 OMAP3_EVM# save
 }}}
-If you need external display enabled use following `bootargs`:
+==== External Display ====
+If you need external display you need to enable additional kernel parameters:
+ * omap-dss.def_disp=dvi - this specifies to use DVI output instead on-board screen
+ * omapfb.video_mode=720x480MR-16@60 - this specifies the resolution for external display
+Here 720x480MR-16@60 is example value which means:
+ * resolution - 720x480
+ * M - always present
+ * R - reduced blinking  
+ * 16 - 16 bits = 65,536 colours
+ * @60 - 60 Hz
+For more detailed info see [http://http://www.mjmwired.net/kernel/Documentation/fb/modedb.txt Linux Kernel Documentation]
 {{{
 OMAP3_EVM# setenv bootargs mem=128M console=tty0 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw init=/init rootdelay=5 omap-dss.def_disp=dvi omapfb.video_mode=720x480MR-16@60
 }}}
