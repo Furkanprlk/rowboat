@@ -174,7 +174,7 @@ This is example. You should use your network parameters.
 {{{
 OMAP3_EVM#setenv bootcmd tftp; bootm
 OMAP3_EVM#setenv baudrate 115200
-OMAP3_EVM#setenv bootargs mem=128M console=tty0 console=ttyS0,115200n8 androidboot.console=ttyS0 #noinitrd root=/dev/mmcblk0p2 rw init=/init rootdelay=5 omapfb.video_mode=640x480MR-16@60
+OMAP3_EVM#setenv bootargs mem=128M console=tty0 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw init=/init rootdelay=5 omap-dss.def_disp=dvi omapfb.video_mode=720x480MR-16@60
 OMAP3_EVM#setenv ipaddr=10.10.10.3
 OMAP3_EVM#setenv netmask=255.255.255.0
 OMAP3_EVM#setenv serverip=10.10.10.1
