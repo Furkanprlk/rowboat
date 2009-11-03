@@ -5,8 +5,8 @@
 This page collects hardware-related notes about Android on OMAP3EVM. It also contains information regarding features, limitations and other board-specific topics relevant to Android
 
 You can get information regarding OMAP3EVM here:
- * Getting started: [http://www.mistralsolutions.com/products/omap_3evm.php]
- * Detailed information: [http://www.mistralsolutions.com/assets/downloads/3530.php]
+ * *Generation I.*Getting started: [http://www.mistralsolutions.com/products/omap_3evm.php]
+ * *Generation II.*Detailed information: [http://www.mistralsolutions.com/assets/downloads/3530.php]
 
 
 === Board Revisions Tested ===
