@@ -6,3 +6,5 @@
 = Ubuntu 8.x/9.x =
 
 = Building on non-Ubuntu hosts (hints) =
+
+== Fedora 11 ==
