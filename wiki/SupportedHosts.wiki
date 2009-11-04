@@ -1,10 +1,9 @@
 #summary This page collects information about Host environment supported
 = Introduction =
 
-"There's no reason why Android cannot be built on non-Ubuntu systems"
-
 = Ubuntu 8.x/9.x =
 
 = Building on non-Ubuntu hosts (hints) =
+"There's no reason why Android cannot be built on non-Ubuntu systems"
 
 == Fedora 11 ==
