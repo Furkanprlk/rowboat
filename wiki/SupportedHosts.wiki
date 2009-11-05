@@ -1,9 +1,15 @@
 #summary This page collects information about Host environment supported
 = Introduction =
 
+This is complex task to support all possible Host environments, especially if we think about host wider than single Linux distribution. We strongly recommend to stay with one, most preferable distribution. For Android it is Ubuntu 8.x/9.04. On the other side developers should not be scared - there is many individuals who have Android builds in exotic environments.
+
 = Ubuntu 8.x/9.04 =
 
+This is recommended environment rowboat builds is being test upon.
+
 == Ubuntu 9.10 ==
+
+TBD (Add here notes about const char * and char * conversion issues brought by gcc update to 4.4.1)
 
 = Building on non-Ubuntu hosts (hints) =
 According to "There's no reason why Android cannot be built on non-Ubuntu systems"
