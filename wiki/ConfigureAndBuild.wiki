@@ -4,7 +4,7 @@
 === Hardware ===
 To work with Beagleboard or OMAP3EVM you will need the following:
  * Board
- * Host machine (Linux Ubuntu 8.x/9.x) with Ethernet card and serial port
+ * Host machine (Linux Ubuntu 8.x/9.04) with Ethernet card and serial port
  * Serial cable (null-modem)
  * Power supply (5V)
  * USB Hub
