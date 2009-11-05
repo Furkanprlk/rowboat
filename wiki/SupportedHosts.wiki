@@ -3,7 +3,7 @@
 
 = Ubuntu 8.x/9.04 =
 
-= Ubuntu 9.10 =
+== Ubuntu 9.10 ==
 
 = Building on non-Ubuntu hosts (hints) =
 According to "There's no reason why Android cannot be built on non-Ubuntu systems"
