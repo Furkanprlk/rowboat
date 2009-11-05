@@ -14,6 +14,8 @@ TBD (Add here notes about const char * and char * conversion issues brought by g
 = Building on non-Ubuntu hosts (hints) =
 According to "There's no reason why Android cannot be built on non-Ubuntu systems"
 
+NOTE: We do not support non-Ubuntu builds consistency, though people may find useful hints and tricks below.
+
 == Fedora 10 ==
 
 == Fedora 11 ==
