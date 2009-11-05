@@ -6,13 +6,14 @@ This is complex task to support all possible Host environments, especially if we
 = Ubuntu 8.x/9.04 =
 
 This is recommended environment rowboat builds is being test upon.
+You may find details here: [http://source.android.com/download#TOC-Ubuntu-Linux-32-bit-x86-]
 
 == Ubuntu 9.10 ==
 
 TBD (Add here notes about const char * and char * conversion issues brought by gcc update to 4.4.1)
 
 = Building on non-Ubuntu hosts (hints) =
-According to " [http://source.android.com/download#TOC-Other-Linux There's no reason why Android cannot be built on non-Ubuntu systems] "
+According to Google: " [http://source.android.com/download#TOC-Other-Linux There's no reason why Android cannot be built on non-Ubuntu systems] "
 
 NOTE: We do not support non-Ubuntu builds consistency, though people may find useful hints and tricks below.
 
