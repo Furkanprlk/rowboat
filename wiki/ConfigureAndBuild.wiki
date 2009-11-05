@@ -114,7 +114,7 @@ The next step is building of Linux kernel for your board. In following listing t
 The fourth step in listing is kernel build command, here we tell `make` utility what build is for `ARM` architecture using cross-toolchains for ARM, the build target is `uImage` and it’s multithread build (-j8):
 {{{
 $ cd <sources top>
-$ export PATH=${PWD}/prebuilt/linux-x86/toolchain/arm-/eabi-4.4.0/bin:$PATH
+$ export PATH=${PWD}/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin:$PATH
 $ cd kernel/
 $ make ARCH=arm omap3_evm_android_defconfig
 $ make ARCH=arm CROSS_COMPILE=arm-eabi- uImage -j8
