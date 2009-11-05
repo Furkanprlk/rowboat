@@ -6,7 +6,7 @@ Browse the latest docs here. If you have questions, comments or want to contribu
   * [http://code.google.com/p/rowboat/downloads/list Get pre-built Android]
   * [http://code.google.com/p/rowboat/wiki/Source Get source code]
   * [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and build instructions]
-  * [http://code.google.com/p/rowboat/wiki/UsingPreBuiltImages Get pre-built Android]
+  * [http://code.google.com/p/rowboat/wiki/UsingPreBuiltImages Use pre-built Android]
   * [http://code.google.com/p/rowboat/wiki/TestingAndroid Basic tests once Android is running]
   * [http://code.google.com/p/rowboat/wiki/HowToContribute Get involved]
   * [http://code.google.com/p/rowboat/wiki/FAQ FAQ]
