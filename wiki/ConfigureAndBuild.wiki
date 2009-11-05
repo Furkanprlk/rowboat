@@ -32,7 +32,7 @@ flex, bison, gperf, libsdl-dev, libesd0-dev, libwxgtk2.6-dev (optional), build-e
 }}}
 For Ubuntu 32-bit use such command:
 {{{
-$ sudo apt-get install git-core gnupg sun-java5-jdk flex bison gperf libsdl-dev libesd0-dev libwxgtk2.6-dev build-essential zip curl libncurses5-dev zlib1g-dev minicom tftpd
+$ sudo apt-get install git-core gnupg sun-java5-jdk flex bison gperf libsdl-dev libesd0-dev libwxgtk2.6-dev build-essential zip curl libncurses5-dev zlib1g-dev minicom tftpd uboot-mkimage
 }}}
 Ubuntu Intrepid (8.10) users may need a newer version of libreadline:
 {{{
