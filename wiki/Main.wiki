@@ -3,9 +3,10 @@
 Browse the latest docs here. If you have questions, comments or want to contribute, let's talk at [http://webchat.freenode.net/?channels=rowboat #rowboat] or [mailto:rowboat@googlegroups.com rowboat@googlegroups.com]
 
 == Getting Started Topics ==
-  * [http://code.google.com/p/rowboat/wiki/UsingPreBuiltImages Get pre-built Android]
+  * [http://code.google.com/p/rowboat/downloads/list Get pre-built Android]
   * [http://code.google.com/p/rowboat/wiki/Source Get source code]
   * [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and build instructions]
+  * [http://code.google.com/p/rowboat/wiki/UsingPreBuiltImages Get pre-built Android]
   * [http://code.google.com/p/rowboat/wiki/TestingAndroid Basic tests once Android is running]
   * [http://code.google.com/p/rowboat/wiki/HowToContribute Get involved]
   * [http://code.google.com/p/rowboat/wiki/FAQ FAQ]
