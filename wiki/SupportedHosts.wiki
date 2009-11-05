@@ -1,7 +1,7 @@
 #summary This page collects information about Host environment supported
 = Introduction =
 
-This is complex task to support all possible Host environments, especially if we consider it wider than well-known Linux distribution. We strongly recommend to stay with one, most preferable distribution. For Android it is Ubuntu 8.x/9.04. On the other side developers should not be scared - there is many individuals who have Android builds in exotic environments.
+This is complex task to support all possible Host environments, especially if we consider it wider than well-known Linux distribution. We strongly recommend to stay with one, most preferable distribution. For Android it is Ubuntu 8.x/9.04. On the other side developers should not be scared - there are many individuals who run Android builds in exotic environments.
 
 = Ubuntu 8.x/9.04 =
 
