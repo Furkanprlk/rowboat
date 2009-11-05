@@ -1,7 +1,7 @@
 #summary This page collects information about Host environment supported
 = Introduction =
 
-= Ubuntu 8.x/9.x =
+= Ubuntu 8.x/9.04 =
 
 = Building on non-Ubuntu hosts (hints) =
 "There's no reason why Android cannot be built on non-Ubuntu systems"
