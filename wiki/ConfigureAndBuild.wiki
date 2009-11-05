@@ -28,7 +28,7 @@ Required packages:
 {{{
 Git 1.5.4 or newer and the GNU Privacy Guard. 
 JDK 5.0, update 12 or higher.  Java 6 is not supported, because of incompatibilities with @Override.
-flex, bison, gperf, libsdl-dev, libesd0-dev, libwxgtk2.6-dev (optional), build-essential, zip, curl, minicom, tftp-server
+flex, bison, gperf, libsdl-dev, libesd0-dev, libwxgtk2.6-dev (optional), build-essential, zip, curl, minicom, tftp-server, uboot-mkimage
 }}}
 For Ubuntu 32-bit use such command:
 {{{
