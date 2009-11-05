@@ -12,7 +12,7 @@ This is recommended environment rowboat builds is being test upon.
 TBD (Add here notes about const char * and char * conversion issues brought by gcc update to 4.4.1)
 
 = Building on non-Ubuntu hosts (hints) =
-According to "There's no reason why Android cannot be built on non-Ubuntu systems"
+According to " [http://source.android.com/download#TOC-Other-Linux There's no reason why Android cannot be built on non-Ubuntu systems] "
 
 NOTE: We do not support non-Ubuntu builds consistency, though people may find useful hints and tricks below.
 
