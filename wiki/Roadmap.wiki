@@ -9,7 +9,7 @@
 The following work is planned for *Donut*:
  * Integration of DSP (DSPLink, DMAI) and Multimedia support via GStreamer and OpenCore/OpenMax
  * Miscellaneous optimizations based on ARM Neon technology (bionic, skia, pixelflinger, etc...) 
- * Integration of OMAP35xx Display features and Camera interface
+ * Integration of OMAP35xx Display features, Video Input and Camera interfaces
 
 = Éclair =
 
