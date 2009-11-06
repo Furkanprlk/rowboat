@@ -10,7 +10,7 @@ You may find details here: [http://source.android.com/download#TOC-Ubuntu-Linux-
 
 == Ubuntu 9.10 ==
 
-Const char * and char * conversion issues brought by gcc update to 4.4.1 fixed.
+{const char *} and {char *} conversion issues brought by gcc update to 4.4.1 fixed.
 
 = Building on non-Ubuntu hosts (hints) =
 According to Google: " [http://source.android.com/download#TOC-Other-Linux There's no reason why Android cannot be built on non-Ubuntu systems] "
