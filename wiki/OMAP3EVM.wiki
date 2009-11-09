@@ -37,7 +37,7 @@ The onboard key are mapped in the following way (from the upper left corner to t
 
 Menu, Back, Up, Home, Explorer, Volume Up, Left, Center, Right, Search, Volume Down, Soft Left, Down, Soft Right, Power
 
-=== Using Multimedia Daughter Card (MDC) in Android ===
+=== Using Multimedia Daughter Card (MDC) in Android (Relevant for Generation I EVMs) ===
 TBD
 
 === Using DVI output instead of on-board LCD ===
