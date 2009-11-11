@@ -29,5 +29,15 @@ TBD
 === On-board keys mapping in Android ===
 On board key "USER" is mapped to Home.
 
+=== Using TV output (S-Video) instead of on-board LCD ===
+
+It is similar to usage of DVI output. If you want to use S-Video - make sure the cable is connected to EVM S-Video Output connector (not to confuse with Input!!!). 
+
+Pass following parameters in the command line:
+
+ * omap-dss.def_disp="tv"
+ * omapfb.video_mode="tv:ntsc" or "tv:pal" 
+
+
 === Known issues, limitations ===
 TBD
