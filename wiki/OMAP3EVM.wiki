@@ -62,4 +62,4 @@ Pass following parameters in the command line:
  * omapfb.video_mode="tv:ntsc" or "tv:pal" 
 
 === Known issues, limitations ===
-RTC does not work on Rev D board
+RTC does not work on Rev D board, you can find more details here: [http://e2e.ti.com/forums/t/9023.aspx]. Latest EVM does not have this limitation.
