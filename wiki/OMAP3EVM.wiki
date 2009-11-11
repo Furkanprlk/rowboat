@@ -58,8 +58,8 @@ It is similar to usage of DVI output. If you want to use S-Video - make sure the
 
 Pass following parameters in the command line:
 
- * omap-dss.def_disp="tv" omapfb.video_mode="tv:ntsc" or omap-dss.def_disp="tv" omapfb.video_mode="tv:pal" 
-
+ * omap-dss.def_disp="tv"
+ * omapfb.video_mode="tv:ntsc" or "tv:pal" 
 
 === Known issues, limitations ===
 RTC does not work on Rev D board
