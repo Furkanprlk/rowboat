@@ -54,7 +54,7 @@ For more detailed info see [http://http://www.mjmwired.net/kernel/Documentation/
 
 === Using TV output (S-Video) instead of on-board LCD ===
 
-It is similar to usage of DVI output. If you want to use S-Video - make sure the cable is connected to S-Video Output connector (not to confuse with Input!!!). 
+It is similar to usage of DVI output. If you want to use S-Video - make sure the cable is connected to EVM S-Video Output connector (not to confuse with Input!!!). 
 
 Pass following parameters in the command line:
 
