@@ -29,12 +29,8 @@ Following components compound complete software stack needed to work efficiently
  # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/TI-C6x-CGT-v6.0.16.1.bin cg6x_6.0.16.1]
  # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/bios_setuplinux_5_33_06.bin bios_5_33_06]
  # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/xdctools_setuplinux_3_15_01_59.bin xdctools_3_15_01_59]
- # [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html codec_engine_2_24_01]
-
-Warning! You need to have an account on TI site (free registration
-without any approves).
-
-12. gstreamer 0.10.0.1
+ # [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html codec_engine_2_24_01] *Note:* You need to have an account on TI site (free registration)
+ # gstreamer 0.10.0.1
 
 to get gstreamer you need to checkout SVN:
 # svn checkout --username anonymous
