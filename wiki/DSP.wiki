@@ -42,9 +42,7 @@ Following components compound complete software stack needed to work efficiently
    * pthread_mutexattr_settype
    * pthread_setcanceltype
    * pthread_attr_setinheritsched# Modified build files (Makefiles and config.bld) to adapt for Android
-toolchains
- # Memory holes kernel patches (TBD)
- # Patches for gstreamer in android
+toolchains# Memory holes kernel patches (TBD)# Patches for gstreamer in android
 
 
 = Details =
