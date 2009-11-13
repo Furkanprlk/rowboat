@@ -37,13 +37,11 @@ Following components compound complete software stack needed to work efficiently
 
 = List of modifications made on top of DSP stack =
  # Added SYS V IPC into bionic
- # Some 'libpthread' calls are not yet implemented in android (this moment they are commented out):
- * pthread_sigmask
- * pthread_mutexattr_settype
- * pthread_setcanceltype
- * pthread_attr_setinheritsched
-
-4. Modified build files (Makefiles and config.bld) to support android
+ # Some 'libpthread' calls are not yet implemented in android (this moment they are commented out):  * pthread_sigmask
+   * pthread_mutexattr_settype
+   * pthread_setcanceltype
+   * pthread_attr_setinheritsched
+ # Modified build files (Makefiles and config.bld) to support android
 toolchains.
  Memory holes kernel patches.
 5. Patches for gstreamer in android
