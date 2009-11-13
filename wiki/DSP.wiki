@@ -37,7 +37,8 @@ Following components compound complete software stack needed to work efficiently
 
 = List of modifications made on top of DSP stack =
  # Added SYS V IPC into bionic
- # Some 'libpthread' calls are not yet implemented in android (this moment they are commented out):  * pthread_sigmask
+ # Some 'libpthread' calls are not yet implemented in android (this moment they are commented out):
+   * pthread_sigmask
    * pthread_mutexattr_settype
    * pthread_setcanceltype
    * pthread_attr_setinheritsched
