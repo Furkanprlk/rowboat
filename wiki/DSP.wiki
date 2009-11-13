@@ -16,6 +16,9 @@ Following components compound complete software stack needed to work efficiently
  # *dmai*
  # *ti gstreamer* 
 
+= Components/packages versions and locations =
+
+
 = Details =
 
 Add your content here.  Format your content with:
