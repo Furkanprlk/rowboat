@@ -25,7 +25,6 @@ Following components compound complete software stack needed to work efficiently
     # dsplink_1_61_03
     # local_power_manager_1_24
     # xdais_6_24
-
  # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/cs1omap3530_setuplinux_1_00_01-44.bin cs1omap3530_1_00_01]
 
 8. cg6x_6.0.16.1
