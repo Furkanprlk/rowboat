@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary This pages contains all information regarding Omap3530 DSP stack integration in Android
 
 = Introduction =
 
