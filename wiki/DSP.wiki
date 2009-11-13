@@ -8,7 +8,7 @@ OMAP3530 (as well as family of DaVinci DM) has C46x+ DSP core embedded in the SO
 
 = Software Stack Components =
 
-Following components compound complete software stack :
+Following components compound complete software stack needed to work efficiently with DSP:
 
  # *bios* (and tools)
  # *codec engine* (and tools)
