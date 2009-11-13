@@ -6,6 +6,13 @@ OMAP3530 (as well as family of DaVinci...) has C46x+ DSP core embedded in the SO
 
 [http://code.google.com/p/rowboat/ Rowboat] DSP support is based on TI Linux Digital Video Software Development Kit (DVSDK) for OMAP3530
 
+= Software Stack Components =
+
+Following components compound software stack :
+
+ # biosutils
+ # ceutils
+ # dmai
 
 = Details =
 
