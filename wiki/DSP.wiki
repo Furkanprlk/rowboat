@@ -37,13 +37,12 @@ Following components compound complete software stack needed to work efficiently
 
 = List of modifications made on top of DSP stack =
  # Added SYS V IPC into bionic
- # Some 'libpthread' calls are not yet implemented in android (this
-moment they are commented out):
-     * pthread_sigmask
-     * pthread_mutexattr_settype
-     * pthread_setcanceltype
-     * pthread_attr_setinheritsched
-3. Added SYS V IPC into bionic
+ # Some 'libpthread' calls are not yet implemented in android (this moment they are commented out):
+ * pthread_sigmask
+ * pthread_mutexattr_settype
+ * pthread_setcanceltype
+ * pthread_attr_setinheritsched
+
 4. Modified build files (Makefiles and config.bld) to support android
 toolchains.
  Memory holes kernel patches.
@@ -56,54 +55,6 @@ Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
-
-= asmirnov = 
-
-7. cs1omap3530_1_00_01
-
-http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/cs1omap3530_setuplinux_1_00_01-44.bin
-
-8. cg6x_6.0.16.1
-
-http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/TI-C6x-CGT-v6.0.16.1.bin
-
-9. bios_5_33_06
-
-http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/bios_setuplinux_5_33_06.bin
-
-10. xdctools_3_15_01_59
-
-http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/xdctools_setuplinux_3_15_01_59.bin
-
-
-11. codec_engine_2_24_01
-
-http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html
-
-Warning! You need to have an account on TI site (free registration
-without any approves).
-
-12. gstreamer 0.10.0.1
-
-to get gstreamer you need to checkout SVN:
-# svn checkout --username anonymous
-https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti
-
-
-
-
-Diff between our release and origin:
-1. Memory holes kernel patches.
-2. Some 'libpthread' calls are not yet implemented in android (this
-moment they are commented):
-	pthread_sigmask
-	pthread_mutexattr_settype
-	pthread_setcanceltype
-	pthread_attr_setinheritsched
-3. Added SYS V IPC into bionic
-4. Modified build files (Makefiles and config.bld) to support android
-toolchains.
-5. Patches for gstreamer in android
 
 
 = dolnikov =
