@@ -18,7 +18,7 @@ Following components compound complete software stack needed to work efficiently
 
 = Components/packages versions and locations =
 
- # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/dvsdk_setuplinux_3_00_02_44.bin DVSDK_3_00 3_00_02_44]
+ # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/dvsdk_setuplinux_3_00_02_44.bin DVSDK_3_00 3_00_02_44] containing:
     # biosutils_1_01_00
     # ceutils_1.06
     # dmai_2_00_01_04
