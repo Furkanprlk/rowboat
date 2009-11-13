@@ -26,14 +26,10 @@ Following components compound complete software stack needed to work efficiently
     # local_power_manager_1_24
     # xdais_6_24
  # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/cs1omap3530_setuplinux_1_00_01-44.bin cs1omap3530_1_00_01]
+ # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/TI-C6x-CGT-v6.0.16.1.bin cg6x_6.0.16.1]
+ # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/bios_setuplinux_5_33_06.bin bios_5_33_06]
 
-8. cg6x_6.0.16.1
 
-http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/TI-C6x-CGT-v6.0.16.1.bin
-
-9. bios_5_33_06
-
-http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/bios_setuplinux_5_33_06.bin
 
 10. xdctools_3_15_01_59
 
