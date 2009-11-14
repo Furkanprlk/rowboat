@@ -67,7 +67,10 @@ Following components compound complete software stack needed to work efficiently
       * xdctools_setuplinux_3_15_01_59.bin
       * bios_setuplinux_5_33_06.bin
       * TI-C6x-CGT-v6.0.16.1.bin
-   * TIGStreamerPlugins need to be placed under the external/ti-dsp folder (assume revision 506 is taken from [https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti gstreamer-ti svn]
+   * TIGStreamerPlugins need to be placed under the external/ti-dsp folder (assume revision 506 is taken from [https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti gstreamer-ti svn]). To check out it manually:
+   {{{
+   # svn checkout -r 506 --username anonymous --password "" -q https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti
+   }}}
 
 == Build ==
 
