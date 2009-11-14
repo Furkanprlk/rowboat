@@ -65,9 +65,9 @@ Following components compound complete software stack needed to work efficiently
 == Build ==
 
 To build Android with TI DSP stack use following command:
-{{{ 
-# make TARGET_PRODUCT=[omap3evm | beagleboard] BUILD_WITH_GST=true dvsdk
-}}}
+   {{{ 
+   # make TARGET_PRODUCT=[omap3evm | beagleboard] BUILD_WITH_GST=true dvsdk
+   }}}
 
 It builds Android for the selected platform, kernel for the selected platform, TI kernel modules for dsp communication and dsp codec server.
         
