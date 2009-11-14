@@ -12,7 +12,7 @@ The following work is planned for *Donut*:
  * Miscellaneous optimizations based on ARM Neon technology (bionic, skia, pixelflinger, etc...) 
  * Integration of OMAP35xx Display features, Video Input and Camera interfaces
 
-= Éclair (comming soon) =
+= Éclair (coming soon) =
 
 Following work is planned for *Éclair*:
  * Move forward all Donut work (boards support, DSP, misc optimizations) to Éclair
