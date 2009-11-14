@@ -61,10 +61,9 @@ Following components compound complete software stack needed to work efficiently
     }}}
  # Download and place codec_engine_2_24_01.tar.gz under the external/ti-dsp folder. Codec Engine is available here: [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html] *Note:* You may need to have an account on software-dl.ti.com
  # (Optional) Rest of the components (DVSDK and TIGStreamerPlugins) will be downloaded automatically during the build process, unless you want to use local files (previously downloaded instead in order to save time on downloads.
-   * To avoid downloading DVSDK binaries (in case you already have them on your build host) put them under the external/ti-dsp folder.
+   * You can put pre-downloaded [here: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ DVSDK .bin] under the external/ti-dsp folder
 
-        DVSDK binaries are available here: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/
-        Full list of necessary files:
+ Full list of necessary files:
                 dvsdk_setuplinux_3_00_02_44.bin
                 cs1omap3530_setuplinux_1_00_01-44.bin
                 xdctools_setuplinux_3_15_01_59.bin
