@@ -57,13 +57,17 @@ Following components compound complete software stack needed to work efficiently
  Check if you have expect installed on your build host
 
  # Download rowboat Android with integrated TI DSP stack from gitorious.org/rowboat:
-    {{{ repo init -u git://gitorious.org/rowboat/manifest.git -m ti-dsp.xml repo sync }}}
+    {{{ 
+    # repo init -u git://gitorious.org/rowboat/manifest.git -m ti-dsp.xml repo sync
+    }}}
  # Download and place codec_engine_2_24_01.tar.gz under the external/ti-dsp folder. Codec Engine is available here: [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html] *Note:* You may need to have an account on software-dl.ti.com
 
 == Build ==
 
 To build Android with TI DSP stack use following command:
-{{{ make TARGET_PRODUCT=[omap3evm | beagleboard] BUILD_WITH_GST=true dvsdk }}}
+{{{ 
+make TARGET_PRODUCT=[omap3evm | beagleboard] BUILD_WITH_GST=true dvsdk
+}}}
 
 It builds Android for the selected platform, kernel for the selected platform, TI kernel modules for dsp communication and dsp codec server.
         
