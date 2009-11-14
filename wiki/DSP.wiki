@@ -104,8 +104,3 @@ Some updates:
 	a) If you didn't build kernel before it will be configured with the default config and built.
 	b) It will rebuild kernel using your config if .config is in place (will take a few seconds if you didn't changed it).
 3) DVSDK cleaning is now calling only after downloading/installing it to clean up prebuilt stuff.
-
-
-4) To avoid downloading GStreamer TI plugin put gstreamer-ti svn repository under the external/ti-dsp folder
-        To checkout gstreamer-ti manualy:
-                svn checkout -r 506 --username anonymous --password "" -q https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti
