@@ -55,6 +55,10 @@ You should to install expect on your build host
 == Build ==
 
 == Test ==
+
+Now you can try a few examples using gstreamer command-line programs, for example:
+{{{ gst-launch -v filesrc location=sample.264 ! TIViddec2 codecName=h264dec engineName=codecServer ! TIDmaiVideoSink videoStd=VGA videoOutput=LCD sync=false }}}
+
 Чтобы увидеть работающий gstreamer с аппаратным ускорением, используем пайпы отсюда: http://wiki.davincidsp.com/index.php/Example_GStreamer_Pipelines. Только во всех пайпах вместо "gst-launch" запускаем "gst-launch-0.10".  Никакие пути экспортировать не надо. Loadmodules.sh тоже дергать не надо.
 
 
