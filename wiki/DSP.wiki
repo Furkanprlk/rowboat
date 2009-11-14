@@ -53,8 +53,8 @@ Following components compound complete software stack needed to work efficiently
 You should to install expect on your build host
 
  # Download rowboat Android with integrated TI DSP stack from gitorious.org/rowboat
-{{{repo init -u git://gitorious.org/rowboat/manifest.git -m ti-dsp.xml
-   repo sync}}}
+    {{{ repo init -u git://gitorious.org/rowboat/manifest.git -m ti-dsp.xml
+        repo sync }}}
 
 == Build ==
 
