@@ -54,7 +54,7 @@ Following components compound complete software stack needed to work efficiently
 
 == Preparation ==
 
- Check if you have expect installed on your build host
+ 0. Check if you have expect installed on your build host
 
  # Download rowboat Android with integrated TI DSP stack from gitorious.org/rowboat:
     {{{ 
