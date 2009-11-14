@@ -80,7 +80,7 @@ To build Android with TI DSP stack use following command:
    # make TARGET_PRODUCT=[omap3evm | beagleboard] BUILD_WITH_GST=true dvsdk
    }}}
 
-It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server.
+It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server. (Hint: It will try to download DVSDK and TIGStremear Plugins unless they are already located under _external/ti-dsp_
         
 After build is finished successfully TI DSP specific kernel modules and codec server are located under the /system/ti-dsp folder in the rootfs, TIGSTreamer plugin is located under the /system/plugins folder in the rootfs.
 
