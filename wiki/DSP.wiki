@@ -57,4 +57,53 @@ Add your content here.  Format your content with:
 
 = dolnikov =
 
+Yeg: Please add "run gstreamer with ti dsp acceleration" instructions.
+
+Artemi: Please review the following instructions and let me know if you
+want some more details to be described regarding download and build
+process.
+
+How-to download and build rowboat Android with integrated TI DSP stack
+
+1) To download rowboat Android with integrated TI DSP stack:
+        repo init -u git://gitorious.org/rowboat/manifest.git -m ti-dsp.xml
+        repo sync
+2) Put codec_engine_2_24_01.tar.gz under the external/ti-dsp folder.
+        Codec Engine is available here: http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html
+        Note: You need to have account on software-dl.ti.com
+3) To avoid downloading DVSDK binaries (in case you already have them on your build host) put them under the external/ti-dsp folder.
+        DVSDK binaries are available here: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/
+        Full list of necessary files:
+                dvsdk_setuplinux_3_00_02_44.bin
+                cs1omap3530_setuplinux_1_00_01-44.bin
+                xdctools_setuplinux_3_15_01_59.bin
+                bios_setuplinux_5_33_06.bin
+                TI-C6x-CGT-v6.0.16.1.bin
+4) To avoid downloading GStreamer TI plugin put gstreamer-ti svn repository under the external/ti-dsp folder
+        To checkout gstreamer-ti manualy:
+                svn checkout -r 506 --username anonymous --password "" -q https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti
+
+5) To build Android with integrated TI DSP stack:
+        make TARGET_PRODUCT=[omap3evm | beagleboard] BUILD_WITH_GST=true dvsdk
+        This will build Android for the selected platform, kernel for the selected platform, TI kernel modules for dsp communication and dsp codec server.
+        Note: For the time being TI DSP stack will rebuilds fully every time so if you need to make changes in Android itself you can rebuild it with the following command:
+                make TARGET_PRODUCT=[omap3evm | beagleboard] BUILD_WITH_GST=true
+6) Ti dsp specific kernel modules and dsp codec server are located under the /system/ti-dsp folder in the rootfs.
+   Ti GSTreamer plugin is located under the /system/plugins folder in the rootfs
+
+Some updates:
+1) You should to install expect on your build host.
+2) Now kernel will be reconfigured with the default config only if there is no kernel/.config file so:
+	a) If you didn't build kernel before it will be configured with the default config and built.
+	b) It will rebuild kernel using your config if .config is in place (will take a few seconds if you didn't changed it).
+3) DVSDK cleaning is now calling only after downloading/installing it to clean up prebuilt stuff.
+
+One more update:
+During downloading DVSDK svn may ask you something like "do you want to save this settings"(it happens after kernel build).
+You should confirm it (save permanently) so it will work quietly later.
+
+В дополнении письма Бороды. 
+Чтобы увидеть работающий gstreamer с аппаратным ускорением, используем пайпы отсюда: http://wiki.davincidsp.com/index.php/Example_GStreamer_Pipelines. Только во всех пайпах вместо "gst-launch" запускаем "gst-launch-0.10".  Никакие пути экспортировать не надо. Loadmodules.sh тоже дергать не надо.
+
+
 = yelizarov =
