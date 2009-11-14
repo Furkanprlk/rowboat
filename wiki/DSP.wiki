@@ -62,13 +62,13 @@ Following components compound complete software stack needed to work efficiently
     }}}
  # Download and place codec_engine_2_24_01.tar.gz under the external/ti-dsp folder. Codec Engine is available here: [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html] *Note:* You may need to have an account on software-dl.ti.com
  # (Optional) Rest of the components (DVSDK and TIGStreamerPlugins) will be downloaded automatically during the build process, unless you want to use local files (previously downloaded instead in order to save time on downloads.
-   * You can put pre-downloaded [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ DVSDK] under the external/ti-dsp folder. Full list of necessary files looks as follows:
+   * You can put pre-downloaded [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ DVSDK] under the _external/ti-dsp_ folder. Full list of necessary files looks as follows:
       * dvsdk_setuplinux_3_00_02_44.bin
       * cs1omap3530_setuplinux_1_00_01-44.bin
       * xdctools_setuplinux_3_15_01_59.bin
       * bios_setuplinux_5_33_06.bin
       * TI-C6x-CGT-v6.0.16.1.bin
-   * TIGStreamerPlugins need to be placed under the external/ti-dsp folder (assume revision 506 is taken from [https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti gstreamer-ti svn]). To check out it manually:
+   * TIGStreamerPlugins need to be placed under the _external/ti-dsp_ folder (assume revision 506 is taken from [https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti gstreamer-ti svn]). To check out it manually:
    {{{
    # svn checkout -r 506 --username anonymous --password "" -q https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti
    }}}
@@ -82,7 +82,7 @@ To build Android with TI DSP stack use following command:
 
 It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server. (Hint: It will try to download DVSDK and TIGStremear Plugins unless they are already located under _external/ti-dsp_
         
-After build is finished successfully TI DSP specific kernel modules and codec server are located under the /system/ti-dsp folder in the rootfs, TIGSTreamer plugin is located under the /system/plugins folder in the rootfs.
+After build is finished successfully TI DSP specific kernel modules and codec server are located under the _/system/ti-dsp_ folder in the rootfs, TIGSTreamer plugin is located under the _/system/plugins_ folder in the rootfs.
 
 == Test ==
 
