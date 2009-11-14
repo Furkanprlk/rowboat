@@ -67,6 +67,7 @@ Following components compound complete software stack needed to work efficiently
       * xdctools_setuplinux_3_15_01_59.bin
       * bios_setuplinux_5_33_06.bin
       * TI-C6x-CGT-v6.0.16.1.bin
+   * TIGStreamerPlugins need to be placed under the external/ti-dsp folder (assume revision 506 is taken from [https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti gstreamer-ti svn]
 
 == Build ==
 
@@ -102,14 +103,6 @@ Some updates:
 3) DVSDK cleaning is now calling only after downloading/installing it to clean up prebuilt stuff.
 
 
-3) To avoid downloading DVSDK binaries (in case you already have them on your build host) put them under the external/ti-dsp folder.
-        DVSDK binaries are available here: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/
-        Full list of necessary files:
-                dvsdk_setuplinux_3_00_02_44.bin
-                cs1omap3530_setuplinux_1_00_01-44.bin
-                xdctools_setuplinux_3_15_01_59.bin
-                bios_setuplinux_5_33_06.bin
-                TI-C6x-CGT-v6.0.16.1.bin
 4) To avoid downloading GStreamer TI plugin put gstreamer-ti svn repository under the external/ti-dsp folder
         To checkout gstreamer-ti manualy:
                 svn checkout -r 506 --username anonymous --password "" -q https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti
