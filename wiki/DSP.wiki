@@ -16,7 +16,7 @@ Following components compound complete software stack needed to work efficiently
  # *codec engine* (and tools)
  # *dsplink*
  # *dmai*
- # *ti gstreamer* 
+ # *ti gstreamer* (optional)
 
 = Components/packages versions and locations =
 
@@ -45,6 +45,8 @@ Following components compound complete software stack needed to work efficiently
  # Modified build files (Makefiles and config.bld) to adapt for Android toolchains
  # Memory holes kernel patches (TBD)
  # Patches for gstreamer in android
+
+*NOTE:* Opencore/Openmax DMAI codecs support coming (TIGSTreamerPlugin will be just an option then)
 
 = Building and Testing DSP stack =
 
