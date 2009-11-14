@@ -46,7 +46,7 @@ Following components compound complete software stack needed to work efficiently
  # Memory holes kernel patches (TBD)
  # Patches for gstreamer in android
 
-*NOTE:* Opencore/Openmax DMAI codecs support coming (TIGSTreamerPlugin will be just an option then)
+*NOTE:* Opencore/Openmax DMAI codecs support coming (TIGSTreamerPlugin will be just a secondary option then)
 
 = Building and Testing DSP stack =
 
