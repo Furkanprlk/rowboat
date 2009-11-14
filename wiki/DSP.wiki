@@ -46,6 +46,12 @@ Following components compound complete software stack needed to work efficiently
  # Memory holes kernel patches (TBD)
  # Patches for gstreamer in android
 
+= Building and Testing DSP stack =
+
+== Preparation ==
+
+You should to install expect on your build host
+
 
 = Details =
 
