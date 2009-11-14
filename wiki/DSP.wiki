@@ -16,6 +16,7 @@ Following components compound complete software stack needed to work efficiently
  # *codec engine* (and tools)
  # *dsplink*
  # *dmai*
+ # *opencore dmai codecs* (coming soon)
  # *ti gstreamer* (optional)
 
 = Components/packages versions and locations =
@@ -79,9 +80,9 @@ To build Android with TI DSP stack use following command:
    # make TARGET_PRODUCT=[omap3evm | beagleboard] BUILD_WITH_GST=true dvsdk
    }}}
 
-It builds Android for the selected platform, kernel for the selected platform, TI kernel modules for dsp communication and dsp codec server.
+It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server.
         
-After build is finished successfully TI DSP specific kernel modules and DSP codec server are located under the /system/ti-dsp folder in the rootfs, TI GSTreamer plugin is located under the /system/plugins folder in the rootfs.
+After build is finished successfully TI DSP specific kernel modules and codec server are located under the /system/ti-dsp folder in the rootfs, TIGSTreamer plugin is located under the /system/plugins folder in the rootfs.
 
 == Test ==
 
