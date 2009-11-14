@@ -59,11 +59,7 @@ You should to install expect on your build host
 Now you can try playback of media using gstreamer command-line programs, for example:
     {{{ gst-launch-0.10 -v filesrc location=sample.264 ! TIViddec2 codecName=h264dec engineName=codecServer ! TIDmaiVideoSink videoStd=VGA videoOutput=LCD sync=false }}}
 
-You can experiment with pipe parameters using following information: [http://wiki.davincidsp.com/index.php/Example_GStreamer_Pipeline] *Note:* don't forget to change gst-launch to gst-launch-0.10 (there is no symlink installed by default)
-
- Никакие пути экспортировать не надо. Loadmodules.sh тоже дергать не надо.
-
-
+You can experiment with pipe parameters using following information: [http://wiki.davincidsp.com/index.php/Example_GStreamer_Pipelines] *Note:* don't forget to change gst-launch to gst-launch-0.10 (there is no symlink installed by default). No need to exports of misc paths, Loadmodules.sh is also not needed
 
 = Details =
 
