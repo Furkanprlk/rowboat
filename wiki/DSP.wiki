@@ -52,6 +52,12 @@ Following components compound complete software stack needed to work efficiently
 
 You should to install expect on your build host
 
+== Build ==
+
+== Test ==
+Чтобы увидеть работающий gstreamer с аппаратным ускорением, используем пайпы отсюда: http://wiki.davincidsp.com/index.php/Example_GStreamer_Pipelines. Только во всех пайпах вместо "gst-launch" запускаем "gst-launch-0.10".  Никакие пути экспортировать не надо. Loadmodules.sh тоже дергать не надо.
+
+
 
 = Details =
 
