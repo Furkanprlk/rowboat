@@ -84,6 +84,13 @@ It builds Android and Linux kernel for the selected platform, TI kernel modules 
         
 After build is finished successfully TI DSP specific kernel modules and codec server are located under the _/system/ti-dsp_ folder in the rootfs, TIGSTreamer plugin is located under the _/system/plugins_ folder in the rootfs.
 
+== Boot ==
+
+DVSDK DSP stack by default uses physical memory window within 89-128MBytes. In order not to change DSP stack mappings we recommend to use following memory settings:
+  # for boards with > 128Megs of memory:
+
+  #
+
 == Test ==
 
 Now you can try playback of media using gstreamer command-line programs, for example:
