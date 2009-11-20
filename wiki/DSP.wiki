@@ -91,7 +91,7 @@ DVSDK DSP stack by default uses physical memory window within 89-128MBytes. In o
 (Don't forget to adjust these parameters for your board settings (i.e. 512megs of SDRAM, etc...)
 
   * Boards with 128MB of memory.Add {{{ mem=88M }}} to your bootargs (rest will be used for DSP). With 128MB board you'll probably have buffer allocating problem with the omap_vout driver. To avoid this, try following bootargs additions for the display driver:
-{{{ omap_vout.vid1_static_vrfb_alloc=y omap_vout.video1_numbuffers=3 omap_vout.video1_bufsize=829440 omap_vout.video2_numbuffers=0 }}. Anyway we recommend to use new 256M boards.
+{{{ omap_vout.vid1_static_vrfb_alloc=y omap_vout.video1_numbuffers=3 omap_vout.video1_bufsize=829440 omap_vout.video2_numbuffers=0 }}}. Anyway we recommend to use new 256M boards.
 
 
 == Test ==
