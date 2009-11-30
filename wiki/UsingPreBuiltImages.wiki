@@ -6,6 +6,13 @@ This page will discuss using the pre-built Rowboat Android images to try out Row
 
 For now this article is focusing on booting the Mistral EVM through NFS. Additional sections will be added later for SD card booting for Beagle. 
 
+= Preparing mmc/sd card for reflashing boards and booting Android =
+
+To create mmc/sd card for reflashing beagleboard or OMAP3 EVM  boards with the x-load and u-boot we provided and also to create mmc/sd card for booting Android use mk-mmc scripts which you can find here: http://rowboat.googlecode.com/files/mk-mmc.tar.gz
+Also you can get it from the git repository:
+git clone git://gitorious.org/rowboat/mk-mmc.git
+See detailed instructions on using mk-mmc scripts in the README file provided in the tarball and repository.
+
 = Booting Rowboat via TFTP/NFS on the Mistral EVM =
 
 This is the boot of choice particularly if you already have a Mistral EVM up and running with NFS after following the [http://wiki.davincidsp.com/index.php/OMAP35x_DVEVM_Getting_Started_Guide OMAP3 EVM Getting Started Guide]. Before using this method, please note that this method assumes you are using a Linux host machine to run a TFTP and NFS servers, most any typical PC distribution will do, though this was tested against Ubuntu.
