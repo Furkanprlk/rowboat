@@ -4,13 +4,15 @@
 
 This page will discuss using the pre-built Rowboat Android images to try out Rowboat quickly without having to download and build the source (hopefully within minutes!). There are a couple of ways to do this, primarily an SD card boot or a network TFTP/NFS based boot. 
 
-For now this article is focusing on booting the Mistral EVM through NFS. Additional sections will be added later for SD card booting for Beagle. 
 
 = Preparing mmc/sd card for reflashing boards and booting Android =
 
-To create mmc/sd card for reflashing beagleboard or OMAP3 EVM  boards with the x-load and u-boot we provided and also to create mmc/sd card for booting Android use mk-mmc scripts which you can find here: http://rowboat.googlecode.com/files/mk-mmc.tar.gz
-Also you can get it from the git repository:
-git clone git://gitorious.org/rowboat/mk-mmc.git
+ * Reflashing
+If you are unsure about status of bootloaders and environment variables as one of the simplest steps we recommend to try *reflashing* procedure. It will update bootloaders and its settings. Start with reflash SD card preparation, then boot and get your board updated
+ * Creating Android SD card
+If you are unsure about creation of SD card to boot Android we recommend to try preparation script for this.
+
+To create MMC/SD card for reflashing or booting Android on Beagleboard or OMAP3EVM boards with the x-load and u-boot we provide use mk-mmc scripts located here: [http://rowboat.googlecode.com/files/mk-mmc.tar.gz] Also you can get it from the git repository: {{{git clone git://gitorious.org/rowboat/mk-mmc.git}}}
 
 See detailed instructions on using mk-mmc scripts in the README file provided in the tarball and repository.
 
