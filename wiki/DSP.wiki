@@ -63,6 +63,7 @@ Following components compound complete software stack needed to work efficiently
     # repo init -u git://gitorious.org/rowboat/manifest.git -m ti-dsp.xml repo sync
     }}}
  # Download and place codec_engine_2_24_01.tar.gz under the _external/ti-dsp_ folder. Codec Engine is available here: [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html] *Note:* You may need to have an account on software-dl.ti.com
+ # (Optional) Download and place mp3 DSP codec [http://software-dl-1.ti.com/dsps/forms/self_cert_export.html?prod_no=c64xplus_mp3dec_1_31_001_production.bin&ref_url=http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ c64xplus_mp3dec_1_31_001_production.bin] under the _external/ti-dsp_ folder. *Note:* It requires registration.
  # (Optional) Rest of the components (DVSDK and TIGStreamerPlugins) will be downloaded automatically during the build process, unless you want to use local files (previously downloaded instead in order to save time on downloads.
    * You can put pre-downloaded [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ DVSDK] under the _external/ti-dsp_ folder. Full list of necessary files looks as follows:
       * dvsdk_setuplinux_3_00_02_44.bin
