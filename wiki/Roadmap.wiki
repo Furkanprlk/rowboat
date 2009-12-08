@@ -4,11 +4,12 @@
   * Donut-based Android (currently synchronized with 1.6-rc1) for the ARM Cortex-A8 on OMAP35xx platforms 
   * Validated on [OMAP3EVM] and BeagleBoard, including !PacketVideo ARM codecs, Web browsing, touchscreen (for OMAP3EVM), and more. See [http://code.google.com/p/rowboat/wiki/TestingAndroid this] wiki topic for other tests.
   * Synchronized with *DVSDK_3_00 3_00_02_44 *
+  * [DSP] support (DSPLink, DMAI, TIGStreamer)
 
 = Donut =
 
 The following work is planned for *Donut*:
- * Integration of DSP (DSPLink, DMAI) and Multimedia support via GStreamer and OpenCore/OpenMax
+ * OpenCore/OpenMax DMAI bindings
  * Miscellaneous optimizations based on ARM Neon technology (bionic, skia, pixelflinger, etc...) 
  * Integration of OMAP35xx Display features, Video Input and Camera interfaces
 
