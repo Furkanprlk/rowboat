@@ -34,7 +34,7 @@ Following components compound complete software stack needed to work efficiently
  # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/bios_setuplinux_5_33_06.bin bios_5_33_06]
  # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/xdctools_setuplinux_3_15_01_59.bin xdctools_3_15_01_59]
  # [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html codec_engine_2_24_01] *Note:* You need to have an account on TI site (free registration)
- # (optional) Add-on codecs. For example [http://software-dl-1.ti.com/dsps/forms/self_cert_export.html?prod_no=c64xplus_mp3dec_1_31_001_production.bin&ref_url=http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ mp3 DSP codec]
+ # (optional) Add-on codecs. For example mp3 DSP codec [http://software-dl-1.ti.com/dsps/forms/self_cert_export.html?prod_no=c64xplus_mp3dec_1_31_001_production.bin&ref_url=http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ c64xplus_mp3dec_1_31_001_production.bin]
  # (optional) [https://gstreamer.ti.com/gf/project/gstreamer_ti/frs/?action=FrsReleaseView&release_id=211 TIGStreamerPlugin 1.01.00] *Note:* Suggest to get gstreamer from the project SVN: 
     {{{ 
     # svn checkout --username anonymous https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti 
