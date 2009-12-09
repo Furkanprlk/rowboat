@@ -10,7 +10,7 @@ OMAP3530 (as well as family of !DaVinci DM) has C46x+ DSP core embedded in the S
 
 Following components compound complete software stack needed to work efficiently with DSP:
 
-(TBD briefly describe what each component does and provide reference to all useful information)
+TBD: _Briefly describe what each component does and provide reference to all useful information_ 
 
  # *bios* (and tools)
  # *codec engine* (and tools)
@@ -33,11 +33,11 @@ Following components compound complete software stack needed to work efficiently
  # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/TI-C6x-CGT-v6.0.16.1.bin cg6x_6.0.16.1]
  # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/bios_setuplinux_5_33_06.bin bios_5_33_06]
  # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/xdctools_setuplinux_3_15_01_59.bin xdctools_3_15_01_59]
- # [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html codec_engine_2_24_01] *Note:* You need to have an account on TI site (free registration)
+ # [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html codec_engine_2_24_01] <br/> *Note:* You need to have an account on TI site (free registration)
  # (optional) Add-on codecs. For example mp3 DSP codec [http://software-dl-1.ti.com/dsps/forms/self_cert_export.html?prod_no=c64xplus_mp3dec_1_31_001_production.bin&ref_url=http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ c64xplus_mp3dec_1_31_001_production.bin]
- # (optional) [https://gstreamer.ti.com/gf/project/gstreamer_ti/frs/?action=FrsReleaseView&release_id=211 TIGStreamerPlugin 1.01.00] *Note:* Suggest to get gstreamer from the project SVN: 
+ # (optional) [https://gstreamer.ti.com/gf/project/gstreamer_ti/frs/?action=FrsReleaseView&release_id=211 TIGStreamerPlugin 1.01.00] <br/> *Note:* Suggest to get gstreamer from the project SVN: 
     {{{ 
-    # svn checkout --username anonymous https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti 
+# svn checkout --username anonymous https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti 
     }}}
 
 = List of modifications made on top of DSP stack =
@@ -51,7 +51,7 @@ Following components compound complete software stack needed to work efficiently
  # Memory holes kernel patches (TBD)
  # (optional) Patches for gstreamer in Android
 
-*NOTE:* Opencore/Openmax DMAI codecs support coming (TIGSTreamerPlugin will be just a secondary option then)
+*Note:* Opencore/Openmax DMAI codecs support coming (TIGSTreamerPlugin will be just a secondary option then)
 
 = Building and Testing DSP stack =
 
@@ -60,11 +60,11 @@ Following components compound complete software stack needed to work efficiently
  # Check if you have expect installed on your build host (TBD explain why it is needed)
  # Download rowboat Android with integrated TI DSP stack from gitorious.org/rowboat:
     {{{ 
-    # repo init -u git://gitorious.org/rowboat/manifest.git -m ti-dsp.xml
-    # repo sync
+# repo init -u git://gitorious.org/rowboat/manifest.git -m ti-dsp.xml
+# repo sync
     }}}
- # Download and place codec_engine_2_24_01.tar.gz under the _external/ti-dsp_ folder. Codec Engine is available here: [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html] *Note:* You may need to have an account on software-dl.ti.com
- # (Optional) Download and place mp3 DSP codec [http://software-dl-1.ti.com/dsps/forms/self_cert_export.html?prod_no=c64xplus_mp3dec_1_31_001_production.bin&ref_url=http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ c64xplus_mp3dec_1_31_001_production.bin] under the _external/ti-dsp_ folder. *Note:* It requires registration.
+ # Download and place codec_engine_2_24_01.tar.gz under the _external/ti-dsp_ folder. Codec Engine is available [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html here.] <br/> *Note:* You may need to have an account on software-dl.ti.com
+ # (Optional) Download and place mp3 DSP codec [http://software-dl-1.ti.com/dsps/forms/self_cert_export.html?prod_no=c64xplus_mp3dec_1_31_001_production.bin&ref_url=http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ c64xplus_mp3dec_1_31_001_production.bin] under the _external/ti-dsp_ folder. <br/> *Note:* It requires registration.
  # (Optional) Rest of the components (DVSDK and TIGStreamerPlugins) will be downloaded automatically during the build process, unless you want to use local files (previously downloaded instead in order to save time on downloads.
    * You can put pre-downloaded [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ DVSDK] under the _external/ti-dsp_ folder. Full list of necessary files looks as follows:
       * dvsdk_setuplinux_3_00_02_44.bin
@@ -74,23 +74,25 @@ Following components compound complete software stack needed to work efficiently
       * TI-C6x-CGT-v6.0.16.1.bin
    * TIGStreamerPlugins need to be placed under the _external/ti-dsp_ folder (assume revision 506 is taken from [https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti gstreamer-ti svn]). To check out it manually:
    {{{
-   # svn checkout -r 506 --username anonymous --password "" -q https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti
+# svn checkout -r 506 --username anonymous --password "" -q https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti
    }}}
 
 == Build ==
 
 To build Android with TI DSP stack use following command:
    {{{ 
-   # make TARGET_PRODUCT=[omap3evm | beagleboard] BUILD_WITH_GST=true dvsdk
+# make TARGET_PRODUCT=[omap3evm | beagleboard] BUILD_WITH_GST=true dvsdk
    }}}
 
-It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server. (Hint: It will try to download DVSDK and TIGStremear Plugins unless they are already located under _external/ti-dsp_
+It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server.
+
+*Hint*: It will try to download DVSDK and TIGStremear Plugins unless they are already located under _external/ti-dsp_
         
 After build is finished successfully TI DSP specific kernel modules and codec server are located under the _/system/ti-dsp_ folder in the rootfs, TIGSTreamer plugin is located under the _/system/plugins_ folder in the rootfs.
 
 == Boot ==
 
-DVSDK DSP stack by default uses physical memory window within 89-128MBytes. In order not to change DSP stack mappings we recommend to use following memory settings:
+DVSDK DSP stack by default uses physical memory window within 89-128MB. In order not to change DSP stack mappings we recommend to use following memory settings:
   * Boards with > 128MB of memory (say Beagle C3, or OMAP3EVM Gen. II). Use "memory hole" parameters, for example adding: {{{ mem=88M@0x80000000 mem=128M@0x88000000 }}} to the bootargs tells kernel to take first 88M of phys memory and 128M with 128M offset, so the DSP memory window will not be managed by the kernel.
 (Don't forget to adjust these parameters for your board)
 
@@ -102,10 +104,10 @@ DVSDK DSP stack by default uses physical memory window within 89-128MBytes. In o
 
 Now you can try playback of media using gstreamer command-line programs, for example:
     {{{ 
-    # gst-launch-0.10 -v filesrc location=sample.264 ! TIViddec2 codecName=h264dec engineName=codecServer ! TIDmaiVideoSink videoStd=VGA videoOutput=LCD sync=false
+# gst-launch-0.10 -v filesrc location=sample.264 ! TIViddec2 codecName=h264dec engineName=codecServer ! TIDmaiVideoSink videoStd=VGA videoOutput=LCD sync=false
     }}}
 
-You can experiment with pipe parameters using following information: [http://wiki.davincidsp.com/index.php/Example_GStreamer_Pipelines] *Note:* don't forget to change gst-launch to gst-launch-0.10 (there is no symlink installed by default). No need to exports of misc paths, Loadmodules.sh is also not needed
+You can experiment with pipe parameters using following information  [http://wiki.davincidsp.com/index.php/Example_GStreamer_Pipelines information]. <br/> *Note:* Don't forget to change gst-launch to gst-launch-0.10 (there is no symlink installed by default). No need to exports of misc paths, Loadmodules.sh is also not needed
 
 = misc notes (draft) =
 
@@ -114,8 +116,8 @@ One more update:
 During downloading DVSDK svn may ask you something like "do you want to save this settings"(it happens after kernel build).
 You should confirm it (save permanently) so it will work quietly later.
 
-Some updates:
-2) Now kernel will be reconfigured with the default config only if there is no kernel/.config file so:
-	a) If you didn't build kernel before it will be configured with the default config and built.
-	b) It will rebuild kernel using your config if .config is in place (will take a few seconds if you didn't changed it).
-3) DVSDK cleaning is now calling only after downloading/installing it to clean up prebuilt stuff.
+_Some updates:_
+ * Now kernel will be reconfigured with the default config only if there is no kernel/.config file so: 
+  # If you didn't build kernel before it will be configured with the default config and built.
+  # It will rebuild kernel using your config if .config is in place (will take a few seconds if you didn't changed it).
+ * DVSDK cleaning is now calling only after downloading/installing it to clean up prebuilt stuff.
