@@ -2,7 +2,7 @@
 
 = Introduction =
 
-OMAP3530 (as well as family of DaVinci DM) has C46x+ DSP core embedded in the SoC. DSP core can be used for various purposes, multimedia decoding/encoding is one of good examples.
+OMAP3530 (as well as family of !DaVinci DM) has C46x+ DSP core embedded in the SoC. DSP core can be used for various purposes, multimedia decoding/encoding is one of good examples.
 
 [http://code.google.com/p/rowboat/ Rowboat] DSP support is based on TI Linux Digital Video Software Development Kit ([http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/ DVSDK]) for OMAP3530
 
@@ -91,7 +91,7 @@ After build is finished successfully TI DSP specific kernel modules and codec se
 == Boot ==
 
 DVSDK DSP stack by default uses physical memory window within 89-128MBytes. In order not to change DSP stack mappings we recommend to use following memory settings:
-  * Boards with > 128MB of memory (say Beagle C3, or OMAP3EVM Gen. II). Use "memory whole" parameters, for example adding: {{{ mem=88M@0x80000000 mem=128M@0x88000000 }}} to the bootargs tells kernel to take first 88M of phys memory and 128M with 128M offset, so the DSP memory window will not be managed by the kernel.
+  * Boards with > 128MB of memory (say Beagle C3, or OMAP3EVM Gen. II). Use "memory hole" parameters, for example adding: {{{ mem=88M@0x80000000 mem=128M@0x88000000 }}} to the bootargs tells kernel to take first 88M of phys memory and 128M with 128M offset, so the DSP memory window will not be managed by the kernel.
 (Don't forget to adjust these parameters for your board)
 
   * Boards with 128MB of memory.Add {{{ mem=88M }}} to your bootargs (rest will be used for DSP). With 128MB board you'll probably have buffer allocating problem with the omap_vout driver. To avoid this, try following bootargs additions for the display driver:
