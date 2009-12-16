@@ -198,7 +198,7 @@ For more detailed info see [http://www.mjmwired.net/kernel/Documentation/fb/mode
 So full `bootargs` string with example values will be following:
 {{{
 OMAP3_EVM# setenv bootargs "mem=128M console=tty0 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw 
-init=/init rootdelay=5 omap-dss.def_disp=dvi omapfb.video_mode=720x480MR-16@60"
+init=/init rootwait omap-dss.def_disp=dvi omapfb.video_mode=720x480MR-16@60"
 }}}
 Remember what if you are using external display on-board display is off, but touch surface still functional.
 == First start ==
