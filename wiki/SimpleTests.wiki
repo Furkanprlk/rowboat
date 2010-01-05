@@ -93,7 +93,44 @@ There are two ways for it:
  * key 105   POWER
 
 Tap every button on EVM’s keypad and compare the response with mapping. If everything works fine - test passed.
-TBD:Add keypad schema
+
+Here is the keypad layout, with the board oriented in portrait mode with
+the keys at the bottom:
+||Menu       ||Back     ||Up     ||Home      ||Explorer||
+||Volume Up  ||Left     ||Center ||Right     ||Search  ||
+||Volume Down||Soft Left||Down   ||Soft Right||Power   ||
+
+=== Provisioning ===
+In order for some of these keys to work, you may need to set the machine to
+be "provisioned".  For example, unless the device is provisioned, the
+keyguard code silently discards the HOME key.
+
+However, by default open builds of the Android have no provisioning
+mechanism.  See this thread for info:
+http://groups.google.com/group/android-porting/browse_thread/thread/61baf6058966fe31
+
+To make the code believe it is provisioned, you need to add a setting
+to the 'secure' system settings.
+(Note that in the above thread, they said to do it in the 'system'
+settings table, but the rowboat Android code checks the 'secure' settings).
+
+Here's what I did:
+{{{
+adb shell
+# cd /data/data/com.android.providers.settings/databases
+# sqlite3 settings.db
+SQLite version 3.5.9
+Enter ".help" for instructions
+sqlite> INSERT INTO secure (name,value) VALUES ('device_provisioned','1');
+sqlite> .quit
+#
+}}}
+
+Then I rebooted. I don't know if this was required or not.
+
+After doing this, the HOME key worked with rowboat on OMAP3EVM.  Also, the
+keyguard comes on when a key is pressed after the screen has timed out.
+
 == OMAP3EVM Touchscreen ==
 [[br]]TBD:Add prerequisites
  * To test touchscreen functionality we will use 2 applications from Google API Demo:
