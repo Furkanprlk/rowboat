@@ -35,7 +35,9 @@ TBD
 === On-board keys mapping in Android ===
 The onboard key are mapped in the following way (from the upper left corner to the lower right by the rows):
 
-Menu, Back, Up, Home, Explorer, Volume Up, Left, Center, Right, Search, Volume Down, Soft Left, Down, Soft Right, Power
+||Menu       ||Back     ||Up     ||Home      ||Explorer||
+||Volume Up  ||Left     ||Center ||Right     ||Search||
+||Volume Down||Soft Left||Down   ||Soft Right||Power||
 
 === Using Multimedia Daughter Card (MDC) in Android (Relevant for Generation I EVMs) ===
 TBD
