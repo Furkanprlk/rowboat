@@ -38,6 +38,10 @@ Ubuntu Intrepid (8.10) users may need a newer version of libreadline:
 {{{
 $ sudo apt-get install lib32readline5-dev
 }}}
+For DSP users:
+{{{
+$ sudo apt-get install expect
+}}}
 
 == Configure your network ==
  * Configure your host Ethernet adapter
