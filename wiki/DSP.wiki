@@ -1,5 +1,5 @@
 #summary This page contains all information regarding Omap3530 DSP stack integration in Android
-
+<wiki:toc max_depth="4" />
 = Introduction =
 
 OMAP3530 (as well as family of !DaVinci DM) has C46x+ DSP core embedded in the SoC. DSP core can be used for various purposes, multimedia decoding/encoding is one of good examples.
