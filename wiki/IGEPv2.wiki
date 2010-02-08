@@ -2,8 +2,8 @@
 
 = Introduction =
 
-This page collects hardware-related notes about Android on !IGEPv2. 
-We strongly recommend to get familiar with !IGEPv2 resources at *[http://www.myigep.com/ www.myigep.com]*
+This page collects hardware-related notes about Android on IGEPv2. 
+We strongly recommend to get familiar with IGEPv2 resources at *[http://www.myigep.com/ www.myigep.com]*
 
 === Board Revisions Tested ===
 
