@@ -20,12 +20,19 @@ $ chmod a+x ~/bin/repo
 You can find detailed repo installing instructions [http://source.android.com/download/using-repo here]
 
 To download the rowboat source code:
+
+For donut branch use:
 {{{
-mkdir rowboat-android
-cd rowboat-android
+mkdir rowboat-android-donut
+cd rowboat-android-donut
 repo init -u git://gitorious.org/rowboat/manifest.git
 repo sync
 }}}
 
-
-
+For eclair branch use:
+{{{
+mkdir rowboat-android-eclair
+cd rowboat-android-eclair
+repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-eclair.xml
+repo sync
+}}}
