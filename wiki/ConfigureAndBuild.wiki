@@ -159,7 +159,7 @@ $ sudo tar jxfv out/target/product/<board>/rootfs.tar.bz2 --numeric-owner -C /mn
 And the final step:
 {{{
 $ sync
-$ sudo umount /mnt/fat32; sudo umount /mnt/etx3
+$ sudo umount /mnt/fat32; sudo umount /mnt/ext3
 }}}
 
 == Configure target board ==
