@@ -175,17 +175,18 @@ Beagleboard# saveenv
 Beagleboard# reset 
 }}}
 === OMAP3_EVM ===
-This is example. You should use your network parameters. 
+This is example. Adjust to your network parameters if needed
 {{{
-OMAP3_EVM# setenv bootcmd tftp; bootm
+OMAP3_EVM# setenv bootcmd 'tftp; bootm'
 OMAP3_EVM# setenv baudrate 115200
-OMAP3_EVM# setenv bootargs "mem=128M console=tty0 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw init=/init rootwait" 
+OMAP3_EVM# setenv bootargs 'mem=128M console=tty0 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw init=/init rootwait'
 OMAP3_EVM# setenv ipaddr 10.10.10.3
 OMAP3_EVM# setenv netmask 255.255.255.0
 OMAP3_EVM# setenv serverip 10.10.10.1
 OMAP3_EVM# setenv ethaddr 00:50:c2:XX:XX:XX
-OMAP3_EVM# setenv bootfile "evm/uImage" <-- full path on host is /tftpboot/evm/uImage
-OMAP3_EVM# save
+OMAP3_EVM# setenv bootfile 'evm/uImage' <-- full path on host is /tftpboot/evm/uImage
+OMAP3_EVM# saveenv
+OMAP3_EVM# reset
 }}}
 ==== External Display ====
 If you need external display you need to enable additional kernel parameters:
