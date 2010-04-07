@@ -96,6 +96,7 @@ The next step is Android file system build.
 To build file system you need to specify for which board you want to build. Use variable `TARGET_PRODUCT` for this:
  * beagleboard
  * omap3evm
+ * igepv2
 Also if you need some unit tests for further use `TARGET_BUILD_VARIANT=tests`.
 If you are using multicore CPU in your host it’s possible to use more than one core for building Android for this pass -j8 (or 16, it depends on cores/CPUs) parameter to `make` command.
 
@@ -115,6 +116,7 @@ $ sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_s
 The next step is building of Linux kernel for your board. In following listing the first step is settings up prebuilt toolchains, the third step is kernel configuring and here you need to use right config file for your board
  * omap3_evm_android_defconfig is for OMAP3EVM
  * omap3_beagle_android_defconfig is for Beagleboard 
+ * igep0020_android_defconfig is for igepv2
 The fourth step in listing is kernel build command, here we tell `make` utility what build is for `ARM` architecture using cross-toolchains for ARM, the build target is `uImage` and it’s multithread build (-j8):
 {{{
 $ cd <sources top>
@@ -165,8 +167,8 @@ $ sudo umount /mnt/fat32; sudo umount /mnt/ext3
 == Configure target board ==
 There is one important requirement:
  * for [OMAP3EVM] U-Boot should be 2008.10 (Jun 16 2009-18:54:50)
- * for BeagleBoard U-Boot should be 2009.08 
-=== Beagleboard ===
+ * for BeagleBoard and igepv2 U-Boot should be 2009.08 
+=== Beagleboard and igepv2 ===
 {{{
 Beagleboard# setenv bootcmd 'mmc init; fatload mmc 0 84000000 uImage; bootm 84000000'
 Beagleboard# setenv bootargs 'mem=128M androidboot.console=ttyS2 console=tty0 console=ttyS2,115200n8 root=/dev/mmcblk0p2 rw 
