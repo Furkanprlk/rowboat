@@ -87,9 +87,14 @@ disable         = no
 {{{
 $ mkdir rowboat-android
 $ cd rowboat-android
-$ repo init -u git://gitorious.org/rowboat/manifest.git
+$ repo init -u git://gitorious.org/rowboat/manifest.git -m ManifestName
 $ repo sync
 }}}
+Where _ManifestName_ is:
+ * rowboat-donut.xml - for donut version of rowboat
+ * rowboat-donut-dsp.xml - for donut version of rowboat with DSP support
+ * rowboat-eclair.xml - for eclair version of rowboat
+ * rowboat-eclair-dsp.xml - for eclair version of rowboat with DSP support 
 
 == Build rootfs ==
 The next step is Android file system build. 
