@@ -14,7 +14,7 @@ To work with Beagleboard or OMAP3EVM you will need the following:
  * Card Reader
  * 2Gb SD or MMC Card
  * 4:3 or 16:9 capable Display with DVI input
- * HDMI to DVI cable (for BeagleBoard)
+ * HDMI to DVI cable (for BeagleBoard or IGEPv2)
  * DVI to DVI (if you want to use external Display on OMAP3EVM)
  
 === Software ===
@@ -105,7 +105,9 @@ To build file system you need to specify for which board you want to build. Use 
 Also if you need some unit tests for further use `TARGET_BUILD_VARIANT=tests`.
 If you are using multicore CPU in your host it’s possible to use more than one core for building Android for this pass -j8 (or 16, it depends on cores/CPUs) parameter to `make` command.
 
-In following listing we build Android for OMAP3EVM board with unit test packages and use 16 threads to speed up build process:
+To build from the sources with DSP specify target `dvsdk`. `BUILD_WITH_GST=true` option could be used to build gstreamer (the parameter is optional for eclair).
+
+In following listing we build Android for OMAP3EVM board with unit test packages and use 8 threads to speed up build process:
 {{{
 $ make TARGET_PRODUCT=omap3evm TARGET_BUILD_VARIANT=tests -j8
 }}}
@@ -118,10 +120,10 @@ $ cp -r system android_rootfs
 $ sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_stats android_rootfs . rootfs rootfs.tar.bz2
 }}}
 == Build kernel ==
-The next step is building of Linux kernel for your board. In following listing the first step is settings up prebuilt toolchains, the third step is kernel configuring and here you need to use right config file for your board
+The next step is building Linux kernel for your board. (If dvsdk target is specified while building rootfs, kernel is already built.) In following listing the first step is settings up prebuilt toolchains, the third step is kernel configuring and here you need to use right config file for your board
  * omap3_evm_android_defconfig is for OMAP3EVM
  * omap3_beagle_android_defconfig is for Beagleboard 
- * igep0020_android_defconfig is for igepv2
+ * igep0020_android_defconfig is for IGEPv2
 The fourth step in listing is kernel build command, here we tell `make` utility what build is for `ARM` architecture using cross-toolchains for ARM, the build target is `uImage` and it’s multithread build (-j8):
 {{{
 $ cd <sources top>
@@ -172,8 +174,8 @@ $ sudo umount /mnt/fat32; sudo umount /mnt/ext3
 == Configure target board ==
 There is one important requirement:
  * for [OMAP3EVM] U-Boot should be 2008.10 (Jun 16 2009-18:54:50)
- * for BeagleBoard and igepv2 U-Boot should be 2009.08 
-=== Beagleboard and igepv2 ===
+ * for BeagleBoard and IGEPv2 U-Boot should be 2009.08 
+=== Beagleboard and IGEPv2 ===
 {{{
 Beagleboard# setenv bootcmd 'mmc init; fatload mmc 0 84000000 uImage; bootm 84000000'
 Beagleboard# setenv bootargs 'mem=128M androidboot.console=ttyS2 console=tty0 console=ttyS2,115200n8 root=/dev/mmcblk0p2 rw 
