@@ -29,11 +29,7 @@ $ repo sync
 }}}
 
 Where _!ManifestName_ is:
-
-_rowboat-donut.xml_ - for donut version of rowboat
-
-_rowboat-donut-dsp.xml_ - for donut version of rowboat with DSP support
-
-_rowboat-eclair.xml_ - for eclair version of rowboat
-
-_rowboat-eclair-dsp.xml_ - for eclair version of rowboat with DSP support
+ * _rowboat-donut.xml_ - for donut version of rowboat
+ * _rowboat-donut-dsp.xml_ - for donut version of rowboat with DSP support
+ * _rowboat-eclair.xml_ - for eclair version of rowboat
+ * _rowboat-eclair-dsp.xml_ - for eclair version of rowboat with DSP support
