@@ -1,30 +1,27 @@
 #summary This page contains the Rowboat Roadmap
 
 = What's available today =
-  * Donut-based Android (currently synchronized with 1.6-rc1) for the ARM Cortex-A8 on OMAP35xx platforms 
+  * Donut or Eclair based Android for OMAP35x
+  * Eclair uses NEON from skia to accelerate 2D graphics and will soon use the SGX to accelerate 3D graphics
   * Validated on [OMAP3EVM] and BeagleBoard, including !PacketVideo ARM codecs, Web browsing, touchscreen (for OMAP3EVM), and more. See [http://code.google.com/p/rowboat/wiki/TestingAndroid this] wiki topic for other tests.
   * Synchronized with *DVSDK_3_00 3_00_02_44 *
-  * [DSP] support (DSPLink, DMAI, TIGStreamer)
+  * [DSP] support (DSPLink, Codec Engine, DMAI, TIGStreamer) for Donut and Eclair
 
 = Donut =
 
-The following work is planned for *Donut*:
+Open items on donut (see above for status):
  * OpenCore/OpenMax DMAI bindings
  * Miscellaneous optimizations based on ARM Neon technology (bionic, skia, pixelflinger, etc...) 
  * Integration of OMAP35xx Display features, Video Input and Camera interfaces
 
-= Éclair (coming soon) =
+= Éclair =
 
-Following work is planned for *Éclair*:
- * Move forward all Donut work (boards support, DSP, misc optimizations) to Éclair
- * Support of hardware-accelerated 3D graphics
- * 2D acceleration based on Neon and DSP
- * Revised Neon support (fully integrated for best performance)
- * Support of new hardware platforms/boards
+ * SGX accelerated 3D graphics *coming soon*
+ * Add 2.6.32 kernel support
 
-= Flan =
+= Froyo =
 
-Plans for *Flan* have not yet been finalized, but we will continue to work on the following: 
+Plans for *Froyo* have not yet been finalized, but we will continue to work on the following: 
  * Keep everything synchronized with Google Android
  * Integrate latest updates and bugfixes
  * Expand supported platforms list
