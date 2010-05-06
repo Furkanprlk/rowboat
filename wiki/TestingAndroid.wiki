@@ -1,19 +1,16 @@
 #summary Overview of Android Testing
 
 = Intro =
-We have four planes/dimensions for the Android testing:
+We have three planes/dimensions for the Android testing:
  * *[SimpleTests]*
  * *[Benchmarks]*
  * *[StressTest]*
- * *[ManualTesting]*
 
 "[SimpleTests]" consists of two parts:
  * Tests designed by Google and shipped with their Android's source code
- * Our own test cases (not automated yet)
  * Google Android CTS
+ * Manual testing - group of test cases which is not automated
 
 "[Benchmarks]" are designed to measure 2D, 3D, CPU, Java and JavaScript and overall system performance covering miscellaneous areas (browser, network, data processing).
 
 "[StressTest]" is simple monkey test.
-
-"[ManualTesting]" group of manual test cases which is not automated.
