@@ -1,0 +1,35 @@
+#summary Android on AM3517EVM information page
+
+= Introduction =
+
+This page collects hardware-related notes about Android on AM3517EVM. It also contains information regarding features, limitations and other board-specific topics relevant to Android
+
+You can get information regarding AM3517EVM here:
+ * Getting started: [http://www.mistralsolutions.com/products/omap_3evm.php]
+ * Detailed information: [http://www.mistralsolutions.com/assets/downloads/3530.php]
+
+
+=== Board Revisions Tested ===
+
+=== Bootloader information ===
+
+=== Booting Android sample ===
+TBD
+
+=== Board features/devices supported: ===
+ * Serial
+ * NAND flash
+ * MMC
+ * Ethernet
+ * keypad
+ * LCD
+ * Touchscreen
+
+=== On-board keys mapping in Android ===
+
+=== Using Multimedia Daughter Card (MDC) in Android ===
+TBD
+
+=== Using DVI output instead of on-board LCD ===
+
+=== Known issues, limitations ===
