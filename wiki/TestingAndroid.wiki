@@ -2,7 +2,7 @@
 
 = Intro =
 We have four planes/dimensions for the Android testing:
- * *[UnitTests]*
+ * *[SimpleTests]*
  * *[Benchmarks]*
  * *[StressTest]*
  * *[ManualTesting]*
