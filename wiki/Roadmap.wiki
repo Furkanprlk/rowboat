@@ -4,7 +4,7 @@
   * Google Android Eclair based Android for OMAP35xx/37xx, AM35x
   * SGX530 accelerated 3D graphics.
   * Validated on [OMAP3EVM], BeagleBoard and [AM3517EVM], including !PacketVideo ARM codecs, Web browsing, touchscreen, and more. See [http://code.google.com/p/rowboat/wiki/TestingAndroid this] wiki topic for other tests.
-  * 2.6.32 kernel based on [PSP_03.00.00.04 http://processors.wiki.ti.com/index.php/AM35x-OMAP35x-PSP_03.00.00.04_Release_Notes] 
+  * 2.6.32 kernel based on [http://processors.wiki.ti.com/index.php/AM35x-OMAP35x-PSP_03.00.00.04_Release_Notes PSP_03.00.00.04] 
   * Synchronized with *DVSDK_3_00 3_00_02_44 *
   * [DSP] support (DSPLink, Codec Engine, DMAI, TIGStreamer) for Eclair
 
