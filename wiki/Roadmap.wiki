@@ -1,23 +1,16 @@
 #summary This page contains the Rowboat Roadmap
 
 = What's available today =
-  * Donut or Eclair based Android for OMAP35x
-  * Eclair uses NEON from skia to accelerate 2D graphics and will soon use the SGX to accelerate 3D graphics
-  * Validated on [OMAP3EVM] and BeagleBoard, including !PacketVideo ARM codecs, Web browsing, touchscreen (for OMAP3EVM), and more. See [http://code.google.com/p/rowboat/wiki/TestingAndroid this] wiki topic for other tests.
+  * Google Android Eclair based Android for OMAP35xx/37xx, AM35x
+  * SGX530 accelerated 3D graphics.
+  * Validated on [OMAP3EVM], BeagleBoard and [AM3517EVM], including !PacketVideo ARM codecs, Web browsing, touchscreen, and more. See [http://code.google.com/p/rowboat/wiki/TestingAndroid this] wiki topic for other tests.
+  * 2.6.32 kernel based on 
   * Synchronized with *DVSDK_3_00 3_00_02_44 *
-  * [DSP] support (DSPLink, Codec Engine, DMAI, TIGStreamer) for Donut and Eclair
+  * [DSP] support (DSPLink, Codec Engine, DMAI, TIGStreamer) for Eclair
 
-= Donut =
-
-Open items on donut (see above for status):
+= Open items on Eclair (see above for status): =
  * OpenCore/OpenMax DMAI bindings
- * Miscellaneous optimizations based on ARM Neon technology (bionic, skia, pixelflinger, etc...) 
- * Integration of OMAP35xx Display features, Video Input and Camera interfaces
-
-= Éclair =
-
- * SGX accelerated 3D graphics *coming soon*
- * Add 2.6.32 kernel support
+ * Integration of OMAP35xx/AM35x Display features, Video Input and Camera interfaces
 
 = Froyo =
 
