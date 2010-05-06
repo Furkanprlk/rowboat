@@ -5,8 +5,8 @@
 This page collects hardware-related notes about Android on AM3517EVM. It also contains information regarding features, limitations and other board-specific topics relevant to Android
 
 You can get information regarding AM3517EVM here:
- * Getting started: [http://www.mistralsolutions.com/products/omap_3evm.php]
- * Detailed information: [http://www.mistralsolutions.com/assets/downloads/3530.php]
+ * Getting started: [http://www.logicpd.com/products/development-kits/zoom-am3517-evm-development-kit#tabs-som-1]
+ * Detailed information: [http://www.logicpd.com/products/development-kits/zoom-am3517-evm-development-kit#tabs-som-4]
 
 
 === Board Revisions Tested ===
