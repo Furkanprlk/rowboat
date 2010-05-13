@@ -22,17 +22,17 @@ TBD: _Briefly describe what each component does and provide reference to all use
 
 = Components/packages versions and locations =
 
- # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/dvsdk_setuplinux_3_00_02_44.bin DVSDK_3_00 3_00_02_44] containing:
+ # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/3_00_02_44/exports/dvsdk_setuplinux_3_00_02_44.bin DVSDK_3_00 3_00_02_44] containing:
     # biosutils_1_01_00
     # ceutils_1.06
     # dmai_2_00_01_04
     # dsplink_1_61_03
     # local_power_manager_1_24
     # xdais_6_24
- # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/cs1omap3530_setuplinux_1_00_01-44.bin cs1omap3530_1_00_01]
- # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/TI-C6x-CGT-v6.0.16.1.bin cg6x_6.0.16.1]
- # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/bios_setuplinux_5_33_06.bin bios_5_33_06]
- # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest//exports/xdctools_setuplinux_3_15_01_59.bin xdctools_3_15_01_59]
+ # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/3_00_02_44/exports/cs1omap3530_setuplinux_1_00_01-44.bin cs1omap3530_1_00_01]
+ # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/3_00_02_44/exports/TI-C6x-CGT-v6.0.16.1.bin cg6x_6.0.16.1]
+ # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/3_00_02_44/exports/bios_setuplinux_5_33_06.bin bios_5_33_06]
+ # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/3_00_02_44/exports/xdctools_setuplinux_3_15_01_59.bin xdctools_3_15_01_59]
  # [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html codec_engine_2_24_01] <br/> *Note:* You need to have an account on TI site (free registration)
  # (optional) Add-on codecs. For example mp3 DSP codec [http://software-dl-1.ti.com/dsps/forms/self_cert_export.html?prod_no=c64xplus_mp3dec_1_31_001_production.bin&ref_url=http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ c64xplus_mp3dec_1_31_001_production.bin]
  # (optional) [https://gstreamer.ti.com/gf/project/gstreamer_ti/frs/?action=FrsReleaseView&release_id=211 TIGStreamerPlugin 1.01.00] <br/> *Note:* Suggest to get gstreamer from the project SVN: 
