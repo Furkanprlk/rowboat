@@ -18,7 +18,7 @@ To work with Beagleboard or OMAP3EVM you will need the following:
  * DVI to DVI (if you want to use external Display on OMAP3EVM)
  
 === Software ===
-As Google we recommend to use Ubuntu, but also you can use CentOS 5.3 (32 bit).
+As Google we recommend to use Ubuntu 8.04+ , but also you can use CentOS 5.3 (32 bit).
  * Install DHCP server
  * Install tftp server (actual for OMAP3EVM)
  * Install [http://source.android.com/download/using-repo repo] tool 
@@ -102,6 +102,8 @@ To build file system you need to specify for which board you want to build. Use 
  * beagleboard
  * omap3evm
  * igepv2
+ * am3517evm
+
 Also if you need some unit tests for further use `TARGET_BUILD_VARIANT=tests`.
 If you are using multicore CPU in your host it’s possible to use more than one core for building Android for this pass -j8 (or 16, it depends on cores/CPUs) parameter to `make` command.
 
