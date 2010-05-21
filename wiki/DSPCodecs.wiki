@@ -114,3 +114,7 @@ In some cases it may be necessary to modify additional parts of OpenCORE:
 1. to disable dropping of ADTS frame headers set macros  “PVMF_AAC_PARSER_NODE_INCLUDE_ADTS_HEADERS” value to “1” in file opencore/nodes/pvaacffparsernode/include/pvmf_aacffparser_defs.h.
 
 2. conversion of frame from YUV422 into YUV420 format for previewing  engines/adapters/player/framemetadatautility/src/pv_frame_metadata_mio_video.cpp.
+
+[http://fobi.ru/rowboat/init.jpg]
+
+[http://fobi.ru/rowboat/process.jpg]
