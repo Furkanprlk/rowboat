@@ -1,0 +1,65 @@
+#summary OMX DSP-accelerated audio/video codecs overview
+
+= Introduction =
+
+  The main conception of the OMX DSP system is to create audio/video framework components and then write codecs based on them. Basic functions related to buffer management, input/output ports initialization, some DSP APIs are common for all codecs, and they are implemented in the DSP-components. This approach simplifies codec-writing process, as it is generally only required to inherit DSP-component class from and add codec specifics. The DSP-component class can be thought of as an OMX-compatible DMAI interface implementation, while the codec is a DMAI codec implementation merged into OMX framework.
+
+  The reason of reworking of the OMX base class is to add DMAI buffers support. The OMX base class and software codec components use generic memory for buffers but DSP engine works with CMEM pools only. Also this rework avoids the memory copying overhead.
+
+    The structure of the DSP-component was initially derived from the software H.264 decoder by PacketVideo. The DSP-component is a class inherited from OMX base class implemented in /opencore/codecs_v2/omx/omx_baseclass.
+
+    The package provides only implementations of Adec1 and Vdec2 DMAI interfaces only. The DSP processing code is based on DMAI samples and TI GStreamer.
+
+= Most significant functions overview =
+
+_Base class overloaded functions:_
+
+ - *BufferMgmtFunction* – main buffer management function. It obtains data from the parser  layer, processes it to the DSP stack and then pushes decoded data buffer pointer down to the output stack
+
+ - *Component{Init, DeInit}* – component initialization/deinitialization routine
+
+ - *CalculateBufferParameters* – calculate output buffer parameters
+
+ - *ProcessData* – rejected function, left for compatibility only
+
+ - *BaseComponentAllocateBuffer* – buffer allocation routine
+
+ - *BaseComponentFreeBuffer* – buffer freeing routine
+
+ - *BaseComponentFillThisBuffer* – this function is called from the output layer when the buffer is processed and can be used again
+
+_Functions added into DSP layer:_
+
+ - *DspDecoderInit* – setup DMAI interface
+
+ - *DspDecoderClean* – release DMAI interface
+
+ - *DspPut* – push frame to decoder input buffer
+
+ - *DspGet* – retreive decoded frame
+
+ - *DspResize* – dynamic port re-configuration support
+
+ - *DspProcess* – decodes frame stored into the input DSP-buffer
+
+ - *DspRelease* – release output buffer back to pool
+
+ - *DspFlush* –  flushes DSP video decoder
+
+= Most significant variables overview =
+
+ - *hOutBuf* – reference to active DSP output buffer
+
+ - *hDispBuffer* – handle of the buffer to be passed to render
+
+ - *pDSPBuffer* – pointer to the DSP input buffer storage
+
+ - *iDSPWriteIndex* – current writing index
+
+ - *iDSPBufferSize* – input DSP buffer storage size
+
+ - *hEngine* – reference to the opened engine (CodecServer)
+
+ - *hAd/Vd* – DMAI interface handle
+
+ - *iDecoderName* – decoder engine name
