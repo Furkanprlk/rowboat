@@ -8,28 +8,29 @@ You can get information regarding AM3517EVM here:
  * Getting started: [http://www.logicpd.com/products/development-kits/zoom-am3517-evm-development-kit#tabs-som-1]
  * Detailed information: [http://www.logicpd.com/products/development-kits/zoom-am3517-evm-development-kit#tabs-som-4]
 
-
 === Board Revisions Tested ===
-
+ * *Generation I.*CPU board / SOM board: rev. *7*; Main board: rev. *4*; UI board: rev. *C*
 === Bootloader information ===
+We recommend to use uboot from TI PSP SDK release 02.01.02.09.
 
 === Booting Android sample ===
-TBD
+[http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and Build Instructions]
 
 === Board features/devices supported: ===
  * Serial
  * NAND flash
  * MMC
  * Ethernet
- * keypad
  * LCD
  * Touchscreen
 
 === On-board keys mapping in Android ===
+ * Not tested
 
 === Using Multimedia Daughter Card (MDC) in Android ===
 TBD
 
 === Using DVI output instead of on-board LCD ===
+TBD
 
 === Known issues, limitations ===
