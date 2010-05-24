@@ -11,7 +11,8 @@ You can get information regarding AM3517EVM here:
 === Board Revisions Tested ===
  * *Generation I.*CPU board / SOM board: rev. *7*; Main board: rev. *4*; UI board: rev. *C*
 === Bootloader information ===
-We recommend to use uboot from TI PSP SDK release 02.01.02.09.
+
+We recommend to use uboot from [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/sdk/AM3517/latest/index_FDS.html TI PSP SDK] release 3_00_00_03
 
 === Booting Android sample ===
 [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and Build Instructions]
