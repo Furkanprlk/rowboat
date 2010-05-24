@@ -126,6 +126,8 @@ The next step is building Linux kernel for your board. (If dvsdk target is speci
  * omap3_evm_android_defconfig is for OMAP3EVM
  * omap3_beagle_android_defconfig is for Beagleboard 
  * igep0020_android_defconfig is for IGEPv2
+ * am3517_evm_android_defconfig is for AM3517 EVM
+
 The fourth step in listing is kernel build command, here we tell `make` utility what build is for `ARM` architecture using cross-toolchains for ARM, the build target is `uImage` and it’s multithread build (-j8):
 {{{
 $ cd <sources top>
