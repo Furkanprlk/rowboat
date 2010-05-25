@@ -80,7 +80,8 @@ TBD: _Briefly describe what each component does and provide reference to all use
 == Build ==
 
 To build Android with TI DSP stack use following command:
-   {{{ 
+   {{{
+# ./prepare
 # make TARGET_PRODUCT=[omap3evm | beagleboard] BUILD_WITH_GST=true dvsdk
    }}}
 
