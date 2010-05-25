@@ -14,7 +14,7 @@ You can get information regarding AM3517EVM here:
 
 We recommend to use uboot from [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/sdk/AM3517/latest/index_FDS.html TI PSP SDK] release 3_00_00_03
 
-=== Booting Android sample ===
+=== Android Sources, Configuring and Booting Instructions ===
 [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and Build Instructions]
 
 === Board features/devices supported: ===
