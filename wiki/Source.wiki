@@ -1,8 +1,10 @@
 #summary Getting Project Source Code
 
-Our project is hosted at http://gitorious.org/rowboat. For a more complete set of instructions, see the [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and Build wiki page].
+Our project sources are hosted at http://gitorious.org/rowboat
 
-Before you download the source, you will need [http://git-scm.com/ git] and [http://source.android.com/download/using-repo repo] tools.
+== Host Setup to download the sources ==
+
+Before you download the source, you will need [http://git-scm.com/ git] and [http://source.android.com/source/git-repo.html repo] tools.
 
 On an Ubuntu 8.04 host, you can do the following:
 
@@ -17,9 +19,11 @@ $ curl http://android.git.kernel.org/repo >~/bin/repo
 $ chmod a+x ~/bin/repo
 }}}
 
-You can find detailed repo installing instructions [http://source.android.com/download/using-repo here]
+You can find detailed repo installing instructions [http://source.android.com/source/git-repo.html here]
 
-To download the rowboat source code:
+==To download the rowboat source code==
+
+Kindly follow the below instructions to download the sources
 
 {{{
 $ mkdir rowboat-android
@@ -33,3 +37,15 @@ Where _!ManifestName_ is:
  * _rowboat-donut-dsp.xml_ - for donut version of rowboat with DSP support
  * _rowboat-eclair.xml_ - for eclair version of rowboat
  * _rowboat-eclair-dsp.xml_ - for eclair version of rowboat with DSP support
+
+
+==To download TI's Android SGX SDK==
+
+Kindly follow the below steps to download the TI's Android SGX SDK release, the release works with the rowboat eclair source downloaded by following the instructions above.
+
+{{{
+$ cd rowboat-android
+$ git clone git://gitorious.org/rowboat/ti_android_sgx_sdk.git
+}}}
+
+To Configure and Build the sources for a OMAP/AM35xx, AM37xx based platform kindly follow the [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and Build wiki page].
