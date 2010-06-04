@@ -114,6 +114,11 @@ In following listing we build Android for OMAP3EVM board with unit test packages
 $ make TARGET_PRODUCT=omap3evm TARGET_BUILD_VARIANT=tests -j8
 }}}
 After build process finished you'll need rootfs for this do following:
+
+{{{
+NOTE: IF YOU WANT TO INSTALL THE OPENGL SGX (3D Hardware accelerator) DRIVERS INTO FILESYSTEM THEN SKIP THIS STEP AND CONTINUE WITH THE Android Graphics Installation procedure below.
+}}}
+
 {{{ 
 $ cd out/target/product/omap3evm
 $ mkdir android_rootfs
@@ -121,6 +126,157 @@ $ cp -r root/* android_rootfs
 $ cp -r system android_rootfs
 $ sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_stats android_rootfs . rootfs rootfs.tar.bz2
 }}}
+
+== Install the Android Graphics SGX SDK on Host Machine ==
+
+=== Procedure to Install ===
+
+The procedure to install Android graphics SDK sources are mentioned below, you should have downloaded the sources as directed in [http://code.google.com/p/rowboat/wiki/Source Get source code wiki]
+
+   * Execute the installer
+{{{
+#> ./OMAP35x_Android_Graphics_SDK_setuplinux_3_01_00_03.bin
+
+
+Will result in following instruction, press "Y"
+
+This will install TI OMAP35xx/37xx Android Graphics SDK on your computer.
+Continue? [n/Y] Y
+}}}
+
+   * Accept the License Agreement
+
+Kindly read the complete License agreement by pressing Space bar and agree when prompted by pressing "Y"
+
+{{{
+OMAP3530 / OMAP3515 / AM3517 / AM3715 / DM3730
+Android Linux Graphics SDK Software License Agreement
+
+
+IMPORTANT - PLEASE READ THE FOLLOWING LICENSE AGREEMENT CAREFULLY.  THIS IS A
+LEGALLY BINDING AGREEMENT.  AFTER YOU READ THIS LICENSE AGREEMENT, YOU WILL BE
+ASKED WHETHER YOU ACCEPT AND AGREE TO THE TERMS OF THIS LICENSE AGREEMENT.  DO
+NOT CLICK "I HAVE READ AND AGREE" UNLESS: (1) YOU ARE AUTHORIZED TO ACCEPT AND
+AGREE TO THE TERMS OF THIS LICENSE AGREEMENT ON BEHALF OF YOURSELF AND YOUR
+COMPANY; AND (2) YOU INTEND TO ENTER INTO AND TO BE BOUND BY THE TERMS OF THIS
+LEGALLY BINDING AGREEMENT ON BEHALF OF YOURSELF AND YOUR COMPANY.
+
+Important - Read carefully:  This OMAP3530 / OMAP3515 / AM3517 / AM3715 / DM3730
+Graphics Software License Agreement ("Agreement") is a legal agreement between
+you (either an individual or entity) and Texas Instruments Incorporated ("TI").
+The "Licensed Materials" subject to this Agreement include the software programs
+(in whole or in part) set forth in Exhibit 1, which is attached hereto and
+incorporated herein by this reference, that accompany this Agreement and that TI
+has granted you access to download and any "on-line" or electronic documentation
+(in whole or in part) associated with these programs, as well as any updates or
+upgrades to such software programs and documentation, if any, provided to you at
+-- Press space to continue or 'q' to quit --
+
+*Keep Pressing Space Bar on Keyboard*
+
+                        ========================
+                        END OF LICENSE AGREEMENT
+                        ========================
+
+Do you agree to the licensing terms [n/Y] Y
+}}}
+
+=== Select the source install location ===
+
+{{{
+Where do you want to install TI OMAP35xx/37xx Android Graphics SDK?
+
+Example: [/opt/OMAP35x_Android_Graphics_SDK_3_01_00_03] */home/user/rowboat_android*
+
+
+Installing TI OMAP35xx/37xx Android Graphics SDK...
+
+Should see following directory structure
+
+root@android-pc:~/OMAP35x_Android_Graphics_SDK_3_01_00_03# ls
+ANDROID_RN_3_01_00_03.pdf	GFX_Linux_SDK		
+gfx_rel_es5.x_android		Makefile.KM.Android
+ANDROID_RN_3_01_00_03.txt	gfx_rel_es2.x_android	initrc.patch
+Rules.make			GFX_Linux_KM		gfx_rel_es3.x_android  
+Makefile			uninstall
+}}}
+
+=== Edit Rules.make to configure the SGX source build ===
+{{{
+1) #set home area HOME (relative location for all SDK operations)
+HOME=INVALIDVAL
+
+Example: HOME=/home/user/rowboat-android/out/target/product/omap3evm
+
+2) #Path of Android Root FS
+ANDROID_ROOT=$(HOME)/INVALIDVAL
+
+Example: ANDROID_ROOT=$(HOME)/android_rootfs
+
+3) #set toolchain root path for arm-eabi
+CSTOOL_DIR=INVALIDVAL
+
+Example: CSTOOL_DIR=/home/user/rowboat-android/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/
+
+4) #set the kernel installation path
+KERNEL_INSTALL_DIR=$(HOME)/INVALIDVAL
+
+Example: KERNEL_INSTALL_DIR=/home/user/rowboat-android/kernel
+
+}}}
+
+=== Build the Kernel Module sources ===
+
+Execute the make command in the sources directory
+{{{
+root@android-pc:~/OMAP35x_Android_Graphics_SDK_3_01_00_03# *make*
+
+Will display:
+*copying the sgx kernel modules to appropriate folder...*
+}}}
+
+=== Install the drivers in Target filesystem ===
+
+Install the SGX drivers in the root filesystem built
+
+{{{
+Do a make to identify the processor option.
+root@android-pc:~/OMAP35x_Android_Graphics_SDK_3_01_00_03# *make help_km*
+
+Usage (for build): make
+Usage (for install): make install OMAPES={2.x | 3.x | 5.x}
+See online Graphics Getting Started Guide for further details.
+
+Select the OMAP3 device you work with
+
+For OMAP3530 ES 1or2 = 2.x
+For OMAP3530 ES3.0   = 3.x
+For AM3517           = 3.x
+For AM37xx           = 5.x
+
+Execute the following to install the libraries and drivers into the target filesystem
+
+Example for OMAP3530 ES 3.0: 
+root@android-pc:~/OMAP35x_Android_Graphics_SDK_3_01_00_03# *make install OMAPES=3.x*
+
+Will display
+
+*Installation complete!*
+
+}}}
+
+=== Populate the root filesystem ===
+Follow the steps below to populate the Android File system.
+{{{ 
+$ cd out/target/product/omap3evm
+$ mkdir android_rootfs
+$ cp -r root/* android_rootfs
+$ cp -r system android_rootfs
+$ sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_stats android_rootfs . rootfs rootfs.tar.bz2
+}}}
+
+The rootfs.tar.bz2 is the android filesystem, it can be put on a SD/MMC Card or used our NFS.
+
 == Build kernel ==
 The next step is building Linux kernel for your board. (If dvsdk target is specified while building rootfs, kernel is already built.) In following listing the first step is settings up prebuilt toolchains, the third step is kernel configuring and here you need to use right config file for your board
  * omap3_evm_android_defconfig is for OMAP3EVM
