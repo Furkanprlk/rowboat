@@ -113,17 +113,23 @@ In following listing we build Android for OMAP3EVM board with unit test packages
 {{{
 $ make TARGET_PRODUCT=omap3evm TARGET_BUILD_VARIANT=tests -j8
 }}}
-After build process finished you'll need rootfs for this do following:
 
-{{{
-NOTE: IF YOU WANT TO INSTALL THE OPENGL SGX (3D Hardware accelerator) DRIVERS INTO FILESYSTEM THEN SKIP THIS STEP AND CONTINUE WITH THE Android Graphics Installation procedure below.
-}}}
+After build process finished you'll need rootfs for this do following:
 
 {{{ 
 $ cd out/target/product/omap3evm
 $ mkdir android_rootfs
 $ cp -r root/* android_rootfs
 $ cp -r system android_rootfs
+}}}
+
+{{{
+NOTE: IF YOU WANT TO INSTALL THE OPENGL SGX (3D Hardware accelerator) DRIVERS INTO
+FILESYSTEM THEN SKIP THE BELOW STEP AND CONTINUE WITH THE Android Graphics Installation 
+procedure below.
+}}}
+
+{{{
 $ sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_stats android_rootfs . rootfs rootfs.tar.bz2
 }}}
 
@@ -229,10 +235,10 @@ Example: KERNEL_INSTALL_DIR=/home/user/rowboat-android/kernel
 
 Execute the make command in the sources directory
 {{{
-root@android-pc:~/OMAP35x_Android_Graphics_SDK_3_01_00_03# *make*
+root@android-pc:~/OMAP35x_Android_Graphics_SDK_3_01_00_03# make
 
 Will display:
-*copying the sgx kernel modules to appropriate folder...*
+copying the sgx kernel modules to appropriate folder...
 }}}
 
 === Install the drivers in Target filesystem ===
@@ -261,17 +267,29 @@ root@android-pc:~/OMAP35x_Android_Graphics_SDK_3_01_00_03# *make install OMAPES=
 
 Will display
 
-*Installation complete!*
+Installation complete!
+
+}}}
+
+{{{
+Run the service for SGX.
+
+$ vim android_rootfs/init.rc
+
+Just above the comment
+
+# adbd is controlled by the persist.service.adb.enable system property
+
+Add below two lines
+
+# Start PowerVR SGX DDK
+service pvr /system/bin/sgx/rc.pvr start
 
 }}}
 
 === Populate the root filesystem ===
 Follow the steps below to populate the Android File system.
 {{{ 
-$ cd out/target/product/omap3evm
-$ mkdir android_rootfs
-$ cp -r root/* android_rootfs
-$ cp -r system android_rootfs
 $ sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_stats android_rootfs . rootfs rootfs.tar.bz2
 }}}
 
