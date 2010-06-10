@@ -96,6 +96,23 @@ Where _ManifestName_ is:
  * rowboat-eclair.xml - for eclair version of rowboat
  * rowboat-eclair-dsp.xml - for eclair version of rowboat with DSP support 
 
+== Build kernel ==
+The next step is building Linux kernel for your board. (If dvsdk target is specified while building rootfs, kernel is already built.) In following listing the first step is settings up prebuilt toolchains, the third step is kernel configuring and here you need to use right config file for your board
+ * omap3_evm_android_defconfig is for OMAP3EVM
+ * omap3_beagle_android_defconfig is for Beagleboard 
+ * igep0020_android_defconfig is for IGEPv2
+ * am3517_evm_android_defconfig is for AM3517 EVM
+
+The fourth step in listing is kernel build command, here we tell `make` utility what build is for `ARM` architecture using cross-toolchains for ARM, the build target is `uImage` and it’s multithread build (-j8):
+{{{
+$ cd <sources top>
+$ export PATH=${PWD}/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin:$PATH
+$ cd kernel/
+$ make ARCH=arm omap3_evm_android_defconfig
+$ make ARCH=arm CROSS_COMPILE=arm-eabi- uImage -j8
+$ cd ..
+}}}
+
 == Build rootfs ==
 The next step is Android file system build. 
 To build file system you need to specify for which board you want to build. Use variable `TARGET_PRODUCT` for this:
@@ -295,22 +312,7 @@ $ sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_s
 
 The rootfs.tar.bz2 is the android filesystem, it can be put on a SD/MMC Card or used our NFS.
 
-== Build kernel ==
-The next step is building Linux kernel for your board. (If dvsdk target is specified while building rootfs, kernel is already built.) In following listing the first step is settings up prebuilt toolchains, the third step is kernel configuring and here you need to use right config file for your board
- * omap3_evm_android_defconfig is for OMAP3EVM
- * omap3_beagle_android_defconfig is for Beagleboard 
- * igep0020_android_defconfig is for IGEPv2
- * am3517_evm_android_defconfig is for AM3517 EVM
 
-The fourth step in listing is kernel build command, here we tell `make` utility what build is for `ARM` architecture using cross-toolchains for ARM, the build target is `uImage` and it’s multithread build (-j8):
-{{{
-$ cd <sources top>
-$ export PATH=${PWD}/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin:$PATH
-$ cd kernel/
-$ make ARCH=arm omap3_evm_android_defconfig
-$ make ARCH=arm CROSS_COMPILE=arm-eabi- uImage -j8
-$ cd ..
-}}}
 == Prepare SD card ==
 To boot Android from SD/MMC card you must have it partitioned like following:
 {{{
