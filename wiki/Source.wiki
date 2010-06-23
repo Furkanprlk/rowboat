@@ -48,4 +48,4 @@ $ cd rowboat-android
 $ git clone git://gitorious.org/rowboat/ti_android_sgx_sdk.git
 }}}
 
-To Configure and Build the sources for a OMAP/AM35xx, AM37xx based platform kindly follow the [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and Build wiki page].
+To Configure and Build the sources for a OMAP35x, AM35x, AM37x based platform kindly follow the [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and Build wiki page].
