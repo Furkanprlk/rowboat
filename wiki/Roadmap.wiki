@@ -10,7 +10,7 @@
 
 = Open items on Eclair (see above for status): =
  * OpenCore/OpenMax DMAI bindings
- * Integration of OMAP35xx/AM35x Display features, Video Input and Camera interfaces
+ * Integration of OMAP35x/AM35x Display features, Video Input and Camera interfaces
 
 = Froyo =
 
