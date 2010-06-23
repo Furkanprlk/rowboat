@@ -1,7 +1,7 @@
 #summary This page contains the Rowboat Roadmap
 
 = What's available today =
-  * Google Android Eclair based Android for OMAP35xx/37xx, AM35x
+  * Google Android Eclair based Android for OMAP35x, AM35x, and AM37x
   * SGX530 accelerated 3D graphics.
   * Validated on [OMAP3EVM], BeagleBoard and [AM3517EVM], including !PacketVideo ARM codecs, Web browsing, touchscreen, and more. See [http://code.google.com/p/rowboat/wiki/TestingAndroid this] wiki topic for other tests.
   * 2.6.32 kernel based on [http://processors.wiki.ti.com/index.php/AM35x-OMAP35x-PSP_03.00.00.04_Release_Notes PSP_03.00.00.04] 
