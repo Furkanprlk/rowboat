@@ -163,7 +163,7 @@ The procedure to install Android graphics SDK sources are mentioned below, you s
 
 Will result in following instruction, press "Y"
 
-This will install TI OMAP35xx/37xx Android Graphics SDK on your computer.
+This will install TI OMAP35x/AM37x Android Graphics SDK on your computer.
 Continue? [n/Y] Y
 }}}
 
@@ -207,12 +207,12 @@ Do you agree to the licensing terms [n/Y] Y
 === Select the source install location ===
 
 {{{
-Where do you want to install TI OMAP35xx/37xx Android Graphics SDK?
+Where do you want to install TI OMAP35x/AM37x Android Graphics SDK?
 
 Example: [/opt/OMAP35x_Android_Graphics_SDK_3_01_00_03] */home/user/rowboat_android*
 
 
-Installing TI OMAP35xx/37xx Android Graphics SDK...
+Installing TI OMAP35x/AM37x Android Graphics SDK...
 
 Should see following directory structure
 
@@ -275,7 +275,7 @@ Select the OMAP3 device you work with
 For OMAP3530 ES 1or2 = 2.x
 For OMAP3530 ES3.0   = 3.x
 For AM3517           = 3.x
-For AM37xx           = 5.x
+For AM37x           = 5.x
 
 Execute the following to install the libraries and drivers into the target filesystem
 
