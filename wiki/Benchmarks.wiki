@@ -53,7 +53,7 @@ TBD:Add wireframes
 TBD: Add
 
 == Icon ==
-http://i772.photobucket.com/albums/yy9/manul7/BA_Icon.png
+http://i772.photobucket.com/albums/yy9/manul7/icon.png
 
 = Benchmarks =
 
