@@ -6,7 +6,7 @@ The goal is to create a set of performance test applications for the Android Pla
 
 = Try it now =
 
-You can get Benchmarking application from the [http://rowboat.googlecode.com/files/GeneralRunner.apk Downloads section]
+You can get Benchmarking application from the [http://code.google.com/p/rowboat/downloads/detail?name=RowboatBench-v1.0-for-2%2B.apk&can=2&q= Downloads section]
 
 Here's example if you want to add this on your sdcard:
 {{{
