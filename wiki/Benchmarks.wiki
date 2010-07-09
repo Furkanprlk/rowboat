@@ -6,16 +6,16 @@ The goal is to create a set of performance test applications for the Android Pla
 
 = Try it now =
 
-You can get Benchmarking application from the [http://code.google.com/p/rowboat/downloads/detail?name=RowboatBench-v1.0-for-2%2B.apk&can=2&q= Downloads section]
+You can get Benchmarking application from the [http://rowboat.googlecode.com/files/RowboatBench-v1.0-for-2%2B.apk Downloads section]
 
 Here's example if you want to add this on your sdcard:
 {{{
 mount sdcard
-put GeneralRunner.apk to <sdcard>/data/app
+put RowboatBench-v1.0-for-2%2B.apk to <sdcard>/data/app
 sync
 unmount
 }}}
-Running on the device: Open Applications menu, Start *!GeneralRunner* 
+Running on the device: Open Applications menu, Start *!RowboatBench* 
 
 Alternatively you can use ADB
 
@@ -41,14 +41,8 @@ Alternatively you can use ADB
      * Lightmapping 
      * Shaders 
      * Dynamic texturing 
- * Application launch time 
- * Video Playback 
-   * Audio, video testing with subset of codecs 
-   * Measuring CPU utilization 
  * CPU High Load 
- * HTML Render performance 
- * Dalvik VM benchmarks 
- * Data providers test (SQLite3 benchmarking,etc) 
+ * Dalvik VM benchmarks
 
 = UI =
 TBD:Add wireframes
@@ -88,7 +82,7 @@ Good links for understand this is:
 === 3D ===
  * Render box 
  * Render textured box 
- * Render some scene, like teapot or something like that, and count FPS and polycounts 
+ * Render some scene, like teapot or something like that, and count FPS and polygons 
  * Same, but textured 
  * Not sure but we can test shaders speed if they presents in API (1.5-1.6) 
  * GLXGears partially we have almost all things for this benchmarking, we need more complex resource consumption scene, but I believe that we can find some. 
