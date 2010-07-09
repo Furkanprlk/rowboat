@@ -5,15 +5,15 @@ You can get benchmarking application from the Downloads section
 ==How to install==
 Here is example if you want to add this on your SD Card:
 
-# mount sdcard
-# put RowboatBench-v1.0-for-2%2B.apk to <sdcard>/data/app
-# sync
-# unmount
+ # mount sdcard
+ # put RowboatBench-v1.0-for-2%2B.apk to sdcard/data/app
+ # sync
+ # unmount
 
 or
 
-# Get connection with target via ADB
-# adb install RowboatBench-v1.0-for-2%2B.apk
+ # Get connection with target via ADB
+ # adb install RowboatBench-v1.0-for-2%2B.apk
 
 ==How to run?==
 Running on the device: Open Applications menu and start RowboatBench
