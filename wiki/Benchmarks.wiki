@@ -1,125 +1,73 @@
-#summary Benchmarks - currently a work in progress
-
-= Goal =
-
+=Goal=
 The goal is to create a set of performance test applications for the Android Platform.
+You can get benchmarking application from the Downloads section
 
-= Try it now =
+==How to install==
+Here is example if you want to add this on your SD Card:
 
-You can get Benchmarking application from the [http://rowboat.googlecode.com/files/RowboatBench-v1.0-for-2%2B.apk Downloads section]
+# mount sdcard
+# put RowboatBench-v1.0-for-2%2B.apk to <sdcard>/data/app
+# sync
+# unmount
 
-Here's example if you want to add this on your sdcard:
-{{{
-mount sdcard
-put RowboatBench-v1.0-for-2%2B.apk to <sdcard>/data/app
-sync
-unmount
-}}}
-Running on the device: Open Applications menu, Start *!RowboatBench* 
+or
 
-Alternatively you can use ADB
+# Get connection with target via ADB
+# adb install RowboatBench-v1.0-for-2%2B.apk
 
+==How to run?==
+Running on the device: Open Applications menu and start RowboatBench
 
-= Hardware =
-   * OMAP3EVM and BeagleBoard 
-   * Android ARM Emulator 
-   * HTC myTouch (ARM11), HTC Dream G1 
+==Tests==
 
-= Targets =
- * Graphics 
-   * 2D performance tests 
-     * Fillrate 
-     * Bitmaps drawing 
-     * Primitives drawing 
-     * Alpha blending 
-     * Animation 
-   * 3D performance tests 
-     * Primitives drawing 
-     * Alpha blending 
-     * Animation 
-     * Fillrate 
-     * Lightmapping 
-     * Shaders 
-     * Dynamic texturing 
- * CPU High Load 
- * Dalvik VM benchmarks
+The following tests included:
+ * 2D graphics:
+   # Archs
+   # Fill Rate
+   # Circles
+   # Rectangles
+   # Bitmap Animation
+   # Text
 
-= UI =
-TBD:Add wireframes
+ * 3D graphics:
+   # Colored Cube
+   # Lighting
+   # Textures
+   # AlphaBlending
+   # glFog
+   # Reflection effect
+   # Multitexturing
+   # Utah teapot
+   # GlxGears
+   # Stars
+   # Sphere mapping
+   # Bezier surface
 
-= Artwork =
+ * CPU:
+   # Dhrystone
+   # Whitestone
+   # Himeno
+   # Spectral normalization
 
-== Logo ==
-TBD: Add
-
-== Icon ==
+=Artwork=
+==Icon==
 http://i772.photobucket.com/albums/yy9/manul7/icon.png
 
-= Benchmarks =
+=Benchmarks Descriptions=
+==Graphics==
+===2D===
+TBD
+===3D===
+TBD
+===CPU High Load==
+TBD
+===Web Browser Performance===
+TBD
 
-== Graphics ==
+=Info=
 
-=== 2D ===
- * First at all is fillrate test (full screen filling). 
- * Same as first but draw filled rectangles 
- * Draw some bitmaps at some time 
- * Draw some primitives, like dots, lines and arcs 
-
-For performing 2D speed test we have almost all things in API samples. So with small changes we use it in our test.
-
-==== Problems ====
-So in performing this set, found some troubles:
- * Android has 2 methods for graphics output, first - synchronous, initiated by VM, second - with maximum performance available.
- * All test made by first method, and FPS and other counting values has no mean. Second can not be tested on emulator, because in case running on it we have full CPU load and nothing changes with more or less hard tests.
-
-Second method must be checked on real HW, for make some decisions.
-
-Good links for understand this is:
- * [http://developer.android.com/reference/android/view/SurfaceView.html SurfaceView]
- * [http://developer.android.com/guide/topics/graphics/index.html Graphics 2D]
- * [http://developer.android.com/guide/samples/LunarLander/src/com/example/android/lunarlander/LunarLander.html LunarLander]
-
-=== 3D ===
- * Render box 
- * Render textured box 
- * Render some scene, like teapot or something like that, and count FPS and polygons 
- * Same, but textured 
- * Not sure but we can test shaders speed if they presents in API (1.5-1.6) 
- * GLXGears partially we have almost all things for this benchmarking, we need more complex resource consumption scene, but I believe that we can find some. 
-
-== CPU High Load ==
-We use 4 mathematical methods witch heavy arithmetical calculations:
-   * [http://en.wikipedia.org/wiki/Mandelbrot_set Mandelbrot set] 
-   * Jacobi 
-   * Spectral Normalization  
-   * [http://en.wikipedia.org/wiki/Dhrystone Dhrystone] 
-
-== Web Browser Performance ==
-Rendering of sample page, that counts time needed for proper render it. We must create that sample page...
-
-== Dalvik Benchmarks ==
-   * 011-array-copy 
-   * 023-many-interfaces 
-   * 027-arithmetic 
-   * 051-threads 
-   * 055-enum-performance 
-   * 057-iteration-performance 
-   * 058-enum-order 
-   * CoffeineMark 3.0
-
-== Info ==
-   * http://www.concentric.net/~ttwang/tech/microbench.htm 
-   * http://www.stefankrause.net/wp/?p=9 
-   * http://research.sun.com/techrep/2002/abstract-114.html 
-   * http://www.shudo.net/jit/perf/ 
-   * http://www.ibm.com/developerworks/java/library/j-jtp09275.html?ca=dgr-jw22JavaUrbanLegends 
-
-= Notes =
-   * How about Bezier curves? 
-   * How about add text test (print, output) for 2D part 
-   * add object transformation for 3D test 
-   * add dynamic texturing and dynamic lighting 
-
-
-= Repository =
-Patience!
+    * http://www.concentric.net/~ttwang/tech/microbench.htm
+    * http://www.stefankrause.net/wp/?p=9
+    * http://research.sun.com/techrep/2002/abstract-114.html
+    * http://www.shudo.net/jit/perf/
+    * http://www.ibm.com/developerworks/java/library/j-jtp09275.html?ca=dgr-jw22JavaUrbanLegends 
