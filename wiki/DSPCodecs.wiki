@@ -118,3 +118,11 @@ In some cases it may be necessary to modify additional parts of OpenCORE:
 [http://fobi.ru/rowboat/init.jpg]
 
 [http://fobi.ru/rowboat/process.jpg]
+
+= Supported decoding formats =
+
+*Audio:* AAC
+
+*Video:* MPEG4, H264, H263
+
+Video decoding supports AAC-audio stream with sample rate from 48000 to 64000 only.
