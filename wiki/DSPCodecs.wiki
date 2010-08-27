@@ -115,14 +115,12 @@ In some cases it may be necessary to modify additional parts of OpenCORE:
 
 2. conversion of frame from YUV422 into YUV420 format for previewing  engines/adapters/player/framemetadatautility/src/pv_frame_metadata_mio_video.cpp.
 
-[http://fobi.ru/rowboat/init.jpg]
+[http://lh3.ggpht.com/_Kd4XxT6UFfI/THeXhNHn5PI/AAAAAAAAAKQ/QnxyuzfwOPo/init.jpg]
 
-[http://fobi.ru/rowboat/process.jpg]
+[http://lh4.ggpht.com/_Kd4XxT6UFfI/THeXhCH47QI/AAAAAAAAAKU/j3hFB8UtzNE/process.jpg]
 
 = Supported decoding formats =
 
-*Audio:* AAC
+The following table shows media formats supported by the DSP-accelerated codecs.
 
-*Video:* MPEG4, H264, H263
-
-Video decoding supports AAC-audio stream with sample rate from 48000 to 64000 only.
+[http://lh3.ggpht.com/_Kd4XxT6UFfI/THeXhX5mJrI/AAAAAAAAAKY/M4ltofsYGUY/matrix.jpg]
