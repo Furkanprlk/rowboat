@@ -114,7 +114,7 @@ $ cd ..
 }}}
 
 == Build rootfs ==
-The next step is Android file system build. 
+The next step is Android file system build. If you want to use DSP-core see "DSP stack integration" page for more instructions.
 To build file system you need to specify for which board you want to build. Use variable `TARGET_PRODUCT` for this:
  * beagleboard
  * omap3evm
