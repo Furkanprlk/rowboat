@@ -123,4 +123,4 @@ In some cases it may be necessary to modify additional parts of OpenCORE:
 
 The following table shows media formats supported by the DSP-accelerated codecs.
 
-[http://lh3.ggpht.com/_Kd4XxT6UFfI/THeXhX5mJrI/AAAAAAAAAKY/M4ltofsYGUY/matrix.jpg]
+[http://lh5.ggpht.com/_Kd4XxT6UFfI/TITLm5-h_RI/AAAAAAAAAKw/wcY8hcNI_5Q/matrix2.jpg]
