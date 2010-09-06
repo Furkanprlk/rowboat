@@ -77,6 +77,10 @@ TBD: _Briefly describe what each component does and provide reference to all use
 # svn checkout -r 506 --username anonymous --password "" -q https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti
    }}}
 
+== MP3 DSP codec ==
+
+By default codec server doesn't support MP3 decoding, you need to install additional codec. All the instructions are available on the [http://processors.wiki.ti.com/index.php/How_do_I_Integrate_new_codecs_into_DVSDK TI wiki page].
+
 == Build ==
 
 To build Android with TI DSP stack use following command:
