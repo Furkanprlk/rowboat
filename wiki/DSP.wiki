@@ -85,7 +85,6 @@ By default codec server doesn't support MP3 decoding, you need to install additi
 
 To build Android with TI DSP stack use following command:
    {{{
-# ./prepare
 # make TARGET_PRODUCT=[omap3evm | beagleboard] [BUILD_WITH_GST=true] dvsdk
    }}}
 
