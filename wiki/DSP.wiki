@@ -88,7 +88,9 @@ To build Android with TI DSP stack use following command:
 # make TARGET_PRODUCT=[omap3evm | beagleboard | igepv2] [BUILD_WITH_GST=true] dvsdk
    }}}
 
-It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server.
+It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server. 
+
+Currently preferred and fully supported framework for multimedia is OpenCORE based on OMX codecs, it builds by default (more information is available on 'OMX DSP-accelerated audio/video codecs' wiki page). GStreamer is currently better supported in Donut version of rowboat (works from the UI players and 'gst-launch' tool in terminal). In Eclair version it is used for debugging only (UI players and 'surfaceflingersink' element currently don't work).
 
 *Hint*: It will try to download DVSDK and TIGStremear Plugins unless they are already located under _external/ti-dsp_
         
@@ -105,6 +107,9 @@ DVSDK DSP stack by default uses physical memory window within 89-128MB. In order
 
 
 == Test ==
+
+To test media playback use 'Music player' or 'Gallery' UI applications in rowboat. Supported formats are available on 'OMX DSP-accelerated audio/video codecs' wiki page.
+Check for 'omx-dsp' tag in logcat to see that accelerated codecs are enabled.
 
 Now you can try playback of media using gstreamer command-line programs, for example:
     {{{ 
