@@ -36,6 +36,8 @@ TBD: _Briefly describe what each component does and provide reference to all use
  # Check if you have _expect_ utility installed on your build host (TBD _explain why it is needed_)
  # Download rowboat Android (Eclair version) with integrated TI DSP stack from gitorious.org/rowboat:
     {{{ 
+# mkdir rowboat-android
+# cd rowboat-android
 # repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-eclair-dsp.xml
 # repo sync
     }}}
@@ -64,14 +66,34 @@ It builds Android and Linux kernel for the selected platform, TI kernel modules 
 
 After build is finished successfully TI DSP specific kernel modules and codec server are located under the _/system/ti-dsp_ folder in the rootfs.
 
+Prepare rootfs, assuming TARGET_PRODUCT=omap3evm in the command above:
+    {{{
+# cd out/target/product/omap3evm
+# mkdir android_rootfs
+# cp -r root/* android_rootfs
+# cp -r system android_rootfs
+    }}}
+
+Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Install_the_Android_Graphics_SGX_SDK_on_Host_Machine ConfigureAndBuild#Install_the_Android_Graphics_SGX_SDK_on_Host_Machine] to integrate SGX SDK libraries and drivers into the rootfs. This step is necessary to get 2D GUI accelerated.
+
+Create the rootfs image:
+    {{{
+# cd out/target/product/omap3evm
+# sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_stats android_rootfs . rootfs rootfs.tar.bz2
+    }}}
+
+Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Prepare_SD_card ConfigureAndBuild#Prepare_SD_card] to populate the rootfs to a SD card.
+
 == Boot ==
 
-DVSDK DSP stack by default uses physical memory window within 89-128MB. In order not to change DSP stack mappings we recommend to use following memory settings:
-  * Boards with > 128MB of memory (say Beagle C3, or OMAP3EVM Gen. II). Use "memory hole" parameters, for example adding: {{{ mem=88M@0x80000000 mem=128M@0x88000000 }}} to the bootargs tells kernel to take first 88M of phys memory and 128M with 128M offset, so the DSP memory window will not be managed by the kernel.
-(Don't forget to adjust these parameters for your board)
+Refer to the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Configure_target_board ConfigureAndBuild#Configure_target_board] to setup the u-boot env on the target board.
 
-  * Boards with 128MB of memory.Add {{{ mem=88M }}} to your bootargs (rest will be used for DSP). With 128MB board you'll probably have buffer allocating problem with the omap_vout driver. To avoid this, try following bootargs additions for the display driver:
-{{{ omap_vout.vid1_static_vrfb_alloc=y omap_vout.video1_numbuffers=3 omap_vout.video1_bufsize=829440 omap_vout.video2_numbuffers=0 }}}. Anyway we recommend to use new 256M boards.
+DVSDK DSP stack by default uses physical memory window within 89-128MB. In order not to change DSP stack mappings we recommend to use following memory settings:
+  * For boards with > 128MB of memory (say Beagle C3, or OMAP3EVM Gen. II), use "memory hole" parameters, for example adding: {{{ mem=88M@0x80000000 mem=128M@0x88000000 }}} to the bootargs tells kernel to take first 88M of phys memory and 128M with 128M offset, so the DSP memory window will not be managed by the kernel.(Don't forget to adjust these parameters for your board)
+
+  * For boards with 128MB of memory, add {{{ mem=88M }}} to your bootargs (rest will be used for DSP). With 128MB board you'll probably have buffer allocating problem with the omap_vout driver. To avoid this, try following bootargs additions for the display driver: {{{ omap_vout.vid1_static_vrfb_alloc=y omap_vout.video1_numbuffers=3 omap_vout.video1_bufsize=829440 omap_vout.video2_numbuffers=0 }}}
+
+Anyway we recommend to use new 256M boards.
 
 
 == Test ==
