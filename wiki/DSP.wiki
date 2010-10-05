@@ -1,10 +1,10 @@
-#summary This page contains all information regarding Omap3530 DSP stack integration in Android
+#summary This page contains all information regarding OMAP3530 or DM3730 DSP stack integration in Android
 <wiki:toc max_depth="4" />
 = Introduction =
 
-The OMAP3530 (as well the !DaVinci (DM) family of processors) has a C46x+ DSP core embedded in the SoC. This DSP core can be used for various purposes, including multimedia decoding/encoding.
+The OMAP3530 or DM3730 (as well the !DaVinci (DM) family of processors) has a C46x+ DSP core embedded in the SoC. This DSP core can be used for various purposes, including multimedia decoding/encoding.
 
-[http://code.google.com/p/rowboat/ Rowboat] DSP support is based on the TI Linux Digital Video Software Development Kit ([http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/ DVSDK]) for the OMAP3530
+[http://code.google.com/p/rowboat/ Rowboat] DSP support is based on the TI Linux Digital Video Software Development Kit ([http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/ DVSDK]) for the OMAP3530/DM3730.
 
 = Software Stack Components =
 
@@ -76,6 +76,8 @@ Prepare rootfs, assuming TARGET_PRODUCT=omap3evm in the command above:
 
 Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Install_the_Android_Graphics_SGX_SDK_on_Host_Machine ConfigureAndBuild#Install_the_Android_Graphics_SGX_SDK_on_Host_Machine] to integrate SGX SDK libraries and drivers into the rootfs. This step is necessary to get 2D GUI accelerated.
 
+For boards using OMAP3530, use {{{ OMAPES=3.x }}} install option, for boards using DM3730, use {{{ OMAPES=5.x }}} install option.
+
 Create the rootfs image:
     {{{
 # cd out/target/product/omap3evm
@@ -91,9 +93,7 @@ Refer to the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAnd
 DVSDK DSP stack by default uses physical memory window within 89-128MB. In order not to change DSP stack mappings we recommend to use following memory settings:
   * For boards with > 128MB of memory (say Beagle C3, or OMAP3EVM Gen. II), use "memory hole" parameters, for example adding: {{{ mem=88M@0x80000000 mem=128M@0x88000000 }}} to the bootargs tells kernel to take first 88M of phys memory and 128M with 128M offset, so the DSP memory window will not be managed by the kernel.(Don't forget to adjust these parameters for your board)
 
-  * For boards with 128MB of memory, add {{{ mem=88M }}} to your bootargs (rest will be used for DSP). With 128MB board you'll probably have buffer allocating problem with the omap_vout driver. To avoid this, try following bootargs additions for the display driver: {{{ omap_vout.vid1_static_vrfb_alloc=y omap_vout.video1_numbuffers=3 omap_vout.video1_bufsize=829440 omap_vout.video2_numbuffers=0 }}}
-
-Anyway we recommend to use new 256M boards.
+  * For boards with 128MB of memory, add {{{ mem=88M }}} to your bootargs (rest will be used for DSP). With 128MB board you'll probably have buffer allocating problem with the omap_vout driver. To avoid this, try following bootargs additions for the display driver: {{{ omap_vout.vid1_static_vrfb_alloc=y omap_vout.video1_numbuffers=3 omap_vout.video1_bufsize=829440 omap_vout.video2_numbuffers=0 }}}. Anyway we recommend to use new 256M boards.
 
 
 == Test ==
