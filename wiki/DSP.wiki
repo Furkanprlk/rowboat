@@ -101,6 +101,18 @@ DVSDK DSP stack by default uses physical memory window within 89-128MB. In order
 To test media playback use 'Music player' or 'Gallery' UI applications in rowboat. Supported formats are available on 'OMX DSP-accelerated audio/video codecs' wiki page.
 Check for 'omx-dsp' tag in logcat to see that accelerated codecs are enabled.
 
+= Known Issues =
+ * system hangs when playback video clips using both DSP AAC + DSP Video codecs together;
+ * dragging the playback progress bar causes a/v out of sync;
+ * frame drops when playback D1 resolution mpeg4 video clips (_unconfirmed_);
+
+Using ARM AAC codec can workaround the 'system hangs' issue. Revert back commit 2bec6d48... - 'Add OMX DSP aac codec support' in {{{ external/opencore }}} to use ARM AAC codec. The files touched under {{{ external/opencore }}} are,
+ `build_config/opencore_dynamic/pv_config.h` <br/>
+ `codecs_v2/omx/omx_common/src/pv_omxcore.cpp` <br/>
+ `codecs_v2/omx/omx_common/src/pv_omxregistry.cpp` <br/>
+ `nodes/pvaacffparsernode/include/pvmf_aacffparser_defs.h`
+
+
 = misc notes (draft) =
 
 One more update:
