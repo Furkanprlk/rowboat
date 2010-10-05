@@ -95,6 +95,8 @@ Where _ManifestName_ is:
  * rowboat-donut-dsp.xml - for donut version of rowboat with DSP support
  * rowboat-eclair.xml - for eclair version of rowboat
  * rowboat-eclair-dsp.xml - for eclair version of rowboat with DSP support 
+ * rowboat-froyo.xml - for eclair version of rowboat
+
 
 == Build kernel ==
 The next step is building Linux kernel for your board. (If dvsdk target is specified while building rootfs, kernel is already built.) In following listing the first step is settings up prebuilt toolchains, the third step is kernel configuring and here you need to use right config file for your board
