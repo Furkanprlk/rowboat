@@ -33,25 +33,25 @@ TBD: _Briefly describe what each component does and provide reference to all use
 
 == Preparation ==
 
- # Check if you have expect installed on your build host (TBD explain why it is needed)
+ # Check if you have _expect_ utility installed on your build host (TBD _explain why it is needed_)
  # Download rowboat Android (Eclair version) with integrated TI DSP stack from gitorious.org/rowboat:
     {{{ 
 # repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-eclair-dsp.xml
 # repo sync
     }}}
- # Download and place codec_engine_2_24_01.tar.gz under the _external/ti-dsp_ folder. Codec Engine is available [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html here.] <br/> *Note:* You may need to have an account on software-dl.ti.com
- # (Optional) Download and place mp3 DSP codec [http://software-dl-1.ti.com/dsps/forms/self_cert_export.html?prod_no=c64xplus_mp3dec_1_31_001_production.bin&ref_url=http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ c64xplus_mp3dec_1_31_001_production.bin] under the _external/ti-dsp_ folder. <br/> *Note:* It requires registration.
- # (Optional) DVSDK package will be downloaded automatically during the build process, unless you want to use local files (previously downloaded instead in order to save time on downloads.
-   * You can put pre-downloaded [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ DVSDK] under the _external/ti-dsp_ folder. Full list of necessary files looks as follows:
-      * dvsdk_setuplinux_3_00_02_44.bin
-      * cs1omap3530_setuplinux_1_00_01-44.bin
-      * xdctools_setuplinux_3_15_01_59.bin
-      * bios_setuplinux_5_33_06.bin
-      * TI-C6x-CGT-v6.0.16.1.bin
+ # Download [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ce/2_25_05_16/exports/codec_engine_2_25_05_16.tar.gz codec_engine_2_25_05_16.tar.gz] and place it under the _external/ti-dsp_ folder.
+    {{{
+# wget http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ce/2_25_05_16/exports/codec_engine_2_25_05_16.tar.gz
+    }}}
+ # (*Optional*) DVSDK packages will be downloaded automatically during the build process, unless you want to use local files (previously downloaded instead in order to save time on downloads. You can put the following pre-downloaded packages under the _external/ti-dsp_ folder.
+      * [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/dvsdk_3_01_00_10_Setup.bin dvsdk_setuplinux_3_01_00_10.bin]
+      * [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/cs1omap3530_setupLinux_1_01_00-prebuilt-dvsdk3.01.00.10.bin cs1omap3530_setupLinux_1_01_00-prebuilt-dvsdk3.01.00.10.bin]
+      * [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/ti_cgt_c6000_6.1.12_setup_linux_x86.bin ti_cgt_c6000_6.1.12_setup_linux_x86.bin]
+      * [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ce/2_25_05_16/exports/codec_engine_2_25_05_16.tar.gz codec_engine_2_25_05_16.tar.gz]
 
-== MP3 DSP codec ==
+== MP3 DSP codec (Optional) ==
 
-By default codec server doesn't support MP3 decoding, you need to install additional codec. All the instructions are available on the [http://processors.wiki.ti.com/index.php/How_do_I_Integrate_new_codecs_into_DVSDK TI wiki page].
+By default Codec Server doesn't support DSP MP3 decoding, you need to install additional codec (c64xplus_mp3dec_1_31_001_production.bin) to enable it. All the instructions are available on the TI wiki page [http://processors.wiki.ti.com/index.php/How_do_I_Integrate_new_codecs_into_DVSDK How do I integrate new codecs into DVSDK]. <br/> *Note:* It requires registration to download the package.
 
 == Build ==
 
