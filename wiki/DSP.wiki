@@ -16,9 +16,8 @@ TBD: _Briefly describe what each component does and provide reference to all use
  # *codec engine* (and tools)
  # *dsplink*
  # *dmai*
- # *opencore dmai codecs* (coming soon)
+ # *opencore dmai codecs*
  # *additional DSP codecs* (optional)
- # *ti gstreamer* (optional)
 
 = Components/packages versions and locations =
 
@@ -35,10 +34,6 @@ TBD: _Briefly describe what each component does and provide reference to all use
  # [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/3_00_02_44/exports/xdctools_setuplinux_3_15_01_59.bin xdctools_3_15_01_59]
  # [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html codec_engine_2_24_01] <br/> *Note:* You need to have an account on TI site (free registration)
  # (optional) Add-on codecs. For example mp3 DSP codec [http://software-dl-1.ti.com/dsps/forms/self_cert_export.html?prod_no=c64xplus_mp3dec_1_31_001_production.bin&ref_url=http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ c64xplus_mp3dec_1_31_001_production.bin]
- # (optional) [https://gstreamer.ti.com/gf/project/gstreamer_ti/frs/?action=FrsReleaseView&release_id=211 TIGStreamerPlugin 1.01.00] <br/> *Note:* Suggest to get gstreamer from the project SVN: 
-    {{{ 
-# svn checkout --username anonymous https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti 
-    }}}
 
 = List of modifications made on top of DSP stack =
  # Added SYS V IPC into bionic
@@ -49,9 +44,6 @@ TBD: _Briefly describe what each component does and provide reference to all use
    * pthread_attr_setinheritsched
  # Modified build files (Makefiles and config.bld) to adapt for Android toolchains
  # Memory holes kernel patches (TBD)
- # (optional) Patches for gstreamer in Android
-
-*Note:* Opencore/Openmax DMAI codecs support coming (TIGSTreamerPlugin will be just a secondary option then)
 
 = Building and Testing DSP stack =
 
@@ -65,17 +57,13 @@ TBD: _Briefly describe what each component does and provide reference to all use
     }}}
  # Download and place codec_engine_2_24_01.tar.gz under the _external/ti-dsp_ folder. Codec Engine is available [http://software-dl.ti.com/dsps/dsps_registered_sw/sdo_sb/targetcontent/CE/ce_2_24/index.html here.] <br/> *Note:* You may need to have an account on software-dl.ti.com
  # (Optional) Download and place mp3 DSP codec [http://software-dl-1.ti.com/dsps/forms/self_cert_export.html?prod_no=c64xplus_mp3dec_1_31_001_production.bin&ref_url=http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ c64xplus_mp3dec_1_31_001_production.bin] under the _external/ti-dsp_ folder. <br/> *Note:* It requires registration.
- # (Optional) Rest of the components (DVSDK and TIGStreamerPlugins) will be downloaded automatically during the build process, unless you want to use local files (previously downloaded instead in order to save time on downloads.
+ # (Optional) DVSDK package will be downloaded automatically during the build process, unless you want to use local files (previously downloaded instead in order to save time on downloads.
    * You can put pre-downloaded [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/ DVSDK] under the _external/ti-dsp_ folder. Full list of necessary files looks as follows:
       * dvsdk_setuplinux_3_00_02_44.bin
       * cs1omap3530_setuplinux_1_00_01-44.bin
       * xdctools_setuplinux_3_15_01_59.bin
       * bios_setuplinux_5_33_06.bin
       * TI-C6x-CGT-v6.0.16.1.bin
-   * TIGStreamerPlugins need to be placed under the _external/ti-dsp_ folder (assume revision 506 is taken from [https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti gstreamer-ti svn]). To check out it manually:
-   {{{
-# svn checkout -r 506 --username anonymous --password "" -q https://gstreamer.ti.com/svn/gstreamer_ti/trunk/gstreamer_ti
-   }}}
 
 == MP3 DSP codec ==
 
@@ -85,16 +73,12 @@ By default codec server doesn't support MP3 decoding, you need to install additi
 
 To build Android with TI DSP stack use following command:
    {{{
-# make TARGET_PRODUCT=[omap3evm | beagleboard | igepv2] [BUILD_WITH_GST=true] dvsdk
+# make TARGET_PRODUCT=[omap3evm | beagleboard | igepv2] dvsdk
    }}}
 
 It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server. 
 
-Currently preferred and fully supported framework for multimedia is OpenCORE based on OMX codecs, it builds by default (more information is available on 'OMX DSP-accelerated audio/video codecs' wiki page). GStreamer is currently better supported in Donut version of rowboat (works from the UI players and 'gst-launch' tool in terminal). In Eclair version it is used for debugging only (UI players and 'surfaceflingersink' element currently don't work).
-
-*Hint*: It will try to download DVSDK and TIGStremear Plugins unless they are already located under _external/ti-dsp_
-        
-After build is finished successfully TI DSP specific kernel modules and codec server are located under the _/system/ti-dsp_ folder in the rootfs, TIGSTreamer plugin is located under the _/system/plugins_ folder in the rootfs.
+After build is finished successfully TI DSP specific kernel modules and codec server are located under the _/system/ti-dsp_ folder in the rootfs.
 
 == Boot ==
 
@@ -110,13 +94,6 @@ DVSDK DSP stack by default uses physical memory window within 89-128MB. In order
 
 To test media playback use 'Music player' or 'Gallery' UI applications in rowboat. Supported formats are available on 'OMX DSP-accelerated audio/video codecs' wiki page.
 Check for 'omx-dsp' tag in logcat to see that accelerated codecs are enabled.
-
-Now you can try playback of media using gstreamer command-line programs, for example:
-    {{{ 
-# gst-launch-0.10 -v filesrc location=sample.264 ! TIViddec2 codecName=h264dec engineName=codecServer ! TIDmaiVideoSink videoStd=VGA videoOutput=LCD sync=false
-    }}}
-
-You can experiment with pipe parameters using following information  [http://wiki.davincidsp.com/index.php/Example_GStreamer_Pipelines information]. <br/> *Note:* Don't forget to change gst-launch to gst-launch-0.10 (there is no symlink installed by default). No need to exports of misc paths, Loadmodules.sh is also not needed
 
 = misc notes (draft) =
 
