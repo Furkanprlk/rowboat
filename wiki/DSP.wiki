@@ -33,11 +33,11 @@ TBD: _Briefly describe what each component does and provide reference to all use
 
 == Preparation ==
 
- # Check if you have _expect_ utility installed on your build host (TBD _explain why it is needed_)
+ # Check if you have _git_, _java5-jdk_, and _expect_ utilities installed on your build host (TBD _explain why it is needed_)
  # Download rowboat Android (Eclair version) with integrated TI DSP stack from gitorious.org/rowboat:
     {{{ 
-# mkdir rowboat-android
-# cd rowboat-android
+# mkdir ~/rowboat-android
+# cd ~/rowboat-android
 # repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-eclair-dsp.xml
 # repo sync
     }}}
@@ -57,6 +57,10 @@ By default Codec Server doesn't support DSP MP3 decoding, you need to install ad
 
 == Build ==
 
+Add android toolchain in $PATH:
+    {{{
+# export PATH=${HOME}/rowboat-android/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin:$PATH
+    }}}
 To build Android with TI DSP stack use following command:
    {{{
 # make TARGET_PRODUCT=[omap3evm | beagleboard | igepv2] dvsdk
