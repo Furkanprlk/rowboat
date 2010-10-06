@@ -102,8 +102,10 @@ DVSDK DSP stack by default uses physical memory window within 89-128MB. In order
 
 == Test ==
 
-To test media playback use 'Music player' or 'Gallery' UI applications in rowboat. Supported formats are available on 'OMX DSP-accelerated audio/video codecs' wiki page.
+To test media playback use 'Music player' or 'Gallery' UI applications in rowboat. Supported formats are available on [http://code.google.com/p/rowboat/wiki/DSPCodecs#Supported_decoding_formats OMX DSP-accelerated audio/video codecs] wiki page.
 Check for 'omx-dsp' tag in logcat to see that accelerated codecs are enabled.
+
+If you have any video clip which should be supported but cannot play on rowboat, please try to extract the video elementary stream and play it with the DVSDK decode demo.
 
 = Known Issues =
  * system hangs when playback video clips using both DSP AAC + DSP Video codecs together;
