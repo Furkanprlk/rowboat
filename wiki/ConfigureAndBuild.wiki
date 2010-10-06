@@ -228,21 +228,25 @@ Makefile			uninstall
 1) #set home area HOME (relative location for all SDK operations)
 HOME=INVALIDVAL
 
-2) #Path of Android Root FS
+2) #Current Directory where Graphics SDK is installed
+GRAPHICS_INSTALL_DIR=$(HOME)/OMAP35x_Android_Graphics_SDK_3_01_00_03
+
+3) #Path of Android Root FS
 ANDROID_ROOT=$(HOME)/INVALIDVAL
 
-3) #set toolchain root path for arm-eabi
+4) #set toolchain root path for arm-eabi
 CSTOOL_DIR=INVALIDVAL
 
-4) #set the kernel installation path
+5) #set the kernel installation path
 KERNEL_INSTALL_DIR=$(HOME)/INVALIDVAL
 }}}
 Example: 
 {{{
-HOME=/home/user/rowboat-android/out/target/product/omap3evm
-ANDROID_ROOT=$(HOME)/android_rootfs
-CSTOOL_DIR=/home/user/rowboat-android/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/
-KERNEL_INSTALL_DIR=/home/user/rowboat-android/kernel
+HOME=/home/user
+GRAPHICS_INSTALL_DIR=$(HOME)/OMAP35x_Android_Graphics_SDK_3_01_00_03
+ANDROID_ROOT=$(HOME)/rowboat-android/out/target/product/omap3evm/android_rootfs
+CSTOOL_DIR=$(HOME)/rowboat-android/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/
+KERNEL_INSTALL_DIR=$(HOME)/rowboat-android/kernel
 }}}
 
 === Build the Kernel Module sources ===
