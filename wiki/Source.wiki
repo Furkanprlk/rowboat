@@ -26,8 +26,8 @@ You can find detailed repo installing instructions [http://source.android.com/so
 Kindly follow the below instructions to download the sources
 
 {{{
-$ mkdir rowboat-android
-$ cd rowboat-android
+$ mkdir ~/rowboat-android
+$ cd ~/rowboat-android
 $ repo init -u git://gitorious.org/rowboat/manifest.git -m ManifestName
 $ repo sync
 }}}
@@ -48,4 +48,6 @@ $ cd rowboat-android
 $ git clone git://gitorious.org/rowboat/ti_android_sgx_sdk.git
 }}}
 
-To Configure and Build the sources for a OMAP35x, AM35x, AM37x based platform kindly follow the [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and Build wiki page].
+To Configure and Build the sources for a OMAP35x (without DSP codecs), AM35x, AM37x based platform kindly follow the [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and Build wiki page].
+
+To build the source for OMAP3530 or DM3730 based platform with DSP codecs integrated kindly follow the [http://code.google.com/p/rowboat/wiki/DSP#Building_and_Testing_DSP_stack DSP stack integration] wiki page.
