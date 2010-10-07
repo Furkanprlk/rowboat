@@ -68,6 +68,10 @@ Add android toolchain in $PATH:
     {{{
 # export PATH=${HOME}/rowboat-android/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin:$PATH
     }}}
+If English is not the locale in your host machine, some package install scripts will fail due to unexpected non-English output. Set env _LANG_ as following to fix it:
+    {{{
+# export LANG=C 
+    }}}
 To build Android with TI DSP stack use following command:
    {{{
 # make TARGET_PRODUCT=[omap3evm | beagleboard | igepv2] dvsdk
