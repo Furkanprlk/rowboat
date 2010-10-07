@@ -34,12 +34,19 @@ TBD: _Briefly describe what each component does and provide reference to all use
 == Preparation ==
 
  # Check if you have _git_, _java5-jdk_, and _expect_ utilities installed on your build host (TBD _explain why it is needed_)
- # Download rowboat Android (Eclair version) with integrated TI DSP stack from gitorious.org/rowboat:
+ # Download _repo_. You can find detailed repo installing instructions [http://source.android.com/source/git-repo.html here]. Make sure ~/bin is in $PATH
+{{{
+$ curl http://android.git.kernel.org/repo >~/bin/repo
+$ chmod a+x ~/bin/repo
+}}}
+
+ # Download rowboat Android (Eclair version) with integrated TI DSP stack and TI's Android SGX SDK package from gitorious.org/rowboat:
     {{{ 
 # mkdir ~/rowboat-android
 # cd ~/rowboat-android
 # repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-eclair-dsp.xml
 # repo sync
+# git clone git://gitorious.org/rowboat/ti_android_sgx_sdk.git
     }}}
  # Download [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ce/2_25_05_16/exports/codec_engine_2_25_05_16.tar.gz codec_engine_2_25_05_16.tar.gz] and place it under the _external/ti-dsp_ folder.
     {{{
