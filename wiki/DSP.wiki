@@ -36,8 +36,8 @@ TBD: _Briefly describe what each component does and provide reference to all use
  # Check if you have _git_, _java5-jdk_, and _expect_ utilities installed on your build host (TBD _explain why it is needed_)
  # Download _repo_. You can find detailed repo installing instructions [http://source.android.com/source/git-repo.html here]. Make sure ~/bin is in $PATH
 {{{
-$ curl http://android.git.kernel.org/repo >~/bin/repo
-$ chmod a+x ~/bin/repo
+# curl http://android.git.kernel.org/repo >~/bin/repo
+# chmod a+x ~/bin/repo
 }}}
 
  # Download rowboat Android (Eclair version) with integrated TI DSP stack and TI's Android SGX SDK package from gitorious.org/rowboat:
@@ -99,7 +99,7 @@ Create the rootfs image:
 # sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_stats android_rootfs . rootfs rootfs.tar.bz2
     }}}
 
-Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Prepare_SD_card ConfigureAndBuild#Prepare_SD_card] to populate the rootfs to a SD card.
+Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Prepare_SD_card ConfigureAndBuild#Prepare_SD_card] to populate the rootfs to a SD card. Before copying _uImage_ to the SD card, copy [http://code.google.com/p/rowboat/downloads/detail?name=x-load.bin.ift&can=2&q= x-load.bin.ift] to the SD card first partition, rename it to _mlo_; also copy [http://code.google.com/p/rowboat/downloads/detail?name=u-boot.evm.bin&can=2&q= u-boot.evm.bin] or [http://code.google.com/p/rowboat/downloads/detail?name=u-boot.beagle.bin&can=2&q= u-boot.beagle.bin] depending on your platform, rename it to _u-boot.bin_. _mlo_ has to be copied first, otherwise the board will not boot.
 
 == Boot ==
 
@@ -110,6 +110,12 @@ DVSDK DSP stack by default uses physical memory window within 89-128MB. In order
 
   * For boards with 128MB of memory, add {{{ mem=88M }}} to your bootargs (rest will be used for DSP). With 128MB board you'll probably have buffer allocating problem with the omap_vout driver. To avoid this, try following bootargs additions for the display driver: {{{ omap_vout.vid1_static_vrfb_alloc=y omap_vout.video1_numbuffers=3 omap_vout.video1_bufsize=829440 omap_vout.video2_numbuffers=0 }}}. Anyway we recommend to use new 256M boards.
 
+The example of u-boot env setup for omap3evm with 256MB DDR to boot from SD card:
+{{{
+OMAP3_EVM# setenv bootcmd 'mmc init; fatload mmc 0 80800000 uImage; bootm 80800000'
+OMAP3_EVM# setenv bootargs 'mem=88M@0x80000000 mem=128M@0x88000000 console=tty0 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw init=/init rootwait'
+OMAP3_EVM# saveenv
+}}}
 
 == Test ==
 
