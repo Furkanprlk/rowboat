@@ -17,6 +17,7 @@ The following components form a complete software stack needed to work efficient
     * [http://processors.wiki.ti.com/index.php/Category:Codec_Engine]
  # *DSP/BIOS Link*
     * TI provided driver provided low-level communications between the ARM and the DSP
+    * [http://focus.ti.com/docs/training/catalog/events/event.jhtml?sku=WEB108007|DSP/BIOS Link Training Material]
  # *DMAI*
     * The DaVinci Multimedia Application Interface (DMAI) is a thin utility layer on top of the operating system (Linux or DSP/BIOS) and the Codec Engine (CE) to assist in quickly writing portable applications on a DaVinci (or OMAP) platform.
     * [http://processors.wiki.ti.com/index.php/Davinci_Multimedia_Application_Interface]
