@@ -16,7 +16,8 @@ The following components form a complete software stack needed to work efficient
     * A TI provided framework to enable instantiation/control of Codecs running on DSP from the ARM
  # *DSP/BIOS Link*
     * TI provided driver provided low-level communications between the ARM and the DSP
- # *dmai*
+ # *DMAI*
+    * [http://processors.wiki.ti.com/index.php/Davinci_Multimedia_Application_Interface]
  # *opencore dmai codecs*
  # *additional DSP codecs* (optional), for example, mp3 DSP codec
 
