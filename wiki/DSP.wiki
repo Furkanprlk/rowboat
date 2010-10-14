@@ -137,8 +137,7 @@ Using ARM AAC codec can workaround the 'system hangs' issue. Revert back to comm
 
 = Some Observations =
 
- * During downloading DVSDK svn may ask you something like "do you want to save this settings"(it happens after kernel build).
-You should confirm it (save permanently) so it will work quietly later.
+ * During downloading DVSDK svn may ask you something like "do you want to save this settings"(it happens after kernel build).  You should confirm it (save permanently) so it will work without prompting again later.
  * Now kernel will be reconfigured with the default config only if there is no kernel/.config file so: 
   # If you didn't build kernel before it will be configured with the default config and built.
   # It will rebuild kernel using your config if .config is in place (will take a few seconds if you didn't changed it).
