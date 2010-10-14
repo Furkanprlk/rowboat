@@ -12,9 +12,12 @@ The following components form a complete software stack needed to work efficient
 
 TBD: _Briefly describe what each component does and provide reference to all useful information_ 
 
- # *bios* (and tools)
- # *codec engine* (and tools)
- # *dsplink*
+ # *DSP/BIOS* (and tools)
+    * A TI provided realtime operating system for DSP's
+ # *Codec Engine* (and tools)
+    * A TI provided framework to enable instantiation/control of Codecs running on DSP from the ARM
+ # *DSP/BIOS Link*
+    * TI provided driver provided low-level communications between the ARM and the DSP
  # *dmai*
  # *opencore dmai codecs*
  # *additional DSP codecs* (optional), for example, mp3 DSP codec
