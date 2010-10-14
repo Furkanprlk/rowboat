@@ -323,9 +323,9 @@ Disk /dev/sdd: 1977 MB, 1977614336 bytes
 Units = cylinders of 4032 * 512 = 2064384 bytes
 Disk identifier: 0x00000000
 
-Device Boot      Start         End      Blocks   Id  System
-/dev/sdd1            1          30       60448+   b  W95 FAT32
-/dev/sdd2           31         957     1868832   83  Linux
+Device    Boot      Start         End      Blocks   Id  System
+/dev/sdd1   *           1          30       60448+   b  W95 FAT32
+/dev/sdd2              31         957     1868832   83  Linux
 }}}
 Format the partitions for use the commands:
 {{{
