@@ -19,6 +19,7 @@ from the ARM
  # *DSP/BIOS Link*
     * TI provided driver provided low-level communications between the ARM and the DSP
  # *DMAI*
+    * The DaVinci Multimedia Application Interface (DMAI) is a thin utility layer on top of the operating system (Linux or DSP/BIOS) and the Codec Engine (CE) to assist in quickly writing portable applications on a DaVinci (or OMAP) platform.
     * [http://processors.wiki.ti.com/index.php/Davinci_Multimedia_Application_Interface]
  # *opencore dmai codecs*
  # *additional DSP codecs* (optional), for example, mp3 DSP codec
