@@ -1,4 +1,5 @@
-#summary This page contains all information regarding OMAP3530 or DM3730 DSP stack integration in Android
+#summary This page contains information about enabling hardware acceleration for multimedia features of Android thorugh !OpenCore on OMAP3530 and DM3730.
+
 <wiki:toc max_depth="4" />
 = Benefits =
 
