@@ -135,9 +135,7 @@ Using ARM AAC codec can workaround the 'system hangs' issue. Revert back to comm
  `nodes/pvaacffparsernode/include/pvmf_aacffparser_defs.h`
 
 
-= misc notes (draft) =
-
-One more update:
+= Some Observations =
 
 During downloading DVSDK svn may ask you something like "do you want to save this settings"(it happens after kernel build).
 You should confirm it (save permanently) so it will work quietly later.
@@ -147,3 +145,14 @@ _Some updates:_
   # If you didn't build kernel before it will be configured with the default config and built.
   # It will rebuild kernel using your config if .config is in place (will take a few seconds if you didn't changed it).
  * DVSDK cleaning is now calling only after downloading/installing it to clean up prebuilt stuff.
+
+
+= DVSDK Component Changes =
+ # Added SYS V IPC into bionic
+ # Some 'libpthread' calls are not yet implemented in android (at the moment calls to these API's are disabled in the components that use them):
+   * pthread_sigmask
+   * pthread_mutexattr_settype
+   * pthread_setcanceltype
+   * pthread_attr_setinheritsched
+ # Modified build files (Makefiles and config.bld) to adapt for Android toolchains
+ # Memory holes kernel patches to enable support for memory sizes >128MBytes
