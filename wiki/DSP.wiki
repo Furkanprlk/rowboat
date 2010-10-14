@@ -10,8 +10,6 @@ The OMAP3530 or DM3730 (as well the !DaVinci (DM) family of processors) has a C4
 
 The following components form a complete software stack needed to work efficiently with DSP. They are provided in TI DVSDK or individual packages.
 
-TBD: _Briefly describe what each component does and provide reference to all useful information_ 
-
  # *DSP/BIOS* (and tools)
     * A TI provided realtime operating system for DSP's
  # *Codec Engine* (and tools)
