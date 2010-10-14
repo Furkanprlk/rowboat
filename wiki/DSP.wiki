@@ -36,6 +36,7 @@ The following components form a complete software stack needed to work efficient
  # Check if you have _git_, _java5-jdk_, and _expect_ utilities installed on your build host. Use the 'which' command from the Linux prompt to see if they commands are present (i.e. which git)
  # Download _repo_. You can find detailed repo installing instructions [http://source.android.com/source/git-repo.html here]. Make sure ~/bin is in $PATH
 {{{
+# mkdir -p ~/bin
 # curl http://android.git.kernel.org/repo >~/bin/repo
 # chmod a+x ~/bin/repo
 }}}
