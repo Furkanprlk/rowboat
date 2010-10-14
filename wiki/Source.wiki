@@ -58,4 +58,4 @@ To Configure and Build the sources for a OMAP35x (without DSP codecs), AM35x, AM
 
 ==To enable DSP audio/video acceleration in !OpenCore==
 
-If you are using a device with a DSP (i.e. OMAP3530, DM37x) then you can take advantage of the powerful multimedia acceleration capabilities of the device by following these instructions: [http://code.google.com/p/rowboat/wiki/DSP#Building_and_Testing_DSP_stack DSP stack integration.]
+If you are using a device with a DSP (i.e. OMAP3530, DM37x) then you can take advantage of the powerful multimedia acceleration capabilities of the device by following these instructions: [http://code.google.com/p/rowboat/wiki/DSP#Building_and_Testing_DSP_stack Enabling Multimedia Acceleration.]
