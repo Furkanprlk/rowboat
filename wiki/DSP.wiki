@@ -28,16 +28,6 @@ The following components form a complete software stack needed to work efficient
     * Technical Details available [http://code.google.com/p/rowboat/wiki/DSPCodecs here]
  # *additional DSP codecs* (optional), for example, mp3 DSP codec
 
-= Necessary modifications to the DVSDK components to make them work with Android =
- # Added SYS V IPC into bionic
- # Some 'libpthread' calls are not yet implemented in android (at the moment calls to these API's are disabled in the components that use them):
-   * pthread_sigmask
-   * pthread_mutexattr_settype
-   * pthread_setcanceltype
-   * pthread_attr_setinheritsched
- # Modified build files (Makefiles and config.bld) to adapt for Android toolchains
- # Memory holes kernel patches (TBD)
-
 = Building and Testing DSP stack =
 
 == Preparation ==
