@@ -21,7 +21,7 @@ TBD: _Briefly describe what each component does and provide reference to all use
 
 = List of modifications made on top of DSP stack =
  # Added SYS V IPC into bionic
- # Some 'libpthread' calls are not yet implemented in android (this moment they are commented out):
+ # Some 'libpthread' calls are not yet implemented in android (at the moment calls to these API's are disabled in the components that use them):
    * pthread_sigmask
    * pthread_mutexattr_settype
    * pthread_setcanceltype
@@ -33,7 +33,7 @@ TBD: _Briefly describe what each component does and provide reference to all use
 
 == Preparation ==
 
- # Check if you have _git_, _java5-jdk_, and _expect_ utilities installed on your build host (TBD _explain why it is needed_)
+ # Check if you have _git_, _java5-jdk_, and _expect_ utilities installed on your build host (TBD _explain why it is needed_) use the 'which' command from the Linux prompt to see if they commands are present (i.e. which git)
  # Download _repo_. You can find detailed repo installing instructions [http://source.android.com/source/git-repo.html here]. Make sure ~/bin is in $PATH
 {{{
 # curl http://android.git.kernel.org/repo >~/bin/repo
