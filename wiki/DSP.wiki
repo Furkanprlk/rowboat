@@ -23,7 +23,8 @@ The following components form a complete software stack needed to work efficient
  # *DMAI*
     * The !DaVinci Multimedia Application Interface (DMAI) is a thin utility layer on top of the operating system (Linux or DSP/BIOS) and the Codec Engine (CE) to assist in quickly writing portable applications on a !DaVinci (or OMAP) platform.
     * [http://processors.wiki.ti.com/index.php/Davinci_Multimedia_Application_Interface]
- # *opencore dmai codecs*
+ # *!OpenCore DMAI Codecs*
+    * Integration of TI DSP accelerated codecs into the !PacketVideo !OpenCore framework that is provided here on the rowboat Android development site.
  # *additional DSP codecs* (optional), for example, mp3 DSP codec
 
 = List of modifications made on top of DSP stack =
