@@ -50,4 +50,9 @@ $ git clone git://gitorious.org/rowboat/ti_android_sgx_sdk.git
 
 To Configure and Build the sources for a OMAP35x (without DSP codecs), AM35x, AM37x based platform kindly follow the [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and Build wiki page].
 
-To build the source for OMAP3530 or DM3730 based platform with DSP codecs integrated kindly follow the [http://code.google.com/p/rowboat/wiki/DSP#Building_and_Testing_DSP_stack DSP stack integration] wiki page.
+
+==To enable DSP audio/video acceleration in OpenCore==
+
+If you are using a device with a DSP (i.e. OMAP3530, DM37x) then you can take advantage of the powerful multimedia acceleration capabilities of the device by following these instructions:
+
+[http://code.google.com/p/rowboat/wiki/DSP#Building_and_Testing_DSP_stack DSP stack integration]
