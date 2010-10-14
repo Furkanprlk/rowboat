@@ -128,7 +128,7 @@ If you have any video clip which should be supported but cannot play on rowboat,
  * dragging the playback progress bar causes a/v out of sync;
  * frame drops when playback D1 resolution mpeg4 video clips (_unconfirmed_);
 
-Using ARM AAC codec can workaround the 'system hangs' issue. Revert back to commit 2bec6d48... - 'Add OMX DSP aac codec support' in {{{ external/opencore }}} to use ARM AAC codec. The files touched under {{{ external/opencore }}} are,
+Using ARM AAC codec can workaround the 'system hangs' issue. Undo the commit ID 2bec6d48... - 'Add OMX DSP aac codec support' in {{{ external/opencore }}} to use ARM AAC codec. The files touched under {{{ external/opencore }}} are,
  `build_config/opencore_dynamic/pv_config.h` <br/>
  `codecs_v2/omx/omx_common/src/pv_omxcore.cpp` <br/>
  `codecs_v2/omx/omx_common/src/pv_omxregistry.cpp` <br/>
