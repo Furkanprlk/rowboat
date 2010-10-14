@@ -12,6 +12,8 @@ The following components form a complete software stack needed to work efficient
 
  # *DSP/BIOS* (and tools)
     * A TI provided realtime operating system for DSP's
+    * [http://processors.wiki.ti.com/index.php?title=Category:DSPBIOS DSP/BIOS information on TI E2E]
+    * [http://en.wikipedia.org/wiki/SYS/BIOS Wikipedia Overview of DSP/BIOS]
  # *Codec Engine* (and tools)
     * A TI provided framework to enable instantiation/control of Codecs running on DSP from the ARM
     * [http://processors.wiki.ti.com/index.php/Category:Codec_Engine]
