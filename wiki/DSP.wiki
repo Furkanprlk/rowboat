@@ -25,6 +25,7 @@ The following components form a complete software stack needed to work efficient
     * [http://processors.wiki.ti.com/index.php/Davinci_Multimedia_Application_Interface]
  # *!OpenCore DMAI Codecs*
     * Integration of TI DSP accelerated codecs into the !PacketVideo !OpenCore framework that is provided here on the rowboat Android development site.
+    * Technical Details available [http://code.google.com/p/rowboat/wiki/DSPCodecs here]
  # *additional DSP codecs* (optional), for example, mp3 DSP codec
 
 = List of modifications made on top of DSP stack =
