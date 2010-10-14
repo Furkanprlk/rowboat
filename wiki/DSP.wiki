@@ -2,7 +2,7 @@
 <wiki:toc max_depth="4" />
 = Introduction =
 
-The OMAP3530 or DM3730 (as well the !DaVinci (DM) family of processors) has a C46x+ DSP core embedded in the SoC. This DSP core can be used for various purposes, including multimedia decoding/encoding.  This offloads the host ARM processor for other general processing tasks and enables decoding of higher bitrate and/or higher resolution video and audio than would otherwise be achievable with Android.
+The OMAP3530 or DM3730 (as well the !DaVinci (DM) family of processors) has a C46x+ DSP core embedded in the SoC. This DSP core can be used for various purposes, including multimedia decoding/encoding.  This offloads the host ARM processor for other general processing tasks and enables decoding of higher bitrate and/or higher resolution video and audio than would otherwise be achievable with Android running on ARM only.
 
 [http://code.google.com/p/rowboat/ Rowboat] DSP support is based on the TI Linux Digital Video Software Development Kit ([http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/ DVSDK]) for the OMAP3530/DM3730.
 
