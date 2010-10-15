@@ -41,7 +41,7 @@ The following components form a complete software stack needed to work efficient
 # chmod a+x ~/bin/repo
 }}}
 
- # Download rowboat Android (Eclair version) with integrated TI DSP stack and TI's Android SGX SDK package from gitorious.org/rowboat:
+ # Download rowboat Android (Eclair version) with integrated TI DSP stack and TI's Android SGX SDK package from gitorious.org/rowboat. Please ensure you have atleast 13GB free space on your hard drive for the source and build temporary files.
     {{{ 
 # mkdir ~/rowboat-android
 # cd ~/rowboat-android
@@ -75,6 +75,7 @@ If English is not the locale in your host machine, some package install scripts 
     }}}
 To build Android with TI DSP stack use following command:
    {{{
+# cd ~/rowboat-android
 # make TARGET_PRODUCT=[omap3evm | beagleboard | igepv2] dvsdk
    }}}
 
@@ -102,6 +103,8 @@ Create the rootfs image:
 
 Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Prepare_SD_card ConfigureAndBuild#Prepare_SD_card] to populate the rootfs to a SD card. Before copying _uImage_ to the SD card, copy [http://code.google.com/p/rowboat/downloads/detail?name=x-load.bin.ift&can=2&q= x-load.bin.ift] to the SD card first partition, rename it to _mlo_; also copy [http://code.google.com/p/rowboat/downloads/detail?name=u-boot.evm.bin&can=2&q= u-boot.evm.bin] or [http://code.google.com/p/rowboat/downloads/detail?name=u-boot.beagle.bin&can=2&q= u-boot.beagle.bin] depending on your platform, rename it to _u-boot.bin_. _mlo_ has to be copied first, otherwise the board will not boot.
 
+[http://processors.wiki.ti.com/index.php/How_to_Make_3_Partition_SD_Card How to Make 3 Partition SD Card] wiki is an alternative reference to populate rowboat to a SD card.
+
 == Boot ==
 
 Refer to the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Configure_target_board ConfigureAndBuild#Configure_target_board] to setup the u-boot env on the target board.
@@ -120,7 +123,7 @@ OMAP3_EVM# saveenv
 
 == Test ==
 
-To test media playback use 'Music player' or 'Gallery' UI applications in rowboat. Supported formats are available on [http://code.google.com/p/rowboat/wiki/DSPCodecs#Supported_decoding_formats OMX DSP-accelerated audio/video codecs] wiki page.
+To test media playback copy media files to the first partition of the SD card and use 'Music player' or 'Gallery' UI applications in rowboat. Supported formats are available on [http://code.google.com/p/rowboat/wiki/DSPCodecs#Supported_decoding_formats OMX DSP-accelerated audio/video codecs] wiki page.
 Check for 'omx-dsp' tag in logcat to see that accelerated codecs are enabled.
 
 If you have any video clip which should be supported but cannot play on rowboat, please try to extract the video elementary stream and play it with the DVSDK decode demo.
@@ -144,6 +147,7 @@ Using ARM AAC codec can workaround the 'system hangs' issue. Undo the commit ID 
   # If you didn't build kernel before it will be configured with the default config and built.
   # It will rebuild kernel using your config if .config is in place (will take a few seconds if you didn't changed it).
  * DVSDK cleaning is now called only after downloading/installing it to clean up prebuilt stuff.
+ * Sometimes Jave VM complains about SIGSEGV during compiling rowboat. Please re-run the make command if it happens.
 
 
 =DVSDK/Android Integration Change Log=
