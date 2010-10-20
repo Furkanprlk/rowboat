@@ -12,7 +12,7 @@
 
 = Gingerbread =
 
-Plans for *Froyo* have not yet been finalized, but we will continue to work on the following: 
+Plans for *Gingerbread* have not yet been finalized, but we will continue to work on the following: 
  * Keep everything synchronized with Google Android
  * Integrate latest updates and bugfixes
  * Expand supported platforms list
