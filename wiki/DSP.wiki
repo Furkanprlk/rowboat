@@ -57,7 +57,6 @@ The following components form a complete software stack needed to work efficient
       * [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/dvsdk_3_01_00_10_Setup.bin dvsdk_setuplinux_3_01_00_10.bin]
       * [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/cs1omap3530_setupLinux_1_01_00-prebuilt-dvsdk3.01.00.10.bin cs1omap3530_setupLinux_1_01_00-prebuilt-dvsdk3.01.00.10.bin]
       * [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/ti_cgt_c6000_6.1.12_setup_linux_x86.bin ti_cgt_c6000_6.1.12_setup_linux_x86.bin]
-      * [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ce/2_25_05_16/exports/codec_engine_2_25_05_16.tar.gz codec_engine_2_25_05_16.tar.gz]
 
 == MP3 DSP codec (Optional) ==
 
@@ -153,6 +152,7 @@ Using ARM AAC codec can workaround the 'system hangs' issue. Undo the commit ID 
   # It will rebuild kernel using your config if .config is in place (will take a few seconds if you didn't changed it).
  * DVSDK cleaning is now called only after downloading/installing it to clean up prebuilt stuff.
  * Sometimes Jave VM complains about SIGSEGV during compiling rowboat. Please re-run the make command if it happens.
+ * If there is any failure while compiling dvsdk packages, and you want to redo a clean dvsdk build, please delete *external/ti-dsp/already_clean* and *external/ti-dsp/dvsdk_3_01_00_10/* and re-run the build command. If *external/ti-dsp/already_clean* exists, the build script will not install and patch dvsdk packages. Please refer to the top level Makefile for details.
 
 
 =DVSDK/Android Integration Change Log=
