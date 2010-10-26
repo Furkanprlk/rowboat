@@ -33,7 +33,7 @@ The following components form a complete software stack needed to work efficient
 
 == Preparation ==
 
- # Check if you have _git_, _java5-jdk_, and _expect_ utilities installed on your build host. Use the 'which' command from the Linux prompt to see if they commands are present (i.e. which git)
+ # Check if you have _git_, _java5-jdk_, and _expect_ utilities installed on your build host. Use the _which_ command from the Linux prompt to see if they commands are present (i.e. which git)
  # Download _repo_. You can find detailed repo installing instructions [http://source.android.com/source/git-repo.html here]. Make sure ~/bin is in $PATH
 {{{
 # mkdir -p ~/bin
@@ -41,13 +41,12 @@ The following components form a complete software stack needed to work efficient
 # chmod a+x ~/bin/repo
 }}}
 
- # Download rowboat Android (Eclair version) with integrated TI DSP stack and TI's Android SGX SDK package from gitorious.org/rowboat. Please ensure you have atleast 13GB free space on your hard drive for the source and build temporary files.
+ # Download rowboat Android (Eclair version) with integrated TI DSP stack from gitorious.org/rowboat. Please ensure you have atleast 13GB free space on your hard drive for the source and build temporary files.
     {{{ 
 # mkdir ~/rowboat-android
 # cd ~/rowboat-android
 # repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-eclair-dsp.xml
 # repo sync
-# git clone git://gitorious.org/rowboat/ti_android_sgx_sdk.git
     }}}
  # Download [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ce/2_25_05_16/exports/codec_engine_2_25_05_16.tar.gz codec_engine_2_25_05_16.tar.gz] and place it under the _external/ti-dsp_ folder.
     {{{
@@ -75,32 +74,29 @@ If English is not the locale in your host machine, some package install scripts 
 To build Android with TI DSP stack use following command:
    {{{
 # cd ~/rowboat-android
-# make TARGET_PRODUCT=[omap3evm | beagleboard | igepv2] dvsdk
+# make TARGET_PRODUCT=[omap3evm | beagleboard | igepv2] [OMAPES=(2.x|3.x|5.x)]
    }}}
 
-It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server. 
+It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server, and SGX drivers as while. 
 
-After build is finished successfully TI DSP specific kernel modules and codec server are located under the _/system/ti-dsp_ folder in the rootfs.
+Your must specify your board with *TARGET_PRODUCT* variable. Set *OMAPES* variable to install proper version of SGX drivers (Default is 3.x): 
+{{{
+OMAPES=2.x, for OMAP3530 ES1 or ES2;
+OMAPES=3.x, for OMAP3530 ES3.0;
+OMAPES=5.x, for DM37x
+}}}
 
-Prepare rootfs, assuming TARGET_PRODUCT=omap3evm in the command above:
+After build is finished successfully TI DSP specific kernel modules and codec server are located under the _/system/ti-dsp_ folder in the rootfs. The kernel uImage is in _kernel/arch/arm/boot/_ folder. 
+
+Create the rootfs image, assuming TARGET_PRODUCT=omap3evm in the command above:
     {{{
 # cd out/target/product/omap3evm
 # mkdir android_rootfs
-# cp -r root/* android_rootfs
-# cp -r system android_rootfs
-    }}}
-
-Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Install_the_Android_Graphics_SGX_SDK_on_Host_Machine ConfigureAndBuild#Install_the_Android_Graphics_SGX_SDK_on_Host_Machine] to integrate SGX SDK libraries and drivers into the rootfs. This step is necessary to get 2D GUI accelerated.
-
-For boards using OMAP3530, use {{{ OMAPES=3.x }}} install option, for boards using DM3730, use {{{ OMAPES=5.x }}} install option.
-
-Create the rootfs image:
-    {{{
-# cd out/target/product/omap3evm
+# cp -r root/* system android_rootfs
 # sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_stats android_rootfs . rootfs rootfs.tar.bz2
     }}}
 
-Download the [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/01_00_00/exports/Prebuilt_Images.tar.gz Prebuilt Image Package] and untar it.
+Download the [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/01_00_00/exports/Prebuilt_Images.tar.gz Prebuilt Image Package] and untar it to get _MLO_ and _u-boot_ images.
 {{{
 # wget http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/01_00_00/exports/Prebuilt_Images.tar.gz
 # tar zxf Prebuilt_Images.tar.gz
@@ -108,7 +104,7 @@ Download the [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_D
 
 Locate the x-loader and u-boot images for your platform. For OMAP3530 and DM3730, they are _!Prebuilt_Images/OMAP35x_AM37x_EVM/MLO_ and _!Prebuilt_Images/OMAP35x_AM37x_EVM/u-boot.bin_.
 
-Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Prepare_SD_card ConfigureAndBuild#Prepare_SD_card] to populate the rootfs to a SD card. Before copying _uImage_ to the SD card, first copy _MLO_ to the SD card first partition; also copy _u-boot.bin_ into the same partition. _mlo_ has to be copied first, otherwise the board will not boot.
+Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Prepare_SD_card ConfigureAndBuild#Prepare_SD_card] to populate the rootfs to a SD card. Before copying _uImage_ to the SD card, first copy _MLO_ to the SD card first partition; also copy _u-boot.bin_ into the same partition. _MLO_ has to be copied first, otherwise the board will not boot.
 
 [http://processors.wiki.ti.com/index.php/How_to_Make_3_Partition_SD_Card How to Make 3 Partition SD Card] wiki is an alternative reference to populate rowboat to a SD card.
 
