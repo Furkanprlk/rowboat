@@ -100,7 +100,15 @@ Create the rootfs image:
 # sudo ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_stats android_rootfs . rootfs rootfs.tar.bz2
     }}}
 
-Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Prepare_SD_card ConfigureAndBuild#Prepare_SD_card] to populate the rootfs to a SD card. Before copying _uImage_ to the SD card, copy [http://code.google.com/p/rowboat/downloads/detail?name=x-load.bin.ift&can=2&q= x-load.bin.ift] to the SD card first partition, rename it to _mlo_; also copy [http://code.google.com/p/rowboat/downloads/detail?name=u-boot.evm.bin&can=2&q= u-boot.evm.bin] or [http://code.google.com/p/rowboat/downloads/detail?name=u-boot.beagle.bin&can=2&q= u-boot.beagle.bin] depending on your platform, rename it to _u-boot.bin_. _mlo_ has to be copied first, otherwise the board will not boot.
+Download the [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/01_00_00/exports/Prebuilt_Images.tar.gz Prebuilt Image Package] and untar it.
+{{{
+# wget http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/01_00_00/exports/Prebuilt_Images.tar.gz
+# tar zxf Prebuilt_Images.tar.gz
+}}}
+
+Locate the x-loader and u-boot images for your platform. For OMAP3530 and DM3730, they are _Prebuilt_Images/OMAP35x_AM37x_EVM/MLO_ and _Prebuilt_Images/OMAP35x_AM37x_EVM/u-boot.bin_.
+
+Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Prepare_SD_card ConfigureAndBuild#Prepare_SD_card] to populate the rootfs to a SD card. Before copying _uImage_ to the SD card, first copy _MLO_ to the SD card first partition; also copy _u-boot.bin_ into the same partition. _mlo_ has to be copied first, otherwise the board will not boot.
 
 [http://processors.wiki.ti.com/index.php/How_to_Make_3_Partition_SD_Card How to Make 3 Partition SD Card] wiki is an alternative reference to populate rowboat to a SD card.
 
