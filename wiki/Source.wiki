@@ -43,7 +43,7 @@ Where _!ManifestName_ is:
 
 ==To download TI's Android SGX SDK==
 
-Kindly follow the below steps to download the TI's Android SGX SDK release, the release works with the rowboat eclair source downloaded by following the instructions above.
+Kindly follow the below steps to download the TI's Android SGX SDK release, the release works with the rowboat eclair source downloaded by following the instructions above. (Now for Eclair and Froyo versions TI's Android SGX SDK downloads with other rowboat sources to external/ti_android_sgx_sdk folder.)
 
 {{{
 $ cd rowboat-android
