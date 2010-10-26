@@ -97,6 +97,21 @@ Where _ManifestName_ is:
  * rowboat-eclair-dsp.xml - for eclair version of rowboat with DSP support 
  * rowboat-froyo.xml - for froyo version of rowboat
 
+== Build rowboat ==
+
+For froyo and eclair version of rowboat you may build kernel, filesystem, dvsdk (in case of dsp version) and install sgx drivers using the command below. After this step you may skip "Build kernel", "Build rootfs", "Install the Android Graphics SGX SDK on Host Machine", "Install the drivers in Target filesystem" sections and go to "Populate the root filesystem".
+
+{{{
+$ make TARGET_PRODUCT=(beagleboard|omap3evm|igepv2|am3517evm) [TARGET_BUILD_VARIANT=tests] [-j8] [OMAPES=(2.x|3.x|5.x)]
+}}}
+Your must specify your board with TARGET_PRODUCT variable. To build tests TARGET_BUILD_VARIANT may be used (see "Build rootfs" section for more info). It is possible to use more then one thread on multi core systems, specify -j _number_of_threads_ to use it. Set OMAPES variable to install proper version of SGX driver (Default is 3.x):
+{{{
+For OMAP3530 ES 1or2 = 2.x
+For OMAP3530 ES3.0   = 3.x
+For AM3517           = 3.x
+For AM37x           = 5.x
+}}}
+Once make's finished, you can find kernel uImage in kernel/arch/arm/boot/ directory.
 
 == Build kernel ==
 
@@ -131,7 +146,7 @@ If you are using multicore CPU in your host it’s possible to use more than one
 
 In following listing we build Android for OMAP3EVM board with unit test packages and use 8 threads to speed up build process:
 {{{
-$ make TARGET_PRODUCT=omap3evm TARGET_BUILD_VARIANT=tests -j8
+$ make TARGET_PRODUCT=omap3evm TARGET_BUILD_VARIANT=tests -j8 droid
 }}}
 
 After build process finished you'll need rootfs for this do following:
