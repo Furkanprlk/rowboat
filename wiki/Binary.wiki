@@ -1,0 +1,4 @@
+#summary Getting pre-built Android binaries for TI OMAP35x / AM35x / AM37x / DM37x
+
+We recommend starting with Texas Instruments Android DevKit:
+[http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/02_00_00/index_FDS.html]
