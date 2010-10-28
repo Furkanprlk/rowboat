@@ -1,7 +1,7 @@
 #summary Sidebar page
 
 === Most important pages ===
-  * [http://code.google.com/p/rowboat/downloads/Binary Get pre-built Android]
+  * [http://code.google.com/p/rowboat/wiki/Binary Get pre-built Android]
   * [http://code.google.com/p/rowboat/wiki/Source Get source code]
   * [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and build instructions]
   * [http://code.google.com/p/rowboat/wiki/DSP Enabling Multimedia Acceleration]
