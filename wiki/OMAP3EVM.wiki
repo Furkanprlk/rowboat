@@ -44,6 +44,9 @@ TBD
 
 === Using DVI output instead of on-board LCD ===
 If you need external display you need to enable additional kernel parameters:
+ * omapdss.def_disp=dvi - this specifies to use DVI output instead on-board screen
+ * omapfb.mode=720x480MR-16@60 - this specifies the resolution for external display
+or (in older versions of u-Boot) 
  * omap-dss.def_disp=dvi - this specifies to use DVI output instead on-board screen
  * omapfb.video_mode=720x480MR-16@60 - this specifies the resolution for external display
 Here 720x480MR-16@60 is example value which means:
@@ -59,7 +62,9 @@ For more detailed info see [http://http://www.mjmwired.net/kernel/Documentation/
 It is similar to usage of DVI output. If you want to use S-Video - make sure the cable is connected to EVM S-Video Output connector (not to confuse with Input!!!). 
 
 Pass following parameters in the command line:
-
+ * omapdss.def_disp="tv" 
+ * omapfb.mode="tv:ntsc"
+or (in older versions of u-Boot)
  * omap-dss.def_disp="tv"
  * omapfb.video_mode="tv:ntsc" or "tv:pal" 
 
