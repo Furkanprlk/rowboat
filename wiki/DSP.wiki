@@ -136,6 +136,8 @@ Check for 'omx-dsp' tag in logcat to see that accelerated codecs are enabled.
 
 If you have any video clip which should be supported but cannot play on rowboat, please try to extract the video elementary stream and play it with the DVSDK decode demo.
 
+The _top_ command shows the ARM load is about 10~20% when playing H.264 or MPEG4 video clips in D1 resolution with AAC codec running on ARM side.
+
 = Known Issues =
  * system hangs when playback video clips using both DSP AAC + DSP Video codecs together;
  * dragging the playback progress bar causes a/v out of sync;
