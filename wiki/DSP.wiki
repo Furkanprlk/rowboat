@@ -111,14 +111,19 @@ Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBu
 == Boot ==
 
 DVSDK DSP stack by default uses physical memory window within 89-128MB. In order not to change DSP stack mappings we recommend to use following memory settings:
-  * For boards with > 128MB of memory (say Beagle C3, or OMAP3EVM Gen. II), use "memory hole" parameters, for example adding: {{{ mem=88M@0x80000000 mem=128M@0x88000000 }}} to the bootargs tells kernel to take first 88M of phys memory and 128M with 128M offset, so the DSP memory window will not be managed by the kernel.(Don't forget to adjust these parameters for your board)
+  * For boards with > 128MB of memory (say Beagle C3, or OMAP3EVM Gen. II), use "memory hole" parameters, for example adding: {{{ mem=88M@0x80000000 mem=128M@0x88000000 }}} to the _bootargs_ tells kernel to take first 88M of phys memory and 128M with 128M offset, so the DSP memory window will not be managed by the kernel.(Don't forget to adjust these parameters for your board)
 
-  * For boards with 128MB of memory, add {{{ mem=88M }}} to your bootargs (rest will be used for DSP). With 128MB board you'll probably have buffer allocating problem with the omap_vout driver. To avoid this, try following bootargs additions for the display driver: {{{ omap_vout.vid1_static_vrfb_alloc=y omap_vout.video1_numbuffers=3 omap_vout.video1_bufsize=829440 omap_vout.video2_numbuffers=0 }}}. Anyway we recommend to use new 256M boards.
+  * For boards with 128MB of memory, add {{{ mem=88M }}} to your bootargs (rest will be used for DSP).
 
-The example of u-boot env setup for omap3evm with 256MB DDR to boot from SD card:
+You'll probably have kernel crash issue due to v4l2 buffer allocation failure with the omap_vout driver in some cases. To avoid this, try following _bootargs_ additions: {{{ omap_vout.vid1_static_vrfb_alloc=y omap_vout.video1_numbuffers=3 omap_vout.video1_bufsize=614400 omap_vout.video2_numbuffers=0 }}}, in which the bufsize is display width `*` height `*` bytes_per_pixel.
+
+The following is an example of u-boot env setup for omap3evm with 256MB DDR to boot from SD card. (It includes artificial line breaks to maintain a print-friendly document.)
 {{{
 OMAP3_EVM# setenv bootcmd 'mmc init; fatload mmc 0 80800000 uImage; bootm 80800000'
-OMAP3_EVM# setenv bootargs 'mem=88M@0x80000000 mem=128M@0x88000000 console=tty0 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw init=/init rootwait'
+OMAP3_EVM# setenv bootargs 'mem=88M@0x80000000 mem=128M@0x88000000 console=tty0 
+console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw init=/init rootwait
+omap_vout.vid1_static_vrfb_alloc=y omap_vout.video1_numbuffers=3 omap_vout.video1_bufsize=614400 
+omap_vout.video2_numbuffers=0'
 OMAP3_EVM# saveenv
 }}}
 
