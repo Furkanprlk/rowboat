@@ -39,6 +39,7 @@ Where _!ManifestName_ is:
  * _rowboat-donut-dsp.xml_ - for donut version of rowboat with DSP support
  * _rowboat-eclair.xml_ - for eclair version of rowboat
  * _rowboat-eclair-dsp.xml_ - for eclair version of rowboat with DSP support
+ * _rowboat-froyo.xml_ - for froyo version of rowboat
 
 
 ==To download TI's Android SGX SDK==
