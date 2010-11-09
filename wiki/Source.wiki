@@ -40,6 +40,7 @@ Where _!ManifestName_ is:
  * _rowboat-eclair.xml_ - for eclair version of rowboat
  * _rowboat-eclair-dsp.xml_ - for eclair version of rowboat with DSP support
  * _rowboat-froyo.xml_ - for froyo version of rowboat
+ * _rowboat-froyo-dsp.xml_ - for froyo version of rowboat with DSP support
 
 
 ==To download TI's Android SGX SDK==
