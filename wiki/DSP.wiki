@@ -47,9 +47,11 @@ The following components form a complete software stack needed to work efficient
 # repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-froyo-dsp.xml
 # repo sync
     }}}
- # Download [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ce/2_25_05_16/exports/codec_engine_2_25_05_16.tar.gz codec_engine_2_25_05_16.tar.gz] and place it under the _external/ti-dsp_ folder.
+ # Download [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ce/2_25_05_16/exports/codec_engine_2_25_05_16.tar.gz codec_engine_2_25_05_16.tar.gz] to the _external/ti-dsp_ folder.
     {{{
+# cd external/ti-dsp/
 # wget http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/ce/2_25_05_16/exports/codec_engine_2_25_05_16.tar.gz
+# cd -
     }}}
  # (*Optional*) DVSDK packages will be downloaded automatically during the build process, unless you want to use local files (previously downloaded instead in order to save time on downloads. You can put the following pre-downloaded packages under the _external/ti-dsp_ folder.
       * [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/dvsdk_3_01_00_10_Setup.bin dvsdk_setuplinux_3_01_00_10.bin]
