@@ -58,28 +58,6 @@ The following components form a complete software stack needed to work efficient
       * [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/cs1omap3530_setupLinux_1_01_00-prebuilt-dvsdk3.01.00.10.bin cs1omap3530_setupLinux_1_01_00-prebuilt-dvsdk3.01.00.10.bin]
       * [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_3_00/latest/exports/ti_cgt_c6000_6.1.12_setup_linux_x86.bin ti_cgt_c6000_6.1.12_setup_linux_x86.bin]
 
-== Use ARM Audio Codecs ==
-
-Currently there is a video playback issue - the system hangs when playback video clips using DSP audio codecs. To workaround this issue please undo some commits in {{{external/opencore}}} as listed below to use ARM audio codecs. 
-
-=== Undo commits on Froyo-DSP ===
- # 8d014a... - Fix MP3 DSP-accelerated codec support
- # b07f620... - Add MP3 DSP-accelerated codec registry information
- # d2c067d... - Remove excess #endif
- # 381c78f... - Add AAC DSP-accelerated codec registry information
-
-=== Undo commits on Eclair-DSP ===
- # 2bec6d4... - Add OMX DSP aac codec support
- # f17b027... - Add MP3 DSP codec registry information
-
-The files touched under {{{ external/opencore }}} are,
- `build_config/opencore_dynamic/pv_config.h` <br/>
- `codecs_v2/omx/omx_common/src/pv_omxcore.cpp` <br/>
- `codecs_v2/omx/omx_common/src/pv_omxregistry.cpp` <br/>
- `nodes/pvaacffparsernode/include/pvmf_aacffparser_defs.h` (on Eclair-DSP)
-
-The ARM load with this workaround has no noticeable increase since audio decoding is light in ARM cycles. 
-
 == Build ==
 
 Add Android toolchain in $PATH:
@@ -163,9 +141,8 @@ If you have any video clip which should be supported but cannot play on rowboat,
 The _top_ command shows the ARM load on DM3730@600MHz is about 10~20% when playing H.264 or MPEG4 video clips in D1 resolution with AAC codec running on ARM side.
 
 = Known Issues =
- * system hangs when playback video clips using both DSP AAC + DSP Video codecs together - one workaround is to use ARM audio codecs as stated in _Use ARM Audio Codecs_ section above;
  * dragging the playback progress bar causes a/v out of sync;
- * frame drops when playback D1 resolution mpeg4 video clips (_unconfirmed_);
+ * sluggish when playback some D1 resolution mpeg4 video clips (_Eclair+DSP only_);
 
 
 = Some Observations =
