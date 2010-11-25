@@ -45,7 +45,7 @@ TBD
 === Using DVI output instead of on-board LCD ===
 If you need external display you need to enable additional kernel parameters:
  * omapdss.def_disp=dvi - this specifies to use DVI output instead on-board screen
- * omapfb.mode=720x480MR-16@60 - this specifies the resolution for external display
+ * omapfb.mode=dvi:720x480MR-16@60 - this specifies the resolution for external display
 or (in older versions of u-Boot) 
  * omap-dss.def_disp=dvi - this specifies to use DVI output instead on-board screen
  * omapfb.video_mode=720x480MR-16@60 - this specifies the resolution for external display
