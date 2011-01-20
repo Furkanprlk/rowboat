@@ -371,7 +371,7 @@ There is one important requirement:
  * for BeagleBoard and IGEPv2 U-Boot should be 2009.08 
 === Beagleboard and IGEPv2 ===
 {{{
-Beagleboard# setenv bootcmd 'mmc init; fatload mmc 0 84000000 uImage; bootm 84000000'
+Beagleboard# setenv bootcmd 'mmcinit; fatload mmc 0 84000000 uImage; bootm 84000000'
 Beagleboard# setenv bootargs 'mem=128M androidboot.console=ttyS2 console=tty0 console=ttyS2,115200n8 root=/dev/mmcblk0p2 rw 
 init=/init rootwait omapfb.video_mode=640x480MR-16@60'
 Beagleboard# saveenv
