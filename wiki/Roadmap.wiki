@@ -1,7 +1,7 @@
 #summary This page contains the Rowboat Roadmap
 
 = What's available today =
-  * Google Android FroYo based Android for OMAP35x, AM35x, and AM37x
+  * Google Android Gingerbread based Android for OMAP35x, AM35x, and AM37x
   * SGX530 accelerated 3D graphics.
   * Validated on [OMAP3EVM], BeagleBoard and [AM3517EVM], including !PacketVideo ARM codecs, Web browsing, touchscreen, and more. See [http://code.google.com/p/rowboat/wiki/TestingAndroid this] wiki topic for other tests.
   * 2.6.32 kernel based on [http://processors.wiki.ti.com/index.php/AM35x-OMAP35x-PSP_03.00.00.04_Release_Notes PSP_03.00.00.04] 
@@ -9,11 +9,3 @@
   * [DSP] support (DSPLink, Codec Engine, DMAI, TIGStreamer) for FroYo
   * OpenCore/OpenMax DMAI bindings
   * Integration of OMAP35x/AM35x Display features, Video Input and Camera interfaces
-
-= Gingerbread =
-
-Plans for *Gingerbread* have not yet been finalized, but we will continue to work on the following: 
- * Keep everything synchronized with Google Android
- * Integrate latest updates and bugfixes
- * Expand supported platforms list
- * Try to achieve record performance and stability
