@@ -119,7 +119,7 @@ You'll probably have kernel crash issue due to v4l2 buffer allocation failure wi
 The following is an example of u-boot env setup for DM3730 EVM with 256MB DDR to boot from SD card. (It includes artificial line breaks to maintain a print-friendly document.) 'mpurate=1000' is necessary to decode 720P video clips. *Please use 1GHz verified DM37x devices, otherwise DSP will crash while running at 1GHz.*
 {{{
 OMAP3_EVM# setenv bootcmd 'mmc init; fatload mmc 0 80800000 uImage; bootm 80800000'
-OMAP3_EVM# setenv bootargs 'mem=71M@0x80000000 mem=128M@0x88000000 console=tty0
+OMAP3_EVM# setenv bootargs 'mem=68M@0x80000000 mem=128M@0x88000000 console=tty0
 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw rootfstype=ext3
 init=/init rootwait ip=off omap_vout.vid1_static_vrfb_alloc=y
 omapdss.def_disp=dvi omapfb.mode=dvi:1280x720MR-16 mpurate=1000'
@@ -129,7 +129,7 @@ OMAP3_EVM# saveenv
 The following is an example of u-boot env setup for OMAP3530 EVM with 256MB DDR to boot from SD card. (It includes artificial line breaks to maintain a print-friendly document.)
 {{{
 OMAP3_EVM# setenv bootcmd 'mmc init; fatload mmc 0 80800000 uImage; bootm 80800000'
-OMAP3_EVM# setenv bootargs 'mem=107M@0x80000000 mem=128M@0x88000000 console=tty0 
+OMAP3_EVM# setenv bootargs 'mem=104M@0x80000000 mem=128M@0x88000000 console=tty0 
 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw rootfstype=ext3
 init=/init rootwait ip=off omap_vout.vid1_static_vrfb_alloc=y'
 OMAP3_EVM# saveenv
