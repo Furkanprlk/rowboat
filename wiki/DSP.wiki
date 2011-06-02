@@ -1,4 +1,4 @@
-#summary This page contains information about enabling hardware acceleration for multimedia features of Android thorugh OpenCore on OMAP3530 and DM3730.
+#summary This page contains information about enabling hardware acceleration for multimedia features of Android on OMAP3530 and DM3730.
 
 <wiki:toc max_depth="4" />
 = Latest Update =
