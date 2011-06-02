@@ -2,14 +2,14 @@
 
 <wiki:toc max_depth="4" />
 = Latest Update =
- * 01/23/2011 - rowboat-froyo-dsp.xml updated TI DVSDK package to v4.01.00.09.
-   * added H.264 High Profile config parser support on OpenCORE;
-   * added MPEG4 ASP and H.264 MP/HP 720P decoding support for DM37x (1GHz only) platforms;
-   * removed the ISP Resizer Framecopy in display overlay;
-   * fixed the incorrect thumbnail color issue by adding VYUY and BGR565 formats support in OpenCORE color converters;
-   * moved the external (media) storage to partition 3 on the SD card;
-   * the DM37x and OMAP35x platforms use different dvsdk 4.01 package.
- * ~~12/20/2010 - rowboat-froyo-dsp.xml removed DVSDK4 installation dependency on CodeSourcery toolchain.~~
+ * 05/31/2011 - rowboat-gingerbread-dsp.xml is available (for DM37x EVM and Beagleboard-xM only).
+   * similar to the features in rowboat-froyo-dsp.xml, but uses Stagefright multimedia framework instead of OpenCORE;
+   * Support up-to 720P MPEG4 ASP decoding @30fps @10Mbps;
+   * Support up-to 720P H.264 HP Lvl3.1 decoding @24fps @4Mbps;
+   * requires 1GHz DM37xx device to support 720P video decoding;
+   * OMAP3530 is not supported at the moment;
+ * ~~01/23/2011 - rowboat-froyo-dsp.xml updated TI DVSDK package to v4.01.00.09.~~
+
 
 = Benefits =
 
@@ -41,52 +41,41 @@ The following components form a complete software stack needed to work efficient
 
 = Building and Testing DSP stack =
 
+This section explains how to build and run Gingerbread+DSP on DM37x devices. The next section provides the difference for Froyo+DSP on DM37x and OMAP35x devices.
+
 == Preparation ==
 
- # Check if you have _git_, _java5-jdk_, and _expect_ utilities installed on your build host. Use the _which_ command from the Linux prompt to see if they commands are present (i.e. which git)
+ # Check if you have _git_, _java6-jdk_, and _expect_ utilities installed on your build host. Use the _which_ command from the Linux prompt to see if they commands are present (i.e. which git)
  # Download _repo_. You can find detailed repo installing instructions [http://source.android.com/source/git-repo.html here]. Make sure ~/bin is in $PATH
 {{{
 # mkdir -p ~/bin
 # curl http://android.git.kernel.org/repo >~/bin/repo
 # chmod a+x ~/bin/repo
 }}}
- # Download Rowboat Android (Froyo version) with integrated TI DSP stack from gitorious.org/rowboat. Please ensure you have atleast 17GB free space on your hard drive for the source and build temporary files.
+ # Download Rowboat Android (Gingerbread version) with integrated TI DSP stack from gitorious.org/rowboat. Please ensure you have atleast 17GB free space on your hard drive for the source and build temporary files.
     {{{ 
 # mkdir ~/rowboat-android
 # cd ~/rowboat-android
-# repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-froyo-dsp.xml
+# repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-gingerbread-dsp.xml
 # repo sync
     }}}
- # Download the TI DVSDK package to the _external/ti-dsp_ folder manually from the table in webpage [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_4_00/latest/index_FDS.html]. Registration might be needed.
+ # Manually download the TI DVSDK package to the _external/ti-dsp_ folder from the table in webpage [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_4_00/latest/index_FDS.html]. Registration might be needed.
    * For DM37xx platform, download _dvsdk_dm3730-evm_4_01_00_09_setuplinux_ package;
    * For OMAP35xx platform, download _dvsdk_omap3530-evm_4_01_00_09_setuplinux_ package.
 
 == Build ==
 
-Add Android toolchain in $PATH:
-    {{{
-# export PATH=${HOME}/rowboat-android/prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin:$PATH
-    }}}
 If English is not the locale in your host machine, some package install scripts will fail due to unexpected non-English output. Set env _LANG_ as following to fix it:
     {{{
 # export LANG=C 
     }}}
-To build Android with TI DSP stack use following command:
+To build Android with TI DSP stack use following command. It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server, and SGX drivers as while. 
    {{{
 # cd ~/rowboat-android
-# make TARGET_PRODUCT=[omap3evm | beagleboard | igepv2] [OMAPES=(2.x|3.x|5.x)]
+# make TARGET_PRODUCT=[omap3evm | beagleboard] [OMAPES=5.x]
    }}}
 
-It builds Android and Linux kernel for the selected platform, TI kernel modules for DSP communication and codec server, and SGX drivers as while. 
-
-Your must specify your board with *TARGET_PRODUCT* variable. Set *OMAPES* variable to install proper version of SGX drivers (Default is 3.x): 
-{{{
-OMAPES=2.x, for OMAP3530 ES1 or ES2;
-OMAPES=3.x, for OMAP3530 ES3.0;
-OMAPES=5.x, for DM37x
-}}}
-
-After build is finished successfully TI DSP specific kernel modules and codec server are located under the _/system/ti-dsp_ folder in the rootfs. The kernel uImage is in _kernel/arch/arm/boot/_ folder. 
+Your must specify your board with *TARGET_PRODUCT* variable. *OMAPES* variable is set to 5.x by default to build for DM37xx only.
 
 Create the rootfs image, assuming TARGET_PRODUCT=omap3evm in the command above:
     {{{
@@ -96,13 +85,13 @@ Create the rootfs image, assuming TARGET_PRODUCT=omap3evm in the command above:
 # ../../../../build/tools/mktarball.sh ../../../host/linux-x86/bin/fs_get_stats android_rootfs . rootfs rootfs.tar.bz2
     }}}
 
-Download the [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/01_00_00/exports/Prebuilt_Images.tar.gz Prebuilt Image Package] and untar it to get _MLO_ and _u-boot_ images.
+For DM37x EVM, download the [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/TI_Android_GingerBread_2_3_DevKit_1_0/exports/DM37X.tar.gz TI Gingerbread Devkit 1.0 DM37x Prebuilt Image Package] and untar it to get _MLO_ and _u-boot_ images, which are _DM37X/Boot_Images/MLO_ and _DM37X/Boot_Images/u-boot.bin_ respectively.
 {{{
-# wget http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/01_00_00/exports/Prebuilt_Images.tar.gz
-# tar zxf Prebuilt_Images.tar.gz
+# wget http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/TI_Android_GingerBread_2_3_DevKit_1_0/exports/DM37X.tar.gz
+# tar zxf DM37X.tar.gz
 }}}
 
-Locate the x-loader and u-boot images for your platform. For OMAP3530 and DM3730, they are _!Prebuilt_Images/OMAP35x_AM37x_EVM/MLO_ and _!Prebuilt_Images/OMAP35x_AM37x_EVM/u-boot.bin_.
+To get _MLO_ and _u-boot.bin_ for Beagleboard-xM, download the [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/TI_Android_GingerBread_2_3_DevKit_1_0/exports/beagleboard-xm.tar.gz Beagleboard-xM Gingerbread prebuilt image package].
 
 Follow the instructions in [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild#Prepare_SD_card ConfigureAndBuild#Prepare_SD_card] to populate the rootfs to a SD card. Before copying _uImage_ to the SD card, first copy _MLO_ to the SD card first partition; also copy _u-boot.bin_ into the same partition. _MLO_ has to be copied first, otherwise the board will not boot.
 
@@ -119,28 +108,15 @@ You'll probably have kernel crash issue due to v4l2 buffer allocation failure wi
 The following is an example of u-boot env setup for DM3730 EVM with 256MB DDR to boot from SD card. (It includes artificial line breaks to maintain a print-friendly document.) 'mpurate=1000' is necessary to decode 720P video clips. *Please use 1GHz verified DM37x devices, otherwise DSP will crash while running at 1GHz.*
 {{{
 OMAP3_EVM# setenv bootcmd 'mmc init; fatload mmc 0 80800000 uImage; bootm 80800000'
-OMAP3_EVM# setenv bootargs 'mem=68M@0x80000000 mem=128M@0x88000000 console=tty0
+OMAP3_EVM# setenv bootargs 'mem=76M@0x80000000 mem=128M@0x88000000 console=tty0
 console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw rootfstype=ext3
 init=/init rootwait ip=off omap_vout.vid1_static_vrfb_alloc=y
 omapdss.def_disp=dvi omapfb.mode=dvi:1280x720MR-16 mpurate=1000'
 OMAP3_EVM# saveenv
 }}}
 
-The following is an example of u-boot env setup for OMAP3530 EVM with 256MB DDR to boot from SD card. (It includes artificial line breaks to maintain a print-friendly document.)
-{{{
-OMAP3_EVM# setenv bootcmd 'mmc init; fatload mmc 0 80800000 uImage; bootm 80800000'
-OMAP3_EVM# setenv bootargs 'mem=104M@0x80000000 mem=128M@0x88000000 console=tty0 
-console=ttyS0,115200n8 androidboot.console=ttyS0 root=/dev/mmcblk0p2 rw rootfstype=ext3
-init=/init rootwait ip=off omap_vout.vid1_static_vrfb_alloc=y'
-OMAP3_EVM# saveenv
-}}}
 
-To configure the display to the DVI port append the following options to _bootargs_ above.
-{{{
-omapdss.def_disp=dvi omapfb.mode=dvi:720x480MR-16
-}}}
-
-For more details of display mode see [http://www.mjmwired.net/kernel/Documentation/fb/modedb.txt modedb Documentation].
+The configuration in the example above sets the display to the DVI port. For more details of display mode see [http://www.mjmwired.net/kernel/Documentation/fb/modedb.txt modedb Documentation].
 
 == Test ==
 
@@ -152,26 +128,46 @@ If you have any video clip which should be supported but cannot play on rowboat,
 The _top_ command shows the ARM load on DM3730@1GHz is about 4~8% when playing H.264@HP video clips in 720P resolution with AAC codec running on ARM side.
 
 
+= Instruction Difference for Build and Run Froyo+DSP =
+
+== Preparation ==
+_java5-jdk_ is required for compiling Froyo. (Since Gingerbread _java6-jdk_ is required.)
+
+Use manifest _rowboat-froyo-dsp.xml_ to download Froyo source from Rowboat.
+
+== Build ==
+
+To build Rowboat Froyo+DSP use the following command:
+   {{{
+# make TARGET_PRODUCT=[omap3evm | beagleboard | igepv2] [OMAPES=(2.x|3.x|5.x)]
+   }}}
+
+Your must specify your board with *TARGET_PRODUCT* variable. Set *OMAPES* variable to install proper version of SGX drivers (Default is 3.x): 
+{{{
+OMAPES=2.x, for OMAP3530 ES1 or ES2;
+OMAPES=3.x, for OMAP3530 ES3.0;
+OMAPES=5.x, for DM37x
+}}}
+
+To get _MLO_ and _u-boot.bin_ for OMAP35x/DM37x EVM, download the [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/02_02_00/exports/DM37X.tar.gz TI Froyo Devkit 2.2 DM37x prebuilt image package]. To get the same for Beagleboard-xM, download the [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/02_02_00/exports/beagleboard-xm.tar.gz Beagleboard-xM Froyo prebuilt image package].
+
+== Boot ==
+For DM37x EVM and Beagleboard-xM, use the following memory hole setup in bootargs.
+{{{
+ 'mem=68M@0x80000000 mem=128M@0x88000000'
+}}}
+
+For OMAP35x EVM and Beagleboard, use the following memory hole setup in bootargs.
+{{{
+ 'mem=104M@0x80000000 mem=128M@0x88000000'
+}}}
+
+
 = Known Issues =
- * dragging the playback progress bar causes a/v out of sync with some video clips;
+ * dragging the playback progress bar causes a/v out of sync with some video clips (in Froyo only);
 
 
 = Some Observations =
 
- * Now kernel will be reconfigured with the default config only if there is no kernel/.config file so: 
-  # If you didn't build kernel before it will be configured with the default config and built.
-  # It will rebuild kernel using your config if .config is in place (will take a few seconds if you didn't changed it).
- * DVSDK cleaning is now called only after downloading/installing it to clean up prebuilt stuff.
  * Sometimes Jave VM complains about SIGSEGV during compiling rowboat. Please re-run the make command if it happens.
- * If there is any failure while compiling dvsdk packages, and you want to redo a clean dvsdk build, please delete *external/ti-dsp/already_clean* and *external/ti-dsp/ti-dvsdk`_``<`_version_`>`/* and re-run the build command. If *external/ti-dsp/already_clean* exists, the build script will not install and patch dvsdk packages. Please refer to the top level Makefile for details.
-
-
-=DVSDK/Android Integration Change Log=
- # Added SYS V IPC into bionic
- # Some 'libpthread' calls are not yet implemented in android (at the moment calls to these API's are disabled in the components that use them):
-   * pthread_sigmask
-   * pthread_mutexattr_settype
-   * pthread_setcanceltype
-   * pthread_attr_setinheritsched
- # Modified build files (Makefiles and config.bld) to adapt for Android toolchains
- # Memory holes kernel patches to enable support for memory sizes >128MBytes
+ * If there is any failure while compiling dvsdk packages, and you want to redo a clean dvsdk build, please delete *external/ti-dsp/already_clean* and *external/ti-dsp/ti-dvsdk`_``<`_version_`>`/* and re-run the build command. If *external/ti-dsp/already_clean* exists, the build script will not install and patch dvsdk packages again. Please refer to the top level Makefile for details.
