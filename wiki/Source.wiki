@@ -41,9 +41,12 @@ Where _!ManifestName_ is:
  * _rowboat-eclair-dsp.xml_ - for eclair version of rowboat with DSP support
  * _rowboat-froyo.xml_ - for froyo version of rowboat
  * _rowboat-froyo-dsp.xml_ - for froyo version of rowboat with DSP support
+ * _rowboat-gingerbread.xml_ - for gingerbread version of rowboat
+ * _rowboat-gingerbread-dsp.xml_ - for gingerbread version of rowboat with DSP support
 
 
-==To download TI's Android SGX SDK==
+==~~To download TI's Android SGX SDK~~==
+*NOTE*: This step is no longer needed since Froyo.
 
 Kindly follow the below steps to download the TI's Android SGX SDK release, the release works with the rowboat eclair source downloaded by following the instructions above. (Now for Eclair and Froyo versions TI's Android SGX SDK downloads with other rowboat sources to external/ti_android_sgx_sdk folder.)
 
