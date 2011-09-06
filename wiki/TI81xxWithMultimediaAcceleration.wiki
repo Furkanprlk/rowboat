@@ -1,0 +1,114 @@
+#summary Get started building Gingerbread for TI816x or TI814x with support for hardware-accelerated multimedia.
+
+= Introduction =
+
+----
+
+_This page is a *WORK IN PROGRESS*, and should be treated as incomplete until this notice is removed._  Until that time, it is highly unlikely that the step that installs TI's software components will complete successfully, and these components are needed for a successful Android build.
+
+_This page is a *WORK IN PROGRESS*, and should be treated as incomplete until this notice is removed._  Until that time, it is highly unlikely that the step that installs TI's software components will complete successfully, and these components are needed for a successful Android build.
+
+_This page is a *WORK IN PROGRESS*, and should be treated as incomplete until this notice is removed._  Until that time, it is highly unlikely that the step that installs TI's software components will complete successfully, and these components are needed for a successful Android build.
+
+_This page is a *WORK IN PROGRESS*, and should be treated as incomplete until this notice is removed._  Until that time, it is highly unlikely that the step that installs TI's software components will complete successfully, and these components are needed for a successful Android build.
+
+_This page is a *WORK IN PROGRESS*, and should be treated as incomplete until this notice is removed._  Until that time, it is highly unlikely that the step that installs TI's software components will complete successfully, and these components are needed for a successful Android build.
+
+----
+
+This document explains how to build and run Android Gingerbread on TI816x and TI814x with support Multimedia and DSP acceleration.
+
+These instructions have been tested with a fresh installation of Ubuntu 10.04 LTS.  Some steps might be slightly different for other Linux distributions or different Ubuntu versions.
+
+= Initializing Your Build Environment =
+
+Many of the steps in this section are based on instructions in this document:  [http://source.android.com/source/initializing.html]
+
+== Installing Needed Ubuntu Packages ==
+
+For a 64-bit Ubuntu installation, run the following commands:
+
+{{{
+sudo apt-get update
+sudo apt-get install python-software-properties git-core gnupg flex bison \
+  gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev   \
+  ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z1-dev   \
+  libgl1-mesa-dev g++-multilib mingw32 tofrodos corkscrew
+}}}
+
+For a 32-bit Ubuntu installation, run the following commands *(UNVERIFIED)*:
+
+{{{
+sudo apt-get update
+sudo apt-get install python-software-properties git-core gnupg flex bison \
+  gperf build-essential zip curl zlib1g-dev libc6-dev libncurses5-dev     \
+  x11proto-core-dev libx11-dev libreadline5-dev libz-dev libgl1-mesa-dev  \
+  g++-multilib mingw32 tofrodos corkscrew
+}}}
+
+
+== Installing the JDK ==
+
+Run the following commands:
+
+{{{
+sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
+sudo add-apt-repository "deb-src http://archive.canonical.com/ubuntu lucid partner"
+sudo apt-get update
+sudo apt-get install sun-java6-jdk
+}}}
+
+= Downloading the Source =
+
+Many of the steps in this section are based on instructions in this document:  [http://source.android.com/source/downloading.html]
+
+== Proxy Settings ==
+
+If you are behind a proxy, you need to run the following commands to access the external rowboat repositories.  Replace {{{<http proxy server>:<port>}}} with the name of your http proxy server and proxy port, and configure your https and ftp proxy servers in a similar fashion.
+
+{{{
+export http_proxy=<http proxy server>:<port>
+export https_proxy=<https proxy server>:<port>
+export ftp_proxy=<ftp proxy server>:<port>
+
+cat > ~/git-proxy.sh <<END
+#!/bin/sh
+
+CS=/usr/bin/corkscrew
+PROXY_HOST=<http proxy server>
+PROXY_PORT=<port>
+
+exec \${CS} \${PROXY_HOST} \${PROXY_PORT} \$*
+END
+export GIT_PROXY_COMMAND=${HOME}/git-proxy.sh
+chmod a+x ~/git-proxy.sh
+}}}
+
+== Install Repo ==
+
+Run the following commands:
+
+{{{
+mkdir ~/bin
+PATH=~/bin:$PATH
+curl https://android.git.kernel.org/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+}}}
+
+== Download the Source ==
+{{{
+mkdir ~/rowboat-android
+cd ~/rowboat-android
+repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-gingerbread-ti81xx-mc-dsp.xml
+repo sync
+}}}
+
+*TO BE CONTINUED*
+
+*TO BE CONTINUED*
+
+*TO BE CONTINUED*
+
+*TO BE CONTINUED*
+
+*TO BE CONTINUED*
