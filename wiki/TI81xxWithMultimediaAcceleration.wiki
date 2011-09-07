@@ -33,17 +33,17 @@ sudo apt-get update
 sudo apt-get install python-software-properties git-core gnupg flex bison \
   gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev   \
   ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z1-dev   \
-  libgl1-mesa-dev g++-multilib mingw32 tofrodos corkscrew
+  libgl1-mesa-dev g++-multilib mingw32 tofrodos corkscrew expect
 }}}
 
-For a 32-bit Ubuntu installation, run the following commands *(UNVERIFIED)*:
+For a 32-bit Ubuntu installation, run the following commands:
 
 {{{
 sudo apt-get update
 sudo apt-get install python-software-properties git-core gnupg flex bison \
   gperf build-essential zip curl zlib1g-dev libc6-dev libncurses5-dev     \
   x11proto-core-dev libx11-dev libreadline5-dev libz-dev libgl1-mesa-dev  \
-  g++-multilib mingw32 tofrodos corkscrew
+  g++-multilib mingw32 tofrodos corkscrew expect
 }}}
 
 
@@ -64,7 +64,7 @@ Many of the steps in this section are based on instructions in this document:  [
 
 == Proxy Settings ==
 
-If you are behind a proxy, you need to run the following commands to access the external rowboat repositories.  Replace {{{<http proxy server>:<port>}}} with the name of your http proxy server and proxy port, and configure your https and ftp proxy servers in a similar fashion.
+If you are behind a proxy server, you need to run the following commands to access the external rowboat repositories.  Replace {{{<http proxy server>:<port>}}} with the name of your http proxy server and proxy port, and configure your https and ftp proxy servers in a similar fashion.
 
 {{{
 export http_proxy=<http proxy server>:<port>
@@ -77,11 +77,11 @@ cat > ~/git-proxy.sh <<END
 CS=/usr/bin/corkscrew
 PROXY_HOST=<http proxy server>
 PROXY_PORT=<port>
-
 exec \${CS} \${PROXY_HOST} \${PROXY_PORT} \$*
 END
-export GIT_PROXY_COMMAND=${HOME}/git-proxy.sh
+
 chmod a+x ~/git-proxy.sh
+git config --global core.gitproxy "${HOME}/git-proxy.sh"
 }}}
 
 == Install Repo ==
@@ -96,12 +96,55 @@ chmod a+x ~/bin/repo
 }}}
 
 == Download the Source ==
+
+Run the following commands to download the Android source code:
+
 {{{
 mkdir ~/rowboat-android
 cd ~/rowboat-android
 repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-gingerbread-ti81xx-mc-dsp.xml
 repo sync
 }}}
+
+Next, install the TI SDK components needed for multimedia and DSP acceleration:
+{{{
+cd ~/rowboat-android/hardware/ti/ti81xx
+./install_mc_dsp_components.sh
+}}}
+
+= Build Android =
+
+If English is not the default locale on your host machine, some package installation scripts will fail due to unexpected non-English output. Set the {{{LANG}}} environment variable as follows to fix it:
+{{{
+export LANG=C 
+}}}
+
+To build Android the command below for the desired platform.  Android and the Linux kernel will be built, as well as the SGX drivers and other kernel modules that are needed for communication with hardware accelerators and codecs.
+
+_*For TI816x:*_
+{{{
+cd ~/rowboat-android
+make TARGET_PRODUCT=ti816xevm OMAPES=6.x
+make TARGET_PRODUCT=ti816xevm OMAPES=6.x fs_tarball
+}}}
+
+_*For TI814x:*_
+{{{
+cd ~/rowboat-android
+make TARGET_PRODUCT=ti814xevm OMAPES=6.x
+make TARGET_PRODUCT=ti814xevm OMAPES=6.x fs_tarball
+}}}
+
+On 32-bit systems you will see the following warning:
+
+{{{
+build/core/main.mk:79: ************************************************************
+build/core/main.mk:80: You are attempting to build on a 32-bit system.
+build/core/main.mk:81: Only 64-bit build environments are supported beyond froyo/2.2.
+build/core/main.mk:82: ************************************************************
+}}}
+
+It is ok to ignore this warning, as rowboat has patched Android to build on 32-bit machines.
 
 *TO BE CONTINUED*
 
