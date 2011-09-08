@@ -33,7 +33,7 @@ sudo apt-get update
 sudo apt-get install python-software-properties git-core gnupg flex bison \
   gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev   \
   ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z1-dev   \
-  libgl1-mesa-dev g++-multilib mingw32 tofrodos corkscrew expect
+  libgl1-mesa-dev g++-multilib mingw32 tofrodos corkscrew expect uboot-mkimage
 }}}
 
 For a 32-bit Ubuntu installation, run the following commands:
@@ -43,7 +43,7 @@ sudo apt-get update
 sudo apt-get install python-software-properties git-core gnupg flex bison \
   gperf build-essential zip curl zlib1g-dev libc6-dev libncurses5-dev     \
   x11proto-core-dev libx11-dev libreadline5-dev libz-dev libgl1-mesa-dev  \
-  g++-multilib mingw32 tofrodos corkscrew expect
+  g++-multilib mingw32 tofrodos corkscrew expect uboot-mkimage
 }}}
 
 
