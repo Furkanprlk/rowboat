@@ -16,7 +16,7 @@ _This page is a *WORK IN PROGRESS*, and should be treated as incomplete until th
 
 ----
 
-This document explains how to build and run Android Gingerbread on TI816x and TI814x with support Multimedia acceleration.
+This document explains how to build and run Android Gingerbread on TI816x and TI814x with support for hardware-accelerated multimedia.
 
 These instructions have been tested with a fresh installation of Ubuntu 10.04 LTS.  Some steps might be slightly different for other Linux distributions or different Ubuntu versions.
 
