@@ -16,7 +16,7 @@ _This page is a *WORK IN PROGRESS*, and should be treated as incomplete until th
 
 ----
 
-This document explains how to build and run Android Gingerbread on TI816x and TI814x with support Multimedia and DSP acceleration.
+This document explains how to build and run Android Gingerbread on TI816x and TI814x with support Multimedia acceleration.
 
 These instructions have been tested with a fresh installation of Ubuntu 10.04 LTS.  Some steps might be slightly different for other Linux distributions or different Ubuntu versions.
 
@@ -237,4 +237,3 @@ sudo ./mkmmc-android.sh <your SD card device> ~/rowboat-android/u-boot/MLO \
 Insert your new SD card into your device, and make sure the DIP switch settings are configured to boot form an SD card.  Turn on the device, and Android Gingerbread should boot.  Note that the first boot usually takes a little while because it runs some "first-time" initialization scripts the first time it is run.
 
 If you prepared any media clips for inclusion on the SD card, they should appear in the Gallery.  Sometimes clips don't appear during the initial Android boot, and if this happens try re-booting and they should show up from that point onward.
-
