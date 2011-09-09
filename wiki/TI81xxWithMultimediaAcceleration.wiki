@@ -40,10 +40,10 @@ For a 32-bit Ubuntu installation, run the following commands:
 
 {{{
 sudo apt-get update
-sudo apt-get install python-software-properties git-core gnupg flex bison \
-  gperf build-essential zip curl zlib1g-dev libc6-dev libncurses5-dev     \
-  x11proto-core-dev libx11-dev libreadline5-dev libz-dev libgl1-mesa-dev  \
-  g++-multilib mingw32 tofrodos corkscrew expect uboot-mkimage
+sudo apt-get install python-software-properties git-core gnupg flex bison     \
+  gperf build-essential zip curl zlib1g-dev libc6-dev libncurses5-dev         \
+  x11proto-core-dev libx11-dev libreadline5-dev libgl1-mesa-dev  g++-multilib \
+  mingw32 tofrodos corkscrew expect uboot-mkimage
 }}}
 
 
@@ -146,12 +146,95 @@ build/core/main.mk:82: *********************************************************
 
 It is ok to ignore this warning, as rowboat has patched Android to build on 32-bit machines.
 
-*TO BE CONTINUED*
+The Android source base is large and the build will take awhile to complete depending on the speed of your machine.
 
-*TO BE CONTINUED*
+= Creating an SD Card Image =
 
-*TO BE CONTINUED*
+This section walks you through the steps necessary to create a bootable SD card with for Android, using the binaries you built in the previous step.
 
-*TO BE CONTINUED*
+== Download and Install the SD Card Utilities ==
 
-*TO BE CONTINUED*
+To create an SD card image containing your Android build, first download the SD card utility scripts and untar them into your home directory.  Here is the [http://rowboat.googlecode.com/files/rowboat-sdcard-utils.tar.bz2 download link].
+
+{{{
+cd ~/
+tar xjvf rowboat-sdcard-utils.tar.bz2
+cd ~/rowboat-sdcard-utils
+}}}
+
+== Configure Boot Arguments ==
+
+The default boot arguments are located at {{{~/rowboat-sdcard-utils/Boot_Images/boot.scr.ti816x.config}}} for TI816x and {{{~/rowboat-sdcard-utils/Boot_Images/boot.scr.ti814x.config}}} for TI814x.  Edit them as you see fit, or leave them at the default settings.
+
+If you make changes to the boot arguments, you need to re-generate the boot image for them as follows:
+
+_*For TI816x:*_
+{{{
+cd ~/rowboat-sdcard-utils/Boot_Images
+./make_boot_scr.sh boot.scr.ti816x.config boot.scr.ti816x
+}}}
+
+_*For TI814x:*_
+{{{
+cd ~/rowboat-sdcard-utils/Boot_Images
+./make_boot_scr.sh boot.scr.ti814x.config boot.scr.ti814x
+}}}
+
+== Prepare Media Clips ==
+
+If you would like any media clips to be included on your SD card (for demo purposes, for example), copy them into
+
+{{{
+~/rowboat-sdcard-utils/Media_Clips
+}}}
+
+== Create the SD Card ==
+
+The most critical part of creating the SD card is determining what device your SD card is.  Place an SD card into your SD card reader, and run:
+
+{{{
+sudo fdisk -l | egrep "^Disk /dev"
+}}}
+
+This will list all the hard drives and other mounted media your machine.  The output will look something like this:
+
+{{{
+Disk /dev/sda: 1000.2 GB, 1000204886016 bytes
+Disk /dev/sdb: 1000.2 GB, 1000204886016 bytes
+Disk /dev/sdc: 500.1 GB, 500107862016 bytes
+Disk /dev/sdd: 1967 MB, 1967128576 bytes
+}}}
+
+Here I can see my two 1TB hard drives, my 500GB external USB drive, and the 2GB SD card that is in my machine.  The size of the device (2GB) is indicating to me that "/dev/sdd" is the device ID for the SD card.  Also, devices are usually assigned in-order alphabetically, so the fact that it is last in the list also shows that it is likely the most recent device inserted into the system.
+
+We will be writing the SD card as the root user, and if you use the wrong device file name, there is nothing stopping you from overwritting a hard drive and making it unusable instead of creating an SD card.  *PROCEED WITH CAUTION*
+
+Once you are satisfied that you know the device of your SD card, run the following commands:
+
+_*For TI816x:*_
+{{{
+cd ~/rowboat-sdcard-utils
+sudo ./mkmmc-android.sh <your SD card device> ~/rowboat-android/u-boot/MLO             \
+    ~/rowboat-android/u-boot/u-boot.bin                                                \
+    ~/rowboat-android/kernel/arch/arm/boot/uImage                                      \
+    ~/rowboat-sdcard-utils/Boot_Images/boot.scr.ti816x                                 \
+    ~/rowboat-sdcard-utils/rowboat-android/out/target/product/ti816xevm/rootfs.tar.bz2 \
+    ~/rowboat-sdcard-utils/Media_Clips
+}}}
+
+_*For TI814x:*_
+{{{
+cd ~/rowboat-sdcard-utils
+sudo ./mkmmc-android.sh <your SD card device> ~/rowboat-android/u-boot/MLO             \
+    ~/rowboat-android/u-boot/u-boot.bin                                                \
+    ~/rowboat-android/kernel/arch/arm/boot/uImage                                      \
+    ~/rowboat-sdcard-utils/Boot_Images/boot.scr.ti814x                                 \
+    ~/rowboat-sdcard-utils/rowboat-android/out/target/product/ti814xevm/rootfs.tar.bz2 \
+    ~/rowboat-sdcard-utils/Media_Clips
+}}}
+
+== Booting the SD card ==
+Insert your new SD card into your device, and make sure the DIP switch settings are configured to boot form an SD card.  Turn on the device, and Android Gingerbread should boot.  Note that the first boot usually takes a little while because it runs some "first-time" initialization scripts the first time it is run.
+
+If you prepared any media clips for inclusion on the SD card, they should appear in the Gallery.  Sometimes clips don't appear during the initial Android boot, and if this happens try re-booting and they should show up from that point onward.
+
