@@ -218,7 +218,7 @@ sudo ./mkmmc-android.sh <your SD card device> ~/rowboat-android/u-boot/MLO      
     ~/rowboat-android/u-boot/u-boot.bin                                                \
     ~/rowboat-android/kernel/arch/arm/boot/uImage                                      \
     ~/rowboat-sdcard-utils/Boot_Images/boot.scr.ti816x                                 \
-    ~/rowboat-sdcard-utils/rowboat-android/out/target/product/ti816xevm/rootfs.tar.bz2 \
+    ~/rowboat-android/out/target/product/ti816xevm/rootfs.tar.bz2 \
     ~/rowboat-sdcard-utils/Media_Clips
 }}}
 
@@ -229,7 +229,7 @@ sudo ./mkmmc-android.sh <your SD card device> ~/rowboat-android/u-boot/MLO      
     ~/rowboat-android/u-boot/u-boot.bin                                                \
     ~/rowboat-android/kernel/arch/arm/boot/uImage                                      \
     ~/rowboat-sdcard-utils/Boot_Images/boot.scr.ti814x                                 \
-    ~/rowboat-sdcard-utils/rowboat-android/out/target/product/ti814xevm/rootfs.tar.bz2 \
+    ~/rowboat-android/out/target/product/ti814xevm/rootfs.tar.bz2 \
     ~/rowboat-sdcard-utils/Media_Clips
 }}}
 
