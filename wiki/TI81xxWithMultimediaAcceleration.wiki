@@ -214,22 +214,22 @@ Once you are satisfied that you know the device of your SD card, run the followi
 _*For TI816x:*_
 {{{
 cd ~/rowboat-sdcard-utils
-sudo ./mkmmc-android.sh <your SD card device> ~/rowboat-android/u-boot/MLO             \
-    ~/rowboat-android/u-boot/u-boot.bin                                                \
-    ~/rowboat-android/kernel/arch/arm/boot/uImage                                      \
-    ~/rowboat-sdcard-utils/Boot_Images/boot.scr.ti816x                                 \
-    ~/rowboat-android/out/target/product/ti816xevm/rootfs.tar.bz2 \
+sudo ./mkmmc-android.sh <your SD card device> ~/rowboat-android/u-boot/MLO \
+    ~/rowboat-android/u-boot/u-boot.bin                                    \
+    ~/rowboat-android/kernel/arch/arm/boot/uImage                          \
+    ~/rowboat-sdcard-utils/Boot_Images/boot.scr.ti816x                     \
+    ~/rowboat-android/out/target/product/ti816xevm/rootfs.tar.bz2          \
     ~/rowboat-sdcard-utils/Media_Clips
 }}}
 
 _*For TI814x:*_
 {{{
 cd ~/rowboat-sdcard-utils
-sudo ./mkmmc-android.sh <your SD card device> ~/rowboat-android/u-boot/MLO             \
-    ~/rowboat-android/u-boot/u-boot.bin                                                \
-    ~/rowboat-android/kernel/arch/arm/boot/uImage                                      \
-    ~/rowboat-sdcard-utils/Boot_Images/boot.scr.ti814x                                 \
-    ~/rowboat-android/out/target/product/ti814xevm/rootfs.tar.bz2 \
+sudo ./mkmmc-android.sh <your SD card device> ~/rowboat-android/u-boot/MLO \
+    ~/rowboat-android/u-boot/u-boot.bin                                    \
+    ~/rowboat-android/kernel/arch/arm/boot/uImage                          \
+    ~/rowboat-sdcard-utils/Boot_Images/boot.scr.ti814x                     \
+    ~/rowboat-android/out/target/product/ti814xevm/rootfs.tar.bz2          \
     ~/rowboat-sdcard-utils/Media_Clips
 }}}
 
