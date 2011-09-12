@@ -154,12 +154,12 @@ This section walks you through the steps necessary to create a bootable SD card 
 
 == Download and Install the SD Card Utilities ==
 
-To create an SD card image containing your Android build, first download the SD card utility scripts and untar them into your home directory.  Here is the [http://rowboat.googlecode.com/files/rowboat-sdcard-utils.tar.bz2 download link].
+To create an SD card image containing your Android build, first download the SD card utility scripts and untar them into your home directory.
 
 {{{
 cd ~/
+wget http://rowboat.googlecode.com/files/rowboat-sdcard-utils.tar.bz2
 tar xjvf rowboat-sdcard-utils.tar.bz2
-cd ~/rowboat-sdcard-utils
 }}}
 
 == Configure Boot Arguments ==
@@ -182,10 +182,19 @@ cd ~/rowboat-sdcard-utils/Boot_Images
 
 == Prepare Media Clips ==
 
-If you would like any media clips to be included on your SD card (for demo purposes, for example), copy them into
+If you would like any media clips to be included on your SD card (e.g., for demo purposes), copy them into
 
 {{{
 ~/rowboat-sdcard-utils/Media_Clips
+}}}
+
+For example, run these commands to include the Sintel movie trailer:
+
+{{{
+cd ~/
+wget http://rowboat.googlecode.com/files/sintel_trailer-1080p-H264-HP-L40_AAC-2CH.tar.bz2
+mkdir -p ~/rowboat-sdcard-utils/Media_Clips/Video
+tar xjvf sintel_trailer-1080p-H264-HP-L40_AAC-2CH.tar.bz2 --strip-components=1 -C ~/rowboat-sdcard-utils/Media_Clips/Video
 }}}
 
 == Create the SD Card ==
@@ -237,3 +246,4 @@ sudo ./mkmmc-android.sh <your SD card device> ~/rowboat-android/u-boot/MLO \
 Insert your new SD card into your device, and make sure the DIP switch settings are configured to boot form an SD card.  Turn on the device, and Android Gingerbread should boot.  Note that the first boot usually takes a little while because it runs some "first-time" initialization scripts the first time it is run.
 
 If you prepared any media clips for inclusion on the SD card, they should appear in the Gallery.  Sometimes clips don't appear during the initial Android boot, and if this happens try re-booting and they should show up from that point onward.
+
