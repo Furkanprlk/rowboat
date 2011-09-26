@@ -95,6 +95,7 @@ repo sync
 Next, install the TI SDK components needed for multimedia and DSP acceleration:
 {{{
 cd ~/rowboat-android/hardware/ti/ti81xx
+stty cols 80
 ./install_mc_dsp_components.sh
 }}}
 
@@ -232,4 +233,3 @@ sudo ./mkmmc-android.sh <your SD card device> ~/rowboat-android/u-boot/MLO \
 Insert your new SD card into your device, and make sure the DIP switch settings are configured to boot form an SD card.  Turn on the device, and Android Gingerbread should boot.  Note that the first boot usually takes a little while because it runs some "first-time" initialization scripts the first time it is run.
 
 If you prepared any media clips for inclusion on the SD card, they should appear in the Gallery.  Sometimes clips don't appear during the initial Android boot, and if this happens try re-booting and they should show up from that point onward.
-
