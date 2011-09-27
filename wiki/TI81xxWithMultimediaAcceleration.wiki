@@ -83,7 +83,24 @@ chmod a+x ~/bin/repo
 
 == Download the Source ==
 
-Run the following commands to download the Android source code:
+Before proceeding, first decide if you want to use a known-good snapshot of the rowboat source that was tested with these instructions, or if you want the bleeding-edge source.  If you're new to Android, please start with the known-good snapshot to make sure the initial task of getting up and running goes as smoothly as possible.
+
+Please don't report problems with these build instructions without first trying the known-good snapshot.
+
+_*Known-Good Snapshot:*_
+
+Run the following commands to download the version of the Android source code that was tested with these instructions:
+
+{{{
+mkdir ~/rowboat-android
+cd ~/rowboat-android
+repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-gingerbread-ti81xx-mc-dsp-snapshot-GMT20110926200120.xml
+repo sync
+}}}
+
+_*Bleeding-Edge Source:*_
+
+Run the following commands to download the latest version Android source code, which may have been updated since these instructions were written:
 
 {{{
 mkdir ~/rowboat-android
@@ -92,7 +109,10 @@ repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-gingerbread-ti8
 repo sync
 }}}
 
-Next, install the TI SDK components needed for multimedia and DSP acceleration:
+_*Install the TI SDK Components:*_
+
+Install the TI SDK components needed for multimedia acceleration.  If these are not installed prior to building Android, the Android build will fail.
+
 {{{
 cd ~/rowboat-android/hardware/ti/ti81xx
 stty cols 80
