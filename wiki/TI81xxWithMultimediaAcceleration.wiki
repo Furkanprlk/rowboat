@@ -121,11 +121,6 @@ stty cols 80
 
 = Build Android =
 
-If English is not the default locale on your host machine, some package installation scripts will fail due to unexpected non-English output. Set the {{{LANG}}} environment variable as follows to fix it:
-{{{
-export LANG=C 
-}}}
-
 To build Android the command below for the desired platform.  Android and the Linux kernel will be built, as well as the SGX drivers and other kernel modules that are needed for communication with hardware accelerators and codecs.
 
 _*For TI816x:*_
