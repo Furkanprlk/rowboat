@@ -135,8 +135,11 @@ Beagleboard_ICS_patches
 |       |-- 0001-change-default-device-type-for-touch-screen.patch
 |       `-- 0002-disble-hardware-renderer.patch
 `-- hardware
-    `-- libhardware
-        `-- 0001-call-OMAPFB_WAITFORGO-ioctl-to-wait-for-empty-buffer.patch
+    |-- libhardware
+    |   `-- 0001-call-OMAPFB_WAITFORGO-ioctl-to-wait-for-empty-buffer.patch
+    `-- ti
+        `-- omap3
+            `-- 0001-Add-LOCAL_MODULE_TAGS-to-fix-build-error.patch
 }}}
 
 === Apply patches to Android ICS sources ===
@@ -169,6 +172,12 @@ hardware/libhardware
 {{{
  $ cd <android source path>/hardware/libhardware
  $ git am <patch_path>/0001-call-OMAPFB_WAITFORGO-ioctl-to-wait-for-empty-buffer.patch
+}}}
+
+hardware/ti/omap3
+{{{
+ $ cd <android source path>/hardware/ti/omap3
+ $ git am <patch_path>/0001-Add-LOCAL_MODULE_TAGS-to-fix-build-error.patch
 }}}
 
 = Download Tools =
