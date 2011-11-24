@@ -1,18 +1,25 @@
 = Introduction =
 
-<Under progress>
-This document explains how to build and run Android ICS on Beagleboard.
+This document explains how to build and run Android 4.0 Ice Cream Sandwich on TI's AM37x (ARM Cortex A8) based BeagleboardXM.
+
+NOTE: This activity is under progress can be used for evaluation purposes only.
 
 = Out of the Box Demo =
 
-This section gives the instructions to quickly prepare an SD Card image and get an experience of Android ICS on beagleboard.
+This section gives the instructions to quickly prepare an SD Card image and get an experience of Android Ice Cream Sandwich on Beagleboard XM.
 
 * Download the pre-built Image
 
 {{{
+ Using Curl
  $ cd ~
  $ curl http://rowboat.googlecode.com/files/beagleboard-xm.tar.gz > beagleboard-xm.tar.gz
  $ tar -zxvf beagleboard_xm.tar.gz
+
+ Direct Download
+ http://rowboat.googlecode.com/files/beagleboard-xm.tar.gz 
+$ tar -zxvf beagleboard_xm.tar.gz
+
 }}}
 
 * Get an SD Card of minimum size 4GBytes (Class4 minimum) and a USB Card reader 
@@ -40,7 +47,7 @@ This section gives the instructions to quickly prepare an SD Card image and get 
 
 ==  Installing Repo ==
 
-To install, initialize, and configure Repo, follow these steps
+To install, initialize, and configure repo, follow these steps
 
 * Make sure you have a bin/ directory in your home directory, and that it is included in your path
 
@@ -49,16 +56,16 @@ To install, initialize, and configure Repo, follow these steps
  $ PATH=~/bin:$PATH
 }}}
 
-* Download the Repo script and ensure it is executable
+* Download the repo script and ensure it is executable
 
 {{{
  $ curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
  $ chmod a+x ~/bin/repo
 }}}
 
-== Initializing Repo Client ==
+== Initializing repo Client ==
 
-After installing Repo, set up your client to access the android source repository
+After installing repo, set up your client to access the android source repository
 
 * Create an empty directory to hold your working files
 
@@ -103,7 +110,7 @@ Use following commands to clone kernel
 
 }}}
 
-= Apply Patches =
+= Download Beagleboard ICS patches =
 
 Download beagleboard ICS patches
 
@@ -113,8 +120,7 @@ Download beagleboard ICS patches
  $ tar -zxvf Beagleboard_ICS_patches.tar.gz
 }}}
 
-Apply extracted patches to respective repositories as per below tree.
-
+The patches are organized as shown below:
 {{{
 Beagleboard_ICS_patches
 .
@@ -131,6 +137,38 @@ Beagleboard_ICS_patches
 `-- hardware
     `-- libhardware
         `-- 0001-call-OMAPFB_WAITFORGO-ioctl-to-wait-for-empty-buffer.patch
+}}}
+
+=== Apply patches to Android ICS sources ===
+
+bionic
+{{{
+ $ cd <android source path>/bionic
+ $ git am <patch_path>/001-Add-omapfb-header-file.patch
+}}}
+
+device/ti/beagleboard
+
+In device/ti create a new folder named beagleboard and initialize new GIT repository
+
+{{{
+ $ mkdir <android source path>/device/ti/beagleboard
+ $ cd <android source path>/device/ti/beagleboard
+ $ git init .
+ $ git am 0001-Initial-configuration-for-beagleboard.patch
+}}}
+
+frameworks/base
+{{{
+ $ cd <android source path>/frameworks/base
+ $ git am <patch_path>/0001-change-default-device-type-for-touch-screen.patch
+ $ git am <patch_path>/0002-disble-hardware-renderer.patch
+}}}
+
+hardware/libhardware
+{{{
+ $ cd <android source path>/hardware/libhardware
+ $ git am <patch_path>/0001-call-OMAPFB_WAITFORGO-ioctl-to-wait-for-empty-buffer.patch
 }}}
 
 = Download Tools =
@@ -282,5 +320,10 @@ Copy compiled Images to image folder and create a bootable SD card as follows.
 
 == Booting Up the Board ==
 
-Insert your SD card into your beagleboard, connect serial cable, DVI dislay to board and turn on the device.Android ICS should boot. Note that the first boot usually takes a little while because it runs some "first-time" initialization scripts the first time it is run. You can connect mouse to board and browse ICS UI.
+Insert your SD card into your beagleboard, connect serial cable, DVI display to board and turn on the board.
 
+Android ICS should boot. 
+
+Note that the first boot usually takes a little while because it runs some "first-time" initialization scripts. You can connect mouse to board and browse ICS UI.
+
+Enjoy the all new desert with beagle - Pankaj Bharadiya (arowboat.org)
