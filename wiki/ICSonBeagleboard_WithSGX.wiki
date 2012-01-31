@@ -158,7 +158,7 @@ This command will generate the u-boot Image "u-boot.bin"
 
 This command will build kernel, android sources and sgx. If you want to build these components separately, follow below section.
 
-== Build Android, Kernel and SGX ==
+== Build Android, Kernel and SGX Separately ==
 
 === Build Kernel ===
 
