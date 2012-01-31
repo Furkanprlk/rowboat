@@ -150,7 +150,7 @@ The signGP tool will create a .ift file, rename the x-load.bin.ift to MLO
 
 This command will generate the u-boot Image "u-boot.bin"
 
-== Build Android, Kernel and SGX
+== Build Android, Kernel and SGX ==
 
 {{{
   $ make TARGET_PRODUCT=beagleboard OMAPES=5.x
@@ -158,7 +158,9 @@ This command will generate the u-boot Image "u-boot.bin"
 
 This command will build kernel, android sources and sgx. If you want to build these components separately, follow below sections.
 
-== Build Kernel ==
+== Build Android, Kernel and SGX ==
+
+=== Build Kernel ===
 
 * Change directory to kernel 
 
@@ -176,7 +178,7 @@ This command will build kernel, android sources and sgx. If you want to build th
 
 This will generate uImage (kernel image) in kernel/arch/arm/boot folder 
 
-* Build Android filesystem
+=== Build Android filesystem ===
 
 Use following commands to build the root file system.
 
@@ -185,7 +187,7 @@ Use following commands to build the root file system.
   $ make TARGET_PRODUCT=beagleboard
 }}}
 
-* Build and Install SGX(2D/3D accleration) drivers and libraries
+=== Build and Install SGX(2D/3D accleration) drivers and libraries ===
 
 Use following commands to build the root file system.
 
