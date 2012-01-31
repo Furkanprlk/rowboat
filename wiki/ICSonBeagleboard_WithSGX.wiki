@@ -1,6 +1,6 @@
 = Introduction =
 
-This document explains how to build and run Android 4.0 Ice Cream Sandwich on TI's AM37x (ARM Cortex A8) based BeagleboardXM.
+This document explains how to download, build and run Android 4.0 Ice Cream Sandwich on TI's AM37x (ARM Cortex A8) based BeagleboardXM with SGX (2D/3D acceleration) support
 
 
 = Out of the Box Demo =
@@ -156,7 +156,7 @@ This command will generate the u-boot Image "u-boot.bin"
   $ make TARGET_PRODUCT=beagleboard OMAPES=5.x
 }}}
 
-This command will build kernel, android sources and sgx. If you want to build these components separately, follow below sections.
+This command will build kernel, android sources and sgx. If you want to build these components separately, follow below section.
 
 == Build Android, Kernel and SGX ==
 
