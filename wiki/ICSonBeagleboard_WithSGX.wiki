@@ -1,6 +1,6 @@
 = Introduction =
 
-This document explains how to download, build and run Android 4.0 Ice Cream Sandwich on TI's AM37x (ARM Cortex A8) based BeagleboardXM with SGX (2D/3D acceleration) support
+This document explains how to download, build and run Android 4.0 Ice Cream Sandwich on TI's AM37x (ARM Cortex A8) based BeagleboardXM with SGX (3D graphics acceleration) support
 
 
 = Out of the Box Demo =
