@@ -105,7 +105,7 @@ Use following commands to clone u-boot
 Use following commands to clone kernel
 
 {{{     
- $ git clone git@gitorious.org:rowboat/kernel.git
+ $ git clone git://gitorious.org/rowboat/kernel.git
  $ git checkout -b rowboat-kernel-2.6.37 remotes/rowboat/rowboat-kernel-2.6.37
 
 }}}
