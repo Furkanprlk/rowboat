@@ -36,7 +36,7 @@ $ tar -zxvf TI_Android_Gingerbread_2.3.4_Kernel_2.6.37_dm37x.tar.gz
 * Prepare the MMC/SD card Image 
 
 {{{
- $ cd ~/beagleboard_xm
+ $ cd ~/TI_Android_Gingerbread_2.3.4_Kernel_2.6.37_dm37x
  $ sudo ./mkmmc-android.sh <Your SD card device e.g:/dev/sdc>
 }}}
 
