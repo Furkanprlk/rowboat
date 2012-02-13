@@ -4,7 +4,51 @@ The DM3730 has a powerful C64x+ DSP core embedded in the SoC. This DSP core can 
 
 [http://code.google.com/p/rowboat/ Rowboat] DSP support is based on the TI Linux Digital Video Software Development Kit (http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_4_00/latest/index_FDS.html DVSDK) for the DM3730. 
 
-This page contains information about enabling hardware acceleration for multimedia features of Android on DM3730.
+This page contains information about enabling hardware acceleration for multimedia 
+features of Android on DM3730.
+
+Components Used:
+Android: 2.3.4
+Linux Kernel: 2.6.37
+TI DVSDK: DVSDK_4.03 04_03_00_06
+
+= Out of the Box Demo =
+
+This section gives the instructions to quickly prepare an SD Card image and get an experience of Android Gingeread-2.3.4 on DM37x EVM.
+
+* Download the pre-built Image
+
+{{{
+ Using Curl
+ $ cd ~
+ $ curl http://rowboat.googlecode.com/files/TI_Android_Gingerbread_2.3.4_Kernel_2.6.37_dm37x.tar.gz > TI_Android_Gingerbread_2.3.4_Kernel_2.6.37_dm37x.tar.gz
+ $ tar -zxvf TI_Android_Gingerbread_2.3.4_Kernel_2.6.37_dm37x.tar.gz
+
+ Direct Download
+http://rowboat.googlecode.com/files/TI_Android_Gingerbread_2.3.4_Kernel_2.6.37_dm37x.tar.gz 
+$ tar -zxvf TI_Android_Gingerbread_2.3.4_Kernel_2.6.37_dm37x.tar.gz
+
+}}}
+
+* Get an SD Card of minimum size 4 GBytes (Class4 minimum) and a USB Card reader 
+
+* Insert the USB SD Card reader (with SD Card) in your host Linux PC 
+
+* Prepare the MMC/SD card Image 
+
+{{{
+ $ cd ~/beagleboard_xm
+ $ sudo ./mkmmc-android.sh <Your SD card device e.g:/dev/sdc>
+}}}
+
+* Setup the board
+
+{{{
+1. Insert the SD Card into the Board
+2. Switch on the board
+3. Wait for ~40 sec to get Android up on the UI screen 
+
+}}}
 
 
 = Getting Source Code =
