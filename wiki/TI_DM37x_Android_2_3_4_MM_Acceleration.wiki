@@ -149,7 +149,7 @@ This section walks you through the steps necessary to create a bootable SD card 
 
 == Configure Boot Arguments ==
 
-DM37x EVM boot arguments:
+* DM37x EVM boot arguments:
 
 {{{
  setenv bootcmd 'mmc init; fatload mmc 0 80800000 uImage; bootm 80800000'
@@ -157,17 +157,18 @@ DM37x EVM boot arguments:
 
 }}}
 
-Generate the boot script (boot.scr) as follows
+* Generate the boot script (boot.scr) as follows
 
-* Change directory to mk-bootscr folder.
+** Change directory to mk-bootscr folder.
 
 {{{
  $ cd ~/RowboatTools/mk-bootscr
 }}}
 
-* Edit mkbootscr file as per your boot arguments.
+** Edit mkbootscr file as per your boot arguments.
 
-* Generate boot.scr boot script
+** Generate boot.scr boot script
+
 {{{
  $ ./mkbootscr
 }}}
