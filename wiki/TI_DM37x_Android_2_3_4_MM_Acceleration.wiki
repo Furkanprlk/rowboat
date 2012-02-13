@@ -8,9 +8,9 @@ This page contains information about enabling hardware acceleration for multimed
 features of Android on DM3730.
 
 Components Used:
-* Android: 2.3.4
-* Linux Kernel: 2.6.37
-* TI DVSDK: DVSDK_4.03 04_03_00_06
+  - Android: 2.3.4<br>
+  - Linux Kernel: 2.6.37 <br>
+  - TI DVSDK: DVSDK_4.03 04_03_00_06 <br>
 
 = Out of the Box Demo =
 
