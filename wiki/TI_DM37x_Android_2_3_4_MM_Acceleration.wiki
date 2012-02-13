@@ -4,8 +4,7 @@ The DM3730 has a powerful C64x+ DSP core embedded in the SoC. This DSP core can 
 
 [http://code.google.com/p/rowboat/ Rowboat] DSP support is based on the TI Linux Digital Video Software Development Kit (http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/dvsdk/DVSDK_4_00/latest/index_FDS.html DVSDK) for the DM3730. 
 
-This page contains information about enabling hardware acceleration for multimedia 
-features of Android on DM3730.
+This page contains information about how to download, build and enable hardware acceleration for multimedia features of Android on DM37x EVM.
 
 Components Used:
   - Android: 2.3.4<br>
