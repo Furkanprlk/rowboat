@@ -110,6 +110,7 @@ Download SD card utility scripts and boot script tools & untar them into your ho
   $ cd ~
   $ curl http://rowboat.googlecode.com/files/RowboatTools-JB.tar.gz > RowboatTools-JB.tar.gz
   $ tar -zxvf RowboatTools-JB.tar.gz
+}}}
 
 = Compilation Procedure =
 
