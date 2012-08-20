@@ -37,8 +37,9 @@ Direct Download: http://rowboat.googlecode.com/files/beagleboard-xm-jb.tar.gz
     # Insert the SD Card into the Board
     # Connect DVI monitor
     # Switch on the board
-    # Wait for ~40 sec to get Android up on the UI screen
+    # Wait for ~50 sec to get Android up on the UI screen
 
+Note: First boot may take ~2-3 minutes.
 
 = Getting Source Code =
 
