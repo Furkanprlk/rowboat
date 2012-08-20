@@ -15,11 +15,10 @@ This section gives the instructions to quickly prepare an SD Card image and get 
   $ cd ~
   $ curl http://rowboat.googlecode.com/files/beaglebone-jb.tar.gz > beaglebone-jb.tar.gz
   $ tar -zxvf beaglebone-jb.tar.gz
-
-  Direct Download
-  http://rowboat.googlecode.com/files/beaglebone-jb.tar.gz 
-  $ tar -zxvf beaglebone-jb.tar.gz
 }}}
+
+Direct Download:  http://rowboat.googlecode.com/files/beaglebone-jb.tar.gz 
+
 
 Get a micro-SD Card of minimum size 4 GBytes (Class4 minimum) and a USB Card reader
 
