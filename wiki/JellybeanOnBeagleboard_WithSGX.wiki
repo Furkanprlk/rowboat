@@ -22,11 +22,11 @@ prebuilt images for Beagleboard
 $ tar -zxvf beagleboard_xm-jb.tar.gz
 }}}
 
-* Get a micro-SD Card of minimum size 4 GBytes (Class4 minimum) and a USB Card reader
+Get a micro-SD Card of minimum size 4 GBytes (Class4 minimum) and a USB Card reader
 
-* Insert the USB SD Card reader (with SD Card) in your host Linux PC
+Insert the USB SD Card reader (with SD Card) in your host Linux PC
 
-* Prepare the MMC/SD card Image
+Prepare the MMC/SD card Image
 
 {{{
  $ cd ~/beagleboard_xm-jb
