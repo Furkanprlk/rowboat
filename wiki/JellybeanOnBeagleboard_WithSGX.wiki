@@ -16,11 +16,11 @@ This section gives the instructions to quickly prepare an SD Card image and get 
 prebuilt images for Beagleboard
  $ curl http://rowboat.googlecode.com/files/beagleboard-xm-jb.tar.gz > beagleboard-xm-jb.tar.gz
  $ tar -zxvf beagleboard-xm-jb.tar.gz
-
- Direct Download
- http://rowboat.googlecode.com/files/beagleboard-xm-jb.tar.gz 
-$ tar -zxvf beagleboard_xm-jb.tar.gz
 }}}
+
+Direct Download: http://rowboat.googlecode.com/files/beagleboard-xm-jb.tar.gz 
+
+
 
 Get a micro-SD Card of minimum size 4 GBytes (Class4 minimum) and a USB Card reader
 
