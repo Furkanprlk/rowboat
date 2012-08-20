@@ -1,4 +1,5 @@
 http://jscuoh.files.wordpress.com/2011/08/page-under-construction.jpg
+<g:plusone size="medium"></g:plusone>
 
 = Introduction =
 
@@ -232,3 +233,5 @@ Android Jellybean should boot.
 Note that the first boot usually takes a little while because it runs some "first-time" initialization scripts. You can browse the Jellybean UI using the touchscreen or by connecting a USB mouse to the Beaglebone..
 
 Power Management is not fully integrated with android. We suggest to enable the "Keep Awake" setting in Settings-> Developer Options menu.
+
+Enjoy new dessert from Rowboat -- Vishveshwar Bhat and Shakti Tiwari.
