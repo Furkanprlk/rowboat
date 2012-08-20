@@ -8,7 +8,7 @@ This document explains how to download, build and run Android 4.1.1 Jelly Bean w
 
 This section gives the instructions to quickly prepare an SD Card image and get an experience of Android Jelly Bean on Beaglebone.
 
-== Download the pre-built Image ==
+  *Download the pre-built Image ==
 
 {{{
   Using Curl
@@ -20,22 +20,21 @@ This section gives the instructions to quickly prepare an SD Card image and get 
 Direct Download:  http://rowboat.googlecode.com/files/beaglebone-jb.tar.gz 
 
 
-Get a micro-SD Card of minimum size 4 GBytes (Class4 minimum) and a USB Card reader
+  * Get a micro-SD Card of minimum size 4 GBytes (Class4 minimum) and a USB Card reader
 
-Insert the USB SD Card reader (with SD Card) in your host Linux PC
+  * Insert the USB SD Card reader (with SD Card) in your host Linux PC
 
-Prepare the MMC/SD card Image
+  * Prepare the MMC/SD card Image
 
 {{{
   $ cd ~/beaglebone-jb
   $ sudo ./mkmmc-android.sh <Your SD card device e.g:/dev/sdc>
 }}}
 
-== Setup the board ==
-
-1. Insert the SD Card into the Board
-2. Switch on the board
-3. Wait for ~50 sec to get Android up on the UI screen 
+  * Setup the board
+    # Insert the SD Card into the Board
+    # Switch on the board
+    # Wait for ~50 sec to get Android up on the UI screen 
 
 Note: First boot may take ~2-3 minutes.
 
