@@ -3,7 +3,7 @@ http://jscuoh.files.wordpress.com/2011/08/page-under-construction.jpg
 
 = Introduction =
 
-This document explains how to download, build and run Android 4.1.1 Jelly Bean with SGX (3D graphics acceleration) support on TI's ARM Cortex A8 based AM335x Beaglebone with LCD7 cape
+This document explains how to download, build and run Android 4.1.1 Jelly Bean with SGX (3D graphics acceleration) support on TI's ARM Cortex A8 based AM335x Beaglebone (Rev A3 and later) with LCD7 cape
 
 = Out of the Box Demo =
 
@@ -37,7 +37,18 @@ Prepare the MMC/SD card Image
 
 1. Insert the SD Card into the Board
 2. Switch on the board
-3. Wait for ~40 sec to get Android up on the UI screen 
+3. Wait for ~50 sec to get Android up on the UI screen 
+
+Note: First boot may take ~2-3 minutes.
+
+== Getting serial console ==
+
+Serial console is provided via mini-usb cable connection between the Beaglebone and the Host.To establish a connection the serial console enter the following commands on the linux console
+
+{{{
+  $ sudo modprobe ftdi_sio vendor=0x0403 product=0xa6d0
+  $ minicom -D /dev/`dmesg | grep FTDI | grep "now attached to" | tail -n 1 | awk '{ print $NF }'` 
+}}}
 
 = Getting Source Code =
 
