@@ -2,11 +2,11 @@ http://jscuoh.files.wordpress.com/2011/08/page-under-construction.jpg
 
 = Introduction =
 
-This document explains how to download, build and run Android 4.1.1 Jellybean with SGX (3D graphics acceleration) support on TI's ARM Cortex A8 based AM37x Beagleboard-XM.
+This document explains how to download, build and run Android 4.1.1 Jelly Bean with SGX (3D graphics acceleration) support on TI's ARM Cortex A8 based AM37x Beagleboard-XM.
 
 = Out of the Box Demo =
 
-This section gives the instructions to quickly prepare an SD Card image and get an experience of Android Jellybean on Beagleboard XM.
+This section gives the instructions to quickly prepare an SD Card image and get an experience of Android Jelly Bean on Beagleboard XM.
 
 == Download the pre-built Image ==
 
@@ -18,7 +18,7 @@ prebuilt images for Beagleboard
  $ tar -zxvf beagleboard-xm-jb.tar.gz
 
  Direct Download
- http://rowboat.googlecode.com/files/beagleboard_xm-jb.tar.gz 
+ http://rowboat.googlecode.com/files/beagleboard-xm-jb.tar.gz 
 $ tar -zxvf beagleboard_xm-jb.tar.gz
 }}}
 
@@ -46,11 +46,11 @@ $ tar -zxvf beagleboard_xm-jb.tar.gz
 
 == Host Setup ==
 
-Rowboat Jellybean sources can be built only on 64-bit hosts. Build is tested on Ubuntu 10.10 (64-bit) and 12.04 (64-bit). Please follow the instructions at http://source.android.com/source/initializing.html to setup your build host.
+Rowboat Jelly Bean sources can be built only on 64-bit hosts. Build is tested on Ubuntu 10.10 (64-bit) and 12.04 (64-bit). Please follow the instructions at http://source.android.com/source/initializing.html to setup your build host.
 
 === Java JDK setup ===
 
-Ubuntu now comes only with OpenJDK which does not work for building the Rowboat Android Jellybean sources. Please follow the following steps to setup the Sun JDK:
+Ubuntu now comes only with OpenJDK which does not work for building the Rowboat Android Jelly Bean sources. Please follow the following steps to setup the Sun JDK:
 
 Download the Sun Java JDK from the following link: http://www.oracle.com/technetwork/java/javase/downloads/jdk6-downloads-1637591.html
 You need to download the Linux x64 bin installer. (Not the rpm installer)
@@ -267,8 +267,8 @@ Copy compiled Images to image folder and create a bootable SD card as follows.
 
 Insert your SD card into your beagleboard, connect serial cable, DVI display to board and turn on the board.
 
-Android Jellybean should boot.
+Android Jelly Bean should boot.
 
-Note that the first boot usually takes a little while because it runs some "first-time" initialization scripts. You can connect mouse to the board and browse the Jellybean UI.
+Note that the first boot usually takes a little while because it runs some "first-time" initialization scripts. You can connect mouse to the board and browse the Jelly Bean UI.
 
 Power Management is not fully integrated with android. We suggest to enable the "Keep Awake" setting in Settings-> Developer Options menu.
