@@ -33,14 +33,12 @@ Direct Download: http://rowboat.googlecode.com/files/beagleboard-xm-jb.tar.gz
  $ sudo ./mkmmc-android.sh <Your SD card device e.g:/dev/sdc>
 }}}
 
-* Setup the board
+  * Setup the board
+    # Insert the SD Card into the Board
+    # Connect DVI monitor
+    # Switch on the board
+    # Wait for ~40 sec to get Android up on the UI screen
 
-{{{
-1. Insert the SD Card into the Board
-2. Connect DVI monitor
-3. Switch on the board
-4. Wait for ~40 sec to get Android up on the UI screen 
-}}}
 
 = Getting Source Code =
 
