@@ -103,7 +103,7 @@ Create an empty directory to hold your working files
 === Get the Files ===
 
 {{{
- $ repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-jb.xml (for beagleboard-xm)
+ $ repo init -u git://gitorious.org/rowboat/manifest.git -m rowboat-jb-am37x.xml (for beagleboard-xm)
  $ repo sync
 }}}
 
