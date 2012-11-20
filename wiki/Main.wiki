@@ -3,6 +3,7 @@
 Browse the latest docs here. If you have questions, comments or want to contribute, let's talk at [http://webchat.freenode.net/?channels=rowboat #rowboat] or [mailto:rowboat@googlegroups.com rowboat@googlegroups.com]
 
 == Getting Started Topics ==
+  * [http://code.google.com/p/rowboat/wiki/AccessoryDevKit Android Accessory Development Kit using Beaglebone]
   * [http://code.google.com/p/rowboat/wiki/Binary Get pre-built Android]
   * [http://code.google.com/p/rowboat/wiki/Source Get source code]
   * [http://code.google.com/p/rowboat/wiki/ConfigureAndBuild Configure and build instructions]
