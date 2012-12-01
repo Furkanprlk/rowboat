@@ -1,10 +1,13 @@
-<font size="6">
-*Beaglebone based Android Accessory Development Kit*
+<font size="5">
+*Beaglebone based - Android Accessory Development Kit*
 </font>
 <br>
+
 <font size="4">
 *User Guide*
 </font>
+<br>
+<br>
 <font size="3">
 *Contents*
 *________*
