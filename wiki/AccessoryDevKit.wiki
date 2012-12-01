@@ -185,42 +185,40 @@ On Successful boot, following messages appear on the serial console.
   .
 After this the accessory application should take control and execute. <br>
 
+= Building Sources =
 
-
-= Developing with Source Code =
+The procedure to download the sources, installing the toolchain and compiling the sources to generate the final images (like pre-built images) is described below
 
 == Getting the Toolchain ==
 
-1. Download CodeSourcery tool chain for ARM for Linux http://www.codesourcery.com/sgpp/lite/arm/portal/package4465/public/arm-none-eabi/arm-2009q1-161-arm-none-eabi.bin
+   * Download CodeSourcery tool chain for ARM for Linux [http://www.codesourcery.com/sgpp/lite/arm/portal/package4465/public/arm-none-eabi/arm-2009q1-161-arm-none-eabi.bin LINK]
 
-2. Install toolchain
+   * Install toolchain on Linux Host machine (ubuntu 10.04 or above)
+{{{
+   #> chmod 777 arm-2009q1-161-arm-none-eabi.bin
+   #> ./arm-2009q1-161-arm-none-eabi.bin
+}}}
 
-   $ chmod 777 arm-2009q1-161-arm-none-eabi.bin
-   $ ./arm-2009q1-161-arm-none-eabi.bin
+   * Set PATH environment variable contain the path of the compiler/tool chain.
 
-2. Set PATH environment variable contain the path of the compiler/tool chain.
+{{{
+   Example:
+   #> export PATH=$PATH:/opt/tools/CodeSourcery/Sourcery_G++_Lite/bin
+}}}
+   * Point LIB_PATH shell environment variable to the Code Sourcery installation
 
-   Ex:
-   $export PATH=$PATH:/opt/tools/CodeSourcery/Sourcery_G++_Lite/bin
-
-3. Point LIB_PATH shell environment variable to the Code Sourcery installation
-   
-   Ex:
+{{{
+   Example:
    LIB_PATH=/opt/tools/CodeSourcery/Sourcery_G++_Lite
+}}}
 
-Note: /opt/tools/ is the path selected while installing the toolchain. If you are installing toolchain path at some other location, please set PATH and LIB_PATH variable appropriately.
-
+   Note: /opt/tools/ is the path selected while installing the toolchain. If you are installing toolchain path at some other location, please set PATH and LIB_PATH variable appropriately.
  
-== Getting Source code <TBD>==
+==Getting Source code==
 
-TI StarterWare software package is used to develop Beaglbone Android accessory. <br>
-StarterWare is a free software development package that provides no-OS platform support for ARM and DSP TI processors. StarterWare includes Device Abstraction Layer (DAL) libraries and example applications that demonstrate the capabilities of the peripherals on the TI processors. 
-<br>
-Please refer to http://processors.wiki.ti.com/index.php/StarterWare (Version: 02.00.00.07) related documents for more details.
+As mentioned above, we use TI's StarterWare software package to develop Beaglbone Android accessory. 
 
-== Get StarterWare Package ==
-
-1. Download StartWare Linux Installer package from http://software-dl.ti.com/dsps/dsps_public_sw/am_bu/starterware/02_00_00_07/index_FDS.html
+* Download StartWare Linux Installer package from http://software-dl.ti.com/dsps/dsps_public_sw/am_bu/starterware/02_00_00_07/index_FDS.html
 2. Install StarterWare package
 
    $ <path to package dir>/AM335X_StarterWare_02_00_00_07_Setup.bin
