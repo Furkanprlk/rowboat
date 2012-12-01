@@ -5,6 +5,9 @@
 = Introduction  =
 
 With Android 3.1, the Android platform introduced Android Open Accessory support, which allows external USB hardware (an Android USB accessory) to interact with an Android-powered device in a special accessory mode. Android USB accessories are specifically designed to attach to Android-powered devices and adhere to a simple protocol (Android accessory protocol) that allows them to detect Android-powered devices that support accessory mode. <br> With majority of smart phones and tablets using Android today, an Android open accessory standard provides a vital link between phones,tablets and other Android powered devices, and embedded systems which are pervasive in our daily life.Android accessories can be audio docking stations, exercise machines, personal medical testing devices, weather stations, or any other external hardware device that adds to the functionality of Android.
+
+http://processors.wiki.ti.com/index.php/File:BB_ADK.jpg
+
 <br>
 Beaglebone Android accessory kit gives you freedom to innovate and develop new accessories for Android devices. It provides an easy to use development kit that will help to take Android accessories at next level. 
 <br>
