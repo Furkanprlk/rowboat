@@ -502,3 +502,6 @@ Inster the populated Micro SD card into the slot on the BeagleBone. Press the re
 }}}
 
 The accessory application holds the control <br>
+
+=Support=
+For any further inputs and to participate in this project please feel free to contact us at rowboat@googlegroups.com
