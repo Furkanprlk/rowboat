@@ -50,8 +50,8 @@ This section gives the instructions to quickly prepare an SD Card with pre-built
 ==Getting Pre-built Images==
 
 To successfully experience beaglebone as an Android accessory we need 
-   *Beaglebone Starterware binary (with integrated Android accessory protocol and Accessory application) - BeagleBoneAcc.tar.gz
-   *A sample Android application (.apk) to be installed on any Android phone or Tablet. - [http://rowboat.googlecode.com/files/TI-ADKDemo.tar.gz TI-ADKDemo.tar.gz]
+   * Beaglebone Starterware binary (with integrated Android accessory protocol and Accessory application) - BeagleBoneAcc.tar.gz
+   * A sample Android application (.apk) to be installed on any Android phone or Tablet. - [http://rowboat.googlecode.com/files/TI-ADKDemo.tar.gz TI-ADKDemo.tar.gz]
 
 <br>
 
@@ -70,26 +70,22 @@ The above step prepares the bootable SD Card with Starterware image, which can b
 
 Follow the below steps to install the example Android application on Android phone or tablet (version 4.0.3 or above)
 
-   *The apk is located in TI-ADKDemo/bin/TI-ADKDemo.apk
-   *Install this application on Android4.0.3 powered device.
-   *The phone can be connected to a Windows or Linux PC and the application can be transferred/installed through ADB over USB. This step should be known to developer as it's a standard method to download/install any Android custom apk on phones/tablets.
+   * The apk is located in TI-ADKDemo/bin/TI-ADKDemo.apk
+   * Install this application on Android4.0.3 powered device.
+   * The phone can be connected to a Windows or Linux PC and the application can be transferred/installed through ADB over USB. This step should be known to developer as it's a standard method to download/install any Android custom apk on phones/tablets.
 
 ==Experience Beaglebone as Android accessory==
 
 After preparing the SD card for Beaglebone and installing apk on phone, please follow the steps below:
 
-   *Insert the SD card into Beaglebone
-   *Connect the power cable and power ON the board
-   *Let the phone/tablet be in on state with accessory app running
-   *Connect Beaglebone USB host port to mini/Micro-B USB port of the Android device (phone/tablet).
-   *Control the LEDs on Beaglebone through the buttons displayed on the Android accessory UI on phone.
-   *The phone displays a timer that is synced from RTC running on beaglebone.
+   * Insert the SD card into Beaglebone
+   * Connect the power cable and power ON the board
+   * Let the phone/tablet be in on state with accessory app running
+   * Connect Beaglebone USB host port to mini/Micro-B USB port of the Android device (phone/tablet).
+   * Control the LEDs on Beaglebone through the buttons displayed on the Android accessory UI on phone.
+   * The phone displays a timer that is synced from RTC running on beaglebone.
 
 This app is just an example to prove beaglebone communication with phone/tablet using Android accessory protocol. Both, the apk on phone and the application on beaglebone can be modified for any type of accessory. The Android accessory protocol need not be changed.
-
-== Hardware setup  ==
-
-Connect MiniB USB Cable,5V DC Power to the BeagleBone and have it powered. Windows or Linux Host can be used to connect and evaluate BeagleBone Accessory. We prefer to use Ubuntu 10.04 as the host to connect to BeagleBone.<br> 
 
 === Getting serial console <br>  ===
 
