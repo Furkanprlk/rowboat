@@ -30,9 +30,12 @@ BeagleBone Accessory Prebuilt SD card image from [http://software-dl.ti.com/dsps
 == Prepartion of SD card  ==
 
 Connect a Micro SD card via a USB card reader on an Ubuntu Machine<br>From a terminal, type the below commands, 
-<pre>$ tar -xzvf BeagleBoneAcc.tar.gz
+
+<font size="2"><code lang="c">
+$ tar -xzvf BeagleBoneAcc.tar.gz
 $ cd BeagleBoneAcc
-$ sudo ./mkmmc-acc.sh /dev/sd&lt;device&gt; </pre>
+$ sudo ./mkmmc-acc.sh /dev/sd<device>
+</code> </font>
  
 The above step prepares the bootable SD Card which can be used to boot beaglebone Accessory. 
 
