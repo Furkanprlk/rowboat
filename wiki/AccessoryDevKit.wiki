@@ -53,8 +53,6 @@ To successfully experience beaglebone as an Android accessory we need
    * Beaglebone Starterware binary (with integrated Android accessory protocol and Accessory application) - BeagleBoneAcc.tar.gz
    * A sample Android application (.apk) to be installed on any Android phone or Tablet. - [http://rowboat.googlecode.com/files/TI-ADKDemo.tar.gz TI-ADKDemo.tar.gz]
 
-<br>
-
 == Prepartion of SD card  ==
 
 Connect a Micro SD card via a USB card reader on an Ubuntu Machine<br>From a command terminal, type the below commands, 
@@ -214,9 +212,9 @@ The USB Accessory class driver provides an interface to detect and set up commun
 
 Application has to call USBACCOpen() to register a callback. The Accessory class driver will call this registered callback to notify whether 
 
-   #USB Accessory device is connected 
-   #Unknown device is connected 
-   #Device is disconnected.
+   # USB Accessory device is connected 
+   # Unknown device is connected 
+   # Device is disconnected.
 
 Once Device connected (USB_EVENT_CONNECTED) event is received, application can read and write to accessory device using AccessoryRead() and AccessoryWrite() calls 
 
@@ -225,7 +223,6 @@ Once Device connected (USB_EVENT_CONNECTED) event is received, application can r
 Below block diagram demonstrate the Beaglebone accessory application code flow. 
 <br> <br> 
 http://rowboat.googlecode.com/files/BB_Accessory_Flow.png
- <br> <br> 
 
 The application must register a USB accessory class driver by calling USBHCDRegisterDrivers() and call USBACCOpen to register a callback. The callback will get invoked by accessory class driver to indicate whether 
 
