@@ -1,5 +1,5 @@
-<font size="8">
-Beaglebone based Android Accessory Development Kit
+<font size="6">
+*Beaglebone based Android Accessory Development Kit*
 </font>
 <br>
 <font size="4">
@@ -7,9 +7,7 @@ Beaglebone based Android Accessory Development Kit
 </font>
 <font size="3">
 *Contents*
-<br>
 *________*
-<br>
 </font>
 <wiki:toc max_depth="2" />
 = Introduction  =
