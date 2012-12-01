@@ -85,6 +85,10 @@ After preparing the SD card for Beaglebone and installing apk on phone, please f
 
 This app is just an example to prove beaglebone communication with phone/tablet using Android accessory protocol. Both, the apk on phone and the application on beaglebone can be modified for any type of accessory. The Android accessory protocol need not be changed.
 
+Watch this video
+
+<wiki:video url="http://www.youtube.com/watch?v=ZlBZJ_vKEFQ"/>
+
 = Building Sources =
 
 The procedure to download the sources, installing the toolchain and compiling the sources to generate the final images (like pre-built images) is described below
