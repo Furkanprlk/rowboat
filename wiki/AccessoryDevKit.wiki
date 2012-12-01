@@ -43,9 +43,17 @@ Why use TI's StarterWare software package as a base software v/s Linux or u-boot
 
 TI's starterware is free to use and distribute, comes with pre-integrated libraries with APIs to access every peripheral on AM335x processor, very easy to use with lots of examples, direct support from TI. For more details please refer to [http://processors.wiki.ti.com/index.php/StarterWare_Getting_Started_02.00.XX.XX StarterWare getting started guide] and [http://processors.wiki.ti.com/index.php/StarterWare_02.00.00.07_User_Guide user guide]<br>
 
+==Android Accessory over Bluetooth (TBD) ==
+The current implementation is based on USB, this will be extended to work over Bluetooth. We are waiting for the beaglebone Bluetooth cape availability.
+
+==Android Accessory over Google Cloud messaging==
+Beaglebone can be communicate to Android phone using Google Cloud messaging service, there is an interesting implementation from our community member. Refer to this project for more details.
+
+http://www.dwindlingthumbs.com/hardware/beaglebone-based-security-system/
+
 =Out of Box Demo=
 
-This section gives the instructions to quickly prepare an SD Card with pre-built binaries of beaglebone accessory software  and to experience Beaglebone as Android accessory.
+This section gives the instructions to quickly prepare an SD Card with pre-built binaries of beaglebone accessory software  and to experience Beaglebone as Android accessory over USB.
 
 ==Getting Pre-built Images==
 
