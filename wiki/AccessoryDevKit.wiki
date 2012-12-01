@@ -45,25 +45,47 @@ TI's starterware is free to use and distribute, comes with pre-integrated librar
 
 =Out of Box Demo=
 
-This section gives the instructions to quickly prepare an SD Card with pre-built binaries of beaglebone software (Starterware, Android accessory application for Starterware and protocol) and to experience Beaglebone as Android accessory.
+This section gives the instructions to quickly prepare an SD Card with pre-built binaries of beaglebone accessory software  and to experience Beaglebone as Android accessory.
 
 ==Getting Pre-built Images==
 
-BeagleBone Accessory Prebuilt SD card image from [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/TI_Android_GingerBread_2_3_4_DevKit_2_1_1/index_FDS.html TI Android DevKit download page]
+To successfully experience beaglebone as an Android accessory we need 
+   *Beaglebone Starterware binary (with integrated Android accessory protocol and Accessory application) - BeagleBoneAcc.tar.gz
+   *A sample Android application (.apk) to be installed on any Android phone or Tablet. - [http://rowboat.googlecode.com/files/TI-ADKDemo.tar.gz TI-ADKDemo.tar.gz]
 
 <br>
 
 == Prepartion of SD card  ==
 
-Connect a Micro SD card via a USB card reader on an Ubuntu Machine<br>From a terminal, type the below commands, 
+Connect a Micro SD card via a USB card reader on an Ubuntu Machine<br>From a command terminal, type the below commands, 
 
-<font size="2"><code lang="c">
- $ tar -xzvf BeagleBoneAcc.tar.gz
- $ cd BeagleBoneAcc
- $ sudo ./mkmmc-acc.sh /dev/sd<device>
-</code> </font>
- 
-The above step prepares the bootable SD Card which can be used to boot beaglebone Accessory. 
+{{{
+   #> tar -xzvf BeagleBoneAcc.tar.gz
+   #> cd BeagleBoneAcc
+   #> sudo ./mkmmc-acc.sh /dev/sd<device>
+}}}
+The above step prepares the bootable SD Card with Starterware image, which can be used to boot beaglebone as an Android accessory.
+
+==Install Accessory Application==
+
+Follow the below steps to install the example Android application on Android phone or tablet (version 4.0.3 or above)
+
+   *The apk is located in TI-ADKDemo/bin/TI-ADKDemo.apk
+   *Install this application on Android4.0.3 powered device.
+   *The phone can be connected to a Windows or Linux PC and the application can be transferred/installed through ADB over USB. This step should be known to developer as it's a standard method to download/install any Android custom apk on phones/tablets.
+
+==Experience Beaglebone as Android accessory==
+
+After preparing the SD card for Beaglebone and installing apk on phone, please follow the steps below:
+
+   *Insert the SD card into Beaglebone
+   *Connect the power cable and power ON the board
+   *Let the phone/tablet be in on state with accessory app running
+   *Connect Beaglebone USB host port to mini/Micro-B USB port of the Android device (phone/tablet).
+   *Control the LEDs on Beaglebone through the buttons displayed on the Android accessory UI on phone.
+   *The phone displays a timer that is synced from RTC running on beaglebone.
+
+This app is just an example to prove beaglebone communication with phone/tablet using Android accessory protocol. Both, the apk on phone and the application on beaglebone can be modified for any type of accessory. The Android accessory protocol need not be changed.
 
 == Hardware setup  ==
 
@@ -167,22 +189,7 @@ On Successful boot, following messages appear on the serial console.
   .
 After this the accessory application should take control and execute. <br>
 
-== Accessory Usage ==
 
-* Download TI Beaglebone Accessory Android application from <LINK>.
-* Install this application on Android4.0.3 powered device.
-* Connect Beaglebone USB host port to mini/Micro-B USB port of the device.
-
-TI Accessory demo application should launch automatically and you should see below screen.
-<br> 
-<br> 
-
-<Screen>
-
-<br> 
-<br> 
-
-The application will allow access to control Beaglebone user LEDs and will display Beglebone RTC clock.
 
 = Developing with Source Code =
 
