@@ -2,7 +2,7 @@
 *Beaglebone based - Android Accessory Development Kit*
 </font>
 <br>
-
+<br>
 <font size="4">
 *User Guide*
 </font>
@@ -38,15 +38,16 @@ http://rowboat.googlecode.com/files/BB_Android_Accessory.png
 Why use TI's StarterWare software package as a base software v/s Linux or u-boot ?
 <br>
    - For Linux, we have to develop a all new USB class for Android accessory and a custom application that talks to peripheral Linux drivers. The implementation is not complex, we have plans to develop this in future.
+
    - u-boot has limited support for AM335x peripherals and we found USB Host protocol lack few features to implement the accessory protocol.
 
 TI's starterware is free to use and distribute, comes with pre-integrated libraries with APIs to access every peripheral on AM335x processor, very easy to use with lots of examples, direct support from TI. For more details please refer to [http://processors.wiki.ti.com/index.php/StarterWare_Getting_Started_02.00.XX.XX StarterWare getting started guide] and [http://processors.wiki.ti.com/index.php/StarterWare_02.00.00.07_User_Guide user guide]<br>
 
 =Out of Box Demo=
 
-This section gives the instructions to quickly prepare an SD Card image and get an experience of TI Beaglebone Accessory.
+This section gives the instructions to quickly prepare an SD Card with pre-built binaries of beaglebone software (Starterware, Android accessory application for Starterware and protocol) and to experience Beaglebone as Android accessory.
 
-== Getting Prebuilt Images  ==
+==Getting Pre-built Images==
 
 BeagleBone Accessory Prebuilt SD card image from [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/TI_Android_GingerBread_2_3_4_DevKit_2_1_1/index_FDS.html TI Android DevKit download page]
 
