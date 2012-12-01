@@ -280,7 +280,10 @@ Once Device connected (USB_EVENT_CONNECTED) event is received, application the c
 
 == Accessory Application  ==
 
-Below block diagram demonstrate the Beaglebone accessory application code flow. <br> <br> [[Image:StarterWareACC.png|border]] <br> <br> 
+Below block diagram demonstrate the Beaglebone accessory application code flow. 
+<br> <br> 
+http://rowboat.googlecode.com/files/BB_Accessory_Flow.png
+ <br> <br> 
 
 The application must register a USB accessory class driver by calling USBHCDRegisterDrivers() and call USBACCOpen to register a callback. The callback will get invoked by accessory class driver to indicate whether - <br> 
 
