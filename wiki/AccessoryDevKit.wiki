@@ -87,7 +87,6 @@ After preparing the SD card for Beaglebone and installing apk on phone, please f
 
 This app is just an example to prove beaglebone communication with phone/tablet using Android accessory protocol. Both, the apk on phone and the application on beaglebone can be modified for any type of accessory. The Android accessory protocol need not be changed.
 
-
 = Building Sources =
 
 The procedure to download the sources, installing the toolchain and compiling the sources to generate the final images (like pre-built images) is described below
@@ -132,8 +131,6 @@ As mentioned above, we use TI's StarterWare software package to develop Beaglbon
     #> cd <StarterWare 02.00.00.07>
     #> patch -p1< <patch to patch directory>/adk_patch/0001-Add-beaglebone-Accessory-support.patch
 }}}
-
-<br>
 
 == Compile the Source Code ==
 
@@ -180,19 +177,27 @@ Above steps will create a bootable SD/MMC card which should be similar to pre-bu
 
 Follow the steps mentioned above in the Out of the box demo section to boot the board and to use the beaglebone as an Android accessory.
 
-= Customizing software to develop new accessory=
+=Customizing software to develop new accessory=
 
-The Beaglebone accessory development kit makes a use of StarterWare USB stack and implements a USB accessory class driver which adhere to the Android opem accessory standard and accessory application to interact with the Android powered device. For detailed design of StarterWare USB stack, please visit http://processors.wiki.ti.com/index.php/StarterWare_USB#Core_Design 
+The software stack contains the 
+   * TI's StarterWare Package (_Downloaded from TI's site_)
+   * USB class driver for Android accessory (_Newly Implemented_)
+      * Implemented using the StarterWare's USB stack which adheres to the Android open accessory standard. The detailed design of StarterWare USB stack is provided [http://processors.wiki.ti.com/index.php/StarterWare_USB#Core_Design HERE]
+      * Sample Accessory application (_Newly Implemented_)
+      * Uses StarterWare libraries to control the hardware and interact with Android Phone/Tablet
 
-Here is the block diagram of Beaglebone USB accssory software which highlights important software blocks. 
+The block diagram of Beaglebone USB accessory software is as shown below. 
 <br>
 <br>
 http://rowboat.googlecode.com/files/BB_accessory_stack.png 
 <br>
 <br>
+
+   NOTE: To develop a new accessory, one has to modify only the StarterWare application and the phone side apk. The USB class driver remains unchanged. 
+
 == Host Controller driver  ==
 
-The USB host controller driver handles all of the details necessary to discover and enumerate any USB device. The USB host controller driver only performs enumeration and relies on the host accessory class driver to perform any other communications with Android device. Most of the code used to enumerate devices is run in interrupt context and is contained in the enumeration handler. In order to complete the enumeration process, the host controller driver also requires that the application periodically call the USBHCDMain() function. 
+The USB host controller driver handles the discovery and enumeration of any USB device. The USB host controller driver only performs enumeration and relies on the host accessory class driver to perform any other communications with Android device. Most of the code used to enumerate devices is run in interrupt context and is contained in the enumeration handler. In order to complete the enumeration process, the host controller driver also requires that the application periodically call the USBHCDMain() function. 
 
 The application has to register a USB accessory class with host controller driver using USBHCDRegisterDrivers() call so that enumeration events can be passed to it. 
 
@@ -200,20 +205,20 @@ Please refer to [http://processors.wiki.ti.com/index.php/StarterWare_USB Starter
 
 == USB Accessory Class Driver  ==
 
-The USB Accessory class driver provides an interface to detect and set up communication with an Android accessory powered device. In general, an accessory class driver carries following steps. 
-
-#Determine the device's accessory mode support 
-#Attempt to start the device in accessory mode if needed 
-#Establish communication with the device if it supports the Android accessory protocol 
-#Provides accessory read and write APIs to communicate with Android accessory powered device.
+The USB Accessory class driver provides an interface to detect and set up communication with an Android accessory powered device (phone/tablet). In general, an accessory class driver carries following steps. 
+<br>
+   # Determine the device's accessory mode support 
+   # Attempt to start the device in accessory mode if needed 
+   # Establish communication with the device if it supports the Android accessory protocol 
+   # Provides accessory read and write APIs to communicate with Android accessory powered device.
 
 Application has to call USBACCOpen() to register a callback. The Accessory class driver will call this registered callback to notify whether 
 
-#USB Accessory device is connected 
-#Unknown device is connected 
-#Device is disconnected.
+   #USB Accessory device is connected 
+   #Unknown device is connected 
+   #Device is disconnected.
 
-Once Device connected (USB_EVENT_CONNECTED) event is received, application the can read and write to accessory device using AccessoryRead() and AccessoryWrite() calls 
+Once Device connected (USB_EVENT_CONNECTED) event is received, application can read and write to accessory device using AccessoryRead() and AccessoryWrite() calls 
 
 == Accessory Application  ==
 
@@ -222,46 +227,50 @@ Below block diagram demonstrate the Beaglebone accessory application code flow.
 http://rowboat.googlecode.com/files/BB_Accessory_Flow.png
  <br> <br> 
 
-The application must register a USB accessory class driver by calling USBHCDRegisterDrivers() and call USBACCOpen to register a callback. The callback will get invoked by accessory class driver to indicate whether - <br> 
+The application must register a USB accessory class driver by calling USBHCDRegisterDrivers() and call USBACCOpen to register a callback. The callback will get invoked by accessory class driver to indicate whether 
 
-#Android accessory mode device is connected (USB_EVENT_CONNECTED)
-#Unknown device is connected (UNKNOWN_DEVICE_EVENT) 
-#Device is disconnected (USB_EVENT_DISCONNECTED).
+   # Android accessory mode device is connected (USB_EVENT_CONNECTED)
+   # Unknown device is connected (UNKNOWN_DEVICE_EVENT) 
+   # Device is disconnected (USB_EVENT_DISCONNECTED).
 
 Once the device connected event is received, accessory can communicate with the application running on Android powered device using custom communication protocol. 
 
 The example application executes the following sequence: 
 
-#Configure and enable the interrupts 
-#Enable the USB clocking 
-#Register the accessory host class driver 
-#Open an instance of the accessory class driver 
-#Initialize the power configuration 
-#Initialize the host controller 
-#Initializes user LED GPIO 
-#Enables RTC 
-#Periodically calls USBHCDMain() function to complete USB re-enumeration process 
-#Sends RTC time data to Android Accessory powered device, receives LED control information and configure LEDs.
+   # Configure and enable the interrupts 
+   # Enable the USB clocking 
+   # Register the accessory host class driver 
+   # Open an instance of the accessory class driver 
+   # Initialize the power configuration 
+   # Initialize the host controller 
+   # Initializes user LED GPIO 
+   # Enables RTC 
+   # Periodically calls USBHCDMain() function to complete USB re-enumeration process 
+   # Sends RTC time data to Android Accessory powered device, receives LED control information and configure LEDs.
 
-= How to Develop New Beaglebone Accessory  =
+===To customize accessory application on Beaglebone===
 
-== Directory structure  ==
+====Directory structure====
 
-* Place application code in "&lt;path to StarterWare source&gt;/examples/beaglebone/&lt;your app folder name&gt;"
+   * Place the application code in "<path to StarterWare source>/examples/beaglebone/<your app folder name>"
 
-* Place your makefile and linker script in "&lt;path to StarterWare source&gt;/build/armv7a/gcc/am335x/beaglebone/&lt;your app folder name&gt;" directory. Follow below command to build your appliation
-  $ cd <path to StarterWare source>/build/armv7a/gcc/am335x/beaglebone/<your app folder name>
-  $ make
-&nbsp;&nbsp;&nbsp; Note: You can take reference of makefile and linker script present in "&lt;path to StarterWare Source&gt;/build/armv7a/gcc/am335x/beaglebone/usb_acc" directory.
-* Built binaries will be placed in folder "<path to StarterWare source>/binary/armv7a/gcc/am335x/beaglebone/<your app folder name> 
+   * Place the makefile and linker script in "<path to StarterWare source>/build/armv7a/gcc/am335x/beaglebone/<your app folder name>" directory. 
 
+   * Follow below command to build the customized application
+{{{  
+#> cd <path to StarterWare source>/build/armv7a/gcc/am335x/beaglebone/<your app folder name>
+#> make
+}}}
+
+   Note: Refer of makefile and linker script present in "<path to StarterWare Source>/build/armv7a/gcc/am335x/beaglebone/usb_acc" directory.
+   * Generated binaries will be placed in folder "<path to StarterWare source>/binary/armv7a/gcc/am335x/beaglebone/<your app folder name> 
 <br>
 
-== Accessory Application Guidelines  ==
+==== Example accessory application snippet====
 
-Following code snippet gives the rough idea on how to develop a new accessory application using StarterWare package. 
+Following code snippet gives a rough idea on how to develop a new accessory application using StarterWare package. 
 
-*Declare structure to use host accessory class driver
+   * Declare structure to use host accessory class driver
 
 <font size="2"><code lang="c">
 static tUSBHostClassDriver const * const g_ppHostClassDrivers[] =
@@ -271,14 +280,14 @@ static tUSBHostClassDriver const * const g_ppHostClassDrivers[] =
 };
 </code> </font> 
 
-*Declare global variables to store accessory instance value and device connection state
+   * Declare global variables to store accessory instance value and device connection state
 
 <font size="2"><code lang="c">
 static unsigned int g_ulACCInstance;
 static unsigned int eUSBState;
 </code> </font> 
 
-*Implement a callback function so that application can be informed when an Android accessory powered device is connected and disconnected.
+   * Implement a callback function so that application can be informed when an Android accessory powered device is connected and disconnected.
 
 <font size="2"><code lang="c">
 
@@ -308,7 +317,7 @@ unsigned int ACCCallback(unsigned int ulEvent)
 }
 </code> </font> 
 
-*Implement a main loop that runs the application
+   * Implement a main loop that runs the application
 
 <font size="2"><code lang="c">
 int main(void)
@@ -370,9 +379,9 @@ int main(void)
     }
 </code> </font>
 
-=Android Accessory Development=
+==To customize accessory application on Android Device (Phone/Tablet)==
 
-Please refer to [http://developer.android.com/guide/topics/connectivity/usb/accessory.html Google USB accessory API guide] and TI Accessory Demo Android application code to write your own accessory application.
+Please refer to [http://developer.android.com/guide/topics/connectivity/usb/accessory.html Google USB accessory API guide] and TI Accessory Demo Android application code to write your own accessory application that can interact with the Beaglebone.
 
 =APPENDIX=
 
