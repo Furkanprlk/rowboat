@@ -1,26 +1,29 @@
-=Beaglebone based Android Accessory Development Kit=
+<font size="8">
+Beaglebone based Android Accessory Development Kit
+</font>
 <br>
-<br>
-
 <font size="4">
 *User Guide*
 </font>
-
+<font size="3">
+*Contents*
+<br>
+*________*
+<br>
+</font>
 <wiki:toc max_depth="2" />
-
 = Introduction  =
+The Android platform (from 3.1 onwards) has integrated a specific protocol "Android Open Accessory", which allows external embedded hardware (accessory) to interact with an Android-powered device (Android phone or tablet) in a special accessory mode over USB or Bluetooth interface. Android accessories are specifically designed to attach to Android-powered devices over USB or Bluetooth and adhere to a simple protocol (Android accessory protocol) that allows them to detect Android-powered devices that support accessory mode.
 
-The Android platform (from 3.1 onwards) has integrated a specific protocol "Android Open Accessory", which allows external embedded hardware (accessory) to interact with an Android-powered device (Android phone or tablet) in a special accessory mode over USB or Bluetooth interface. Android accessories are specifically designed to attach to Android-powered devices over USB or Bluetooth and adhere to a simple protocol (Android accessory protocol) that allows them to detect Android-powered devices that support accessory mode. <br> With majority of smart phones and tablets using Android today, an Android open accessory standard provides a vital link between phones, tablets and other Android powered devices and embedded systems which are pervasive in our daily life. 
-<br>
+With majority of smart phones and tablets using Android today, an Android open accessory standard provides a vital link between phones, tablets and other Android powered devices and embedded systems which are pervasive in our daily life.
+
 Android accessories can be audio docking stations, exercise machines, personal medical testing devices, weather stations, wearable gadgets or any other external hardware device that adds to the functionality of Android.
-<br>
+
 As of today, all the available Android accessory kits are based on micro controllers operating at very low MHz (max 150MHz) and limited peripheral set. For the first time, we provide an accessory kit based on TI's AM335x (ARM Cortex A8) application processor. The processor can operate at range of frequencies (100 MHz to 1 GHz), ultra-low power, very broad list of on chip peripherals and more over the system cost is comparable to that of an micro controller. More details about TI's AM335x can be found here www.ti.com/sitara.
-<br>
+
 Do we really need an application processor for an accessory ? Yes, the embedded products like home appliance, auto infotainment, personal health care, wearable gadgets, etc. are interacting with phones & tablets - they need an application processor to meet the required processing & peripheral set.
-<br>
+
 With the help of rowboat team, we were able to port Android accessory protocol for TI's AM335x based beaglebone platform. Beaglebone + capes based Android accessory kit gives developers the freedom to innovate and develop all new range of accessories for Android devices. It provides an easy to use software development kit, user/developer guide and pre-built examples. 
-<br>
-<br>
 
 == Fundamentals of Beaglebone as Android Accessory ==
 
@@ -34,7 +37,6 @@ http://rowboat.googlecode.com/files/BB_Android_Accessory.png
 Why use TI's StarterWare software package as a base software v/s Linux or u-boot ?
 <br>
    - For Linux, we have to develop a all new USB class for Android accessory and a custom application that talks to peripheral Linux drivers. The implementation is not complex, we have plans to develop this in future.
-<br>
    - u-boot has limited support for AM335x peripherals and we found USB Host protocol lack few features to implement the accessory protocol.
 
 TI's starterware is free to use and distribute, comes with pre-integrated libraries with APIs to access every peripheral on AM335x processor, very easy to use with lots of examples, direct support from TI. For more details please refer to [http://processors.wiki.ti.com/index.php/StarterWare_Getting_Started_02.00.XX.XX StarterWare getting started guide] and [http://processors.wiki.ti.com/index.php/StarterWare_02.00.00.07_User_Guide user guide]<br>
