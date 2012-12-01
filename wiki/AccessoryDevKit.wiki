@@ -1,13 +1,432 @@
-#summary One-sentence summary of this page.
+# Beaglebone based Android Accessory Development Kit
 
-= Introduction =
+= Introduction  =
 
-Add your content here.
+With Android 3.1, the Android platform introduced Android Open Accessory support, which allows external USB hardware (an Android USB accessory) to interact with an Android-powered device in a special accessory mode. Android USB accessories are specifically designed to attach to Android-powered devices and adhere to a simple protocol (Android accessory protocol) that allows them to detect Android-powered devices that support accessory mode. <br> With majority of smart phones and tablets using Android today, an Android open accessory standard provides a vital link between phones,tablets and other Android powered devices, and embedded systems which are pervasive in our daily life.Android accessories can be audio docking stations, exercise machines, personal medical testing devices, weather stations, or any other external hardware device that adds to the functionality of Android.
+<br>
+Beaglebone Android accessory kit gives you freedom to innovate and develop new accessories for Android devices. It provides an easy to use development kit that will help to take Android accessories at next level. 
+<br>
+<br>
+[[Image:BB ADK.jpg|border|830x622px|BB ADK.jpg]]
+<br>
+<br>
+When Beaglebone is connected to Android powered device, it acts as the USB host (powers the bus and enumerates devices) and the Android-powered device acts as the USB device. Beaglenone Android USB accessory adhere to a Android accessory protocol and detect Android-powered devices that support accessory mode.<br>
+Beaglebone accessory development kit uses TI StarterWare software package as a base software for accessory development. StarterWare provides no-OS platform support for AM335x devices. The StarterWare package contains Device Abstraction Layer, libraries and peripheral/board level sample/demo examples that demonstrate the capabilities of the peripherals on AM335x. For more details please refer to [http://processors.wiki.ti.com/index.php/StarterWare_Getting_Started_02.00.XX.XX StarterWare getting started guide] and [http://processors.wiki.ti.com/index.php/StarterWare_02.00.00.07_User_Guide user guide]<br>
+Following sections provide information about the Beaglebone as an Android Accessory Development Kit, how to use it, and how to get started building your own accessories using Beaglebone for Android.
+
+=Out of Box Demo=
+
+This section gives the instructions to quickly prepare an SD Card image and get an experience of TI Beaglebone Accessory.
+
+== Getting Prebuilt Images  ==
+
+BeagleBone Accessory Prebuilt SD card image from [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/TI_Android_GingerBread_2_3_4_DevKit_2_1_1/index_FDS.html TI Android DevKit download page]
+
+<br>
+
+== Prepartion of SD card  ==
+
+Connect a Micro SD card via a USB card reader on an Ubuntu Machine<br>From a terminal, type the below commands, 
+<pre>$ tar -xzvf BeagleBoneAcc.tar.gz
+$ cd BeagleBoneAcc
+$ sudo ./mkmmc-acc.sh /dev/sd&lt;device&gt; </pre>
+ 
+The above step prepares the bootable SD Card which can be used to boot beaglebone Accessory. 
+
+== Hardware setup  ==
+
+Connect MiniB USB Cable,5V DC Power to the BeagleBone and have it powered. Windows or Linux Host can be used to connect and evaluate BeagleBone Accessory. We prefer to use Ubuntu 10.04 as the host to connect to BeagleBone.<br> 
+
+=== Getting serial console <br>  ===
+
+Serial console is provided via MiniB USB connection between the BeagleBone and the Host.<br> 
+
+==== In Windows<br>  ====
+
+'''Side note''': it may be possible to download [http://beagleboard.org/static/beaglebone/a3/Drivers/Windows/BONE_DRV.exe BONE_DRV.exe] for 32-bit Windows or [http://beagleboard.org/static/beaglebone/a3/Drivers/Windows/BONE_D64.exe BONE_D64.exe] for 64-bit Windows to avoid needing to manually edit the driver entries, but this has not yet been validated. 
+
+For Windows XP, Download FTDI driver from http://www.ftdichip.com/Drivers/CDM/CDM20814_WHQL_Certified.zip 
+
+Extract the contents and edit the ftdibus.inf file 
+
+Replace the section between 
+
+[FtdiHw] 
+
+and 
+
+[FtdiHw.NTamd64] 
+
+with the following content 
+<pre>%USB\VID_0403&amp;PID_A6D0.DeviceDesc%=FtdiBus.NT,USB\VID_0403&amp;PID_A6D0
+%USB\VID_0403&amp;PID_A6D0&amp;MI_00.DeviceDesc%=FtdiBus.NT,USB\VID_0403&amp;PID_A6D0&amp;MI_00
+%USB\VID_0403&amp;PID_A6D0&amp;MI_01.DeviceDesc%=FtdiBus.NT,USB\VID_0403&amp;PID_A6D0&amp;MI_01
+%USB\VID_0403&amp;PID_A6D0&amp;MI_00.DeviceDesc%=FtdiBus.NT,USB\VID_0403&amp;PID_A6D0&amp;MI_00
+%USB\VID_0403&amp;PID_A6D0&amp;MI_01.DeviceDesc%=FtdiBus.NT,USB\VID_0403&amp;PID_A6D0&amp;MI_01
+%USB\VID_0403&amp;PID_A6D0&amp;MI_02.DeviceDesc%=FtdiBus.NT,USB\VID_0403&amp;PID_A6D0&amp;MI_02
+%USB\VID_0403&amp;PID_A6D0&amp;MI_03.DeviceDesc%=FtdiBus.NT,USB\VID_0403&amp;PID_A6D0&amp;MI_03
+%USB\VID_0403&amp;PID_A6D0.DeviceDesc%=FtdiBus.NT,USB\VID_0403&amp;PID_A6D0</pre> 
+Also 
+
+Replace the section between 
+
+DriversDisk="FTDI USB Drivers Disk" 
+
+and 
+
+SvcDesc="USB Serial Converter Driver" 
+
+with the following content 
+<pre>USB\VID_0403&amp;PID_A6D0.DeviceDesc="USB Serial Converter"
+USB\VID_0403&amp;PID_A6D0&amp;MI_00.DeviceDesc="USB Serial Converter A"
+USB\VID_0403&amp;PID_A6D0&amp;MI_01.DeviceDesc="USB Serial Converter B"
+USB\VID_0403&amp;PID_A6D0&amp;MI_00.DeviceDesc="USB Serial Converter A"
+USB\VID_0403&amp;PID_A6D0&amp;MI_01.DeviceDesc="USB Serial Converter B"
+USB\VID_0403&amp;PID_A6D0&amp;MI_02.DeviceDesc="USB Serial Converter C"
+USB\VID_0403&amp;PID_A6D0&amp;MI_03.DeviceDesc="USB Serial Converter D"
+USB\VID_0403&amp;PID_A6D0DeviceDesc="USB Serial Converter"
+</pre> 
+Then follow these steps 
+
+*Boot the board 
+*Connect Mini B USB cable between board and Windows PC. 
+*If it is proceeding as planned, Windows will tell you it found a new hardware asks you to install the driver. Install driver that was downloaded as described in the above step 
+*Answer "No, not this time" to the question about running Windows Update to search for software. 
+*Choose "Install the hardware that I manually select from a list (Advanced)" this is the 2nd option, then click "Next" 
+*Select "Show All Devices", then click "Next" 
+*You are going to see a grayed-out text box with "(Retrieving a list of all devices)", click the "Have Disk..." button 
+*Browse" to your driver folder (c:\...\_driver). It will be looking of a .inf file so select "ftdibus.inf" and click "Open" then "OK". 
+*Select "USB Serial Port" then click the "Next" button. 
+*A warning will appear, answer "Yes" but read the warning anyway. 
+*Click the "Close" when the wizard is completed. 
+*Disconnect and reconnect Mini B USB cable from Board(probably reboot it as well). 
+*Serial COM port will be listed on the Terminal Utility menu 
+*Adjust the baudrate to 115200 to connect to the BeagleBone serial.
+
+==== In Linux  ====
+
+To get serial console output on ubuntu follow these steps: 
+<pre>$ sudo modprobe ftdi_sio vendor=0x0403 product=0xa6d0
+$ minicom -D /dev/`dmesg | grep FTDI | grep "now attached to" | tail -n 1 | awk '{ print $NF }'` 
+</pre> 
+{{Note|
+*You might need to make sure minicom's serial port setup is for 115200n8 with hardware flow control. You can get into the minicom configuration menu by invoking 'minicom -s' and selecting serial port setup -&gt; Serial Device (option A).
+*You may have to run minicom with sudo in case sufficient permission is not available for the USB serial node
+}}
+
+=== Verifying Serial Connection<br>  ===
+
+Once you finish setting up serial console, you can test the connection via the below steps 
+
+*Push the small black reset button beside ethernet port 
+*If your serial connection is proper, you can see the sequnce 'CCCC' getting popped up on the serial console.
+
+== Powering on to Beaglebone Accessory  ==
+
+Put the Micro SD card to the slot on the BeagleBone. Press the reset button again.
+<br>
+On Successful boot, following messages appear on the serial console.
+
+    StarterWareAM335x Boot Loader
+ Copying application image from MMC/SD card to RAM
+ Jumping to StarterWare Application...
+  .
+  .
+  .
+After this the accessory application should take control and execute. <br>
+
+== Accessory Usage ==
+
+* Download TI Beaglebone Accessory Android application from <LINK>.
+* Install this application on Android4.0.3 powered device.
+* Connect Beaglebone USB host port to mini/Micro-B USB port of the device.
+
+TI Accessory demo application should launch automatically and you should see below screen.
+<br> 
+<br> 
+
+<Screen>
+
+<br> 
+<br> 
+
+The application will allow access to control Beaglebone user LEDs and will display Beglebone RTC clock.
+
+= Developing with Source Code =
+
+== Getting the Toolchain ==
+
+1. Download CodeSourcery tool chain for ARM for Linux http://www.codesourcery.com/sgpp/lite/arm/portal/package4465/public/arm-none-eabi/arm-2009q1-161-arm-none-eabi.bin
+
+2. Install toolchain
+
+   $ chmod 777 arm-2009q1-161-arm-none-eabi.bin
+   $ ./arm-2009q1-161-arm-none-eabi.bin
+
+2. Set PATH environment variable contain the path of the compiler/tool chain.
+
+   Ex:
+   $export PATH=$PATH:/opt/tools/CodeSourcery/Sourcery_G++_Lite/bin
+
+3. Point LIB_PATH shell environment variable to the Code Sourcery installation
+   
+   Ex:
+   LIB_PATH=/opt/tools/CodeSourcery/Sourcery_G++_Lite
+
+Note: /opt/tools/ is the path selected while installing the toolchain. If you are installing toolchain path at some other location, please set PATH and LIB_PATH variable appropriately.
+
+ 
+== Getting Source code <TBD>==
+
+TI StarterWare software package is used to develop Beaglbone Android accessory. <br>
+StarterWare is a free software development package that provides no-OS platform support for ARM and DSP TI processors. StarterWare includes Device Abstraction Layer (DAL) libraries and example applications that demonstrate the capabilities of the peripherals on the TI processors. 
+<br>
+Please refer to http://processors.wiki.ti.com/index.php/StarterWare (Version: 02.00.00.07) related documents for more details.
+
+== Get StarterWare Package ==
+
+1. Download StartWare Linux Installer package from http://software-dl.ti.com/dsps/dsps_public_sw/am_bu/starterware/02_00_00_07/index_FDS.html
+2. Install StarterWare package
+
+   $ <path to package dir>/AM335X_StarterWare_02_00_00_07_Setup.bin
 
 
-= Details =
+== Apply Beaglebone Accessory patch ==
+<TBD>
+ 
+<br>
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Building Source Code ==
+
+=== Building The Bootloader  ===
+
+Use below commands to build the StarterWare bootloader.
+    
+   $ cd <Path to StarterWare Code>/build/armv7a/gcc/am335x/beaglebone/bootloader
+   $ make
+
+Above command will generate bootloader binary image at
+
+   <Path to StarterWare code>/binary/armv7a/gcc/am335x/beaglebone/bootloader/Release/boot_ti.bin
+
+Rename "boot_ti.bin" to MLO.
+
+   $ mv <Path to StarterWare code>/binary/armv7a/gcc/am335x/beaglebone/bootloader/Release/boot_ti.bin <Path to StarterWare code>/binary/armv7a/gcc/am335x/beaglebone/bootloader/Release/MLO
+
+== Building Accessory Application ==
+Use below command to build Beaglebone accessory application.
+
+   $ cd <Path to StarterWare Code>/build/armv7a/gcc/am335x/beaglebone/usb_acc
+   $ make
+
+Above command will generate an Application binary at following location
+ 
+   <Path to StarterWare code>/binary/armv7a/gcc/am335x/beaglebone/usb_acc/Release/usb_acc_ti.bin
+
+Rename Application "usb_acc_ti.bin" to "app".
+
+   $ mv <Path to StarterWare code>/binary/armv7a/gcc/am335x/beaglebone/usb_acc/Release/usb_acc_ti.bin <Path to StarterWare code>/binary/armv7a/gcc/am335x/beaglebone/usb_acc/Release/app
+
+== Generate Bootable SD/MMC Card ==
+
+Copy compiled images and mk-mmc-acc.sh script to image folder and populate SD/MMC card as follows.
+
+   $ mkdir ~/image
+   $ cd ~/image
+   $ cp <Path to StarterWare code>/binary/armv7a/gcc/am335x/beaglebone/bootloader/Release/MLO .
+   $ cp <Path to StarterWare code>/binary/armv7a/gcc/am335x/beaglebone/usb_acc/Release/app .
+   $ cp <path to pre-built image>/BeagleBoneAcc/mkmmc-acc.sh .
+   $ sudo ./mkmmc-acc.sh /dev/sd<device>
+
+Above steps will create a bootable SD/MMC card which can be used to bootup beaglebone.
+
+= Software Design Interface  =
+
+The Beaglebone accessory development kit makes a use of StarterWare USB stack and implements a USB accessory class driver which adhere to the Android opem accessory standard and accessory application to interact with the Android powered device. For detailed design of StarterWare USB stack, please visit http://processors.wiki.ti.com/index.php/StarterWare_USB#Core_Design 
+
+Here is the block diagram of Beaglebone USB accssory software which highlights important software blocks. 
+<br>
+<br>
+[[Image:StarterWareACCBlock.jpg|border|810x664px]] 
+<br>
+<br>
+== Host Controller driver  ==
+
+The USB host controller driver handles all of the details necessary to discover and enumerate any USB device. The USB host controller driver only performs enumeration and relies on the host accessory class driver to perform any other communications with Android device. Most of the code used to enumerate devices is run in interrupt context and is contained in the enumeration handler. In order to complete the enumeration process, the host controller driver also requires that the application periodically call the USBHCDMain() function. 
+
+The application has to register a USB accessory class with host controller driver using USBHCDRegisterDrivers() call so that enumeration events can be passed to it. 
+
+Please refer to [http://processors.wiki.ti.com/index.php/StarterWare_USB StarterWare USB] documentation for more details about StarterWare USB. 
+
+== USB Accessory Class Driver  ==
+
+The USB Accessory class driver provides an interface to detect and set up communication with an Android accessory powered device. In general, an accessory class driver carries following steps. 
+
+#Determine the device's accessory mode support 
+#Attempt to start the device in accessory mode if needed 
+#Establish communication with the device if it supports the Android accessory protocol 
+#Provides accessory read and write APIs to communicate with Android accessory powered device.
+
+Application has to call USBACCOpen() to register a callback. The Accessory class driver will call this registered callback to notify whether 
+
+#USB Accessory device is connected 
+#Unknown device is connected 
+#Device is disconnected.
+
+Once Device connected (USB_EVENT_CONNECTED) event is received, application the can read and write to accessory device using AccessoryRead() and AccessoryWrite() calls 
+
+== Accessory Application  ==
+
+Below block diagram demonstrate the Beaglebone accessory application code flow. <br> <br> [[Image:StarterWareACC.png|border]] <br> <br> 
+
+The application must register a USB accessory class driver by calling USBHCDRegisterDrivers() and call USBACCOpen to register a callback. The callback will get invoked by accessory class driver to indicate whether - <br> 
+
+#Android accessory mode device is connected (USB_EVENT_CONNECTED)
+#Unknown device is connected (UNKNOWN_DEVICE_EVENT) 
+#Device is disconnected (USB_EVENT_DISCONNECTED).
+
+Once the device connected event is received, accessory can communicate with the application running on Android powered device using custom communication protocol. 
+
+The example application executes the following sequence: 
+
+#Configure and enable the interrupts 
+#Enable the USB clocking 
+#Register the accessory host class driver 
+#Open an instance of the accessory class driver 
+#Initialize the power configuration 
+#Initialize the host controller 
+#Initializes user LED GPIO 
+#Enables RTC 
+#Periodically calls USBHCDMain() function to complete USB re-enumeration process 
+#Sends RTC time data to Android Accessory powered device, receives LED control information and configure LEDs.
+
+= How to Develop New Beaglebone Accessory  =
+
+== Directory structure  ==
+
+* Place application code in "&lt;path to StarterWare source&gt;/examples/beaglebone/&lt;your app folder name&gt;"
+
+* Place your makefile and linker script in "&lt;path to StarterWare source&gt;/build/armv7a/gcc/am335x/beaglebone/&lt;your app folder name&gt;" directory. Follow below command to build your appliation
+  $ cd <path to StarterWare source>/build/armv7a/gcc/am335x/beaglebone/<your app folder name>
+  $ make
+&nbsp;&nbsp;&nbsp; Note: You can take reference of makefile and linker script present in "&lt;path to StarterWare Source&gt;/build/armv7a/gcc/am335x/beaglebone/usb_acc" directory.
+* Built binaries will be placed in folder "<path to StarterWare source>/binary/armv7a/gcc/am335x/beaglebone/<your app folder name> 
+
+<br>
+
+== Accessory Application Guidelines  ==
+
+Following code snippet gives the rough idea on how to develop a new accessory application using StarterWare package. 
+
+*Declare structure to use host accessory class driver
+
+<font size="2"><code lang="c">
+static tUSBHostClassDriver const * const g_ppHostClassDrivers[] =
+{
+  &g_USBACCClassDriver,
+  &g_sUSBEventDriver
+};
+</code> </font> 
+
+*Declare global variables to store accessory instance value and device connection state
+
+<font size="2"><code lang="c">
+static unsigned int g_ulACCInstance;
+static unsigned int eUSBState;
+</code> </font> 
+
+*Implement a callback function so that application can be informed when an Android accessory powered device is connected and disconnected.
+
+<font size="2"><code lang="c">
+
+unsigned int ACCCallback(unsigned int ulEvent)
+{
+    switch(ulEvent)
+    {
+        case USB_EVENT_CONNECTED:
+        {
+          
+            eUSBState = STATE_ACC_INIT;
+            break;
+        }
+
+        case USB_EVENT_DISCONNECTED:
+        {
+            eUSBState = STATE_NO_DEVICE;
+            break;
+        }
+
+        case UNKNOWN_DEVICE_EVENT:
+        {
+            eUSBState = STATE_UNKNOWN_DEVICE;
+            break;
+        }
+    }
+}
+</code> </font> 
+
+*Implement a main loop that runs the application
+
+<font size="2"><code lang="c">
+int main(void)
+{
+    MMUConfigAndEnable();
+
+    /*configure arm interrupt controller to generate usb interrupt */
+       
+    /*Register the host class driver*/
+    USBHCDRegisterDrivers(USB_INSTANCE, g_ppHostClassDrivers, 1);
+   
+    /* Open an instance of the accessory driver and register a callback*/
+    g_ulACCInstance = USBACCOpen(USB_INSTANCE, ACCCallback);
+
+    USBHCDPowerConfigInit(USB_INSTANCE, USBHCD_VBUS_AUTO_HIGH);
+
+    /* Initialize the host controller stack */  
+    USBHCDInit(USB_INSTANCE, g_pHCDPool, HCD_MEMORY_SIZE);
+    USBHCDTimeOutHook(USB_INSTANCE, &USBHTimeOut);
+    USBHTimeOut->Value.slNonEP0= 1;
+
+    /*Do other necessary initialization specific to your application*/
+    
+    /* Call the main loop for the Host controller driver */
+    USBHCDMain(USB_INSTANCE, g_ulACCInstance);
+    
+    /* Implement main loop for the application */
+    while(1)
+    {
+       switch(eUSBState)
+       {
+           /* This state is entered when android accessory powered device is first detected */
+            case STATE_ACC_INIT:
+            {
+                /* Do necessary initialization */            
+                break;
+            }
+            case STATE_ACC_CONNECTED:
+            {
+                   /* Do accessory read and write operations.
+                    * Implement your custom accessory communication protocol to 
+                    * communicate with Android application
+                    * running on Android accessory powered device.
+                    */
+                   break;
+            }
+            case STATE_NO_DEVICE:
+            {
+                 break;
+            }
+            default:
+            {
+                break;
+            }
+        }
+
+        /* Periodically call the main loop for the Host controller driver */
+        USBHCDMain(USB_INSTANCE, g_ulACCInstance);
+    }
+</code> </font>
+
+=Android Accessory Development=
+
+Please refer to [http://developer.android.com/guide/topics/connectivity/usb/accessory.html Google USB accessory API guide] and TI Accessory Demo Android application code to write your own accessory application.
