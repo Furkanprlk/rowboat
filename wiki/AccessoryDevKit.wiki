@@ -260,8 +260,7 @@ The example application executes the following sequence:
 }}}
 
    Note: Refer of makefile and linker script present in "<path to StarterWare Source>/build/armv7a/gcc/am335x/beaglebone/usb_acc" directory.
-   * Generated binaries will be placed in folder "<path to StarterWare source>/binary/armv7a/gcc/am335x/beaglebone/<your app folder name> 
-<br>
+   * Generated binaries will be placed in folder "<path to StarterWare source>/binary/armv7a/gcc/am335x/beaglebone/<your app folder name>
 
 ==== Example accessory application snippet====
 
