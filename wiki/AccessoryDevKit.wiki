@@ -1,4 +1,6 @@
-# Beaglebone based Android Accessory Development Kit
+#Beaglebone based Android Accessory Development Kit
+
+<wiki:toc max_depth="2" />
 
 = Introduction  =
 
