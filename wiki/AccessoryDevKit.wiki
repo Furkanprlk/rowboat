@@ -58,7 +58,7 @@ This section gives the instructions to quickly prepare an SD Card with pre-built
 ==Getting Pre-built Images==
 
 To successfully experience beaglebone as an Android accessory we need 
-   * Beaglebone Starterware binary (with integrated Android accessory protocol and Accessory application) - BeagleBoneAcc.tar.gz
+   * Beaglebone Starterware binary (with integrated Android accessory protocol and Accessory application) - [http://rowboat.googlecode.com/files/BeagleBoneAcc.tar.gz BeagleBoneAcc.tar.gz]
    * A sample Android application (.apk) to be installed on any Android phone or Tablet. - [http://rowboat.googlecode.com/files/TI-ADKDemo.tar.gz TI-ADKDemo.tar.gz]
 
 == Prepartion of SD card  ==
