@@ -8,7 +8,7 @@ This document explains how to download, build and run Android 4.1.1 Jelly Bean w
 
 This section gives the instructions to quickly prepare an SD Card image and get an experience of Android Jelly Bean on Beaglebone.
 
-  *Download the pre-built Image ==
+  * Download the pre-built Image
 
 {{{
   Using Curl
@@ -51,7 +51,7 @@ Serial console is provided via mini-usb cable connection between the Beaglebone 
 
 ==Host Setup ==
 
-Rowboat Jelly Bean sources can be built only on 64-bit hosts. Build is tested on Ubuntu 10.10 (64-bit) and 12.04 (64-bit). Please follow the instructions at http://source.android.com/source/initializing.html to setup your build host.
+Rowboat Jelly Bean sources can be built *ONLY* on 64-bit hosts. Build is tested on Ubuntu 10.10 (64-bit) and 12.04 (64-bit). Please follow the instructions at http://source.android.com/source/initializing.html to setup your build host.
 
 === Java JDK setup ===
 
