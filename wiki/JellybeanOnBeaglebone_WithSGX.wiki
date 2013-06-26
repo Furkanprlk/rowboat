@@ -2,11 +2,13 @@
 
 = Introduction =
 
-This document explains how to download, build and run Android 4.1.1 Jelly Bean with SGX (3D graphics acceleration) support on TI's ARM Cortex A8 based AM335x Beaglebone (Rev A3 and later) with LCD7 cape
+This document explains how to download, build and run Android 4.2.2 Jelly Bean with SGX (3D graphics acceleration) support on TI's ARM Cortex A8 based AM335x Beaglebone (Rev A3 and later) with LCD7 cape
 
 = Out of the Box Demo =
+ _NOTE:_ *The demo images are based on Android Jelly Bean 4.1.1. Updated images with Jelly Bean 4.2.2 are not available currently and needs to be built form source*
 
 This section gives the instructions to quickly prepare an SD Card image and get an experience of Android Jelly Bean on Beaglebone.
+
 
   * Download the pre-built Image
 
@@ -113,16 +115,6 @@ Create an empty directory to hold your working files
   $ repo sync $
 }}}
 
-= Download Tools =
-
-Download SD card utility scripts and boot script tools & untar them into your home directory.
-
-{{{
-  $ cd ~
-  $ curl http://rowboat.googlecode.com/files/RowboatTools-JB.tar.gz > RowboatTools-JB.tar.gz
-  $ tar -zxvf RowboatTools-JB.tar.gz
-}}}
-
 = Compilation Procedure =
 
 == Toolchain Setup ==
@@ -150,16 +142,18 @@ Execute following commands
 }}}
 
 This command will generate the "MLO" and "u-boot.img"
-Build Android, Kernel and SGX
+
+== Build Android, Kernel and SGX ==
 
 {{{
   $ make TARGET_PRODUCT=beaglebone OMAPES=4.x
 }}}
 
 This command will build kernel, android sources and sgx. If you want to build these components separately, follow below section.
-Build Android, Kernel and SGX Separately
 
-== Build Kernel ==
+== Build Android, Kernel and SGX Separately ==
+
+=== Build Kernel ===
 
 Change directory to kernel
 
@@ -178,7 +172,7 @@ Build kernel
 This will generate uImage (kernel image) in kernel/arch/arm/boot folder
 Build Android filesystem
 
-== Build Root Filesystem ==
+=== Build Root Filesystem ===
 
 Use following commands to build the root file system.
 
@@ -187,7 +181,7 @@ Use following commands to build the root file system.
   $ make TARGET_PRODUCT=beaglebone droid
 }}}
 
-Build and Install SGX(2D/3D accleration) drivers and libraries
+=== Build and Install SGX(2D/3D accleration) drivers and libraries ===
 
 Use following commands to build and install SGX.
 
@@ -212,7 +206,7 @@ This section walks you through the steps necessary to create a bootable SD card 
 
 == Configure Boot Arguments ==
 
-The default boot arguments are located in the "~/RowboatTools-JB/am335x/u-boot-env/uEnv.txt" boot script. You can edit this file to update the boot commands.
+The default boot arguments are located in the "<android source>/external/ti_android_utilities/am335x/u-boot-env/uEnv_beaglebone.txt" boot script. You can edit this file to update the boot commands.
 
 
 == Flash SD Card ==
@@ -221,20 +215,20 @@ Copy compiled Images to image folder and create a bootable SD card as follows.
 
 {{{
   $ mkdir ~/image_folder
-  $ cp <android sorce path>/kernel/arch/arm/boot/uImage ~/image_folder
-  $ cp <android souorce path>/u-boot/MLO ~/image_folder
-  $ cp <android souorce path>/u-boot/u-boot.img ~/image_folder
-  $ cp ~/RowboatTools-JB/am335x/u-boot-env/uEnv.txt ~/image_folder
-  $ cp <android source path>/out/target/product/beaglebone/rootfs.tar.bz2 ~/image_folder
-  $ cp ~/RowboatTools-JB/am335x/mk-mmc/mkmmc-android.sh ~/image_folder
+  $ cp <android source>/kernel/arch/arm/boot/uImage ~/image_folder
+  $ cp <android source>/u-boot/MLO ~/image_folder
+  $ cp <android source>/u-boot/u-boot.img ~/image_folder
+  $ cp <android source>/external/ti_android_utilities/ti_android_utilities/am335x/u-boot-env/uEnv_beaglebone.txt ~/image_folder
+  $ cp <android source>/out/target/product/beaglebone/rootfs.tar.bz2 ~/image_folder
+  $ cp <android source>/external/ti_android_utilities/am335x/mk-mmc/mkmmc-android.sh ~/image_folder
 
   $cd ~/image_folder
-  $ sudo./mkmmc-android <your SD card device e.g.:/dev/sdc> MLO u-boot.img uImage uEnv.txt rootfs.tar.bz2
+  $ sudo./mkmmc-android <your SD card device e.g.:/dev/sdc> MLO u-boot.img uImage uEnv_beaglebone.txt rootfs.tar.bz2
 }}}
 
 = Booting Up the Board =
 
-Insert your SD card into your beaglebone, connect mini-USB cable and, optionally USB Mouse to board and turn on the board.
+Insert your SD card into your Beaglebone, connect mini-USB cable and, optionally USB Mouse to board and turn on the board.
 
 Android Jelly Bean should boot.
 
