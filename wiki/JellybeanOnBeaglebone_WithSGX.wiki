@@ -55,6 +55,11 @@ Serial console is provided via mini-usb cable connection between the Beaglebone 
 
 Rowboat Jelly Bean sources can be built *ONLY* on 64-bit hosts. Build is tested on Ubuntu 10.10 (64-bit) and 12.04 (64-bit). Please follow the instructions at http://source.android.com/source/initializing.html to setup your build host.
 
+You also need to install the following packages in addition: minicom tftpd uboot-mkimage expect
+
+{{{
+  $ sudo apt-get install minicom tftpd uboot-mkimage expect
+}}}
 === Java JDK setup ===
 
 Ubuntu now comes only with OpenJDK which does not work for building the Rowboat Android Jelly Bean sources. Please follow the following steps to setup the Sun JDK:
@@ -122,7 +127,7 @@ Create an empty directory to hold your working files
 Setup the tool-chain path to point to arm-eabi- tools in prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/
 
 {{{
-  $ export PATH=<android source>/rowboat-android/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin:$PATH
+  $ export PATH=<android source>/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin:$PATH
 }}}
 
 == Build Boot Loader (MLO/u-boot)==
@@ -222,8 +227,8 @@ Copy compiled Images to image folder and create a bootable SD card as follows.
   $ cp <android source>/out/target/product/beaglebone/rootfs.tar.bz2 ~/image_folder
   $ cp <android source>/external/ti_android_utilities/am335x/mk-mmc/mkmmc-android.sh ~/image_folder
 
-  $cd ~/image_folder
-  $ sudo./mkmmc-android <your SD card device e.g.:/dev/sdc> MLO u-boot.img uImage uEnv_beaglebone.txt rootfs.tar.bz2
+  $ cd ~/image_folder
+  $ sudo./mkmmc-android.sh <your SD card device e.g.:/dev/sdc> MLO u-boot.img uImage uEnv_beaglebone.txt rootfs.tar.bz2
 }}}
 
 = Booting Up the Board =
