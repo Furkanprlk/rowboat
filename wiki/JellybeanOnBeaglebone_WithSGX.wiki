@@ -1,4 +1,7 @@
+#summary Getting Android Jelly Bean 4.2.2 up and running on BeagleBone and BeagleBone Black
 <g:plusone size="medium"></g:plusone>
+
+<wiki:toc max_depth="2" />
 
 = Introduction =
 
@@ -230,6 +233,11 @@ Copy compiled Images to image folder and create a bootable SD card as follows.
   $ cd ~/image_folder
   $ sudo./mkmmc-android.sh <your SD card device e.g.:/dev/sdc> MLO u-boot.img uImage uEnv_beaglebone.txt rootfs.tar.bz2
 }}}
+
+= BeagleBone Black =
+*Detailed Instructions soon!*
+
+Replace TARGET_PRODUCT=beaglebone with *TARGET_PRODUCT=beagleboneblack* in the above build instructions and use the file *<android source>/external/ti_android_utilities/ti_android_utilities/am335x/u-boot-env/uEnv_beagleboneblack.txt* as the uEnv.txt file.
 
 = Booting Up the Board =
 
