@@ -234,7 +234,7 @@ Copy compiled Images to image folder and create a bootable SD card as follows.
   $ sudo./mkmmc-android.sh <your SD card device e.g.:/dev/sdc> MLO u-boot.img uImage uEnv_beaglebone.txt rootfs.tar.bz2
 }}}
 
-=BeagleBone Black=
+=!BeagleBone Black=
 *Detailed Instructions soon!*
 
 Replace TARGET_PRODUCT=beaglebone with *TARGET_PRODUCT=beagleboneblack* in the above build instructions and use the file *<android source>/external/ti_android_utilities/ti_android_utilities/am335x/u-boot-env/uEnv_beagleboneblack.txt* as the uEnv.txt file.
