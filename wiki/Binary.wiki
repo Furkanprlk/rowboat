@@ -1,3 +1,3 @@
-#summary Getting pre-built Android binaries for TI OMAP35x / AM35x / AM37x / DM37x
+#summary Getting pre-built Android binaries for TI AM335x / OMAP35x / AM35x / AM37x / DM37x
 
-We recommend starting with [http://software-dl.ti.com/dsps/dsps_public_sw/sdo_tii/TI_Android_DevKit/TI_Android_GingerBread_2_3_DevKit_1_0/index_FDS.html Texas Instruments Android 2.3 DevKit]
+We recommend starting with [http://www.ti.com/tool/androidsdk-sitara Texas Instruments Sitara Android DevKit] Release page
