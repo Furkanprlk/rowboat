@@ -1,0 +1,1 @@
+We recommend starting with [Texas Instruments Sitara Android DevKit](http://www.ti.com/tool/androidsdk-sitara) Release page
